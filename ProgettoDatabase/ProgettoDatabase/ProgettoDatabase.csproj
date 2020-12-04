@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C0463852-5F1B-4FE7-91FC-14C43F8CA731}</ProjectGuid>
+    <ProjectGuid>{2E9AE7DD-0870-4EC5-A625-4EBDA78A6ABB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ProgettoDatabase</RootNamespace>
     <AssemblyName>ProgettoDatabase</AssemblyName>
@@ -46,14 +46,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AeroportoDataSet.cs">
+      <DependentUpon>AeroportoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AeroportoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AeroportoDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Classi\Persona.cs" />
+    <Compile Include="frmAvvio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmAvvio.Designer.cs">
+      <DependentUpon>frmAvvio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInserisciPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInserisciPersona.Designer.cs">
+      <DependentUpon>frmInserisciPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizzaPersone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizzaPersone.Designer.cs">
+      <DependentUpon>frmVisualizzaPersone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificaPersona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificaPersona.Designer.cs">
+      <DependentUpon>frmModificaPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersone.Designer.cs">
+      <DependentUpon>frmPersone.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAvvio.resx">
+      <DependentUpon>frmAvvio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInserisciPersona.resx">
+      <DependentUpon>frmInserisciPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizzaPersone.resx">
+      <DependentUpon>frmVisualizzaPersone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificaPersona.resx">
+      <DependentUpon>frmModificaPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersone.resx">
+      <DependentUpon>frmPersone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +111,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="AeroportoDataSet.xsc">
+      <DependentUpon>AeroportoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AeroportoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AeroportoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AeroportoDataSet.xss">
+      <DependentUpon>AeroportoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
