@@ -82,6 +82,12 @@
     <Compile Include="frmPersone.Designer.cs">
       <DependentUpon>frmPersone.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAerei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAerei.Designer.cs">
+      <DependentUpon>frmAerei.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAvvio.resx">
