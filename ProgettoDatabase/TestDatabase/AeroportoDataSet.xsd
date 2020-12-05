@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AeroportoDataSet" targetNamespace="http://tempuri.org/AeroportoDataSet.xsd" xmlns:mstns="http://tempuri.org/AeroportoDataSet.xsd" xmlns="http://tempuri.org/AeroportoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AeroportoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AeroportoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TestDatabase.Properties.Settings.GlobalReference.Default.AeroportoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwAereiConMaggiorNumeroVoliTableAdapter" GeneratorDataComponentClassName="vwAereiConMaggiorNumeroVoliTableAdapter" Name="vwAereiConMaggiorNumeroVoli" UserDataComponentName="vwAereiConMaggiorNumeroVoliTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.vwAereiConMaggiorNumeroVoli" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CodiceAereo FROM dbo.vwAereiConMaggiorNumeroVoli</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodiceAereo" DataSetColumn="CodiceAereo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwListaPasseggeriTableAdapter" GeneratorDataComponentClassName="vwListaPasseggeriTableAdapter" Name="vwListaPasseggeri" UserDataComponentName="vwListaPasseggeriTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.vwListaPasseggeri" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nome, Cognome, Codice, CodiceVolo, AeroportoArrivo, Marca FROM dbo.vwListaPasseggeri</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="Cognome" DataSetColumn="Cognome" />
+              <Mapping SourceColumn="Codice" DataSetColumn="Codice" />
+              <Mapping SourceColumn="CodiceVolo" DataSetColumn="CodiceVolo" />
+              <Mapping SourceColumn="AeroportoArrivo" DataSetColumn="AeroportoArrivo" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwNumeroVoliBolognaTableAdapter" GeneratorDataComponentClassName="vwNumeroVoliBolognaTableAdapter" Name="vwNumeroVoliBologna" UserDataComponentName="vwNumeroVoliBolognaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.vwNumeroVoliBologna" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT VoliBologna FROM dbo.vwNumeroVoliBologna</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VoliBologna" DataSetColumn="VoliBologna" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwVoliConPilotaTableAdapter" GeneratorDataComponentClassName="vwVoliConPilotaTableAdapter" Name="vwVoliConPilota" UserDataComponentName="vwVoliConPilotaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.vwVoliConPilota" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT VoliConPilota FROM dbo.vwVoliConPilota</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="VoliConPilota" DataSetColumn="VoliConPilota" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwVoliConPiuIncassoTableAdapter" GeneratorDataComponentClassName="vwVoliConPiuIncassoTableAdapter" Name="vwVoliConPiuIncasso" UserDataComponentName="vwVoliConPiuIncassoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.vwVoliConPiuIncasso" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CodiceVolo FROM dbo.vwVoliConPiuIncasso</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodiceVolo" DataSetColumn="CodiceVolo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwVoliConPiuPasseggeriTableAdapter" GeneratorDataComponentClassName="vwVoliConPiuPasseggeriTableAdapter" Name="vwVoliConPiuPasseggeri" UserDataComponentName="vwVoliConPiuPasseggeriTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.vwVoliConPiuPasseggeri" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CodiceVolo FROM dbo.vwVoliConPiuPasseggeri</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodiceVolo" DataSetColumn="CodiceVolo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblPersoneTableAdapter" GeneratorDataComponentClassName="tblPersoneTableAdapter" Name="tblPersone" UserDataComponentName="tblPersoneTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.tblPersone" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tblPersone] WHERE (([CodicePersona] = @Original_CodicePersona) AND ([Nome] = @Original_Nome) AND ([Cognome] = @Original_Cognome) AND ([Nazione] = @Original_Nazione) AND ([DataNascita] = @Original_DataNascita) AND ([Sesso] = @Original_Sesso) AND ([TipoDocumento] = @Original_TipoDocumento) AND ([NumeroDocumento] = @Original_NumeroDocumento))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodicePersona" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cognome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cognome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Nazione" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nazione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_DataNascita" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="DataNascita" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Sesso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Sesso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NumeroDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NumeroDocumento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CodicePersona, Nome, Cognome, Nazione, DataNascita, Sesso, TipoDocumento, NumeroDocumento
+FROM     tblPersone
+WHERE  (Attivo = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tblPersone] SET [CodicePersona] = @CodicePersona, [Nome] = @Nome, [Cognome] = @Cognome, [Nazione] = @Nazione, [DataNascita] = @DataNascita, [Sesso] = @Sesso, [TipoDocumento] = @TipoDocumento, [NumeroDocumento] = @NumeroDocumento WHERE (([CodicePersona] = @Original_CodicePersona) AND ([Nome] = @Original_Nome) AND ([Cognome] = @Original_Cognome) AND ([Nazione] = @Original_Nazione) AND ([DataNascita] = @Original_DataNascita) AND ([Sesso] = @Original_Sesso) AND ([TipoDocumento] = @Original_TipoDocumento) AND ([NumeroDocumento] = @Original_NumeroDocumento));
+SELECT CodicePersona, Nome, Cognome, Nazione, DataNascita, Sesso, TipoDocumento, NumeroDocumento FROM tblPersone WHERE (CodicePersona = @CodicePersona)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodicePersona" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Cognome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cognome" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Nazione" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nazione" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@DataNascita" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="DataNascita" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Sesso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Sesso" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NumeroDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NumeroDocumento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CodicePersona" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Nome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Cognome" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Cognome" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Nazione" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Nazione" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_DataNascita" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="DataNascita" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Sesso" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Sesso" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NumeroDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NumeroDocumento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CodicePersona" DataSetColumn="CodicePersona" />
+              <Mapping SourceColumn="Nome" DataSetColumn="Nome" />
+              <Mapping SourceColumn="Cognome" DataSetColumn="Cognome" />
+              <Mapping SourceColumn="Nazione" DataSetColumn="Nazione" />
+              <Mapping SourceColumn="DataNascita" DataSetColumn="DataNascita" />
+              <Mapping SourceColumn="Sesso" DataSetColumn="Sesso" />
+              <Mapping SourceColumn="TipoDocumento" DataSetColumn="TipoDocumento" />
+              <Mapping SourceColumn="NumeroDocumento" DataSetColumn="NumeroDocumento" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.DisattivaPersona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DisattivaPersona" Modifier="Public" Name="DisattivaPersona" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DisattivaPersona">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.DisattivaPersona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.EliminaPersona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="EliminaPersona" Modifier="Public" Name="EliminaPersona" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="EliminaPersona">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.EliminaPersona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.tblPersone" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByCodicePersona" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCodicePersona" GeneratorSourceName="FillByCodicePersona" GetMethodModifier="Public" GetMethodName="GetDataByCodicePersona" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCodicePersona" UserSourceName="FillByCodicePersona">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT CodicePersona, Cognome, DataNascita, Nazione, Nome, NumeroDocumento, Sesso, TipoDocumento FROM tblPersone WHERE (CodicePersona = @Param1)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="CodicePersona" DataSourceName="Aeroporto.dbo.tblPersone" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@Param1" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="CodicePersona" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.InserisciPersona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InserisciPersona" Modifier="Public" Name="InserisciPersona" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InserisciPersona">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InserisciPersona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@cognome" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Nazione" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@DataNascita" Precision="0" ProviderType="Char" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@sesso" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NumeroDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.ModificaPersona" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ModificaPersona" Modifier="Public" Name="ModificaPersona" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ModificaPersona">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.ModificaPersona</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@CodicePersona" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@cognome" Precision="0" ProviderType="NVarChar" Scale="0" Size="200" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Nazione" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@DataNascita" Precision="0" ProviderType="Char" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@sesso" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@NumeroDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tblTipiDocumentoTableAdapter" GeneratorDataComponentClassName="tblTipiDocumentoTableAdapter" Name="tblTipiDocumento" UserDataComponentName="tblTipiDocumentoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AeroportoConnectionString (Settings)" DbObjectName="Aeroporto.dbo.tblTipiDocumento" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [tblTipiDocumento] WHERE (([TipoDocumento] = @Original_TipoDocumento))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [tblTipiDocumento] ([TipoDocumento]) VALUES (@TipoDocumento);
+SELECT TipoDocumento FROM tblTipiDocumento WHERE (TipoDocumento = @TipoDocumento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TipoDocumento
+FROM            tblTipiDocumento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [tblTipiDocumento] SET [TipoDocumento] = @TipoDocumento WHERE (([TipoDocumento] = @Original_TipoDocumento));
+SELECT TipoDocumento FROM tblTipiDocumento WHERE (TipoDocumento = @TipoDocumento)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TipoDocumento" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TipoDocumento" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TipoDocumento" DataSetColumn="TipoDocumento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AeroportoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="AeroportoDataSet" msprop:Generator_UserDSName="AeroportoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwAereiConMaggiorNumeroVoli" msprop:Generator_TableClassName="vwAereiConMaggiorNumeroVoliDataTable" msprop:Generator_TableVarName="tablevwAereiConMaggiorNumeroVoli" msprop:Generator_RowChangedName="vwAereiConMaggiorNumeroVoliRowChanged" msprop:Generator_TablePropName="vwAereiConMaggiorNumeroVoli" msprop:Generator_RowDeletingName="vwAereiConMaggiorNumeroVoliRowDeleting" msprop:Generator_RowChangingName="vwAereiConMaggiorNumeroVoliRowChanging" msprop:Generator_RowEvHandlerName="vwAereiConMaggiorNumeroVoliRowChangeEventHandler" msprop:Generator_RowDeletedName="vwAereiConMaggiorNumeroVoliRowDeleted" msprop:Generator_RowClassName="vwAereiConMaggiorNumeroVoliRow" msprop:Generator_UserTableName="vwAereiConMaggiorNumeroVoli" msprop:Generator_RowEvArgName="vwAereiConMaggiorNumeroVoliRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodiceAereo" msprop:Generator_ColumnVarNameInTable="columnCodiceAereo" msprop:Generator_ColumnPropNameInRow="CodiceAereo" msprop:Generator_ColumnPropNameInTable="CodiceAereoColumn" msprop:Generator_UserColumnName="CodiceAereo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwListaPasseggeri" msprop:Generator_TableClassName="vwListaPasseggeriDataTable" msprop:Generator_TableVarName="tablevwListaPasseggeri" msprop:Generator_RowChangedName="vwListaPasseggeriRowChanged" msprop:Generator_TablePropName="vwListaPasseggeri" msprop:Generator_RowDeletingName="vwListaPasseggeriRowDeleting" msprop:Generator_RowChangingName="vwListaPasseggeriRowChanging" msprop:Generator_RowEvHandlerName="vwListaPasseggeriRowChangeEventHandler" msprop:Generator_RowDeletedName="vwListaPasseggeriRowDeleted" msprop:Generator_RowClassName="vwListaPasseggeriRow" msprop:Generator_UserTableName="vwListaPasseggeri" msprop:Generator_RowEvArgName="vwListaPasseggeriRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cognome" msprop:Generator_ColumnVarNameInTable="columnCognome" msprop:Generator_ColumnPropNameInRow="Cognome" msprop:Generator_ColumnPropNameInTable="CognomeColumn" msprop:Generator_UserColumnName="Cognome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Codice" msprop:Generator_ColumnVarNameInTable="columnCodice" msprop:Generator_ColumnPropNameInRow="Codice" msprop:Generator_ColumnPropNameInTable="CodiceColumn" msprop:Generator_UserColumnName="Codice">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodiceVolo" msprop:Generator_ColumnVarNameInTable="columnCodiceVolo" msprop:Generator_ColumnPropNameInRow="CodiceVolo" msprop:Generator_ColumnPropNameInTable="CodiceVoloColumn" msprop:Generator_UserColumnName="CodiceVolo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AeroportoArrivo" msprop:Generator_ColumnVarNameInTable="columnAeroportoArrivo" msprop:Generator_ColumnPropNameInRow="AeroportoArrivo" msprop:Generator_ColumnPropNameInTable="AeroportoArrivoColumn" msprop:Generator_UserColumnName="AeroportoArrivo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwNumeroVoliBologna" msprop:Generator_TableClassName="vwNumeroVoliBolognaDataTable" msprop:Generator_TableVarName="tablevwNumeroVoliBologna" msprop:Generator_RowChangedName="vwNumeroVoliBolognaRowChanged" msprop:Generator_TablePropName="vwNumeroVoliBologna" msprop:Generator_RowDeletingName="vwNumeroVoliBolognaRowDeleting" msprop:Generator_RowChangingName="vwNumeroVoliBolognaRowChanging" msprop:Generator_RowEvHandlerName="vwNumeroVoliBolognaRowChangeEventHandler" msprop:Generator_RowDeletedName="vwNumeroVoliBolognaRowDeleted" msprop:Generator_RowClassName="vwNumeroVoliBolognaRow" msprop:Generator_UserTableName="vwNumeroVoliBologna" msprop:Generator_RowEvArgName="vwNumeroVoliBolognaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VoliBologna" msprop:Generator_ColumnVarNameInTable="columnVoliBologna" msprop:Generator_ColumnPropNameInRow="VoliBologna" msprop:Generator_ColumnPropNameInTable="VoliBolognaColumn" msprop:Generator_UserColumnName="VoliBologna" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwVoliConPilota" msprop:Generator_TableClassName="vwVoliConPilotaDataTable" msprop:Generator_TableVarName="tablevwVoliConPilota" msprop:Generator_RowChangedName="vwVoliConPilotaRowChanged" msprop:Generator_TablePropName="vwVoliConPilota" msprop:Generator_RowDeletingName="vwVoliConPilotaRowDeleting" msprop:Generator_RowChangingName="vwVoliConPilotaRowChanging" msprop:Generator_RowEvHandlerName="vwVoliConPilotaRowChangeEventHandler" msprop:Generator_RowDeletedName="vwVoliConPilotaRowDeleted" msprop:Generator_RowClassName="vwVoliConPilotaRow" msprop:Generator_UserTableName="vwVoliConPilota" msprop:Generator_RowEvArgName="vwVoliConPilotaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="VoliConPilota" msprop:Generator_ColumnVarNameInTable="columnVoliConPilota" msprop:Generator_ColumnPropNameInRow="VoliConPilota" msprop:Generator_ColumnPropNameInTable="VoliConPilotaColumn" msprop:Generator_UserColumnName="VoliConPilota" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwVoliConPiuIncasso" msprop:Generator_TableClassName="vwVoliConPiuIncassoDataTable" msprop:Generator_TableVarName="tablevwVoliConPiuIncasso" msprop:Generator_RowChangedName="vwVoliConPiuIncassoRowChanged" msprop:Generator_TablePropName="vwVoliConPiuIncasso" msprop:Generator_RowDeletingName="vwVoliConPiuIncassoRowDeleting" msprop:Generator_RowChangingName="vwVoliConPiuIncassoRowChanging" msprop:Generator_RowEvHandlerName="vwVoliConPiuIncassoRowChangeEventHandler" msprop:Generator_RowDeletedName="vwVoliConPiuIncassoRowDeleted" msprop:Generator_RowClassName="vwVoliConPiuIncassoRow" msprop:Generator_UserTableName="vwVoliConPiuIncasso" msprop:Generator_RowEvArgName="vwVoliConPiuIncassoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodiceVolo" msprop:Generator_ColumnVarNameInTable="columnCodiceVolo" msprop:Generator_ColumnPropNameInRow="CodiceVolo" msprop:Generator_ColumnPropNameInTable="CodiceVoloColumn" msprop:Generator_UserColumnName="CodiceVolo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vwVoliConPiuPasseggeri" msprop:Generator_TableClassName="vwVoliConPiuPasseggeriDataTable" msprop:Generator_TableVarName="tablevwVoliConPiuPasseggeri" msprop:Generator_RowChangedName="vwVoliConPiuPasseggeriRowChanged" msprop:Generator_TablePropName="vwVoliConPiuPasseggeri" msprop:Generator_RowDeletingName="vwVoliConPiuPasseggeriRowDeleting" msprop:Generator_RowChangingName="vwVoliConPiuPasseggeriRowChanging" msprop:Generator_RowEvHandlerName="vwVoliConPiuPasseggeriRowChangeEventHandler" msprop:Generator_RowDeletedName="vwVoliConPiuPasseggeriRowDeleted" msprop:Generator_RowClassName="vwVoliConPiuPasseggeriRow" msprop:Generator_UserTableName="vwVoliConPiuPasseggeri" msprop:Generator_RowEvArgName="vwVoliConPiuPasseggeriRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodiceVolo" msprop:Generator_ColumnVarNameInTable="columnCodiceVolo" msprop:Generator_ColumnPropNameInRow="CodiceVolo" msprop:Generator_ColumnPropNameInTable="CodiceVoloColumn" msprop:Generator_UserColumnName="CodiceVolo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblPersone" msprop:Generator_TableClassName="tblPersoneDataTable" msprop:Generator_TableVarName="tabletblPersone" msprop:Generator_TablePropName="tblPersone" msprop:Generator_RowDeletingName="tblPersoneRowDeleting" msprop:Generator_RowChangingName="tblPersoneRowChanging" msprop:Generator_RowEvHandlerName="tblPersoneRowChangeEventHandler" msprop:Generator_RowDeletedName="tblPersoneRowDeleted" msprop:Generator_UserTableName="tblPersone" msprop:Generator_RowChangedName="tblPersoneRowChanged" msprop:Generator_RowEvArgName="tblPersoneRowChangeEvent" msprop:Generator_RowClassName="tblPersoneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodicePersona" msprop:Generator_ColumnVarNameInTable="columnCodicePersona" msprop:Generator_ColumnPropNameInRow="CodicePersona" msprop:Generator_ColumnPropNameInTable="CodicePersonaColumn" msprop:Generator_UserColumnName="CodicePersona">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nome" msprop:Generator_ColumnVarNameInTable="columnNome" msprop:Generator_ColumnPropNameInRow="Nome" msprop:Generator_ColumnPropNameInTable="NomeColumn" msprop:Generator_UserColumnName="Nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cognome" msprop:Generator_ColumnVarNameInTable="columnCognome" msprop:Generator_ColumnPropNameInRow="Cognome" msprop:Generator_ColumnPropNameInTable="CognomeColumn" msprop:Generator_UserColumnName="Cognome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nazione" msprop:Generator_ColumnVarNameInTable="columnNazione" msprop:Generator_ColumnPropNameInRow="Nazione" msprop:Generator_ColumnPropNameInTable="NazioneColumn" msprop:Generator_UserColumnName="Nazione">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataNascita" msprop:Generator_ColumnVarNameInTable="columnDataNascita" msprop:Generator_ColumnPropNameInRow="DataNascita" msprop:Generator_ColumnPropNameInTable="DataNascitaColumn" msprop:Generator_UserColumnName="DataNascita">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sesso" msprop:Generator_ColumnVarNameInTable="columnSesso" msprop:Generator_ColumnPropNameInRow="Sesso" msprop:Generator_ColumnPropNameInTable="SessoColumn" msprop:Generator_UserColumnName="Sesso">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoDocumento" msprop:Generator_ColumnVarNameInTable="columnTipoDocumento" msprop:Generator_ColumnPropNameInRow="TipoDocumento" msprop:Generator_ColumnPropNameInTable="TipoDocumentoColumn" msprop:Generator_UserColumnName="TipoDocumento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroDocumento" msprop:Generator_ColumnVarNameInTable="columnNumeroDocumento" msprop:Generator_ColumnPropNameInRow="NumeroDocumento" msprop:Generator_ColumnPropNameInTable="NumeroDocumentoColumn" msprop:Generator_UserColumnName="NumeroDocumento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tblTipiDocumento" msprop:Generator_TableClassName="tblTipiDocumentoDataTable" msprop:Generator_TableVarName="tabletblTipiDocumento" msprop:Generator_TablePropName="tblTipiDocumento" msprop:Generator_RowDeletingName="tblTipiDocumentoRowDeleting" msprop:Generator_RowChangingName="tblTipiDocumentoRowChanging" msprop:Generator_RowEvHandlerName="tblTipiDocumentoRowChangeEventHandler" msprop:Generator_RowDeletedName="tblTipiDocumentoRowDeleted" msprop:Generator_UserTableName="tblTipiDocumento" msprop:Generator_RowChangedName="tblTipiDocumentoRowChanged" msprop:Generator_RowEvArgName="tblTipiDocumentoRowChangeEvent" msprop:Generator_RowClassName="tblTipiDocumentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TipoDocumento" msprop:Generator_ColumnVarNameInTable="columnTipoDocumento" msprop:Generator_ColumnPropNameInRow="TipoDocumento" msprop:Generator_ColumnPropNameInTable="TipoDocumentoColumn" msprop:Generator_UserColumnName="TipoDocumento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vwListaPasseggeri" />
+      <xs:field xpath="mstns:Codice" />
+    </xs:unique>
+    <xs:unique name="tblPersone_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblPersone" />
+      <xs:field xpath="mstns:CodicePersona" />
+    </xs:unique>
+    <xs:unique name="tblTipiDocumento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:tblTipiDocumento" />
+      <xs:field xpath="mstns:TipoDocumento" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_tblPersone_tblTipiDocumento" msdata:parent="tblTipiDocumento" msdata:child="tblPersone" msdata:parentkey="TipoDocumento" msdata:childkey="TipoDocumento" msprop:Generator_UserChildTable="tblPersone" msprop:Generator_ChildPropName="GettblPersoneRows" msprop:Generator_UserRelationName="FK_tblPersone_tblTipiDocumento" msprop:Generator_RelationVarName="relationFK_tblPersone_tblTipiDocumento" msprop:Generator_UserParentTable="tblTipiDocumento" msprop:Generator_ParentPropName="tblTipiDocumentoRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
