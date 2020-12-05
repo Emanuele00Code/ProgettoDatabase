@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2E9AE7DD-0870-4EC5-A625-4EBDA78A6ABB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TestDatabase</RootNamespace>
-    <AssemblyName>TestDatabase</AssemblyName>
+    <RootNamespace>ProgettoDatabase</RootNamespace>
+    <AssemblyName>ProgettoDatabase</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
