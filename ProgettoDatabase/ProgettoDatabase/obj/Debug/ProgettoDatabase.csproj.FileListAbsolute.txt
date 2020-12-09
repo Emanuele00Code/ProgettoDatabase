@@ -18,3 +18,4 @@ C:\Users\Local\source\repos\GIT\ProgettoDatabase\ProgettoDatabase\ProgettoDataba
 C:\Users\Local\source\repos\GIT\ProgettoDatabase\ProgettoDatabase\ProgettoDatabase\obj\Debug\ProgettoDatabase.frmVisualizzaAeroporti.resources
 C:\Users\Local\source\repos\GIT\ProgettoDatabase\ProgettoDatabase\ProgettoDatabase\obj\Debug\ProgettoDatabase.frmVoli.resources
 C:\Users\Local\source\repos\GIT\ProgettoDatabase\ProgettoDatabase\ProgettoDatabase\obj\Debug\ProgettoDatabase.frmModificaVoli.resources
+C:\Users\Local\source\repos\GIT\ProgettoDatabase\ProgettoDatabase\ProgettoDatabase\obj\Debug\ProgettoDatabase.frmInserisciVoli.resources

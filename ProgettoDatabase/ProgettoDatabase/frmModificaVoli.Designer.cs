@@ -165,7 +165,7 @@ namespace ProgettoDatabase
             this.btnSalva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalva.ForeColor = System.Drawing.Color.Gold;
-            this.btnSalva.Location = new System.Drawing.Point(495, 349);
+            this.btnSalva.Location = new System.Drawing.Point(510, 430);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(158, 60);
             this.btnSalva.TabIndex = 47;
@@ -243,6 +243,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataPartenza
             // 
+            this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Location = new System.Drawing.Point(262, 468);
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(200, 22);
@@ -250,6 +251,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataArrivo
             // 
+            this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Location = new System.Drawing.Point(261, 514);
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(200, 22);
@@ -283,7 +285,7 @@ namespace ProgettoDatabase
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmModificaVoli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Visualizza Voli";
+            this.Text = "Modifica Voli";
             this.Load += new System.EventHandler(this.frmModificaVoli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).EndInit();

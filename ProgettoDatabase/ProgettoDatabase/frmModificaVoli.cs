@@ -34,7 +34,7 @@ namespace ProgettoDatabase
         {
             if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //tblVoliTableAdapter.InserisciVoli(txtCodice.Text, txtCodiceAereo.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), txtPartenza.Text);
+                tblVoliTableAdapter.ModificaVoli(Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToInt16(updDurata.Value), (float)updGatePartenza.Value, txtDestinazione.Text, Convert.ToBoolean(chkInternazionale.Checked), _Codice);
             }
         }
 

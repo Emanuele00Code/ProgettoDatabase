@@ -32,7 +32,7 @@ namespace ProgettoDatabase
         {
             if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                //tblVoliTableAdapter.Update(aeroportoDataSet.tblAeroporti);
+                tblVoliTableAdapter.Update(aeroportoDataSet.tblVoli);
             }
         }
 
@@ -45,8 +45,8 @@ namespace ProgettoDatabase
                 int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
                 Codice = Convert.ToString(selectedRow.Cells[0].Value);
-                //frmModificaVoli formDaAprire = new frmModificaVoli(Codice);
-                //formDaAprire.Show();
+                frmModificaVoli formDaAprire = new frmModificaVoli(Codice);
+                formDaAprire.Show();
             }
 
         }
@@ -62,23 +62,14 @@ namespace ProgettoDatabase
         private void btnVisualizza_Click(object sender, EventArgs e)
         {
             string Codice;
-            string CodiceAereo;
-            int Durata;
-            int GatePartenza;
-            string SiglaAereoporto;
 
             if (dvgVoli.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
                 Codice = Convert.ToString(selectedRow.Cells[0].Value);
-                CodiceAereo = Convert.ToString(selectedRow.Cells[1].Value);
-                Durata = Convert.ToInt32(selectedRow.Cells[2].Value);
-                GatePartenza = Convert.ToInt32(selectedRow.Cells[3].Value);
-                SiglaAereoporto = Convert.ToString(selectedRow.Cells[4].Value);
-                //Voli MioVolo = new Voli(Codice, CodiceAereo, Durata, GatePartenza, SiglaAereoporto);
-                //frmVisualizzaVoli FormDaAprire = new frmVisualizzaVoli(MioVolo);
-                //FormDaAprire.Show();
+                //frmVisualizzaVoli formDaAprire = new frmVisualizzaVoli(Codice);
+                //formDaAprire.Show();
             }
 
         }
@@ -96,7 +87,9 @@ namespace ProgettoDatabase
 
                 if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.EliminaVoli(Sigla);
+                    MessageBox.Show("Placeholder, funzione già presente ma non attiva");
+                   
+                    //tblVoliTableAdapter.EliminaVoli(Sigla);
                 }
             }
         }

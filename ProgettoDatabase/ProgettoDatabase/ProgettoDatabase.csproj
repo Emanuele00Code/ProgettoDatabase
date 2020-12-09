@@ -149,6 +149,9 @@
     <EmbeddedResource Include="frmInserisciAeroporti.resx">
       <DependentUpon>frmInserisciAeroporti.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInserisciVoli.resx">
+      <DependentUpon>frmInserisciVoli.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmModificaAerei.resx">
       <DependentUpon>frmModificaAerei.cs</DependentUpon>
     </EmbeddedResource>
