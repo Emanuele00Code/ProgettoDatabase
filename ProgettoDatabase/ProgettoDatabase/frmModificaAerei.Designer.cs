@@ -1,7 +1,7 @@
 ﻿
-namespace TestDatabase
+namespace ProgettoDatabase
 {
-    partial class frmModificaPersona
+    partial class frmModificaAerei
     {
         /// <summary>
         /// Required designer variable.
@@ -30,340 +30,307 @@ namespace TestDatabase
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblCognome = new System.Windows.Forms.Label();
-            this.lblCodice = new System.Windows.Forms.Label();
-            this.lblNazione = new System.Windows.Forms.Label();
-            this.lblDataNascita = new System.Windows.Forms.Label();
-            this.lblNumeroDocumento = new System.Windows.Forms.Label();
-            this.lblTipoDocumento = new System.Windows.Forms.Label();
-            this.txtCodice = new System.Windows.Forms.TextBox();
-            this.tblPersoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aeroportoDataSet = new TestDatabase.AeroportoDataSet();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.txtCognome = new System.Windows.Forms.TextBox();
-            this.txtNazione = new System.Windows.Forms.TextBox();
-            this.dtpDataNascita = new System.Windows.Forms.DateTimePicker();
-            this.grpSesso = new System.Windows.Forms.GroupBox();
-            this.radNonSpecificato = new System.Windows.Forms.RadioButton();
-            this.radAltro = new System.Windows.Forms.RadioButton();
-            this.radFemmina = new System.Windows.Forms.RadioButton();
-            this.radMaschio = new System.Windows.Forms.RadioButton();
-            this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
-            this.tblTipiDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificaAerei));
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblModello = new System.Windows.Forms.Label();
+            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtModello = new System.Windows.Forms.TextBox();
             this.btnSalva = new System.Windows.Forms.Button();
-            this.tblTipiDocumentoTableAdapter = new TestDatabase.AeroportoDataSetTableAdapters.tblTipiDocumentoTableAdapter();
-            this.tblPersoneTableAdapter = new TestDatabase.AeroportoDataSetTableAdapters.tblPersoneTableAdapter();
-            this.txtDataNascita = new System.Windows.Forms.TextBox();
-            this.txtSesso = new System.Windows.Forms.TextBox();
-            this.txtTipoDocumento = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPersoneBindingSource)).BeginInit();
+            this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.updCapacita = new System.Windows.Forms.NumericUpDown();
+            this.updLitri = new System.Windows.Forms.NumericUpDown();
+            this.updMotori = new System.Windows.Forms.NumericUpDown();
+            this.updRaggio = new System.Windows.Forms.NumericUpDown();
+            this.updVelocita = new System.Windows.Forms.NumericUpDown();
+            this.txtPropulsione = new System.Windows.Forms.TextBox();
+            this.txtCompagnia = new System.Windows.Forms.TextBox();
+            this.chkInternazionale = new System.Windows.Forms.CheckBox();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
-            this.grpSesso.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblTipiDocumentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updCapacita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updLitri)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updMotori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblNome
+            // lblMarca
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(67, 124);
-            this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(45, 17);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(67, 124);
+            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(47, 17);
+            this.lblMarca.TabIndex = 0;
+            this.lblMarca.Text = "Marca";
             // 
-            // lblCognome
+            // lblModello
             // 
-            this.lblCognome.AutoSize = true;
-            this.lblCognome.Location = new System.Drawing.Point(67, 177);
-            this.lblCognome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCognome.Name = "lblCognome";
-            this.lblCognome.Size = new System.Drawing.Size(68, 17);
-            this.lblCognome.TabIndex = 1;
-            this.lblCognome.Text = "Cognome";
+            this.lblModello.AutoSize = true;
+            this.lblModello.Location = new System.Drawing.Point(67, 177);
+            this.lblModello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblModello.Name = "lblModello";
+            this.lblModello.Size = new System.Drawing.Size(57, 17);
+            this.lblModello.TabIndex = 1;
+            this.lblModello.Text = "Modello";
             // 
-            // lblCodice
+            // tblAereiBindingSource
             // 
-            this.lblCodice.AutoSize = true;
-            this.lblCodice.Location = new System.Drawing.Point(67, 73);
-            this.lblCodice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCodice.Name = "lblCodice";
-            this.lblCodice.Size = new System.Drawing.Size(51, 17);
-            this.lblCodice.TabIndex = 2;
-            this.lblCodice.Text = "Codice";
-            // 
-            // lblNazione
-            // 
-            this.lblNazione.AutoSize = true;
-            this.lblNazione.Location = new System.Drawing.Point(68, 228);
-            this.lblNazione.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNazione.Name = "lblNazione";
-            this.lblNazione.Size = new System.Drawing.Size(60, 17);
-            this.lblNazione.TabIndex = 5;
-            this.lblNazione.Text = "Nazione";
-            // 
-            // lblDataNascita
-            // 
-            this.lblDataNascita.AutoSize = true;
-            this.lblDataNascita.Location = new System.Drawing.Point(68, 279);
-            this.lblDataNascita.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDataNascita.Name = "lblDataNascita";
-            this.lblDataNascita.Size = new System.Drawing.Size(87, 17);
-            this.lblDataNascita.TabIndex = 3;
-            this.lblDataNascita.Text = "Data nascita";
-            // 
-            // lblNumeroDocumento
-            // 
-            this.lblNumeroDocumento.AutoSize = true;
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(67, 603);
-            this.lblNumeroDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNumeroDocumento.Name = "lblNumeroDocumento";
-            this.lblNumeroDocumento.Size = new System.Drawing.Size(132, 17);
-            this.lblNumeroDocumento.TabIndex = 7;
-            this.lblNumeroDocumento.Text = "Numero documento";
-            // 
-            // lblTipoDocumento
-            // 
-            this.lblTipoDocumento.AutoSize = true;
-            this.lblTipoDocumento.Location = new System.Drawing.Point(67, 544);
-            this.lblTipoDocumento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTipoDocumento.Name = "lblTipoDocumento";
-            this.lblTipoDocumento.Size = new System.Drawing.Size(110, 17);
-            this.lblTipoDocumento.TabIndex = 6;
-            this.lblTipoDocumento.Text = "Tipo documento";
-            // 
-            // txtCodice
-            // 
-            this.txtCodice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "CodicePersona", true));
-            this.txtCodice.Location = new System.Drawing.Point(271, 64);
-            this.txtCodice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCodice.Name = "txtCodice";
-            this.txtCodice.Size = new System.Drawing.Size(265, 22);
-            this.txtCodice.TabIndex = 8;
-            // 
-            // tblPersoneBindingSource
-            // 
-            this.tblPersoneBindingSource.DataMember = "tblPersone";
-            this.tblPersoneBindingSource.DataSource = this.aeroportoDataSet;
+            this.tblAereiBindingSource.DataMember = "tblAerei";
+            this.tblAereiBindingSource.DataSource = this.aeroportoDataSet;
             // 
             // aeroportoDataSet
             // 
             this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
             this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtNome
+            // txtMarca
             // 
-            this.txtNome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "Nome", true));
-            this.txtNome.Location = new System.Drawing.Point(271, 121);
-            this.txtNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(265, 22);
-            this.txtNome.TabIndex = 9;
+            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Marca", true));
+            this.txtMarca.Location = new System.Drawing.Point(271, 124);
+            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(265, 22);
+            this.txtMarca.TabIndex = 9;
             // 
-            // txtCognome
+            // txtModello
             // 
-            this.txtCognome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "Cognome", true));
-            this.txtCognome.Location = new System.Drawing.Point(271, 174);
-            this.txtCognome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCognome.Name = "txtCognome";
-            this.txtCognome.Size = new System.Drawing.Size(265, 22);
-            this.txtCognome.TabIndex = 10;
-            // 
-            // txtNazione
-            // 
-            this.txtNazione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "Nazione", true));
-            this.txtNazione.Location = new System.Drawing.Point(271, 228);
-            this.txtNazione.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNazione.Name = "txtNazione";
-            this.txtNazione.Size = new System.Drawing.Size(265, 22);
-            this.txtNazione.TabIndex = 11;
-            // 
-            // dtpDataNascita
-            // 
-            this.dtpDataNascita.Location = new System.Drawing.Point(271, 279);
-            this.dtpDataNascita.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpDataNascita.Name = "dtpDataNascita";
-            this.dtpDataNascita.Size = new System.Drawing.Size(265, 22);
-            this.dtpDataNascita.TabIndex = 12;
-            this.dtpDataNascita.ValueChanged += new System.EventHandler(this.dtpDataNascita_ValueChanged);
-            // 
-            // grpSesso
-            // 
-            this.grpSesso.Controls.Add(this.radNonSpecificato);
-            this.grpSesso.Controls.Add(this.radAltro);
-            this.grpSesso.Controls.Add(this.radFemmina);
-            this.grpSesso.Controls.Add(this.radMaschio);
-            this.grpSesso.Location = new System.Drawing.Point(71, 348);
-            this.grpSesso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpSesso.Name = "grpSesso";
-            this.grpSesso.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpSesso.Size = new System.Drawing.Size(467, 159);
-            this.grpSesso.TabIndex = 13;
-            this.grpSesso.TabStop = false;
-            this.grpSesso.Text = "Sesso";
-            // 
-            // radNonSpecificato
-            // 
-            this.radNonSpecificato.AutoSize = true;
-            this.radNonSpecificato.Location = new System.Drawing.Point(255, 94);
-            this.radNonSpecificato.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radNonSpecificato.Name = "radNonSpecificato";
-            this.radNonSpecificato.Size = new System.Drawing.Size(126, 21);
-            this.radNonSpecificato.TabIndex = 3;
-            this.radNonSpecificato.TabStop = true;
-            this.radNonSpecificato.Text = "Non specificato";
-            this.radNonSpecificato.UseVisualStyleBackColor = true;
-            this.radNonSpecificato.CheckedChanged += new System.EventHandler(this.radNonSpecificato_CheckedChanged);
-            // 
-            // radAltro
-            // 
-            this.radAltro.AutoSize = true;
-            this.radAltro.Location = new System.Drawing.Point(255, 42);
-            this.radAltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radAltro.Name = "radAltro";
-            this.radAltro.Size = new System.Drawing.Size(58, 21);
-            this.radAltro.TabIndex = 2;
-            this.radAltro.TabStop = true;
-            this.radAltro.Text = "Altro";
-            this.radAltro.UseVisualStyleBackColor = true;
-            this.radAltro.CheckedChanged += new System.EventHandler(this.radAltro_CheckedChanged);
-            // 
-            // radFemmina
-            // 
-            this.radFemmina.AutoSize = true;
-            this.radFemmina.Location = new System.Drawing.Point(29, 94);
-            this.radFemmina.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radFemmina.Name = "radFemmina";
-            this.radFemmina.Size = new System.Drawing.Size(86, 21);
-            this.radFemmina.TabIndex = 1;
-            this.radFemmina.TabStop = true;
-            this.radFemmina.Text = "Femmina";
-            this.radFemmina.UseVisualStyleBackColor = true;
-            this.radFemmina.CheckedChanged += new System.EventHandler(this.radFemmina_CheckedChanged);
-            // 
-            // radMaschio
-            // 
-            this.radMaschio.AutoSize = true;
-            this.radMaschio.Location = new System.Drawing.Point(29, 42);
-            this.radMaschio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.radMaschio.Name = "radMaschio";
-            this.radMaschio.Size = new System.Drawing.Size(81, 21);
-            this.radMaschio.TabIndex = 0;
-            this.radMaschio.TabStop = true;
-            this.radMaschio.Text = "Maschio";
-            this.radMaschio.UseVisualStyleBackColor = true;
-            this.radMaschio.CheckedChanged += new System.EventHandler(this.radMaschio_CheckedChanged);
-            // 
-            // cmbTipoDocumento
-            // 
-            this.cmbTipoDocumento.DataSource = this.tblTipiDocumentoBindingSource;
-            this.cmbTipoDocumento.DisplayMember = "TipoDocumento";
-            this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(271, 534);
-            this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cmbTipoDocumento.Name = "cmbTipoDocumento";
-            this.cmbTipoDocumento.Size = new System.Drawing.Size(265, 24);
-            this.cmbTipoDocumento.TabIndex = 14;
-            this.cmbTipoDocumento.ValueMember = "TipoDocumento";
-            // 
-            // tblTipiDocumentoBindingSource
-            // 
-            this.tblTipiDocumentoBindingSource.DataMember = "tblTipiDocumento";
-            this.tblTipiDocumentoBindingSource.DataSource = this.aeroportoDataSet;
-            // 
-            // txtNumeroDocumento
-            // 
-            this.txtNumeroDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "NumeroDocumento", true));
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(271, 599);
-            this.txtNumeroDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
-            this.txtNumeroDocumento.Size = new System.Drawing.Size(265, 22);
-            this.txtNumeroDocumento.TabIndex = 15;
+            this.txtModello.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Modello", true));
+            this.txtModello.Location = new System.Drawing.Point(271, 177);
+            this.txtModello.Margin = new System.Windows.Forms.Padding(4);
+            this.txtModello.Name = "txtModello";
+            this.txtModello.Size = new System.Drawing.Size(265, 22);
+            this.txtModello.TabIndex = 10;
             // 
             // btnSalva
             // 
-            this.btnSalva.Location = new System.Drawing.Point(400, 682);
-            this.btnSalva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalva.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSalva.BackColor = System.Drawing.Color.White;
+            this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalva.Location = new System.Drawing.Point(240, 687);
+            this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
-            this.btnSalva.Size = new System.Drawing.Size(137, 43);
+            this.btnSalva.Size = new System.Drawing.Size(123, 43);
             this.btnSalva.TabIndex = 16;
             this.btnSalva.Text = "SALVA";
-            this.btnSalva.UseVisualStyleBackColor = true;
+            this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
             // 
-            // tblTipiDocumentoTableAdapter
+            // tblAereiTableAdapter
             // 
-            this.tblTipiDocumentoTableAdapter.ClearBeforeFill = true;
+            this.tblAereiTableAdapter.ClearBeforeFill = true;
             // 
-            // tblPersoneTableAdapter
+            // label1
             // 
-            this.tblPersoneTableAdapter.ClearBeforeFill = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(67, 229);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 17);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Capacità Massima";
             // 
-            // txtDataNascita
+            // label2
             // 
-            this.txtDataNascita.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "DataNascita", true));
-            this.txtDataNascita.Enabled = false;
-            this.txtDataNascita.Location = new System.Drawing.Point(271, 279);
-            this.txtDataNascita.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDataNascita.Name = "txtDataNascita";
-            this.txtDataNascita.Size = new System.Drawing.Size(231, 22);
-            this.txtDataNascita.TabIndex = 17;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(67, 286);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(106, 17);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Litri Carburante";
             // 
-            // txtSesso
+            // label3
             // 
-            this.txtSesso.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "Sesso", true));
-            this.txtSesso.Enabled = false;
-            this.txtSesso.Location = new System.Drawing.Point(271, 174);
-            this.txtSesso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtSesso.Name = "txtSesso";
-            this.txtSesso.Size = new System.Drawing.Size(231, 22);
-            this.txtSesso.TabIndex = 18;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 339);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 17);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Numero Motori";
             // 
-            // txtTipoDocumento
+            // label4
             // 
-            this.txtTipoDocumento.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblPersoneBindingSource, "TipoDocumento", true));
-            this.txtTipoDocumento.Location = new System.Drawing.Point(271, 535);
-            this.txtTipoDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTipoDocumento.Name = "txtTipoDocumento";
-            this.txtTipoDocumento.Size = new System.Drawing.Size(221, 22);
-            this.txtTipoDocumento.TabIndex = 19;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(67, 390);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 17);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Tipo Propulsione";
             // 
-            // frmModificaPersona
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(67, 442);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 17);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Internazionale";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(67, 545);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(117, 17);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Velocita Massima";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(67, 604);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 17);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Compagnia";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(67, 490);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 17);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Raggio";
+            // 
+            // updCapacita
+            // 
+            this.updCapacita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "CapacitaMassima", true));
+            this.updCapacita.Location = new System.Drawing.Point(271, 224);
+            this.updCapacita.Maximum = new decimal(new int[] {
+            32766,
+            0,
+            0,
+            0});
+            this.updCapacita.Name = "updCapacita";
+            this.updCapacita.Size = new System.Drawing.Size(120, 22);
+            this.updCapacita.TabIndex = 27;
+            // 
+            // updLitri
+            // 
+            this.updLitri.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "LitriCarburante", true));
+            this.updLitri.Location = new System.Drawing.Point(271, 281);
+            this.updLitri.Maximum = new decimal(new int[] {
+            32766,
+            0,
+            0,
+            0});
+            this.updLitri.Name = "updLitri";
+            this.updLitri.Size = new System.Drawing.Size(120, 22);
+            this.updLitri.TabIndex = 28;
+            // 
+            // updMotori
+            // 
+            this.updMotori.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "NumeroMotori", true));
+            this.updMotori.Location = new System.Drawing.Point(271, 334);
+            this.updMotori.Maximum = new decimal(new int[] {
+            254,
+            0,
+            0,
+            0});
+            this.updMotori.Name = "updMotori";
+            this.updMotori.Size = new System.Drawing.Size(120, 22);
+            this.updMotori.TabIndex = 29;
+            // 
+            // updRaggio
+            // 
+            this.updRaggio.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "Raggio", true));
+            this.updRaggio.Location = new System.Drawing.Point(271, 485);
+            this.updRaggio.Maximum = new decimal(new int[] {
+            32766,
+            0,
+            0,
+            0});
+            this.updRaggio.Name = "updRaggio";
+            this.updRaggio.Size = new System.Drawing.Size(120, 22);
+            this.updRaggio.TabIndex = 30;
+            // 
+            // updVelocita
+            // 
+            this.updVelocita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "VelocitaMax", true));
+            this.updVelocita.Location = new System.Drawing.Point(271, 540);
+            this.updVelocita.Name = "updVelocita";
+            this.updVelocita.Size = new System.Drawing.Size(120, 22);
+            this.updVelocita.TabIndex = 31;
+            // 
+            // txtPropulsione
+            // 
+            this.txtPropulsione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "TipoPropulsione", true));
+            this.txtPropulsione.Location = new System.Drawing.Point(271, 384);
+            this.txtPropulsione.Name = "txtPropulsione";
+            this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
+            this.txtPropulsione.TabIndex = 32;
+            // 
+            // txtCompagnia
+            // 
+            this.txtCompagnia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "CompagniaAerea", true));
+            this.txtCompagnia.Location = new System.Drawing.Point(271, 599);
+            this.txtCompagnia.Name = "txtCompagnia";
+            this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
+            this.txtCompagnia.TabIndex = 33;
+            // 
+            // chkInternazionale
+            // 
+            this.chkInternazionale.AutoSize = true;
+            this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.tblAereiBindingSource, "Internazionale", true));
+            this.chkInternazionale.Location = new System.Drawing.Point(271, 443);
+            this.chkInternazionale.Name = "chkInternazionale";
+            this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
+            this.chkInternazionale.TabIndex = 34;
+            this.chkInternazionale.UseVisualStyleBackColor = true;
+            // 
+            // frmModificaAerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 779);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(591, 779);
+            this.Controls.Add(this.chkInternazionale);
+            this.Controls.Add(this.txtCompagnia);
+            this.Controls.Add(this.txtPropulsione);
+            this.Controls.Add(this.updVelocita);
+            this.Controls.Add(this.updRaggio);
+            this.Controls.Add(this.updMotori);
+            this.Controls.Add(this.updLitri);
+            this.Controls.Add(this.updCapacita);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalva);
-            this.Controls.Add(this.txtNumeroDocumento);
-            this.Controls.Add(this.cmbTipoDocumento);
-            this.Controls.Add(this.grpSesso);
-            this.Controls.Add(this.dtpDataNascita);
-            this.Controls.Add(this.txtNazione);
-            this.Controls.Add(this.txtCognome);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.txtCodice);
-            this.Controls.Add(this.lblNumeroDocumento);
-            this.Controls.Add(this.lblTipoDocumento);
-            this.Controls.Add(this.lblNazione);
-            this.Controls.Add(this.lblDataNascita);
-            this.Controls.Add(this.lblCodice);
-            this.Controls.Add(this.lblCognome);
-            this.Controls.Add(this.lblNome);
-            this.Controls.Add(this.txtDataNascita);
-            this.Controls.Add(this.txtSesso);
-            this.Controls.Add(this.txtTipoDocumento);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmModificaPersona";
+            this.Controls.Add(this.txtModello);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.lblModello);
+            this.Controls.Add(this.lblMarca);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(609, 826);
+            this.MinimumSize = new System.Drawing.Size(609, 826);
+            this.Name = "frmModificaAerei";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Modifica persona";
-            this.Load += new System.EventHandler(this.frmModificaPersona_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblPersoneBindingSource)).EndInit();
+            this.Text = "Modifica Aerei";
+            this.Load += new System.EventHandler(this.frmModificaAerei_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
-            this.grpSesso.ResumeLayout(false);
-            this.grpSesso.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblTipiDocumentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updCapacita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updLitri)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updMotori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,33 +338,29 @@ namespace TestDatabase
 
         #endregion
 
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblCognome;
-        private System.Windows.Forms.Label lblCodice;
-        private System.Windows.Forms.Label lblNazione;
-        private System.Windows.Forms.Label lblDataNascita;
-        private System.Windows.Forms.Label lblNumeroDocumento;
-        private System.Windows.Forms.Label lblTipoDocumento;
-        private System.Windows.Forms.TextBox txtCodice;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtCognome;
-        private System.Windows.Forms.TextBox txtNazione;
-        private System.Windows.Forms.DateTimePicker dtpDataNascita;
-        private System.Windows.Forms.GroupBox grpSesso;
-        private System.Windows.Forms.RadioButton radNonSpecificato;
-        private System.Windows.Forms.RadioButton radAltro;
-        private System.Windows.Forms.RadioButton radFemmina;
-        private System.Windows.Forms.RadioButton radMaschio;
-        private System.Windows.Forms.ComboBox cmbTipoDocumento;
-        private System.Windows.Forms.TextBox txtNumeroDocumento;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblModello;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtModello;
         private System.Windows.Forms.Button btnSalva;
         private AeroportoDataSet aeroportoDataSet;
-        private System.Windows.Forms.BindingSource tblTipiDocumentoBindingSource;
-        private AeroportoDataSetTableAdapters.tblTipiDocumentoTableAdapter tblTipiDocumentoTableAdapter;
-        private System.Windows.Forms.BindingSource tblPersoneBindingSource;
-        private AeroportoDataSetTableAdapters.tblPersoneTableAdapter tblPersoneTableAdapter;
-        private System.Windows.Forms.TextBox txtDataNascita;
-        private System.Windows.Forms.TextBox txtSesso;
-        private System.Windows.Forms.TextBox txtTipoDocumento;
+        private System.Windows.Forms.BindingSource tblAereiBindingSource;
+        private AeroportoDataSetTableAdapters.tblAereiTableAdapter tblAereiTableAdapter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown updCapacita;
+        private System.Windows.Forms.NumericUpDown updLitri;
+        private System.Windows.Forms.NumericUpDown updMotori;
+        private System.Windows.Forms.NumericUpDown updRaggio;
+        private System.Windows.Forms.NumericUpDown updVelocita;
+        private System.Windows.Forms.TextBox txtPropulsione;
+        private System.Windows.Forms.TextBox txtCompagnia;
+        private System.Windows.Forms.CheckBox chkInternazionale;
     }
 }

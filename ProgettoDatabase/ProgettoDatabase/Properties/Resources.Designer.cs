@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 
-namespace TestDatabase.Properties
+namespace ProgettoDatabase.Properties
 {
     /// <summary>
     ///   Classe di risorse fortemente tipizzata per la ricerca di stringhe localizzate e così via.
@@ -43,7 +43,7 @@ namespace TestDatabase.Properties
             {
                 if ((resourceMan == null))
                 {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TestDatabase.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProgettoDatabase.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

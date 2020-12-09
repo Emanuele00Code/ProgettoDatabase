@@ -46,41 +46,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AeroportoDataSet.cs">
+      <DependentUpon>AeroportoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="AeroportoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AeroportoDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Classi\Persona.cs" />
+    <Compile Include="Classi\Aerei.cs" />
+    <Compile Include="Classi\Aeroporti.cs" />
+    <Compile Include="frmAeroporti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAeroporti.Designer.cs">
+      <DependentUpon>frmAeroporti.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAvvio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAvvio.Designer.cs">
       <DependentUpon>frmAvvio.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInserisciPersona.cs">
+    <Compile Include="frmInserisciAerei.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInserisciPersona.Designer.cs">
-      <DependentUpon>frmInserisciPersona.cs</DependentUpon>
+    <Compile Include="frmInserisciAerei.Designer.cs">
+      <DependentUpon>frmInserisciAerei.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmVisualizzaPersone.cs">
+    <Compile Include="frmInserisciAeroporti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmVisualizzaPersone.Designer.cs">
-      <DependentUpon>frmVisualizzaPersone.cs</DependentUpon>
+    <Compile Include="frmInserisciAeroporti.Designer.cs">
+      <DependentUpon>frmInserisciAeroporti.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmModificaPersona.cs">
+    <Compile Include="frmModificaAerei.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificaPersona.Designer.cs">
-      <DependentUpon>frmModificaPersona.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPersone.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPersone.Designer.cs">
-      <DependentUpon>frmPersone.cs</DependentUpon>
+    <Compile Include="frmModificaAerei.Designer.cs">
+      <DependentUpon>frmModificaAerei.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAerei.cs">
       <SubType>Form</SubType>
@@ -88,22 +92,52 @@
     <Compile Include="frmAerei.Designer.cs">
       <DependentUpon>frmAerei.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificaAeroporti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificaAeroporti.Designer.cs">
+      <DependentUpon>frmModificaAeroporti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizzaAerei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizzaAerei.Designer.cs">
+      <DependentUpon>frmVisualizzaAerei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVisualizzaAeroporti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisualizzaAeroporti.Designer.cs">
+      <DependentUpon>frmVisualizzaAeroporti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAeroporti.resx">
+      <DependentUpon>frmAeroporti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAvvio.resx">
       <DependentUpon>frmAvvio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInserisciPersona.resx">
-      <DependentUpon>frmInserisciPersona.cs</DependentUpon>
+    <EmbeddedResource Include="frmInserisciAerei.resx">
+      <DependentUpon>frmInserisciAerei.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmVisualizzaPersone.resx">
-      <DependentUpon>frmVisualizzaPersone.cs</DependentUpon>
+    <EmbeddedResource Include="frmInserisciAeroporti.resx">
+      <DependentUpon>frmInserisciAeroporti.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModificaPersona.resx">
-      <DependentUpon>frmModificaPersona.cs</DependentUpon>
+    <EmbeddedResource Include="frmModificaAerei.resx">
+      <DependentUpon>frmModificaAerei.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPersone.resx">
-      <DependentUpon>frmPersone.cs</DependentUpon>
+    <EmbeddedResource Include="frmAerei.resx">
+      <DependentUpon>frmAerei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificaAeroporti.resx">
+      <DependentUpon>frmModificaAeroporti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizzaAerei.resx">
+      <DependentUpon>frmVisualizzaAerei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizzaAeroporti.resx">
+      <DependentUpon>frmVisualizzaAeroporti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

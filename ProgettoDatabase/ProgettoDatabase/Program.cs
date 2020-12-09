@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TestDatabase
+namespace ProgettoDatabase
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace TestDatabase
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPersone());
+            Application.Run(new frmAvvio());
         }
     }
 }

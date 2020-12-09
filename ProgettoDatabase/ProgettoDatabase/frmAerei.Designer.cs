@@ -1,7 +1,7 @@
 ﻿
-namespace TestDatabase
+namespace ProgettoDatabase
 {
-    partial class frmPersone
+    partial class frmAerei
     {
         /// <summary>
         /// Required designer variable.
@@ -30,197 +30,248 @@ namespace TestDatabase
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dgvPersone = new System.Windows.Forms.DataGridView();
-            this.codicePersonaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cognomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataNascitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sessoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroDocumentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblPersoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aeroportoDataSet = new TestDatabase.AeroportoDataSet();
-            this.tblPersoneTableAdapter = new TestDatabase.AeroportoDataSetTableAdapters.tblPersoneTableAdapter();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAerei));
+            this.dgvAerei = new System.Windows.Forms.DataGridView();
+            this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacitaMassimaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.litriCarburanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroMotoriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoPropulsioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.internazionaleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.raggioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.velocitaMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.compagniaAereaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.btnSalva = new System.Windows.Forms.Button();
             this.btnModifica = new System.Windows.Forms.Button();
             this.btnNuovo = new System.Windows.Forms.Button();
             this.btnVisualizza = new System.Windows.Forms.Button();
             this.btnElimina = new System.Windows.Forms.Button();
             this.btnFittizia = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersone)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPersoneBindingSource)).BeginInit();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAerei)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvPersone
+            // dgvAerei
             // 
-            this.dgvPersone.AutoGenerateColumns = false;
-            this.dgvPersone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codicePersonaDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.cognomeDataGridViewTextBoxColumn,
-            this.nazioneDataGridViewTextBoxColumn,
-            this.dataNascitaDataGridViewTextBoxColumn,
-            this.sessoDataGridViewTextBoxColumn,
-            this.tipoDocumentoDataGridViewTextBoxColumn,
-            this.numeroDocumentoDataGridViewTextBoxColumn});
-            this.dgvPersone.DataSource = this.tblPersoneBindingSource;
-            this.dgvPersone.Location = new System.Drawing.Point(43, 74);
-            this.dgvPersone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvPersone.MultiSelect = false;
-            this.dgvPersone.Name = "dgvPersone";
-            this.dgvPersone.RowHeadersWidth = 51;
-            this.dgvPersone.Size = new System.Drawing.Size(1304, 185);
-            this.dgvPersone.TabIndex = 0;
+            this.dgvAerei.AutoGenerateColumns = false;
+            this.dgvAerei.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAerei.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codiceAereoDataGridViewTextBoxColumn,
+            this.marcaDataGridViewTextBoxColumn,
+            this.modelloDataGridViewTextBoxColumn,
+            this.capacitaMassimaDataGridViewTextBoxColumn,
+            this.litriCarburanteDataGridViewTextBoxColumn,
+            this.numeroMotoriDataGridViewTextBoxColumn,
+            this.tipoPropulsioneDataGridViewTextBoxColumn,
+            this.internazionaleDataGridViewCheckBoxColumn,
+            this.raggioDataGridViewTextBoxColumn,
+            this.velocitaMaxDataGridViewTextBoxColumn,
+            this.compagniaAereaDataGridViewTextBoxColumn});
+            this.dgvAerei.DataSource = this.tblAereiBindingSource;
+            this.dgvAerei.Location = new System.Drawing.Point(43, 74);
+            this.dgvAerei.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvAerei.MultiSelect = false;
+            this.dgvAerei.Name = "dgvAerei";
+            this.dgvAerei.RowHeadersWidth = 51;
+            this.dgvAerei.Size = new System.Drawing.Size(1304, 185);
+            this.dgvAerei.TabIndex = 0;
             // 
-            // codicePersonaDataGridViewTextBoxColumn
+            // codiceAereoDataGridViewTextBoxColumn
             // 
-            this.codicePersonaDataGridViewTextBoxColumn.DataPropertyName = "CodicePersona";
-            this.codicePersonaDataGridViewTextBoxColumn.HeaderText = "Codice";
-            this.codicePersonaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codicePersonaDataGridViewTextBoxColumn.Name = "codicePersonaDataGridViewTextBoxColumn";
-            this.codicePersonaDataGridViewTextBoxColumn.Width = 125;
+            this.codiceAereoDataGridViewTextBoxColumn.DataPropertyName = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
+            this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
             // 
-            // nomeDataGridViewTextBoxColumn
+            // marcaDataGridViewTextBoxColumn
             // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.Width = 125;
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.Width = 125;
             // 
-            // cognomeDataGridViewTextBoxColumn
+            // modelloDataGridViewTextBoxColumn
             // 
-            this.cognomeDataGridViewTextBoxColumn.DataPropertyName = "Cognome";
-            this.cognomeDataGridViewTextBoxColumn.HeaderText = "Cognome";
-            this.cognomeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cognomeDataGridViewTextBoxColumn.Name = "cognomeDataGridViewTextBoxColumn";
-            this.cognomeDataGridViewTextBoxColumn.Width = 125;
+            this.modelloDataGridViewTextBoxColumn.DataPropertyName = "Modello";
+            this.modelloDataGridViewTextBoxColumn.HeaderText = "Modello";
+            this.modelloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelloDataGridViewTextBoxColumn.Name = "modelloDataGridViewTextBoxColumn";
+            this.modelloDataGridViewTextBoxColumn.Width = 125;
             // 
-            // nazioneDataGridViewTextBoxColumn
+            // capacitaMassimaDataGridViewTextBoxColumn
             // 
-            this.nazioneDataGridViewTextBoxColumn.DataPropertyName = "Nazione";
-            this.nazioneDataGridViewTextBoxColumn.HeaderText = "Nazione";
-            this.nazioneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nazioneDataGridViewTextBoxColumn.Name = "nazioneDataGridViewTextBoxColumn";
-            this.nazioneDataGridViewTextBoxColumn.Width = 125;
+            this.capacitaMassimaDataGridViewTextBoxColumn.DataPropertyName = "CapacitaMassima";
+            this.capacitaMassimaDataGridViewTextBoxColumn.HeaderText = "CapacitaMassima";
+            this.capacitaMassimaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.capacitaMassimaDataGridViewTextBoxColumn.Name = "capacitaMassimaDataGridViewTextBoxColumn";
+            this.capacitaMassimaDataGridViewTextBoxColumn.Width = 125;
             // 
-            // dataNascitaDataGridViewTextBoxColumn
+            // litriCarburanteDataGridViewTextBoxColumn
             // 
-            this.dataNascitaDataGridViewTextBoxColumn.DataPropertyName = "DataNascita";
-            this.dataNascitaDataGridViewTextBoxColumn.HeaderText = "Data nascita";
-            this.dataNascitaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataNascitaDataGridViewTextBoxColumn.Name = "dataNascitaDataGridViewTextBoxColumn";
-            this.dataNascitaDataGridViewTextBoxColumn.Width = 125;
+            this.litriCarburanteDataGridViewTextBoxColumn.DataPropertyName = "LitriCarburante";
+            this.litriCarburanteDataGridViewTextBoxColumn.HeaderText = "LitriCarburante";
+            this.litriCarburanteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.litriCarburanteDataGridViewTextBoxColumn.Name = "litriCarburanteDataGridViewTextBoxColumn";
+            this.litriCarburanteDataGridViewTextBoxColumn.Width = 125;
             // 
-            // sessoDataGridViewTextBoxColumn
+            // numeroMotoriDataGridViewTextBoxColumn
             // 
-            this.sessoDataGridViewTextBoxColumn.DataPropertyName = "Sesso";
-            this.sessoDataGridViewTextBoxColumn.HeaderText = "Sesso";
-            this.sessoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sessoDataGridViewTextBoxColumn.Name = "sessoDataGridViewTextBoxColumn";
-            this.sessoDataGridViewTextBoxColumn.Width = 125;
+            this.numeroMotoriDataGridViewTextBoxColumn.DataPropertyName = "NumeroMotori";
+            this.numeroMotoriDataGridViewTextBoxColumn.HeaderText = "NumeroMotori";
+            this.numeroMotoriDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.numeroMotoriDataGridViewTextBoxColumn.Name = "numeroMotoriDataGridViewTextBoxColumn";
+            this.numeroMotoriDataGridViewTextBoxColumn.Width = 125;
             // 
-            // tipoDocumentoDataGridViewTextBoxColumn
+            // tipoPropulsioneDataGridViewTextBoxColumn
             // 
-            this.tipoDocumentoDataGridViewTextBoxColumn.DataPropertyName = "TipoDocumento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.HeaderText = "Tipo documento";
-            this.tipoDocumentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tipoDocumentoDataGridViewTextBoxColumn.Name = "tipoDocumentoDataGridViewTextBoxColumn";
-            this.tipoDocumentoDataGridViewTextBoxColumn.Width = 150;
+            this.tipoPropulsioneDataGridViewTextBoxColumn.DataPropertyName = "TipoPropulsione";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.HeaderText = "TipoPropulsione";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tipoPropulsioneDataGridViewTextBoxColumn.Name = "tipoPropulsioneDataGridViewTextBoxColumn";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.Width = 125;
             // 
-            // numeroDocumentoDataGridViewTextBoxColumn
+            // internazionaleDataGridViewCheckBoxColumn
             // 
-            this.numeroDocumentoDataGridViewTextBoxColumn.DataPropertyName = "NumeroDocumento";
-            this.numeroDocumentoDataGridViewTextBoxColumn.HeaderText = "Numero documento";
-            this.numeroDocumentoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numeroDocumentoDataGridViewTextBoxColumn.Name = "numeroDocumentoDataGridViewTextBoxColumn";
-            this.numeroDocumentoDataGridViewTextBoxColumn.Width = 150;
+            this.internazionaleDataGridViewCheckBoxColumn.DataPropertyName = "Internazionale";
+            this.internazionaleDataGridViewCheckBoxColumn.HeaderText = "Internazionale";
+            this.internazionaleDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.internazionaleDataGridViewCheckBoxColumn.Name = "internazionaleDataGridViewCheckBoxColumn";
+            this.internazionaleDataGridViewCheckBoxColumn.Width = 125;
             // 
-            // tblPersoneBindingSource
+            // raggioDataGridViewTextBoxColumn
             // 
-            this.tblPersoneBindingSource.DataMember = "tblPersone";
-            this.tblPersoneBindingSource.DataSource = this.aeroportoDataSet;
+            this.raggioDataGridViewTextBoxColumn.DataPropertyName = "Raggio";
+            this.raggioDataGridViewTextBoxColumn.HeaderText = "Raggio";
+            this.raggioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.raggioDataGridViewTextBoxColumn.Name = "raggioDataGridViewTextBoxColumn";
+            this.raggioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // velocitaMaxDataGridViewTextBoxColumn
+            // 
+            this.velocitaMaxDataGridViewTextBoxColumn.DataPropertyName = "VelocitaMax";
+            this.velocitaMaxDataGridViewTextBoxColumn.HeaderText = "VelocitaMax";
+            this.velocitaMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.velocitaMaxDataGridViewTextBoxColumn.Name = "velocitaMaxDataGridViewTextBoxColumn";
+            this.velocitaMaxDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // compagniaAereaDataGridViewTextBoxColumn
+            // 
+            this.compagniaAereaDataGridViewTextBoxColumn.DataPropertyName = "CompagniaAerea";
+            this.compagniaAereaDataGridViewTextBoxColumn.HeaderText = "CompagniaAerea";
+            this.compagniaAereaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.compagniaAereaDataGridViewTextBoxColumn.Name = "compagniaAereaDataGridViewTextBoxColumn";
+            this.compagniaAereaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tblAereiBindingSource
+            // 
+            this.tblAereiBindingSource.DataMember = "tblAerei";
+            this.tblAereiBindingSource.DataSource = this.aeroportoDataSet;
             // 
             // aeroportoDataSet
             // 
             this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
             this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tblPersoneTableAdapter
-            // 
-            this.tblPersoneTableAdapter.ClearBeforeFill = true;
-            // 
             // btnSalva
             // 
+            this.btnSalva.BackColor = System.Drawing.Color.Brown;
+            this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalva.Location = new System.Drawing.Point(43, 309);
-            this.btnSalva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(124, 44);
             this.btnSalva.TabIndex = 1;
             this.btnSalva.Text = "SALVA";
-            this.btnSalva.UseVisualStyleBackColor = true;
+            this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
             // 
             // btnModifica
             // 
+            this.btnModifica.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModifica.Location = new System.Drawing.Point(471, 309);
-            this.btnModifica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModifica.Margin = new System.Windows.Forms.Padding(4);
             this.btnModifica.Name = "btnModifica";
             this.btnModifica.Size = new System.Drawing.Size(197, 44);
             this.btnModifica.TabIndex = 2;
             this.btnModifica.Text = "MODIFICA";
-            this.btnModifica.UseVisualStyleBackColor = true;
+            this.btnModifica.UseVisualStyleBackColor = false;
             this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
             // 
             // btnNuovo
             // 
+            this.btnNuovo.BackColor = System.Drawing.Color.White;
+            this.btnNuovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuovo.Location = new System.Drawing.Point(215, 309);
-            this.btnNuovo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuovo.Margin = new System.Windows.Forms.Padding(4);
             this.btnNuovo.Name = "btnNuovo";
             this.btnNuovo.Size = new System.Drawing.Size(197, 44);
             this.btnNuovo.TabIndex = 3;
             this.btnNuovo.Text = "NUOVO";
-            this.btnNuovo.UseVisualStyleBackColor = true;
+            this.btnNuovo.UseVisualStyleBackColor = false;
             this.btnNuovo.Click += new System.EventHandler(this.btnNuovo_Click);
             // 
             // btnVisualizza
             // 
+            this.btnVisualizza.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnVisualizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVisualizza.Location = new System.Drawing.Point(1150, 309);
-            this.btnVisualizza.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVisualizza.Margin = new System.Windows.Forms.Padding(4);
             this.btnVisualizza.Name = "btnVisualizza";
             this.btnVisualizza.Size = new System.Drawing.Size(197, 44);
             this.btnVisualizza.TabIndex = 4;
             this.btnVisualizza.Text = "VISUALIZZA";
-            this.btnVisualizza.UseVisualStyleBackColor = true;
+            this.btnVisualizza.UseVisualStyleBackColor = false;
             this.btnVisualizza.Click += new System.EventHandler(this.btnVisualizza_Click);
             // 
             // btnElimina
             // 
+            this.btnElimina.BackColor = System.Drawing.Color.White;
+            this.btnElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnElimina.Location = new System.Drawing.Point(915, 309);
             this.btnElimina.Name = "btnElimina";
             this.btnElimina.Size = new System.Drawing.Size(215, 44);
             this.btnElimina.TabIndex = 5;
             this.btnElimina.Text = "ELIMINAZIONE VERA E PROPRIA";
-            this.btnElimina.UseVisualStyleBackColor = true;
+            this.btnElimina.UseVisualStyleBackColor = false;
             this.btnElimina.Click += new System.EventHandler(this.btnElimina_Click);
             // 
             // btnFittizia
             // 
+            this.btnFittizia.BackColor = System.Drawing.Color.Brown;
+            this.btnFittizia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFittizia.Location = new System.Drawing.Point(692, 309);
             this.btnFittizia.Name = "btnFittizia";
             this.btnFittizia.Size = new System.Drawing.Size(197, 43);
             this.btnFittizia.TabIndex = 6;
             this.btnFittizia.Text = "ELIMINAZIONE FITTIZIA";
-            this.btnFittizia.UseVisualStyleBackColor = true;
+            this.btnFittizia.UseVisualStyleBackColor = false;
             this.btnFittizia.Click += new System.EventHandler(this.btnFittizia_Click);
             // 
-            // frmPersone
+            // timer1
+            // 
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // tblAereiTableAdapter
+            // 
+            this.tblAereiTableAdapter.ClearBeforeFill = true;
+            // 
+            // frmAerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1428, 404);
             this.Controls.Add(this.btnFittizia);
             this.Controls.Add(this.btnElimina);
@@ -228,14 +279,16 @@ namespace TestDatabase
             this.Controls.Add(this.btnNuovo);
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.btnSalva);
-            this.Controls.Add(this.dgvPersone);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "frmPersone";
+            this.Controls.Add(this.dgvAerei);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1446, 451);
+            this.MinimumSize = new System.Drawing.Size(1446, 451);
+            this.Name = "frmAerei";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Persone";
-            this.Load += new System.EventHandler(this.frmPersone_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPersone)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblPersoneBindingSource)).EndInit();
+            this.Text = "Aerei";
+            this.Load += new System.EventHandler(this.frmAerei_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAerei)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             this.ResumeLayout(false);
 
@@ -243,11 +296,11 @@ namespace TestDatabase
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvPersone;
+        private System.Windows.Forms.DataGridView dgvAerei;
         private AeroportoDataSet aeroportoDataSet;
-        private System.Windows.Forms.BindingSource tblPersoneBindingSource;
-        private AeroportoDataSetTableAdapters.tblPersoneTableAdapter tblPersoneTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codicePersonaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tblAereiBindingSource;
+        private AeroportoDataSetTableAdapters.tblAereiTableAdapter tblAereiTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codiceAereiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cognomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazioneDataGridViewTextBoxColumn;
@@ -261,5 +314,17 @@ namespace TestDatabase
         private System.Windows.Forms.Button btnVisualizza;
         private System.Windows.Forms.Button btnElimina;
         private System.Windows.Forms.Button btnFittizia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codiceAereoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn capacitaMassimaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn litriCarburanteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroMotoriDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoPropulsioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn internazionaleDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn raggioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn velocitaMaxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compagniaAereaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
