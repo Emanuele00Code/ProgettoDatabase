@@ -40,8 +40,8 @@ namespace ProgettoDatabase
 
         private void btnVoli_Click(object sender, EventArgs e)
         {
-            /*frmVoli myForm2 = new frmVoli();
-            myForm2.Show();*/
+            frmVoli myForm2 = new frmVoli();
+            myForm2.Show();
         }
 
         private void btnAereoporti_Click(object sender, EventArgs e)
