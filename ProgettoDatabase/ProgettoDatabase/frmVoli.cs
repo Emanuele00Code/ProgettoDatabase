@@ -18,13 +18,10 @@ namespace ProgettoDatabase
             InitializeComponent();
         }
 
-        private void frmPersone_Load(object sender, EventArgs e)
+        private void frmVoli_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblVoli'. È possibile spostarla o rimuoverla se necessario.
+
             this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblVoli'. È possibile spostarla o rimuoverla se necessario.
-            this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAeroporti'. È possibile spostarla o rimuoverla se necessario.
 
         }
 
@@ -51,7 +48,7 @@ namespace ProgettoDatabase
 
         }
 
-  
+
 
         private void btnNuovo_Click(object sender, EventArgs e)
         {
@@ -61,56 +58,73 @@ namespace ProgettoDatabase
 
         private void btnVisualizza_Click(object sender, EventArgs e)
         {
-            string Codice;
+            string Codice; ;
+            string DataOraPartenza;
+            string DataOraArrivo;
+            bool Internazionale;
+            string Partenza;
+            int GatePartenza;
+            int Durata;
+            string Destinazione;
+            string CodiceAereo;
 
             if (dvgVoli.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
                 Codice = Convert.ToString(selectedRow.Cells[0].Value);
-                //frmVisualizzaVoli formDaAprire = new frmVisualizzaVoli(Codice);
-                //formDaAprire.Show();
-            }
+                DataOraPartenza = Convert.ToString(selectedRow.Cells[1].Value);
+                DataOraArrivo = Convert.ToString(selectedRow.Cells[2].Value);
+                Internazionale = Convert.ToBoolean(selectedRow.Cells[3].Value);
+                Partenza = Convert.ToString(selectedRow.Cells[4].Value);
+                GatePartenza = Convert.ToInt32(selectedRow.Cells[5].Value);
+                Durata = Convert.ToInt32(selectedRow.Cells[6].Value);
+                Destinazione = Convert.ToString(selectedRow.Cells[7].Value);
+                CodiceAereo = Convert.ToString(selectedRow.Cells[8].Value);
+                Voli MioVolo = new Voli(Codice, DataOraPartenza, DataOraArrivo, Internazionale, CodiceAereo, Destinazione, Durata, GatePartenza);
+                frmVisualizzaVoli formDaAprire = new frmVisualizzaVoli(MioVolo);
+                formDaAprire.Show();
 
+            }
         }
 
-        private void btnElimina_Click(object sender, EventArgs e)
-        {
-            string Sigla;
-
-            if (dvgVoli.SelectedCells.Count > 0)
+            private void btnElimina_Click(object sender, EventArgs e)
             {
-                int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
-                Sigla = Convert.ToString(selectedRow.Cells[0].Value);
+                string Sigla;
 
-
-                if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (dvgVoli.SelectedCells.Count > 0)
                 {
-                    MessageBox.Show("Placeholder, funzione già presente ma non attiva");
-                   
-                    //tblVoliTableAdapter.EliminaVoli(Sigla);
+                    int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
+                    Sigla = Convert.ToString(selectedRow.Cells[0].Value);
+
+
+                    if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("Placeholder, funzione già presente ma non attiva");
+
+                        //tblVoliTableAdapter.EliminaVoli(Sigla);
+                    }
                 }
             }
-        }
 
-        private void btnFittizia_Click(object sender, EventArgs e)
-        {
-            string Sigla;
-
-            if (dvgVoli.SelectedCells.Count > 0)
+            private void btnFittizia_Click(object sender, EventArgs e)
             {
-                int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
-                Sigla = Convert.ToString(selectedRow.Cells[0].Value);
+                string Sigla;
 
-
-                if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (dvgVoli.SelectedCells.Count > 0)
                 {
-                    tblVoliTableAdapter.DisattivaVoli(Sigla);
+                    int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
+                    Sigla = Convert.ToString(selectedRow.Cells[0].Value);
+
+
+                    if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        tblVoliTableAdapter.DisattivaVoli(Sigla);
+                    }
                 }
             }
-        }
 
-    }
-}
+        }
+    } 

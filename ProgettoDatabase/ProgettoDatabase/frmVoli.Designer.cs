@@ -264,7 +264,7 @@ namespace ProgettoDatabase
             this.Name = "frmVoli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Voli";
-            this.Load += new System.EventHandler(this.frmPersone_Load);
+            this.Load += new System.EventHandler(this.frmVoli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgVoli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();

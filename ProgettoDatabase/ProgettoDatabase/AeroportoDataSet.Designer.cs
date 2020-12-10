@@ -6542,7 +6542,7 @@ SELECT Sigla, Nome, Piste, Terminal, Gates, Nazione, Citta, Militare, Internazio
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Sigla, Nome, Piste, Terminal, Gates, Nazione, Citta, Militare, Internazion" +
-                "ale\r\nFROM     tblAeroporti";
+                "ale\r\nFROM     tblAeroporti\r\nWHERE Attivo=1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -6589,6 +6589,7 @@ SELECT Sigla, Nome, Piste, Terminal, Gates, Nazione, Citta, Militare, Internazio
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Militare", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Internazionale", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sigla", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7112,7 +7113,7 @@ SELECT Sigla, Nome, Piste, Terminal, Gates, Nazione, Citta, Militare, Internazio
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int ModificaAeroporto(global::System.Nullable<byte> Piste, global::System.Nullable<byte> Terminal, global::System.Nullable<float> Gates, string Nazione, string Citta, global::System.Nullable<bool> Militare, global::System.Nullable<bool> Internazionale, string Sigla) {
+        public virtual int ModificaAeroporto(global::System.Nullable<byte> Piste, global::System.Nullable<byte> Terminal, global::System.Nullable<float> Gates, string Nazione, string Citta, global::System.Nullable<bool> Militare, global::System.Nullable<bool> Internazionale, string Sigla, string Nome) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Piste.HasValue == true)) {
                 command.Parameters[1].Value = ((byte)(Piste.Value));
@@ -7161,6 +7162,12 @@ SELECT Sigla, Nome, Piste, Terminal, Gates, Nazione, Citta, Militare, Internazio
             }
             else {
                 command.Parameters[8].Value = ((string)(Sigla));
+            }
+            if ((Nome == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(Nome));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

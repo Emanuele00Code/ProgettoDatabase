@@ -36,14 +36,14 @@ namespace ProgettoDatabase
             this.lblCodice = new System.Windows.Forms.Label();
             this.lblGatePartenza = new System.Windows.Forms.Label();
             this.txtCodice = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.txtCodiceAereo = new System.Windows.Forms.TextBox();
             this.lblPartenza = new System.Windows.Forms.Label();
             this.txtPartenza = new System.Windows.Forms.TextBox();
             this.updGatePartenza = new System.Windows.Forms.NumericUpDown();
             this.updDurata = new System.Windows.Forms.NumericUpDown();
             this.btnSalva = new System.Windows.Forms.Button();
-            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
             this.txtDestinazione = new System.Windows.Forms.TextBox();
             this.lblDestinazione = new System.Windows.Forms.Label();
@@ -53,10 +53,10 @@ namespace ProgettoDatabase
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDataPartenza = new System.Windows.Forms.DateTimePicker();
             this.dtpDataArrivo = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodiceAereo
@@ -107,6 +107,16 @@ namespace ProgettoDatabase
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
             this.txtCodice.TabIndex = 8;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "tblVoli";
+            this.bindingSource1.DataSource = this.aeroportoDataSet;
+            // 
+            // aeroportoDataSet
+            // 
+            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtCodiceAereo
             // 
@@ -172,16 +182,6 @@ namespace ProgettoDatabase
             this.btnSalva.Text = "SALVA";
             this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
-            // 
-            // aeroportoDataSet
-            // 
-            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
-            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "tblVoli";
-            this.bindingSource1.DataSource = this.aeroportoDataSet;
             // 
             // tblVoliTableAdapter
             // 
@@ -287,10 +287,10 @@ namespace ProgettoDatabase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modifica Voli";
             this.Load += new System.EventHandler(this.frmModificaVoli_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

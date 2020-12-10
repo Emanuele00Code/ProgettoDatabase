@@ -9,22 +9,28 @@ namespace ProgettoDatabase.Classi
     public class Voli
     {
         public string Codice { get; }
-        //DataOraPartenza
-        //DataOraArrivo
+        
+        public string DataOraPartenza { get; }
+
+        public string DataOraArrivo { get; }
+
         public string CodiceAereo { get; }
-        public string SiglaAereoporto { get; }
+        public string Destinazione { get; }
         public int Durata { get; }
         public int GatePartenza { get; }
 
-        public Voli(string Codice, string CodiceAereo, string SiglaAereoporto, int Durata, int GatePartenza)
+        public bool Internazionale { get; }
+
+        public Voli(string Codice, string DataOraPartenza,string DataOraArrivo, bool internazionale, string CodiceAereo, string Destinazione, int Durata, int GatePartenza )
         {
             this.Codice = Codice;
-            //this.DataOraPartenza = DataOraPartenza;
-            //this.DataOraArrivo = DataOraPartenza;
+            this.DataOraPartenza = DataOraPartenza;
+            this.DataOraArrivo = DataOraArrivo; 
             this.CodiceAereo = CodiceAereo;
-            this.SiglaAereoporto = SiglaAereoporto;
+            this.Destinazione = Destinazione;
             this.Durata = Durata;
             this.GatePartenza = GatePartenza;
+            this.Internazionale = Internazionale;
         }
     }
 }

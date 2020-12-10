@@ -34,7 +34,7 @@ namespace ProgettoDatabase
         {
             if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                tblAeroportiTableAdapter.ModificaAeroporto(Convert.ToByte(updPiste.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked, _Sigla);
+                tblAeroportiTableAdapter.ModificaAeroporto(Convert.ToByte(updPiste.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked, _Sigla, txtNome.Text);
             }
         }
 

@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -56,6 +58,7 @@
     </Compile>
     <Compile Include="Classi\Aerei.cs" />
     <Compile Include="Classi\Aeroporti.cs" />
+    <Compile Include="Classi\Voli.cs" />
     <Compile Include="frmAeroporti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,7 +139,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Voli.cs" />
     <EmbeddedResource Include="frmAeroporti.resx">
       <DependentUpon>frmAeroporti.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisualizzaAeroporti.resx">
       <DependentUpon>frmVisualizzaAeroporti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisualizzaVoli.resx">
+      <DependentUpon>frmVisualizzaVoli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVoli.resx">
       <DependentUpon>frmVoli.cs</DependentUpon>
