@@ -32,11 +32,19 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (txtPartenza.Text != "") && (txtDestinazione.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
-                tblVoliTableAdapter.ModificaVoli(Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToInt16(updDurata.Value), (float)updGatePartenza.Value, txtDestinazione.Text, Convert.ToBoolean(chkInternazionale.Checked), _Codice);
+                if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    tblVoliTableAdapter.ModificaVoli(Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToInt16(updDurata.Value), (float)updGatePartenza.Value, txtDestinazione.Text, Convert.ToBoolean(chkInternazionale.Checked), _Codice);
+                }
             }
-        }
+            else
+            {
+                MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            }
 
  
 

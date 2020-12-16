@@ -32,6 +32,16 @@ namespace ProgettoDatabase
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAerei));
             this.dgvAerei = new System.Windows.Forms.DataGridView();
+            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
+            this.btnSalva = new System.Windows.Forms.Button();
+            this.btnModifica = new System.Windows.Forms.Button();
+            this.btnNuovo = new System.Windows.Forms.Button();
+            this.btnVisualizza = new System.Windows.Forms.Button();
+            this.btnElimina = new System.Windows.Forms.Button();
+            this.btnFittizia = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,16 +53,6 @@ namespace ProgettoDatabase
             this.raggioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.velocitaMaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compagniaAereaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
-            this.btnSalva = new System.Windows.Forms.Button();
-            this.btnModifica = new System.Windows.Forms.Button();
-            this.btnNuovo = new System.Windows.Forms.Button();
-            this.btnVisualizza = new System.Windows.Forms.Button();
-            this.btnElimina = new System.Windows.Forms.Button();
-            this.btnFittizia = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAerei)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
@@ -82,94 +82,6 @@ namespace ProgettoDatabase
             this.dgvAerei.RowHeadersWidth = 51;
             this.dgvAerei.Size = new System.Drawing.Size(1304, 185);
             this.dgvAerei.TabIndex = 0;
-            // 
-            // codiceAereoDataGridViewTextBoxColumn
-            // 
-            this.codiceAereoDataGridViewTextBoxColumn.DataPropertyName = "CodiceAereo";
-            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "CodiceAereo";
-            this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
-            this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // modelloDataGridViewTextBoxColumn
-            // 
-            this.modelloDataGridViewTextBoxColumn.DataPropertyName = "Modello";
-            this.modelloDataGridViewTextBoxColumn.HeaderText = "Modello";
-            this.modelloDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.modelloDataGridViewTextBoxColumn.Name = "modelloDataGridViewTextBoxColumn";
-            this.modelloDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // capacitaMassimaDataGridViewTextBoxColumn
-            // 
-            this.capacitaMassimaDataGridViewTextBoxColumn.DataPropertyName = "CapacitaMassima";
-            this.capacitaMassimaDataGridViewTextBoxColumn.HeaderText = "CapacitaMassima";
-            this.capacitaMassimaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.capacitaMassimaDataGridViewTextBoxColumn.Name = "capacitaMassimaDataGridViewTextBoxColumn";
-            this.capacitaMassimaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // litriCarburanteDataGridViewTextBoxColumn
-            // 
-            this.litriCarburanteDataGridViewTextBoxColumn.DataPropertyName = "LitriCarburante";
-            this.litriCarburanteDataGridViewTextBoxColumn.HeaderText = "LitriCarburante";
-            this.litriCarburanteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.litriCarburanteDataGridViewTextBoxColumn.Name = "litriCarburanteDataGridViewTextBoxColumn";
-            this.litriCarburanteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // numeroMotoriDataGridViewTextBoxColumn
-            // 
-            this.numeroMotoriDataGridViewTextBoxColumn.DataPropertyName = "NumeroMotori";
-            this.numeroMotoriDataGridViewTextBoxColumn.HeaderText = "NumeroMotori";
-            this.numeroMotoriDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.numeroMotoriDataGridViewTextBoxColumn.Name = "numeroMotoriDataGridViewTextBoxColumn";
-            this.numeroMotoriDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tipoPropulsioneDataGridViewTextBoxColumn
-            // 
-            this.tipoPropulsioneDataGridViewTextBoxColumn.DataPropertyName = "TipoPropulsione";
-            this.tipoPropulsioneDataGridViewTextBoxColumn.HeaderText = "TipoPropulsione";
-            this.tipoPropulsioneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tipoPropulsioneDataGridViewTextBoxColumn.Name = "tipoPropulsioneDataGridViewTextBoxColumn";
-            this.tipoPropulsioneDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // internazionaleDataGridViewCheckBoxColumn
-            // 
-            this.internazionaleDataGridViewCheckBoxColumn.DataPropertyName = "Internazionale";
-            this.internazionaleDataGridViewCheckBoxColumn.HeaderText = "Internazionale";
-            this.internazionaleDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.internazionaleDataGridViewCheckBoxColumn.Name = "internazionaleDataGridViewCheckBoxColumn";
-            this.internazionaleDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // raggioDataGridViewTextBoxColumn
-            // 
-            this.raggioDataGridViewTextBoxColumn.DataPropertyName = "Raggio";
-            this.raggioDataGridViewTextBoxColumn.HeaderText = "Raggio";
-            this.raggioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.raggioDataGridViewTextBoxColumn.Name = "raggioDataGridViewTextBoxColumn";
-            this.raggioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // velocitaMaxDataGridViewTextBoxColumn
-            // 
-            this.velocitaMaxDataGridViewTextBoxColumn.DataPropertyName = "VelocitaMax";
-            this.velocitaMaxDataGridViewTextBoxColumn.HeaderText = "VelocitaMax";
-            this.velocitaMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.velocitaMaxDataGridViewTextBoxColumn.Name = "velocitaMaxDataGridViewTextBoxColumn";
-            this.velocitaMaxDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // compagniaAereaDataGridViewTextBoxColumn
-            // 
-            this.compagniaAereaDataGridViewTextBoxColumn.DataPropertyName = "CompagniaAerea";
-            this.compagniaAereaDataGridViewTextBoxColumn.HeaderText = "CompagniaAerea";
-            this.compagniaAereaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.compagniaAereaDataGridViewTextBoxColumn.Name = "compagniaAereaDataGridViewTextBoxColumn";
-            this.compagniaAereaDataGridViewTextBoxColumn.Width = 125;
             // 
             // tblAereiBindingSource
             // 
@@ -266,6 +178,94 @@ namespace ProgettoDatabase
             // 
             this.tblAereiTableAdapter.ClearBeforeFill = true;
             // 
+            // codiceAereoDataGridViewTextBoxColumn
+            // 
+            this.codiceAereoDataGridViewTextBoxColumn.DataPropertyName = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
+            this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            this.marcaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modelloDataGridViewTextBoxColumn
+            // 
+            this.modelloDataGridViewTextBoxColumn.DataPropertyName = "Modello";
+            this.modelloDataGridViewTextBoxColumn.HeaderText = "Modello";
+            this.modelloDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelloDataGridViewTextBoxColumn.Name = "modelloDataGridViewTextBoxColumn";
+            this.modelloDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // capacitaMassimaDataGridViewTextBoxColumn
+            // 
+            this.capacitaMassimaDataGridViewTextBoxColumn.DataPropertyName = "CapacitaMassima";
+            this.capacitaMassimaDataGridViewTextBoxColumn.HeaderText = "Capacita Massima";
+            this.capacitaMassimaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.capacitaMassimaDataGridViewTextBoxColumn.Name = "capacitaMassimaDataGridViewTextBoxColumn";
+            this.capacitaMassimaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // litriCarburanteDataGridViewTextBoxColumn
+            // 
+            this.litriCarburanteDataGridViewTextBoxColumn.DataPropertyName = "LitriCarburante";
+            this.litriCarburanteDataGridViewTextBoxColumn.HeaderText = "Litri Carburante";
+            this.litriCarburanteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.litriCarburanteDataGridViewTextBoxColumn.Name = "litriCarburanteDataGridViewTextBoxColumn";
+            this.litriCarburanteDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // numeroMotoriDataGridViewTextBoxColumn
+            // 
+            this.numeroMotoriDataGridViewTextBoxColumn.DataPropertyName = "NumeroMotori";
+            this.numeroMotoriDataGridViewTextBoxColumn.HeaderText = "Numero Motori";
+            this.numeroMotoriDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.numeroMotoriDataGridViewTextBoxColumn.Name = "numeroMotoriDataGridViewTextBoxColumn";
+            this.numeroMotoriDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tipoPropulsioneDataGridViewTextBoxColumn
+            // 
+            this.tipoPropulsioneDataGridViewTextBoxColumn.DataPropertyName = "TipoPropulsione";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.HeaderText = "Tipo di Propulsione";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tipoPropulsioneDataGridViewTextBoxColumn.Name = "tipoPropulsioneDataGridViewTextBoxColumn";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // internazionaleDataGridViewCheckBoxColumn
+            // 
+            this.internazionaleDataGridViewCheckBoxColumn.DataPropertyName = "Internazionale";
+            this.internazionaleDataGridViewCheckBoxColumn.HeaderText = "Internazionale";
+            this.internazionaleDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.internazionaleDataGridViewCheckBoxColumn.Name = "internazionaleDataGridViewCheckBoxColumn";
+            this.internazionaleDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // raggioDataGridViewTextBoxColumn
+            // 
+            this.raggioDataGridViewTextBoxColumn.DataPropertyName = "Raggio";
+            this.raggioDataGridViewTextBoxColumn.HeaderText = "Raggio";
+            this.raggioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.raggioDataGridViewTextBoxColumn.Name = "raggioDataGridViewTextBoxColumn";
+            this.raggioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // velocitaMaxDataGridViewTextBoxColumn
+            // 
+            this.velocitaMaxDataGridViewTextBoxColumn.DataPropertyName = "VelocitaMax";
+            this.velocitaMaxDataGridViewTextBoxColumn.HeaderText = "Velocita Max";
+            this.velocitaMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.velocitaMaxDataGridViewTextBoxColumn.Name = "velocitaMaxDataGridViewTextBoxColumn";
+            this.velocitaMaxDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // compagniaAereaDataGridViewTextBoxColumn
+            // 
+            this.compagniaAereaDataGridViewTextBoxColumn.DataPropertyName = "CompagniaAerea";
+            this.compagniaAereaDataGridViewTextBoxColumn.HeaderText = "Compagnia Aerea";
+            this.compagniaAereaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.compagniaAereaDataGridViewTextBoxColumn.Name = "compagniaAereaDataGridViewTextBoxColumn";
+            this.compagniaAereaDataGridViewTextBoxColumn.Width = 125;
+            // 
             // frmAerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -314,6 +314,7 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Button btnVisualizza;
         private System.Windows.Forms.Button btnElimina;
         private System.Windows.Forms.Button btnFittizia;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceAereoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelloDataGridViewTextBoxColumn;
@@ -325,6 +326,5 @@ namespace ProgettoDatabase
         private System.Windows.Forms.DataGridViewTextBoxColumn raggioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn velocitaMaxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn compagniaAereaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Timer timer1;
     }
 }
