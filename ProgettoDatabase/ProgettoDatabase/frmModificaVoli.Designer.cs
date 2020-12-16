@@ -243,7 +243,9 @@ namespace ProgettoDatabase
             // 
             // dtpDataPartenza
             // 
+            this.dtpDataPartenza.CustomFormat = "yyyy/MM/dd HH:mm:ss";
             this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
+            this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataPartenza.Location = new System.Drawing.Point(262, 468);
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(200, 22);
@@ -251,7 +253,9 @@ namespace ProgettoDatabase
             // 
             // dtpDataArrivo
             // 
+            this.dtpDataArrivo.CustomFormat = "yyyy/MM/dd HH:mm:ss";
             this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
+            this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataArrivo.Location = new System.Drawing.Point(261, 514);
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(200, 22);
