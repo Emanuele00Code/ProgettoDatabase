@@ -42,7 +42,7 @@ namespace ProgettoDatabase
                 int selectedrowindex = dvgAeroporti.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dvgAeroporti.Rows[selectedrowindex];
                 Sigla = Convert.ToString(selectedRow.Cells[0].Value);
-                frmModificaAeroporti formDaAprire = new frmModificaAeroporti(Sigla);
+                frmModificaAeroporti formDaAprire = new frmModificaAeroporti(this.RefreshGrid,Sigla);
                 formDaAprire.Show();
             }
 
@@ -125,6 +125,13 @@ namespace ProgettoDatabase
                 }
             }
         }
+        private void RefreshGrid()
+        {
+            dvgAeroporti.DataSource = null;
+            this.tblAeroportiTableAdapter.Fill(this.aeroportoDataSet.tblAeroporti);
+            dvgAeroporti.DataSource = tblAeroportiBindingSource;
+        }
+
 
     }
 }

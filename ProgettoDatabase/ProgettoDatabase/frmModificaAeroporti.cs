@@ -16,13 +16,14 @@ namespace ProgettoDatabase
     {
 
         string _Sigla;
-
+        readonly Action _RefreshGrid;
         public frmModificaAeroporti()
         {
         }
 
-        public frmModificaAeroporti(string Sigla) : this()
+        public frmModificaAeroporti(Action RefreshGrid,string Sigla) : this()
         {
+            this._RefreshGrid = RefreshGrid;
             this._Sigla = Sigla;
             InitializeComponent();
         }
@@ -37,6 +38,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblAeroportiTableAdapter.ModificaAeroporto(Convert.ToByte(updPiste.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked, _Sigla, txtNome.Text);
+                    this._RefreshGrid();
                 }
             }
             else

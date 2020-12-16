@@ -37,14 +37,14 @@ namespace ProgettoDatabase
         {
             string Codice;
 
-            if (dvgVoli.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
-                Codice = Convert.ToString(selectedRow.Cells[0].Value);
-                frmModificaVoli formDaAprire = new frmModificaVoli(Codice);
-                formDaAprire.Show();
-            }
+                if (dvgVoli.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = dvgVoli.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = dvgVoli.Rows[selectedrowindex];
+                    Codice = Convert.ToString(selectedRow.Cells[0].Value);
+                    frmModificaVoli formDaAprire = new frmModificaVoli(this.RefreshGrid, Codice);
+                    formDaAprire.Show();
+                }
 
         }
 
@@ -125,6 +125,12 @@ namespace ProgettoDatabase
                     }
                 }
             }
-
+        private void RefreshGrid()
+        {
+            dvgVoli.DataSource = null;
+            this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
+            dvgVoli.DataSource = tblVoliBindingSource;
         }
+
+    }
     } 

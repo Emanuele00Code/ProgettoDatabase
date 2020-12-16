@@ -59,10 +59,12 @@ namespace ProgettoDatabase
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblInternazionale = new System.Windows.Forms.Label();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // aeroportoDataSet
@@ -328,6 +330,10 @@ namespace ProgettoDatabase
             this.chkInternazionale.TabIndex = 52;
             this.chkInternazionale.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmInserisciVoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -367,6 +373,7 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,5 +408,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblInternazionale;
         private System.Windows.Forms.CheckBox chkInternazionale;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
