@@ -43,7 +43,7 @@ namespace ProgettoDatabase
                 int selectedrowindex = dgvAerei.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvAerei.Rows[selectedrowindex];
                 CodiceAerei = Convert.ToString(selectedRow.Cells[0].Value);
-                frmModificaAerei FormDaAprire = new frmModificaAerei(CodiceAerei);
+                frmModificaAerei FormDaAprire = new frmModificaAerei(this.RefreshGrid,CodiceAerei);
                 FormDaAprire.Show();
 
             }
@@ -136,6 +136,12 @@ namespace ProgettoDatabase
             /*dgvAerei.Columns.Clear();
             this.tblAereiTableAdapter.Fill(this.aeroportoDataSet.tblAerei);*/
             
+        }
+        private void RefreshGrid()
+        {
+            dgvAerei.DataSource = null;
+            this.tblAereiTableAdapter.Fill(this.aeroportoDataSet.tblAerei);
+            dgvAerei.DataSource = tblAereiBindingSource;
         }
     }
 }

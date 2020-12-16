@@ -16,16 +16,18 @@ namespace ProgettoDatabase
     {
 
         string _Codice;
+        readonly Action _RefreshGrid;
 
         public frmModificaVoli()
         {
         }
-
-        public frmModificaVoli(string Codice) : this()
+        public frmModificaVoli(Action RefreshGrid, string Codice) : this()
         {
+            this._RefreshGrid = RefreshGrid;
             this._Codice = Codice;
             InitializeComponent();
         }
+
 
 
 
@@ -37,6 +39,8 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblVoliTableAdapter.ModificaVoli(Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToInt16(updDurata.Value), (float)updGatePartenza.Value, txtDestinazione.Text, Convert.ToBoolean(chkInternazionale.Checked), _Codice);
+                    this._RefreshGrid();
+                    this.Close();
                 }
             }
             else
@@ -55,6 +59,7 @@ namespace ProgettoDatabase
 
 
          }
+
 
     }
 }

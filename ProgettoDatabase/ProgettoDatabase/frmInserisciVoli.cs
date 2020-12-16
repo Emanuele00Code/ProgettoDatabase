@@ -25,18 +25,25 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if((txtCodice.Text!="")&&(txtCodiceAereo.Text!="")&&(txtPartenza.Text!="")&&(txtDestinazione.Text!="")&&(updDurata.Value>0)&&(updGatePartenza.Value>0))
-            {
+            //if((txtCodice.Text!="")&&(txtCodiceAereo.Text!="")&&(txtPartenza.Text!="")&&(txtDestinazione.Text!="")&&(updDurata.Value>0)&&(updGatePartenza.Value>0))
+            //{
+            //if (txtCodice.Text == "" && (txtCodiceAereo.Text == "") && (txtPartenza.Text == "") && (txtDestinazione.Text == "") && (updDurata.Value == 0) && (updGatePartenza.Value == 0))
+            //{
+            //    errorProvider1.SetError(txtCodice,txtCodiceAereo,txtPartenza,txtDestinazione,updDurata,updGatePartenza, "Inserire i dati correttamente");
+            //}
+           // else
+            //{
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), txtDestinazione.Text, chkInternazionale.Checked);
                     this.Close();
                 }
-            }
-            else
-            {
-                MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero","Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);  
-            }
+            //}
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero","Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);  
+            //}
         }
 
       

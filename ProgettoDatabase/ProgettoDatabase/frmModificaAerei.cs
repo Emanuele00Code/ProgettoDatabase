@@ -16,13 +16,16 @@ namespace ProgettoDatabase
     {
 
        string _CodiceAerei;
+        readonly Action _RefreshGrid;
+
 
         public frmModificaAerei()
         {  
         }
 
-        public frmModificaAerei(string CodiceAerei):this()
+        public frmModificaAerei(Action RefreshGrid,string CodiceAerei):this()
         {
+            this._RefreshGrid = RefreshGrid;
             this._CodiceAerei = CodiceAerei;
             InitializeComponent();
         }
@@ -45,8 +48,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblAereiTableAdapter.ModificaAereo(txtMarca.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text, _CodiceAerei);
-
-
+                    this._RefreshGrid();
                 }
             }
             else
