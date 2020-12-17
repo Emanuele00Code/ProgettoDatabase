@@ -36,10 +36,38 @@ namespace ProgettoDatabase
             else
             {
                 MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtSigla.Text == "")
+                {
+                    errorProvider1.SetError(txtSigla, "Inserire i dati correttamente");
+                }
+                if (txtNome.Text == "")
+                {
+                    errorProvider2.SetError(txtNome, "Inserire i dati correttamente");
+                }
+                if (txtNazione.Text == "")
+                {
+                    errorProvider3.SetError(txtNazione, "Inserire i dati correttamente");
+                }
+                if (txtCitta.Text == "")
+                {
+                    errorProvider4.SetError(txtCitta, "Inserire i dati correttamente");
+                }
+                if (updPiste.Value <= 0)
+                {
+                    errorProvider5.SetError(updPiste, "Inserire i dati correttamente");
+                }
+                if (updGates.Value <= 0)
+                {
+                    errorProvider6.SetError(updGates, "Inserire i dati correttamente");
+                }
+                if (updTerminal.Value <= 0)
+                {
+                    errorProvider7.SetError(updTerminal, "Inserire i dati correttamente");
+                }
             }
             }
 
-        private void frmInserisciPersona_Load(object sender, EventArgs e)
+            private void frmInserisciPersona_Load(object sender, EventArgs e)
         {
             // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAeroporti'. È possibile spostarla o rimuoverla se necessario.
             this.tblAeroportiTableAdapter.Fill(this.aeroportoDataSet.tblAeroporti);
@@ -69,9 +97,73 @@ namespace ProgettoDatabase
             else
             {
                 MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (txtSigla.Text == "")
+                {
+                    errorProvider1.SetError(txtSigla, "Inserire i dati correttamente");
+                }
+                if (txtNome.Text == "")
+                {
+                    errorProvider2.SetError(txtNome, "Inserire i dati correttamente");
+                }
+                if (txtNazione.Text == "")
+                {
+                    errorProvider3.SetError(txtNazione, "Inserire i dati correttamente");
+                }
+                if (txtCitta.Text =="")
+                {
+                    errorProvider4.SetError(txtCitta, "Inserire i dati correttamente");
+                }
+                if (updPiste.Value <= 0)
+                {
+                    errorProvider5.SetError(updPiste, "Inserire i dati correttamente");
+                }
+                if (updGates.Value <= 0)
+                {
+                    errorProvider6.SetError(updGates, "Inserire i dati correttamente");
+                }
+                if (updTerminal.Value <= 0)
+                {
+                    errorProvider7.SetError(updTerminal, "Inserire i dati correttamente");
+                }
             }
         }
 
+        private void txtSigla_KeyUp(object sender, KeyEventArgs e)
+        {
+            errorProvider1.Clear();
+        }
+
+        private void txtNome_KeyUp(object sender, KeyEventArgs e)
+        {
+            errorProvider2.Clear();
+        }
+
+        private void txtNazione_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider3.Clear();
+        }
+
+        private void updPiste_ValueChanged(object sender, EventArgs e)
+        {
+            errorProvider5.Clear();
 
         }
+
+        private void updTerminal_ValueChanged(object sender, EventArgs e)
+        {
+            errorProvider7.Clear();
+
+        }
+
+        private void updGates_ValueChanged(object sender, EventArgs e)
+        {
+            errorProvider6.Clear();
+
+        }
+
+        private void txtCitta_KeyUp(object sender, KeyEventArgs e)
+        {
+            errorProvider4.Clear();
+        }
+    }
 }

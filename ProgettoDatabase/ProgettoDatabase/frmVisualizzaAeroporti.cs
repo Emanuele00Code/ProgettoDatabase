@@ -64,5 +64,20 @@ namespace ProgettoDatabase
 
 
         }
+
+        private void updTerminal_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updGates_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updPiste_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

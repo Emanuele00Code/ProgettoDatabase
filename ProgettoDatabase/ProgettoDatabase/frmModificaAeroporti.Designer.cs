@@ -51,11 +51,25 @@ namespace ProgettoDatabase
             this.updPiste = new System.Windows.Forms.NumericUpDown();
             this.btnSalva = new System.Windows.Forms.Button();
             this.tblAeroportiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAeroportiTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGates)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updTerminal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updPiste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNome
@@ -116,6 +130,7 @@ namespace ProgettoDatabase
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 22);
             this.txtNome.TabIndex = 9;
+            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
             // bindingSource1
             // 
@@ -152,6 +167,7 @@ namespace ProgettoDatabase
             this.txtCitta.Name = "txtCitta";
             this.txtCitta.Size = new System.Drawing.Size(265, 22);
             this.txtCitta.TabIndex = 18;
+            this.txtCitta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCitta_KeyUp);
             // 
             // cbkMilitare
             // 
@@ -189,6 +205,7 @@ namespace ProgettoDatabase
             this.txtNazione.Name = "txtNazione";
             this.txtNazione.Size = new System.Drawing.Size(265, 22);
             this.txtNazione.TabIndex = 22;
+            this.txtNazione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNazione_KeyUp);
             // 
             // updGates
             // 
@@ -202,6 +219,7 @@ namespace ProgettoDatabase
             this.updGates.Name = "updGates";
             this.updGates.Size = new System.Drawing.Size(120, 22);
             this.updGates.TabIndex = 46;
+            this.updGates.ValueChanged += new System.EventHandler(this.updGates_ValueChanged);
             // 
             // updTerminal
             // 
@@ -215,6 +233,7 @@ namespace ProgettoDatabase
             this.updTerminal.Name = "updTerminal";
             this.updTerminal.Size = new System.Drawing.Size(120, 22);
             this.updTerminal.TabIndex = 45;
+            this.updTerminal.ValueChanged += new System.EventHandler(this.updTerminal_ValueChanged);
             // 
             // updPiste
             // 
@@ -228,6 +247,7 @@ namespace ProgettoDatabase
             this.updPiste.Name = "updPiste";
             this.updPiste.Size = new System.Drawing.Size(120, 22);
             this.updPiste.TabIndex = 44;
+            this.updPiste.ValueChanged += new System.EventHandler(this.updPiste_ValueChanged);
             // 
             // btnSalva
             // 
@@ -244,6 +264,34 @@ namespace ProgettoDatabase
             // tblAeroportiTableAdapter
             // 
             this.tblAeroportiTableAdapter.ClearBeforeFill = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            this.errorProvider7.ContainerControl = this;
             // 
             // frmModificaAeroporti
             // 
@@ -279,6 +327,13 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.updGates)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updTerminal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updPiste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +361,12 @@ namespace ProgettoDatabase
         private System.Windows.Forms.BindingSource bindingSource1;
         private AeroportoDataSet aeroportoDataSet;
         private AeroportoDataSetTableAdapters.tblAeroportiTableAdapter tblAeroportiTableAdapter;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.ErrorProvider errorProvider7;
     }
 }

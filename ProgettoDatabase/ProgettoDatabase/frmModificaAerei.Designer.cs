@@ -55,6 +55,16 @@ namespace ProgettoDatabase
             this.txtPropulsione = new System.Windows.Forms.TextBox();
             this.txtCompagnia = new System.Windows.Forms.TextBox();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updCapacita)).BeginInit();
@@ -62,6 +72,16 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMarca
@@ -102,6 +122,7 @@ namespace ProgettoDatabase
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(265, 22);
             this.txtMarca.TabIndex = 9;
+            this.txtMarca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMarca_KeyUp);
             // 
             // txtModello
             // 
@@ -111,6 +132,7 @@ namespace ProgettoDatabase
             this.txtModello.Name = "txtModello";
             this.txtModello.Size = new System.Drawing.Size(265, 22);
             this.txtModello.TabIndex = 10;
+            this.txtModello.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtModello_KeyUp);
             // 
             // btnSalva
             // 
@@ -216,6 +238,7 @@ namespace ProgettoDatabase
             this.updCapacita.Name = "updCapacita";
             this.updCapacita.Size = new System.Drawing.Size(120, 22);
             this.updCapacita.TabIndex = 27;
+            this.updCapacita.ValueChanged += new System.EventHandler(this.updCapacita_ValueChanged);
             // 
             // updLitri
             // 
@@ -229,6 +252,7 @@ namespace ProgettoDatabase
             this.updLitri.Name = "updLitri";
             this.updLitri.Size = new System.Drawing.Size(120, 22);
             this.updLitri.TabIndex = 28;
+            this.updLitri.ValueChanged += new System.EventHandler(this.updLitri_ValueChanged);
             // 
             // updMotori
             // 
@@ -242,6 +266,7 @@ namespace ProgettoDatabase
             this.updMotori.Name = "updMotori";
             this.updMotori.Size = new System.Drawing.Size(120, 22);
             this.updMotori.TabIndex = 29;
+            this.updMotori.ValueChanged += new System.EventHandler(this.updMotori_ValueChanged);
             // 
             // updRaggio
             // 
@@ -255,6 +280,7 @@ namespace ProgettoDatabase
             this.updRaggio.Name = "updRaggio";
             this.updRaggio.Size = new System.Drawing.Size(120, 22);
             this.updRaggio.TabIndex = 30;
+            this.updRaggio.ValueChanged += new System.EventHandler(this.updRaggio_ValueChanged);
             // 
             // updVelocita
             // 
@@ -263,6 +289,7 @@ namespace ProgettoDatabase
             this.updVelocita.Name = "updVelocita";
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
             this.updVelocita.TabIndex = 31;
+            this.updVelocita.ValueChanged += new System.EventHandler(this.updVelocita_ValueChanged);
             // 
             // txtPropulsione
             // 
@@ -271,6 +298,7 @@ namespace ProgettoDatabase
             this.txtPropulsione.Name = "txtPropulsione";
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
             this.txtPropulsione.TabIndex = 32;
+            this.txtPropulsione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPropulsione_KeyUp);
             // 
             // txtCompagnia
             // 
@@ -279,6 +307,7 @@ namespace ProgettoDatabase
             this.txtCompagnia.Name = "txtCompagnia";
             this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
             this.txtCompagnia.TabIndex = 33;
+            this.txtCompagnia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCompagnia_KeyUp);
             // 
             // chkInternazionale
             // 
@@ -289,6 +318,46 @@ namespace ProgettoDatabase
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
             this.chkInternazionale.TabIndex = 34;
             this.chkInternazionale.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            this.errorProvider7.ContainerControl = this;
+            // 
+            // errorProvider8
+            // 
+            this.errorProvider8.ContainerControl = this;
+            // 
+            // errorProvider9
+            // 
+            this.errorProvider9.ContainerControl = this;
+            // 
+            // errorProvider10
+            // 
+            this.errorProvider10.ContainerControl = this;
             // 
             // frmModificaAerei
             // 
@@ -331,6 +400,16 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +441,15 @@ namespace ProgettoDatabase
         private System.Windows.Forms.TextBox txtPropulsione;
         private System.Windows.Forms.TextBox txtCompagnia;
         private System.Windows.Forms.CheckBox chkInternazionale;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.ErrorProvider errorProvider7;
+        private System.Windows.Forms.ErrorProvider errorProvider8;
+        private System.Windows.Forms.ErrorProvider errorProvider9;
+        private System.Windows.Forms.ErrorProvider errorProvider10;
     }
 }

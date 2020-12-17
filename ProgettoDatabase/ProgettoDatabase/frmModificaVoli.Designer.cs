@@ -53,10 +53,20 @@ namespace ProgettoDatabase
             this.label2 = new System.Windows.Forms.Label();
             this.dtpDataPartenza = new System.Windows.Forms.DateTimePicker();
             this.dtpDataArrivo = new System.Windows.Forms.DateTimePicker();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCodiceAereo
@@ -107,6 +117,7 @@ namespace ProgettoDatabase
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
             this.txtCodice.TabIndex = 8;
+            this.txtCodice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodice_KeyUp);
             // 
             // bindingSource1
             // 
@@ -126,6 +137,7 @@ namespace ProgettoDatabase
             this.txtCodiceAereo.Name = "txtCodiceAereo";
             this.txtCodiceAereo.Size = new System.Drawing.Size(265, 22);
             this.txtCodiceAereo.TabIndex = 9;
+            this.txtCodiceAereo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodiceAereo_KeyUp);
             // 
             // lblPartenza
             // 
@@ -156,6 +168,7 @@ namespace ProgettoDatabase
             this.updGatePartenza.Name = "updGatePartenza";
             this.updGatePartenza.Size = new System.Drawing.Size(120, 22);
             this.updGatePartenza.TabIndex = 45;
+            this.updGatePartenza.ValueChanged += new System.EventHandler(this.updGatePartenza_ValueChanged);
             // 
             // updDurata
             // 
@@ -169,6 +182,7 @@ namespace ProgettoDatabase
             this.updDurata.Name = "updDurata";
             this.updDurata.Size = new System.Drawing.Size(120, 22);
             this.updDurata.TabIndex = 44;
+            this.updDurata.ValueChanged += new System.EventHandler(this.updDurata_ValueChanged);
             // 
             // btnSalva
             // 
@@ -194,6 +208,7 @@ namespace ProgettoDatabase
             this.txtDestinazione.Name = "txtDestinazione";
             this.txtDestinazione.Size = new System.Drawing.Size(265, 22);
             this.txtDestinazione.TabIndex = 49;
+            this.txtDestinazione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDestinazione_KeyUp);
             // 
             // lblDestinazione
             // 
@@ -261,6 +276,26 @@ namespace ProgettoDatabase
             this.dtpDataArrivo.Size = new System.Drawing.Size(200, 22);
             this.dtpDataArrivo.TabIndex = 55;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
             // frmModificaVoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -295,6 +330,11 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +364,10 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpDataPartenza;
         private System.Windows.Forms.DateTimePicker dtpDataArrivo;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
     }
 }

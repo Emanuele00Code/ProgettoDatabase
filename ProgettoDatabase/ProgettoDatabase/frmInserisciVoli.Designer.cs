@@ -60,11 +60,25 @@ namespace ProgettoDatabase
             this.lblInternazionale = new System.Windows.Forms.Label();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             this.SuspendLayout();
             // 
             // aeroportoDataSet
@@ -152,6 +166,7 @@ namespace ProgettoDatabase
             this.txtCodiceAereo.Name = "txtCodiceAereo";
             this.txtCodiceAereo.Size = new System.Drawing.Size(265, 22);
             this.txtCodiceAereo.TabIndex = 30;
+            this.txtCodiceAereo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodiceAereo_KeyUp);
             // 
             // txtCodice
             // 
@@ -161,6 +176,8 @@ namespace ProgettoDatabase
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
             this.txtCodice.TabIndex = 29;
+            this.txtCodice.TextChanged += new System.EventHandler(this.txtCodice_TextChanged);
+            this.txtCodice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodice_KeyUp);
             // 
             // lblGatePartenza
             // 
@@ -214,6 +231,7 @@ namespace ProgettoDatabase
             this.updDurata.Name = "updDurata";
             this.updDurata.Size = new System.Drawing.Size(120, 22);
             this.updDurata.TabIndex = 41;
+            this.updDurata.ValueChanged += new System.EventHandler(this.updDurata_ValueChanged);
             // 
             // updGatePartenza
             // 
@@ -227,6 +245,7 @@ namespace ProgettoDatabase
             this.updGatePartenza.Name = "updGatePartenza";
             this.updGatePartenza.Size = new System.Drawing.Size(120, 22);
             this.updGatePartenza.TabIndex = 42;
+            this.updGatePartenza.ValueChanged += new System.EventHandler(this.updGatePartenza_ValueChanged);
             // 
             // tblVoliTableAdapter
             // 
@@ -248,6 +267,7 @@ namespace ProgettoDatabase
             this.txtDestinazione.Name = "txtDestinazione";
             this.txtDestinazione.Size = new System.Drawing.Size(265, 22);
             this.txtDestinazione.TabIndex = 44;
+            this.txtDestinazione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDestinazione_KeyUp);
             // 
             // dtpDataArrivo
             // 
@@ -334,6 +354,34 @@ namespace ProgettoDatabase
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            this.errorProvider7.ContainerControl = this;
+            // 
+            // errorProvider8
+            // 
+            this.errorProvider8.ContainerControl = this;
+            // 
             // frmInserisciVoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -375,6 +423,13 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +465,12 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label lblInternazionale;
         private System.Windows.Forms.CheckBox chkInternazionale;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.ErrorProvider errorProvider7;
+        private System.Windows.Forms.ErrorProvider errorProvider8;
     }
 }

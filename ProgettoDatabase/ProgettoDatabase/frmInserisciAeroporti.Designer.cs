@@ -29,6 +29,7 @@ namespace ProgettoDatabase
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInserisciAeroporti));
             this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.btnSalva = new System.Windows.Forms.Button();
@@ -55,10 +56,24 @@ namespace ProgettoDatabase
             this.updPiste = new System.Windows.Forms.NumericUpDown();
             this.updTerminal = new System.Windows.Forms.NumericUpDown();
             this.updGates = new System.Windows.Forms.NumericUpDown();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider4 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider5 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updPiste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updTerminal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGates)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
             this.SuspendLayout();
             // 
             // aeroportoDataSet
@@ -120,6 +135,7 @@ namespace ProgettoDatabase
             this.txtNazione.Name = "txtNazione";
             this.txtNazione.Size = new System.Drawing.Size(265, 22);
             this.txtNazione.TabIndex = 40;
+            this.txtNazione.TextChanged += new System.EventHandler(this.txtNazione_TextChanged);
             // 
             // lblNazione
             // 
@@ -154,6 +170,7 @@ namespace ProgettoDatabase
             this.txtCitta.Name = "txtCitta";
             this.txtCitta.Size = new System.Drawing.Size(265, 22);
             this.txtCitta.TabIndex = 36;
+            this.txtCitta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCitta_KeyUp);
             // 
             // lblCitta
             // 
@@ -180,6 +197,7 @@ namespace ProgettoDatabase
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 22);
             this.txtNome.TabIndex = 30;
+            this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
             // txtSigla
             // 
@@ -188,6 +206,7 @@ namespace ProgettoDatabase
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(265, 22);
             this.txtSigla.TabIndex = 29;
+            this.txtSigla.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSigla_KeyUp);
             // 
             // lblInternazionale
             // 
@@ -265,6 +284,7 @@ namespace ProgettoDatabase
             this.updPiste.Name = "updPiste";
             this.updPiste.Size = new System.Drawing.Size(120, 22);
             this.updPiste.TabIndex = 41;
+            this.updPiste.ValueChanged += new System.EventHandler(this.updPiste_ValueChanged);
             // 
             // updTerminal
             // 
@@ -277,6 +297,7 @@ namespace ProgettoDatabase
             this.updTerminal.Name = "updTerminal";
             this.updTerminal.Size = new System.Drawing.Size(120, 22);
             this.updTerminal.TabIndex = 42;
+            this.updTerminal.ValueChanged += new System.EventHandler(this.updTerminal_ValueChanged);
             // 
             // updGates
             // 
@@ -289,6 +310,35 @@ namespace ProgettoDatabase
             this.updGates.Name = "updGates";
             this.updGates.Size = new System.Drawing.Size(120, 22);
             this.updGates.TabIndex = 43;
+            this.updGates.ValueChanged += new System.EventHandler(this.updGates_ValueChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
+            // errorProvider4
+            // 
+            this.errorProvider4.ContainerControl = this;
+            // 
+            // errorProvider5
+            // 
+            this.errorProvider5.ContainerControl = this;
+            // 
+            // errorProvider6
+            // 
+            this.errorProvider6.ContainerControl = this;
+            // 
+            // errorProvider7
+            // 
+            this.errorProvider7.ContainerControl = this;
             // 
             // frmInserisciAeroporti
             // 
@@ -329,6 +379,13 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.updPiste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updTerminal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGates)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +417,12 @@ namespace ProgettoDatabase
         private System.Windows.Forms.NumericUpDown updPiste;
         private System.Windows.Forms.NumericUpDown updTerminal;
         private System.Windows.Forms.NumericUpDown updGates;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.ErrorProvider errorProvider4;
+        private System.Windows.Forms.ErrorProvider errorProvider5;
+        private System.Windows.Forms.ErrorProvider errorProvider6;
+        private System.Windows.Forms.ErrorProvider errorProvider7;
     }
 }

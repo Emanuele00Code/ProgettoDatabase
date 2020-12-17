@@ -212,6 +212,7 @@ namespace ProgettoDatabase
             this.updGates.ReadOnly = true;
             this.updGates.Size = new System.Drawing.Size(120, 22);
             this.updGates.TabIndex = 46;
+            this.updGates.ValueChanged += new System.EventHandler(this.updGates_ValueChanged);
             // 
             // updTerminal
             // 
@@ -225,6 +226,7 @@ namespace ProgettoDatabase
             this.updTerminal.ReadOnly = true;
             this.updTerminal.Size = new System.Drawing.Size(120, 22);
             this.updTerminal.TabIndex = 45;
+            this.updTerminal.ValueChanged += new System.EventHandler(this.updTerminal_ValueChanged);
             // 
             // updPiste
             // 
@@ -238,6 +240,7 @@ namespace ProgettoDatabase
             this.updPiste.ReadOnly = true;
             this.updPiste.Size = new System.Drawing.Size(120, 22);
             this.updPiste.TabIndex = 44;
+            this.updPiste.ValueChanged += new System.EventHandler(this.updPiste_ValueChanged);
             // 
             // tblPersoneBindingSource
             // 
