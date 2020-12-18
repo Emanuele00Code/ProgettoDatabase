@@ -197,5 +197,9 @@ namespace ProgettoDatabase
             errorProvider2.Clear();
         }
 
+        private void frmInserisciAerei_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -49,5 +49,23 @@ namespace ProgettoDatabase
             frmAeroporti myForm3 = new frmAeroporti();
             myForm3.Show();
         }
+
+        private void aeroportoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInserisciAeroporti FormDaAprire = new frmInserisciAeroporti();
+            FormDaAprire.Show();
+        }
+
+        private void voloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInserisciVoli FormDaAprire = new frmInserisciVoli();
+            FormDaAprire.Show();
+        }
+
+        private void aereoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInserisciAerei FormDaAprire = new frmInserisciAerei();
+            FormDaAprire.Show();
+        }
     }
 }

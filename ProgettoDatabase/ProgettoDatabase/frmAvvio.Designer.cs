@@ -35,6 +35,10 @@ namespace ProgettoDatabase
             this.btnAereoporti = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.nuovoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aereoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.voloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aeroportoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,18 +89,51 @@ namespace ProgettoDatabase
             this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(866, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(866, 31);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripDropDownButton1
             // 
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovoToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 24);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 28);
             this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
+            // nuovoToolStripMenuItem
+            // 
+            this.nuovoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aereoToolStripMenuItem,
+            this.voloToolStripMenuItem,
+            this.aeroportoToolStripMenuItem});
+            this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
+            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuovoToolStripMenuItem.Text = "Nuovo...";
+            // 
+            // aereoToolStripMenuItem
+            // 
+            this.aereoToolStripMenuItem.Name = "aereoToolStripMenuItem";
+            this.aereoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aereoToolStripMenuItem.Text = "Aereo";
+            this.aereoToolStripMenuItem.Click += new System.EventHandler(this.aereoToolStripMenuItem_Click);
+            // 
+            // voloToolStripMenuItem
+            // 
+            this.voloToolStripMenuItem.Name = "voloToolStripMenuItem";
+            this.voloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.voloToolStripMenuItem.Text = "Volo";
+            this.voloToolStripMenuItem.Click += new System.EventHandler(this.voloToolStripMenuItem_Click);
+            // 
+            // aeroportoToolStripMenuItem
+            // 
+            this.aeroportoToolStripMenuItem.Name = "aeroportoToolStripMenuItem";
+            this.aeroportoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aeroportoToolStripMenuItem.Text = "Aeroporto";
+            this.aeroportoToolStripMenuItem.Click += new System.EventHandler(this.aeroportoToolStripMenuItem_Click);
             // 
             // frmAvvio
             // 
@@ -131,6 +168,10 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Button btnAereoporti;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem nuovoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aereoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem voloToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aeroportoToolStripMenuItem;
     }
 }
 
