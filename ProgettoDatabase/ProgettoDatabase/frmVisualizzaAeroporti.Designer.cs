@@ -92,7 +92,7 @@ namespace ProgettoDatabase
             // lblTerminal
             // 
             this.lblTerminal.AutoSize = true;
-            this.lblTerminal.Location = new System.Drawing.Point(68, 228);
+            this.lblTerminal.Location = new System.Drawing.Point(67, 223);
             this.lblTerminal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTerminal.Name = "lblTerminal";
             this.lblTerminal.Size = new System.Drawing.Size(63, 17);
@@ -102,7 +102,7 @@ namespace ProgettoDatabase
             // lblInternazionale
             // 
             this.lblInternazionale.AutoSize = true;
-            this.lblInternazionale.Location = new System.Drawing.Point(58, 477);
+            this.lblInternazionale.Location = new System.Drawing.Point(67, 472);
             this.lblInternazionale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInternazionale.Name = "lblInternazionale";
             this.lblInternazionale.Size = new System.Drawing.Size(97, 17);
@@ -140,7 +140,7 @@ namespace ProgettoDatabase
             // lblGates
             // 
             this.lblGates.AutoSize = true;
-            this.lblGates.Location = new System.Drawing.Point(74, 286);
+            this.lblGates.Location = new System.Drawing.Point(67, 280);
             this.lblGates.Name = "lblGates";
             this.lblGates.Size = new System.Drawing.Size(46, 17);
             this.lblGates.TabIndex = 16;
@@ -186,7 +186,7 @@ namespace ProgettoDatabase
             // lblNazione
             // 
             this.lblNazione.AutoSize = true;
-            this.lblNazione.Location = new System.Drawing.Point(70, 326);
+            this.lblNazione.Location = new System.Drawing.Point(67, 324);
             this.lblNazione.Name = "lblNazione";
             this.lblNazione.Size = new System.Drawing.Size(60, 17);
             this.lblNazione.TabIndex = 21;
@@ -260,7 +260,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(586, 511);
             this.Controls.Add(this.updGates);
             this.Controls.Add(this.updTerminal);
@@ -280,6 +280,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.lblSigla);
             this.Controls.Add(this.lblPiste);
             this.Controls.Add(this.lblNome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(604, 558);
             this.Name = "frmVisualizzaAeroporti";

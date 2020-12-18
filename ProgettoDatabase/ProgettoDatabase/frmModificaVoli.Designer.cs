@@ -186,9 +186,9 @@ namespace ProgettoDatabase
             // 
             // btnSalva
             // 
-            this.btnSalva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSalva.BackColor = System.Drawing.Color.White;
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalva.ForeColor = System.Drawing.Color.Gold;
+            this.btnSalva.ForeColor = System.Drawing.Color.Black;
             this.btnSalva.Location = new System.Drawing.Point(510, 430);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(158, 60);
@@ -258,7 +258,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataPartenza
             // 
-            this.dtpDataPartenza.CustomFormat = "yyyy/MM/dd HH:mm:ss";
+            this.dtpDataPartenza.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataPartenza.Location = new System.Drawing.Point(262, 468);
@@ -268,7 +268,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataArrivo
             // 
-            this.dtpDataArrivo.CustomFormat = "yyyy/MM/dd HH:mm:ss";
+            this.dtpDataArrivo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataArrivo.Location = new System.Drawing.Point(261, 514);
@@ -300,7 +300,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(714, 633);
             this.Controls.Add(this.dtpDataArrivo);
             this.Controls.Add(this.dtpDataPartenza);
@@ -321,6 +321,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.lblCodice);
             this.Controls.Add(this.lblDurata);
             this.Controls.Add(this.lblCodiceAereo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmModificaVoli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

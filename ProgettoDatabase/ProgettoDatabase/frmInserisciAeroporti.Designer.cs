@@ -261,7 +261,7 @@ namespace ProgettoDatabase
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.BackColor = System.Drawing.Color.White;
+            this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Location = new System.Drawing.Point(77, 86);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
@@ -344,7 +344,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(621, 502);
             this.Controls.Add(this.updGates);
             this.Controls.Add(this.updTerminal);
@@ -369,6 +369,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.txtDataNascita);
             this.Controls.Add(this.txtSesso);
             this.Controls.Add(this.btnSalva);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(639, 549);
             this.Name = "frmInserisciAeroporti";

@@ -418,7 +418,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(598, 779);
             this.Controls.Add(this.txtCodice);
             this.Controls.Add(this.lblCodice);
@@ -447,6 +447,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.txtDataNascita);
             this.Controls.Add(this.txtSesso);
             this.Controls.Add(this.btnSalva);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(616, 826);
             this.MinimumSize = new System.Drawing.Size(616, 826);

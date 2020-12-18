@@ -33,7 +33,6 @@ namespace ProgettoDatabase
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVisualizzaAerei));
             this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
-            this.tblTipiDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
             this.txtCompagnia = new System.Windows.Forms.TextBox();
@@ -59,7 +58,6 @@ namespace ProgettoDatabase
             this.lblCodice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblTipiDocumentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).BeginInit();
@@ -76,11 +74,6 @@ namespace ProgettoDatabase
             // 
             this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
             this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblTipiDocumentoBindingSource
-            // 
-            this.tblTipiDocumentoBindingSource.DataMember = "tblTipiDocumento";
-            this.tblTipiDocumentoBindingSource.DataSource = this.aeroportoDataSet;
             // 
             // tblAereiTableAdapter
             // 
@@ -304,7 +297,7 @@ namespace ProgettoDatabase
             // frmVisualizzaAerei
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(595, 656);
             this.Controls.Add(this.txtCodice);
@@ -329,6 +322,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.lblModello);
             this.Controls.Add(this.lblMarca);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(613, 703);
             this.MinimumSize = new System.Drawing.Size(613, 703);
@@ -350,7 +344,7 @@ namespace ProgettoDatabase
 
         #endregion
         private AeroportoDataSet aeroportoDataSet;
-        private System.Windows.Forms.BindingSource tblTipiDocumentoBindingSource;
+        
         private System.Windows.Forms.BindingSource tblAereiBindingSource;
         private AeroportoDataSetTableAdapters.tblAereiTableAdapter tblAereiTableAdapter;
         private System.Windows.Forms.CheckBox chkInternazionale;

@@ -88,9 +88,9 @@ namespace ProgettoDatabase
             // 
             // btnSalva
             // 
-            this.btnSalva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSalva.BackColor = System.Drawing.Color.White;
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalva.ForeColor = System.Drawing.Color.Gold;
+            this.btnSalva.ForeColor = System.Drawing.Color.Black;
             this.btnSalva.Location = new System.Drawing.Point(382, 506);
             this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
@@ -125,9 +125,9 @@ namespace ProgettoDatabase
             // 
             // btnSalvaENuovo
             // 
-            this.btnSalvaENuovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnSalvaENuovo.BackColor = System.Drawing.Color.White;
             this.btnSalvaENuovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvaENuovo.ForeColor = System.Drawing.Color.Gold;
+            this.btnSalvaENuovo.ForeColor = System.Drawing.Color.Black;
             this.btnSalvaENuovo.Location = new System.Drawing.Point(140, 506);
             this.btnSalvaENuovo.Name = "btnSalvaENuovo";
             this.btnSalvaENuovo.Size = new System.Drawing.Size(150, 43);
@@ -271,7 +271,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataArrivo
             // 
-            this.dtpDataArrivo.CustomFormat = "yyyy/MM/dd HH:mm:ss";
+            this.dtpDataArrivo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataArrivo.Location = new System.Drawing.Point(277, 400);
@@ -302,7 +302,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataPartenza
             // 
-            this.dtpDataPartenza.CustomFormat = "yyyy/MM/dd HH:mm:ss";
+            this.dtpDataPartenza.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataPartenza.Location = new System.Drawing.Point(278, 333);
@@ -386,7 +386,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(621, 563);
             this.Controls.Add(this.chkInternazionale);
             this.Controls.Add(this.lblInternazionale);
@@ -413,6 +413,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.txtDataNascita);
             this.Controls.Add(this.txtSesso);
             this.Controls.Add(this.btnSalva);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInserisciVoli";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

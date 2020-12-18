@@ -33,7 +33,6 @@ namespace ProgettoDatabase
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVoli));
             this.btnSalva = new System.Windows.Forms.Button();
             this.btnModifica = new System.Windows.Forms.Button();
-            this.btnNuovo = new System.Windows.Forms.Button();
             this.btnVisualizza = new System.Windows.Forms.Button();
             this.btnElimina = new System.Windows.Forms.Button();
             this.btnFittizia = new System.Windows.Forms.Button();
@@ -41,6 +40,13 @@ namespace ProgettoDatabase
             this.tblVoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbSalva = new System.Windows.Forms.ToolStripButton();
+            this.tsbNuovo = new System.Windows.Forms.ToolStripButton();
+            this.tsbModifica = new System.Windows.Forms.ToolStripButton();
+            this.tsbNascondi = new System.Windows.Forms.ToolStripButton();
+            this.tsbElimina = new System.Windows.Forms.ToolStripButton();
+            this.tsbVisualizza = new System.Windows.Forms.ToolStripButton();
             this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataOraPartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataOraArrivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,89 +59,43 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.dvgVoli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalva
             // 
-            this.btnSalva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalva.ForeColor = System.Drawing.Color.Gold;
-            this.btnSalva.Location = new System.Drawing.Point(93, 309);
-            this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalva.Location = new System.Drawing.Point(0, 0);
             this.btnSalva.Name = "btnSalva";
-            this.btnSalva.Size = new System.Drawing.Size(124, 44);
-            this.btnSalva.TabIndex = 1;
-            this.btnSalva.Text = "SALVA";
-            this.btnSalva.UseVisualStyleBackColor = false;
-            this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
+            this.btnSalva.Size = new System.Drawing.Size(75, 23);
+            this.btnSalva.TabIndex = 9;
             // 
             // btnModifica
             // 
-            this.btnModifica.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifica.ForeColor = System.Drawing.Color.Gold;
-            this.btnModifica.Location = new System.Drawing.Point(410, 311);
-            this.btnModifica.Margin = new System.Windows.Forms.Padding(4);
+            this.btnModifica.Location = new System.Drawing.Point(0, 0);
             this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(124, 44);
-            this.btnModifica.TabIndex = 2;
-            this.btnModifica.Text = "MODIFICA";
-            this.btnModifica.UseVisualStyleBackColor = false;
-            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
-            // 
-            // btnNuovo
-            // 
-            this.btnNuovo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnNuovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuovo.ForeColor = System.Drawing.Color.Gold;
-            this.btnNuovo.Location = new System.Drawing.Point(253, 310);
-            this.btnNuovo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnNuovo.Name = "btnNuovo";
-            this.btnNuovo.Size = new System.Drawing.Size(124, 44);
-            this.btnNuovo.TabIndex = 3;
-            this.btnNuovo.Text = "NUOVO";
-            this.btnNuovo.UseVisualStyleBackColor = false;
-            this.btnNuovo.Click += new System.EventHandler(this.btnNuovo_Click);
+            this.btnModifica.Size = new System.Drawing.Size(75, 23);
+            this.btnModifica.TabIndex = 9;
             // 
             // btnVisualizza
             // 
-            this.btnVisualizza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnVisualizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisualizza.ForeColor = System.Drawing.Color.Gold;
-            this.btnVisualizza.Location = new System.Drawing.Point(1071, 309);
-            this.btnVisualizza.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVisualizza.Location = new System.Drawing.Point(0, 0);
             this.btnVisualizza.Name = "btnVisualizza";
-            this.btnVisualizza.Size = new System.Drawing.Size(197, 44);
-            this.btnVisualizza.TabIndex = 4;
-            this.btnVisualizza.Text = "VISUALIZZA";
-            this.btnVisualizza.UseVisualStyleBackColor = false;
-            this.btnVisualizza.Click += new System.EventHandler(this.btnVisualizza_Click);
+            this.btnVisualizza.Size = new System.Drawing.Size(75, 23);
+            this.btnVisualizza.TabIndex = 11;
             // 
             // btnElimina
             // 
-            this.btnElimina.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElimina.ForeColor = System.Drawing.Color.Gold;
-            this.btnElimina.Location = new System.Drawing.Point(818, 309);
+            this.btnElimina.Location = new System.Drawing.Point(0, 0);
             this.btnElimina.Name = "btnElimina";
-            this.btnElimina.Size = new System.Drawing.Size(215, 44);
-            this.btnElimina.TabIndex = 5;
-            this.btnElimina.Text = "ELIMINAZIONE VERA E PROPRIA";
-            this.btnElimina.UseVisualStyleBackColor = false;
-            this.btnElimina.Click += new System.EventHandler(this.btnElimina_Click);
+            this.btnElimina.Size = new System.Drawing.Size(75, 23);
+            this.btnElimina.TabIndex = 10;
             // 
             // btnFittizia
             // 
-            this.btnFittizia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnFittizia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFittizia.ForeColor = System.Drawing.Color.Gold;
-            this.btnFittizia.Location = new System.Drawing.Point(581, 311);
+            this.btnFittizia.Location = new System.Drawing.Point(0, 0);
             this.btnFittizia.Name = "btnFittizia";
-            this.btnFittizia.Size = new System.Drawing.Size(197, 43);
-            this.btnFittizia.TabIndex = 6;
-            this.btnFittizia.Text = "ELIMINAZIONE FITTIZIA";
-            this.btnFittizia.UseVisualStyleBackColor = false;
-            this.btnFittizia.Click += new System.EventHandler(this.btnFittizia_Click);
+            this.btnFittizia.Size = new System.Drawing.Size(75, 23);
+            this.btnFittizia.TabIndex = 9;
             // 
             // dvgVoli
             // 
@@ -156,7 +116,7 @@ namespace ProgettoDatabase
             this.dvgVoli.Name = "dvgVoli";
             this.dvgVoli.RowHeadersWidth = 51;
             this.dvgVoli.RowTemplate.Height = 24;
-            this.dvgVoli.Size = new System.Drawing.Size(1175, 166);
+            this.dvgVoli.Size = new System.Drawing.Size(1236, 264);
             this.dvgVoli.TabIndex = 7;
             // 
             // tblVoliBindingSource
@@ -172,6 +132,82 @@ namespace ProgettoDatabase
             // tblVoliTableAdapter
             // 
             this.tblVoliTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbSalva,
+            this.tsbNuovo,
+            this.tsbModifica,
+            this.tsbNascondi,
+            this.tsbElimina,
+            this.tsbVisualizza});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1428, 27);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbSalva
+            // 
+            this.tsbSalva.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalva.Image")));
+            this.tsbSalva.Name = "tsbSalva";
+            this.tsbSalva.Size = new System.Drawing.Size(29, 24);
+            this.tsbSalva.Click += new System.EventHandler(this.tsbSalva_Click);
+            // 
+            // tsbNuovo
+            // 
+            this.tsbNuovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNuovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuovo.Image")));
+            this.tsbNuovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNuovo.Name = "tsbNuovo";
+            this.tsbNuovo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuovo.Text = "Inserisci";
+            this.tsbNuovo.Click += new System.EventHandler(this.tsbNuovo_Click);
+            // 
+            // tsbModifica
+            // 
+            this.tsbModifica.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbModifica.Image = ((System.Drawing.Image)(resources.GetObject("tsbModifica.Image")));
+            this.tsbModifica.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbModifica.Name = "tsbModifica";
+            this.tsbModifica.Size = new System.Drawing.Size(29, 24);
+            this.tsbModifica.Text = "Modifica";
+            this.tsbModifica.Click += new System.EventHandler(this.tsbModifica_Click);
+            // 
+            // tsbNascondi
+            // 
+            this.tsbNascondi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNascondi.Image = ((System.Drawing.Image)(resources.GetObject("tsbNascondi.Image")));
+            this.tsbNascondi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNascondi.Name = "tsbNascondi";
+            this.tsbNascondi.Size = new System.Drawing.Size(29, 24);
+            this.tsbNascondi.Text = "toolStripButton4";
+            this.tsbNascondi.ToolTipText = "Nascondi";
+            this.tsbNascondi.Click += new System.EventHandler(this.tsbNascondi_Click);
+            // 
+            // tsbElimina
+            // 
+            this.tsbElimina.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbElimina.Image = ((System.Drawing.Image)(resources.GetObject("tsbElimina.Image")));
+            this.tsbElimina.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbElimina.Name = "tsbElimina";
+            this.tsbElimina.Size = new System.Drawing.Size(29, 24);
+            this.tsbElimina.Text = "toolStripButton5";
+            this.tsbElimina.ToolTipText = "Elimina";
+            this.tsbElimina.Click += new System.EventHandler(this.tsbElimina_Click);
+            // 
+            // tsbVisualizza
+            // 
+            this.tsbVisualizza.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbVisualizza.Image = ((System.Drawing.Image)(resources.GetObject("tsbVisualizza.Image")));
+            this.tsbVisualizza.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVisualizza.Name = "tsbVisualizza";
+            this.tsbVisualizza.Size = new System.Drawing.Size(29, 24);
+            this.tsbVisualizza.Text = "toolStripButton6";
+            this.tsbVisualizza.ToolTipText = "Visualizza";
+            this.tsbVisualizza.Click += new System.EventHandler(this.tsbVisualizza_Click);
             // 
             // codiceDataGridViewTextBoxColumn
             // 
@@ -240,7 +276,7 @@ namespace ProgettoDatabase
             // codiceAereoDataGridViewTextBoxColumn
             // 
             this.codiceAereoDataGridViewTextBoxColumn.DataPropertyName = "CodiceAereo";
-            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "Codice Aereo";
             this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
             this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
@@ -249,15 +285,16 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1428, 404);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dvgVoli);
             this.Controls.Add(this.btnFittizia);
             this.Controls.Add(this.btnElimina);
             this.Controls.Add(this.btnVisualizza);
-            this.Controls.Add(this.btnNuovo);
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.btnSalva);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1446, 451);
             this.MinimumSize = new System.Drawing.Size(1446, 451);
@@ -268,7 +305,10 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.dvgVoli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -277,7 +317,6 @@ namespace ProgettoDatabase
 
         private System.Windows.Forms.Button btnSalva;
         private System.Windows.Forms.Button btnModifica;
-        private System.Windows.Forms.Button btnNuovo;
         private System.Windows.Forms.Button btnVisualizza;
         private System.Windows.Forms.Button btnElimina;
         private System.Windows.Forms.Button btnFittizia;
@@ -302,6 +341,13 @@ namespace ProgettoDatabase
         private System.Windows.Forms.DataGridViewCheckBoxColumn expr18DataGridViewCheckBoxColumn;
         private System.Windows.Forms.BindingSource tblVoliBindingSource;
         private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbSalva;
+        private System.Windows.Forms.ToolStripButton tsbNuovo;
+        private System.Windows.Forms.ToolStripButton tsbModifica;
+        private System.Windows.Forms.ToolStripButton tsbNascondi;
+        private System.Windows.Forms.ToolStripButton tsbElimina;
+        private System.Windows.Forms.ToolStripButton tsbVisualizza;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataOraPartenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataOraArrivoDataGridViewTextBoxColumn;

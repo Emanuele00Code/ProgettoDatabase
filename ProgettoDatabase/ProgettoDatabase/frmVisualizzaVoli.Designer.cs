@@ -92,7 +92,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataPartenza
             // 
-            this.dtpDataPartenza.CustomFormat = "yyyy/MM/dd HH:mm:ss";
+            this.dtpDataPartenza.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Enabled = false;
             this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -123,7 +123,7 @@ namespace ProgettoDatabase
             // 
             // dtpDataArrivo
             // 
-            this.dtpDataArrivo.CustomFormat = "yyyy/MM/dd HH:mm:ss";
+            this.dtpDataArrivo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Enabled = false;
             this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -284,7 +284,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(610, 489);
             this.Controls.Add(this.chkInternazionale);
             this.Controls.Add(this.lblInternazionale);
@@ -306,6 +306,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.lblCodice);
             this.Controls.Add(this.lblDurata);
             this.Controls.Add(this.lblCodiceAereo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVisualizzaVoli";
             this.Text = "frmVisualizzaVoli";
             this.Load += new System.EventHandler(this.frmVisualizzaVoli_Load);

@@ -37,10 +37,10 @@ namespace ProgettoDatabase
             // 
             // btn_Aerei
             // 
-            this.btn_Aerei.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btn_Aerei.ForeColor = System.Drawing.Color.DarkRed;
+            this.btn_Aerei.BackColor = System.Drawing.Color.Gainsboro;
+            this.btn_Aerei.ForeColor = System.Drawing.Color.Maroon;
             this.btn_Aerei.Location = new System.Drawing.Point(299, 43);
-            this.btn_Aerei.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btn_Aerei.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Aerei.Name = "btn_Aerei";
             this.btn_Aerei.Size = new System.Drawing.Size(254, 93);
             this.btn_Aerei.TabIndex = 0;
@@ -50,10 +50,10 @@ namespace ProgettoDatabase
             // 
             // btnVoli
             // 
-            this.btnVoli.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnVoli.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnVoli.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnVoli.ForeColor = System.Drawing.Color.Maroon;
             this.btnVoli.Location = new System.Drawing.Point(299, 174);
-            this.btnVoli.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnVoli.Margin = new System.Windows.Forms.Padding(5);
             this.btnVoli.Name = "btnVoli";
             this.btnVoli.Size = new System.Drawing.Size(254, 96);
             this.btnVoli.TabIndex = 1;
@@ -63,11 +63,11 @@ namespace ProgettoDatabase
             // 
             // btnAereoporti
             // 
-            this.btnAereoporti.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAereoporti.BackColor = System.Drawing.Color.Gainsboro;
             this.btnAereoporti.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAereoporti.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAereoporti.ForeColor = System.Drawing.Color.Maroon;
             this.btnAereoporti.Location = new System.Drawing.Point(299, 314);
-            this.btnAereoporti.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAereoporti.Margin = new System.Windows.Forms.Padding(5);
             this.btnAereoporti.Name = "btnAereoporti";
             this.btnAereoporti.Size = new System.Drawing.Size(254, 99);
             this.btnAereoporti.TabIndex = 2;
@@ -79,13 +79,14 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(866, 475);
             this.Controls.Add(this.btnAereoporti);
             this.Controls.Add(this.btnVoli);
             this.Controls.Add(this.btn_Aerei);
             this.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximumSize = new System.Drawing.Size(884, 522);
             this.MinimumSize = new System.Drawing.Size(884, 522);
             this.Name = "frmAvvio";
