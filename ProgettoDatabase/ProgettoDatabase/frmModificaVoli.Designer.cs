@@ -265,6 +265,7 @@ namespace ProgettoDatabase
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(200, 22);
             this.dtpDataPartenza.TabIndex = 54;
+            this.dtpDataPartenza.ValueChanged += new System.EventHandler(this.dtpDataPartenza_ValueChanged);
             // 
             // dtpDataArrivo
             // 
@@ -275,6 +276,7 @@ namespace ProgettoDatabase
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(200, 22);
             this.dtpDataArrivo.TabIndex = 55;
+            this.dtpDataArrivo.ValueChanged += new System.EventHandler(this.dtpDataArrivo_ValueChanged);
             // 
             // errorProvider1
             // 

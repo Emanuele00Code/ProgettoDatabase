@@ -30,7 +30,34 @@ namespace ProgettoDatabase
 
 
 
-
+        private void dtpDataPartenza_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDataPartenza.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            TimeSpan tp = Convert.ToDateTime(dtpDataArrivo.Value) - Convert.ToDateTime(dtpDataPartenza.Value);
+            if (tp.TotalMinutes < 0)
+            {
+                dtpDataArrivo.Value = dtpDataPartenza.Value;
+                updDurata.Value = 0;
+            }
+            else
+            {
+                updDurata.Value = (decimal)tp.TotalMinutes;
+            }
+        }
+        private void dtpDataArrivo_ValueChanged(object sender, EventArgs e)
+        {
+            dtpDataArrivo.Text = dtpDataArrivo.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            TimeSpan tp = Convert.ToDateTime(dtpDataArrivo.Value) - Convert.ToDateTime(dtpDataPartenza.Value);
+            if (tp.TotalMinutes < 0)
+            {
+                dtpDataPartenza.Value = dtpDataArrivo.Value;
+                updDurata.Value=0;
+            }
+            else
+            {
+                updDurata.Value = (decimal)tp.TotalMinutes;
+            }
+        }
 
         private void btnSalva_Click(object sender, EventArgs e)
         {

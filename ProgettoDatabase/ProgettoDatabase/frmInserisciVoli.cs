@@ -103,22 +103,33 @@ namespace ProgettoDatabase
             }
         }
 
-    
+
         private void dtpDataPartenza_ValueChanged(object sender, EventArgs e)
         {
+            dtpDataPartenza.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            TimeSpan tp = Convert.ToDateTime(dtpDataArrivo.Value) - Convert.ToDateTime(dtpDataPartenza.Value);
+            if (tp.TotalMinutes < 0)
             {
-                string Giorno = dtpDataPartenza.Value.Day < 10 ? "0" + dtpDataPartenza.Value.Day.ToString() : dtpDataPartenza.Value.Day.ToString();
-                string Mese = dtpDataPartenza.Value.Month < 10 ? "0" + dtpDataPartenza.Value.Month.ToString() : dtpDataPartenza.Value.Month.ToString();
-                txtDataNascita.Text = dtpDataPartenza.Value.Year.ToString() + dtpDataPartenza.Value.Month.ToString() + dtpDataPartenza.Value.Day.ToString();
+                dtpDataArrivo.Value = dtpDataPartenza.Value;
+                updDurata.Value = 0;
+            }
+            else
+            {
+                updDurata.Value = (decimal)tp.TotalMinutes;
             }
         }
-
         private void dtpDataArrivo_ValueChanged(object sender, EventArgs e)
         {
+            dtpDataArrivo.Text = dtpDataArrivo.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            TimeSpan tp = Convert.ToDateTime(dtpDataArrivo.Value) - Convert.ToDateTime(dtpDataPartenza.Value);
+            if (tp.TotalMinutes < 0)
             {
-                string Giorno = dtpDataArrivo.Value.Day < 10 ? "0" + dtpDataArrivo.Value.Day.ToString() : dtpDataArrivo.Value.Day.ToString();
-                string Mese = dtpDataArrivo.Value.Month < 10 ? "0" + dtpDataArrivo.Value.Month.ToString() : dtpDataArrivo.Value.Month.ToString();
-                txtDataNascita.Text = dtpDataArrivo.Value.Year.ToString() + dtpDataArrivo.Value.Month.ToString() + dtpDataArrivo.Value.Day.ToString();
+                dtpDataPartenza.Value = dtpDataArrivo.Value;
+                updDurata.Value = 0;
+            }
+            else
+            {
+                updDurata.Value = (decimal)tp.TotalMinutes;
             }
         }
 
