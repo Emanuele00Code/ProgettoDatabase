@@ -56,9 +56,7 @@ namespace ProgettoDatabase
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtModello = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.lblModello = new System.Windows.Forms.Label();
-            this.lblMarca = new System.Windows.Forms.Label();
             this.lblCodice = new System.Windows.Forms.Label();
             this.txtCodice = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -104,7 +102,7 @@ namespace ProgettoDatabase
             // 
             this.btnSalva.BackColor = System.Drawing.Color.White;
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalva.Location = new System.Drawing.Point(384, 682);
+            this.btnSalva.Location = new System.Drawing.Point(384, 630);
             this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(137, 43);
@@ -144,7 +142,7 @@ namespace ProgettoDatabase
             // 
             this.btnSalvaENuovo.BackColor = System.Drawing.Color.White;
             this.btnSalvaENuovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvaENuovo.Location = new System.Drawing.Point(71, 682);
+            this.btnSalvaENuovo.Location = new System.Drawing.Point(71, 630);
             this.btnSalvaENuovo.Name = "btnSalvaENuovo";
             this.btnSalvaENuovo.Size = new System.Drawing.Size(150, 43);
             this.btnSalvaENuovo.TabIndex = 20;
@@ -156,7 +154,7 @@ namespace ProgettoDatabase
             // 
             this.chkInternazionale.AutoSize = true;
             this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.tblAereiBindingSource, "Internazionale", true));
-            this.chkInternazionale.Location = new System.Drawing.Point(272, 420);
+            this.chkInternazionale.Location = new System.Drawing.Point(272, 368);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
             this.chkInternazionale.TabIndex = 54;
@@ -165,7 +163,7 @@ namespace ProgettoDatabase
             // txtCompagnia
             // 
             this.txtCompagnia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "CompagniaAerea", true));
-            this.txtCompagnia.Location = new System.Drawing.Point(272, 576);
+            this.txtCompagnia.Location = new System.Drawing.Point(272, 524);
             this.txtCompagnia.Name = "txtCompagnia";
             this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
             this.txtCompagnia.TabIndex = 53;
@@ -174,7 +172,7 @@ namespace ProgettoDatabase
             // txtPropulsione
             // 
             this.txtPropulsione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "TipoPropulsione", true));
-            this.txtPropulsione.Location = new System.Drawing.Point(272, 361);
+            this.txtPropulsione.Location = new System.Drawing.Point(272, 309);
             this.txtPropulsione.Name = "txtPropulsione";
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
             this.txtPropulsione.TabIndex = 52;
@@ -183,7 +181,7 @@ namespace ProgettoDatabase
             // updVelocita
             // 
             this.updVelocita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "VelocitaMax", true));
-            this.updVelocita.Location = new System.Drawing.Point(272, 517);
+            this.updVelocita.Location = new System.Drawing.Point(272, 465);
             this.updVelocita.Name = "updVelocita";
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
             this.updVelocita.TabIndex = 51;
@@ -192,7 +190,7 @@ namespace ProgettoDatabase
             // updRaggio
             // 
             this.updRaggio.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "Raggio", true));
-            this.updRaggio.Location = new System.Drawing.Point(272, 462);
+            this.updRaggio.Location = new System.Drawing.Point(272, 410);
             this.updRaggio.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -206,7 +204,7 @@ namespace ProgettoDatabase
             // updMotori
             // 
             this.updMotori.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "NumeroMotori", true));
-            this.updMotori.Location = new System.Drawing.Point(272, 311);
+            this.updMotori.Location = new System.Drawing.Point(272, 259);
             this.updMotori.Maximum = new decimal(new int[] {
             254,
             0,
@@ -220,7 +218,7 @@ namespace ProgettoDatabase
             // updLitri
             // 
             this.updLitri.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "LitriCarburante", true));
-            this.updLitri.Location = new System.Drawing.Point(272, 258);
+            this.updLitri.Location = new System.Drawing.Point(272, 206);
             this.updLitri.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -234,7 +232,7 @@ namespace ProgettoDatabase
             // updCapacita
             // 
             this.updCapacita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "CapacitaMassima", true));
-            this.updCapacita.Location = new System.Drawing.Point(272, 201);
+            this.updCapacita.Location = new System.Drawing.Point(272, 149);
             this.updCapacita.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -248,7 +246,7 @@ namespace ProgettoDatabase
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(68, 467);
+            this.label8.Location = new System.Drawing.Point(68, 415);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 46;
@@ -257,7 +255,7 @@ namespace ProgettoDatabase
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 581);
+            this.label7.Location = new System.Drawing.Point(68, 529);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 17);
             this.label7.TabIndex = 45;
@@ -266,7 +264,7 @@ namespace ProgettoDatabase
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 522);
+            this.label6.Location = new System.Drawing.Point(68, 470);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 44;
@@ -275,7 +273,7 @@ namespace ProgettoDatabase
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 419);
+            this.label5.Location = new System.Drawing.Point(68, 367);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 17);
             this.label5.TabIndex = 43;
@@ -284,7 +282,7 @@ namespace ProgettoDatabase
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 367);
+            this.label4.Location = new System.Drawing.Point(68, 315);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 42;
@@ -293,7 +291,7 @@ namespace ProgettoDatabase
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 316);
+            this.label3.Location = new System.Drawing.Point(68, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 41;
@@ -302,7 +300,7 @@ namespace ProgettoDatabase
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 263);
+            this.label2.Location = new System.Drawing.Point(68, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 40;
@@ -311,7 +309,7 @@ namespace ProgettoDatabase
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 206);
+            this.label1.Location = new System.Drawing.Point(68, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 17);
             this.label1.TabIndex = 39;
@@ -320,42 +318,22 @@ namespace ProgettoDatabase
             // txtModello
             // 
             this.txtModello.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Modello", true));
-            this.txtModello.Location = new System.Drawing.Point(272, 154);
+            this.txtModello.Location = new System.Drawing.Point(272, 102);
             this.txtModello.Margin = new System.Windows.Forms.Padding(4);
             this.txtModello.Name = "txtModello";
             this.txtModello.Size = new System.Drawing.Size(265, 22);
             this.txtModello.TabIndex = 38;
             this.txtModello.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtModello_KeyUp);
             // 
-            // txtMarca
-            // 
-            this.txtMarca.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Marca", true));
-            this.txtMarca.Location = new System.Drawing.Point(272, 101);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(265, 22);
-            this.txtMarca.TabIndex = 37;
-            this.txtMarca.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtMarca_KeyUp);
-            // 
             // lblModello
             // 
             this.lblModello.AutoSize = true;
-            this.lblModello.Location = new System.Drawing.Point(68, 154);
+            this.lblModello.Location = new System.Drawing.Point(68, 102);
             this.lblModello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModello.Name = "lblModello";
             this.lblModello.Size = new System.Drawing.Size(57, 17);
             this.lblModello.TabIndex = 36;
             this.lblModello.Text = "Modello";
-            // 
-            // lblMarca
-            // 
-            this.lblMarca.AutoSize = true;
-            this.lblMarca.Location = new System.Drawing.Point(68, 101);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(47, 17);
-            this.lblMarca.TabIndex = 35;
-            this.lblMarca.Text = "Marca";
             // 
             // lblCodice
             // 
@@ -419,7 +397,7 @@ namespace ProgettoDatabase
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(598, 779);
+            this.ClientSize = new System.Drawing.Size(598, 712);
             this.Controls.Add(this.txtCodice);
             this.Controls.Add(this.lblCodice);
             this.Controls.Add(this.chkInternazionale);
@@ -439,9 +417,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtModello);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.lblModello);
-            this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.btnSalvaENuovo);
             this.Controls.Add(this.txtTipoDocumento);
             this.Controls.Add(this.txtDataNascita);
@@ -450,7 +426,6 @@ namespace ProgettoDatabase
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(616, 826);
-            this.MinimumSize = new System.Drawing.Size(616, 826);
             this.Name = "frmInserisciAerei";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserisci Aerei";
@@ -502,9 +477,7 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtModello;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label lblModello;
-        private System.Windows.Forms.Label lblMarca;
         private System.Windows.Forms.Label lblCodice;
         private System.Windows.Forms.TextBox txtCodice;
         private System.Windows.Forms.ErrorProvider errorProvider1;

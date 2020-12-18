@@ -33,6 +33,9 @@ namespace ProgettoDatabase
             this.btn_Aerei = new System.Windows.Forms.Button();
             this.btnVoli = new System.Windows.Forms.Button();
             this.btnAereoporti = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_Aerei
@@ -75,12 +78,33 @@ namespace ProgettoDatabase
             this.btnAereoporti.UseVisualStyleBackColor = false;
             this.btnAereoporti.Click += new System.EventHandler(this.btnAereoporti_Click);
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(866, 27);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 24);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            // 
             // frmAvvio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(866, 475);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnAereoporti);
             this.Controls.Add(this.btnVoli);
             this.Controls.Add(this.btn_Aerei);
@@ -93,7 +117,10 @@ namespace ProgettoDatabase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmAvvio_Load);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -102,6 +129,8 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Button btn_Aerei;
         private System.Windows.Forms.Button btnVoli;
         private System.Windows.Forms.Button btnAereoporti;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
     }
 }
 

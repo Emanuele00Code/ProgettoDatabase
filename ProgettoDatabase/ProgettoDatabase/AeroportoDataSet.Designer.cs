@@ -5645,8 +5645,8 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT CapacitaMassima, CodiceAereo, CompagniaAerea, Internazionale, LitriCarbura" +
-                "nte, Marca, Modello, NumeroMotori, Raggio, TipoPropulsione, VelocitaMax FROM tbl" +
-                "Aerei WHERE (CodiceAereo = @Param1)";
+                "nte, Modello, NumeroMotori, Raggio, TipoPropulsione, VelocitaMax FROM tblAerei W" +
+                "HERE (CodiceAereo = @Param1)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -5655,7 +5655,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodiceAereo", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapacitaMassima", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LitriCarburante", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5670,7 +5669,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             this._commandCollection[5].CommandText = "dbo.ModificaAereo";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapacitaMassima", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LitriCarburante", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6164,102 +6162,13 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InserisciAerei(string CodiceAereo, string Marca, string Modello, global::System.Nullable<short> CapacitaMassima, global::System.Nullable<short> LitriCarburante, global::System.Nullable<byte> NumeroMotori, string TipoPropulsione, global::System.Nullable<bool> Internazionale, global::System.Nullable<short> Raggio, global::System.Nullable<short> VelocitaMax, string CompagniaAerea) {
+        public virtual int InserisciAerei(string CodiceAereo, string Modello, global::System.Nullable<short> CapacitaMassima, global::System.Nullable<short> LitriCarburante, global::System.Nullable<byte> NumeroMotori, string TipoPropulsione, global::System.Nullable<bool> Internazionale, global::System.Nullable<short> Raggio, global::System.Nullable<short> VelocitaMax, string CompagniaAerea) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((CodiceAereo == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[1].Value = ((string)(CodiceAereo));
-            }
-            if ((Marca == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Marca));
-            }
-            if ((Modello == null)) {
-                command.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[3].Value = ((string)(Modello));
-            }
-            if ((CapacitaMassima.HasValue == true)) {
-                command.Parameters[4].Value = ((short)(CapacitaMassima.Value));
-            }
-            else {
-                command.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((LitriCarburante.HasValue == true)) {
-                command.Parameters[5].Value = ((short)(LitriCarburante.Value));
-            }
-            else {
-                command.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((NumeroMotori.HasValue == true)) {
-                command.Parameters[6].Value = ((byte)(NumeroMotori.Value));
-            }
-            else {
-                command.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((TipoPropulsione == null)) {
-                command.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[7].Value = ((string)(TipoPropulsione));
-            }
-            if ((Internazionale.HasValue == true)) {
-                command.Parameters[8].Value = ((bool)(Internazionale.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Raggio.HasValue == true)) {
-                command.Parameters[9].Value = ((short)(Raggio.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((VelocitaMax.HasValue == true)) {
-                command.Parameters[10].Value = ((short)(VelocitaMax.Value));
-            }
-            else {
-                command.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((CompagniaAerea == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[11].Value = ((string)(CompagniaAerea));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int ModificaAereo(string Marca, string Modello, global::System.Nullable<short> CapacitaMassima, global::System.Nullable<short> LitriCarburante, global::System.Nullable<byte> NumeroMotori, string TipoPropulsione, global::System.Nullable<bool> Internazionale, global::System.Nullable<short> Raggio, global::System.Nullable<short> VelocitaMax, string CompagniaAerea, string Original_CodiceAereo) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
-            if ((Marca == null)) {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[1].Value = ((string)(Marca));
             }
             if ((Modello == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
@@ -6315,11 +6224,88 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             else {
                 command.Parameters[10].Value = ((string)(CompagniaAerea));
             }
-            if ((Original_CodiceAereo == null)) {
-                command.Parameters[11].Value = global::System.DBNull.Value;
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int ModificaAereo(string Modello, global::System.Nullable<short> CapacitaMassima, global::System.Nullable<short> LitriCarburante, global::System.Nullable<byte> NumeroMotori, string TipoPropulsione, global::System.Nullable<bool> Internazionale, global::System.Nullable<short> Raggio, global::System.Nullable<short> VelocitaMax, string CompagniaAerea, string Original_CodiceAereo) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((Modello == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[11].Value = ((string)(Original_CodiceAereo));
+                command.Parameters[1].Value = ((string)(Modello));
+            }
+            if ((CapacitaMassima.HasValue == true)) {
+                command.Parameters[2].Value = ((short)(CapacitaMassima.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((LitriCarburante.HasValue == true)) {
+                command.Parameters[3].Value = ((short)(LitriCarburante.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((NumeroMotori.HasValue == true)) {
+                command.Parameters[4].Value = ((byte)(NumeroMotori.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((TipoPropulsione == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(TipoPropulsione));
+            }
+            if ((Internazionale.HasValue == true)) {
+                command.Parameters[6].Value = ((bool)(Internazionale.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Raggio.HasValue == true)) {
+                command.Parameters[7].Value = ((short)(Raggio.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((VelocitaMax.HasValue == true)) {
+                command.Parameters[8].Value = ((short)(VelocitaMax.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((CompagniaAerea == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(CompagniaAerea));
+            }
+            if ((Original_CodiceAereo == null)) {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[10].Value = ((string)(Original_CodiceAereo));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

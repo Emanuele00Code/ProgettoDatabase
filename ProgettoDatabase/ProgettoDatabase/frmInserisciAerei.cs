@@ -25,11 +25,11 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCompagnia.Text != "") && (txtMarca.Text != "") && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
+            if ((txtCodice.Text != "") && (txtCompagnia.Text != "") && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
             {
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, txtMarca.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
+                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
                     this.Close();
                 }
             }
@@ -44,10 +44,7 @@ namespace ProgettoDatabase
                 {
                     errorProvider2.SetError(txtCompagnia, "Inserire i dati correttamente");
                 }
-                if (txtMarca.Text == "")
-                {
-                    errorProvider3.SetError(txtMarca, "Inserire i dati correttamente");
-                }
+               
                 if (txtModello.Text == "")
                 {
                     errorProvider4.SetError(txtModello, "Inserire i dati correttamente");
@@ -88,14 +85,13 @@ namespace ProgettoDatabase
 
         private void btnSalvaENuovo_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCompagnia.Text != "") && (txtMarca.Text != "") && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
+            if ((txtCodice.Text != "") && (txtCompagnia.Text != "")  && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
             {
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, txtMarca.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
+                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
                     txtCodice.Text = "";
                     txtCompagnia.Text = "";
-                    txtMarca.Text = "";
                     txtModello.Text = "";
                     updCapacita.Value = 0;
                     updLitri.Value = 0;
@@ -117,10 +113,7 @@ namespace ProgettoDatabase
                 {
                     errorProvider2.SetError(txtCompagnia, "Inserire i dati correttamente");
                 }
-                if (txtMarca.Text == "")
-                {
-                    errorProvider3.SetError(txtMarca, "Inserire i dati correttamente");
-                }
+               
                 if (txtModello.Text == "")
                 {
                     errorProvider4.SetError(txtModello, "Inserire i dati correttamente");

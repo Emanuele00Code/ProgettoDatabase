@@ -38,7 +38,7 @@ namespace ProgettoDatabase
 
             txtCodice.Text = this._MiaAerei.CodiceAereo;
             txtCompagnia.Text = this._MiaAerei.CompagniaAerea;
-            txtMarca.Text = this._MiaAerei.Marca;
+            
             txtModello.Text = this._MiaAerei.Modello;
             updCapacita.Value = Convert.ToDecimal(this._MiaAerei.CapacitaMassima);
             updLitri.Value = Convert.ToDecimal(this._MiaAerei.LitriCarburante);

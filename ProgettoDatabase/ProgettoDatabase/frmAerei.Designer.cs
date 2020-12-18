@@ -44,7 +44,6 @@ namespace ProgettoDatabase
             this.tsbElimina = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizza = new System.Windows.Forms.ToolStripButton();
             this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modelloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacitaMassimaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.litriCarburanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +65,6 @@ namespace ProgettoDatabase
             this.dgvAerei.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAerei.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceAereoDataGridViewTextBoxColumn,
-            this.marcaDataGridViewTextBoxColumn,
             this.modelloDataGridViewTextBoxColumn,
             this.capacitaMassimaDataGridViewTextBoxColumn,
             this.litriCarburanteDataGridViewTextBoxColumn,
@@ -116,7 +114,7 @@ namespace ProgettoDatabase
             this.tsbVisualizza});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1428, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1428, 31);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -124,7 +122,7 @@ namespace ProgettoDatabase
             // 
             this.tsbSalva.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalva.Image")));
             this.tsbSalva.Name = "tsbSalva";
-            this.tsbSalva.Size = new System.Drawing.Size(29, 24);
+            this.tsbSalva.Size = new System.Drawing.Size(29, 28);
             this.tsbSalva.Click += new System.EventHandler(this.tsbSalva_Click);
             // 
             // tsbNuovo
@@ -133,7 +131,7 @@ namespace ProgettoDatabase
             this.tsbNuovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuovo.Image")));
             this.tsbNuovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuovo.Name = "tsbNuovo";
-            this.tsbNuovo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuovo.Size = new System.Drawing.Size(29, 28);
             this.tsbNuovo.Text = "Inserisci";
             this.tsbNuovo.Click += new System.EventHandler(this.tsbNuovo_Click);
             // 
@@ -143,7 +141,7 @@ namespace ProgettoDatabase
             this.tsbModifica.Image = ((System.Drawing.Image)(resources.GetObject("tsbModifica.Image")));
             this.tsbModifica.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbModifica.Name = "tsbModifica";
-            this.tsbModifica.Size = new System.Drawing.Size(29, 24);
+            this.tsbModifica.Size = new System.Drawing.Size(29, 28);
             this.tsbModifica.Text = "Modifica";
             this.tsbModifica.Click += new System.EventHandler(this.tsbModifica_Click);
             // 
@@ -153,7 +151,7 @@ namespace ProgettoDatabase
             this.tsbNascondi.Image = ((System.Drawing.Image)(resources.GetObject("tsbNascondi.Image")));
             this.tsbNascondi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNascondi.Name = "tsbNascondi";
-            this.tsbNascondi.Size = new System.Drawing.Size(29, 24);
+            this.tsbNascondi.Size = new System.Drawing.Size(29, 28);
             this.tsbNascondi.Text = "toolStripButton4";
             this.tsbNascondi.ToolTipText = "Nascondi";
             this.tsbNascondi.Click += new System.EventHandler(this.tsbNascondi_Click);
@@ -164,7 +162,7 @@ namespace ProgettoDatabase
             this.tsbElimina.Image = ((System.Drawing.Image)(resources.GetObject("tsbElimina.Image")));
             this.tsbElimina.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbElimina.Name = "tsbElimina";
-            this.tsbElimina.Size = new System.Drawing.Size(29, 24);
+            this.tsbElimina.Size = new System.Drawing.Size(29, 28);
             this.tsbElimina.Text = "toolStripButton5";
             this.tsbElimina.ToolTipText = "Elimina";
             this.tsbElimina.Click += new System.EventHandler(this.tsbElimina_Click);
@@ -175,7 +173,7 @@ namespace ProgettoDatabase
             this.tsbVisualizza.Image = ((System.Drawing.Image)(resources.GetObject("tsbVisualizza.Image")));
             this.tsbVisualizza.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbVisualizza.Name = "tsbVisualizza";
-            this.tsbVisualizza.Size = new System.Drawing.Size(29, 24);
+            this.tsbVisualizza.Size = new System.Drawing.Size(29, 28);
             this.tsbVisualizza.Text = "toolStripButton6";
             this.tsbVisualizza.ToolTipText = "Visualizza";
             this.tsbVisualizza.Click += new System.EventHandler(this.tsbVisualizza_Click);
@@ -187,14 +185,6 @@ namespace ProgettoDatabase
             this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
             this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.Width = 125;
             // 
             // modelloDataGridViewTextBoxColumn
             // 
@@ -317,7 +307,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.ToolStripButton tsbElimina;
         private System.Windows.Forms.ToolStripButton tsbVisualizza;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceAereoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacitaMassimaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn litriCarburanteDataGridViewTextBoxColumn;
