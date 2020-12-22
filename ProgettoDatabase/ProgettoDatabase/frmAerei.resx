@@ -123,6 +123,9 @@
   <metadata name="aeroportoDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="aeroportoDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>555, 17</value>
   </metadata>
@@ -147,18 +150,18 @@
   <data name="tsbNuovo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAA3SURBVDhPYxj+wAGKyQYNUEw2oL8BIP/CNIHwAShGFsMb
-        JhQbgA5gmsgGA28AyL8k+XnIAQYGAHSOEQGnmZKaAAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAAvSURBVDhPY/hPIRjkBjAwMIAxPjDcDIBpIISRAXUNQAfY
+        NKCD4W4AMWCgDfj/HwCWOZCaVZ8WEAAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="tsbModifica.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADGSURBVDhPndA7CsJAFIXhUfdiIzbiY282Vm5BUMT3axU2
-        2YCNnYWIWliIC7DwPzojIcZkkgMfTAbOnZmYDKnhhDNa2sgSle8Yo48HvIe48ghFFNCDhjSRGFd+oq4N
-        Gw0ZQE/6m/DJC7vWnlLCCof3V0yi11bBDWnY9Q1V/CRadnFD9JzUsv52uKxowBK5y3pzanmCzOUKcpeV
-        DnaIK6+RWFammH2W33iXlQC6hYvKG3iVlSvm6ELFPbzLygVHbDFEG2V4xJgX8dU7OCuKYTwAAAAASUVO
-        RK5CYII=
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADsSURBVDhPnZI7joQwEERb4gCIgAgRkZFwARJOQcAn4RZE
+        JNwNAhJEwl2Ami0vRt7ZncXiSS3Zpl+ZliywZJomhGGIIAgwDMN5ClgFUPY8DyKiynXdK+Q2wJT3fcdx
+        HFfIOI7/B2jZcRwlmXDPkT4GmDcXRXGtybZtah1F0d8B7zNTMENYvu9jnuffAe+yRodwHC2THwGfZKLP
+        TJlcXU9kojqfykSWZXksE+m6DkmSqEdiYiMTqesaVVWd229sZSJpmoJ/odGPhHUnk68+QVmWaNsWeZ4j
+        jmOrmzUqgJVlGZqmQd/3WNf1/HwH8AJCRgeNL6V84QAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="tsbNascondi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -260,7 +260,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(586, 511);
             this.Controls.Add(this.updGates);
             this.Controls.Add(this.updTerminal);

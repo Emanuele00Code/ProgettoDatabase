@@ -100,9 +100,9 @@ namespace ProgettoDatabase
             this.lblModello.Location = new System.Drawing.Point(67, 85);
             this.lblModello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModello.Name = "lblModello";
-            this.lblModello.Size = new System.Drawing.Size(57, 17);
+            this.lblModello.Size = new System.Drawing.Size(102, 17);
             this.lblModello.TabIndex = 1;
-            this.lblModello.Text = "Modello";
+            this.lblModello.Text = "Nuovo Modello";
             // 
             // tblAereiBindingSource
             // 
@@ -353,9 +353,9 @@ namespace ProgettoDatabase
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(67, 53);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.Size = new System.Drawing.Size(113, 17);
             this.label9.TabIndex = 35;
-            this.label9.Text = "Marca";
+            this.label9.Text = "Seleziona Marca";
             // 
             // marcheBindingSource
             // 
@@ -376,6 +376,7 @@ namespace ProgettoDatabase
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
             this.cmbModello.TabIndex = 37;
+            this.cmbModello.Text = "*Seleziona Una Marca*";
             this.cmbModello.ValueMember = "Modello";
             this.cmbModello.SelectionChangeCommitted += new System.EventHandler(this.cmbModello_SelectionChangeCommitted);
             // 
@@ -401,6 +402,7 @@ namespace ProgettoDatabase
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(265, 24);
             this.cmbMarca.TabIndex = 38;
+            this.cmbMarca.Text = "Seleziona...";
             this.cmbMarca.ValueMember = "Nome";
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 
@@ -417,7 +419,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(591, 688);
             this.Controls.Add(this.lblModelloCorrente);
             this.Controls.Add(this.cmbMarca);

@@ -271,7 +271,7 @@ namespace ProgettoDatabase
             // frmVisualizzaAerei
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(595, 557);
             this.Controls.Add(this.txtCodice);

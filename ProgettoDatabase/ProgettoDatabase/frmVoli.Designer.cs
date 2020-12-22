@@ -37,6 +37,15 @@ namespace ProgettoDatabase
             this.btnElimina = new System.Windows.Forms.Button();
             this.btnFittizia = new System.Windows.Forms.Button();
             this.dvgVoli = new System.Windows.Forms.DataGridView();
+            this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataOraPartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataOraArrivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.internazionaleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.partenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gatePartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinazioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tblVoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
@@ -47,15 +56,6 @@ namespace ProgettoDatabase
             this.tsbNascondi = new System.Windows.Forms.ToolStripButton();
             this.tsbElimina = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizza = new System.Windows.Forms.ToolStripButton();
-            this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOraPartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOraArrivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.internazionaleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.partenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gatePartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinazioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dvgVoli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
@@ -100,6 +100,7 @@ namespace ProgettoDatabase
             // dvgVoli
             // 
             this.dvgVoli.AutoGenerateColumns = false;
+            this.dvgVoli.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dvgVoli.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgVoli.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codiceDataGridViewTextBoxColumn,
@@ -112,102 +113,13 @@ namespace ProgettoDatabase
             this.destinazioneDataGridViewTextBoxColumn,
             this.codiceAereoDataGridViewTextBoxColumn});
             this.dvgVoli.DataSource = this.tblVoliBindingSource;
-            this.dvgVoli.Location = new System.Drawing.Point(93, 75);
+            this.dvgVoli.Location = new System.Drawing.Point(78, 76);
+            this.dvgVoli.Margin = new System.Windows.Forms.Padding(4);
             this.dvgVoli.Name = "dvgVoli";
             this.dvgVoli.RowHeadersWidth = 51;
             this.dvgVoli.RowTemplate.Height = 24;
-            this.dvgVoli.Size = new System.Drawing.Size(1236, 264);
+            this.dvgVoli.Size = new System.Drawing.Size(1298, 264);
             this.dvgVoli.TabIndex = 7;
-            // 
-            // tblVoliBindingSource
-            // 
-            this.tblVoliBindingSource.DataMember = "tblVoli";
-            this.tblVoliBindingSource.DataSource = this.aeroportoDataSet;
-            // 
-            // aeroportoDataSet
-            // 
-            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
-            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblVoliTableAdapter
-            // 
-            this.tblVoliTableAdapter.ClearBeforeFill = true;
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbSalva,
-            this.tsbNuovo,
-            this.tsbModifica,
-            this.tsbNascondi,
-            this.tsbElimina,
-            this.tsbVisualizza});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1428, 27);
-            this.toolStrip1.TabIndex = 8;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbSalva
-            // 
-            this.tsbSalva.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalva.Image")));
-            this.tsbSalva.Name = "tsbSalva";
-            this.tsbSalva.Size = new System.Drawing.Size(29, 24);
-            this.tsbSalva.Click += new System.EventHandler(this.tsbSalva_Click);
-            // 
-            // tsbNuovo
-            // 
-            this.tsbNuovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuovo.Image")));
-            this.tsbNuovo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNuovo.Name = "tsbNuovo";
-            this.tsbNuovo.Size = new System.Drawing.Size(29, 24);
-            this.tsbNuovo.Text = "Inserisci";
-            this.tsbNuovo.Click += new System.EventHandler(this.tsbNuovo_Click);
-            // 
-            // tsbModifica
-            // 
-            this.tsbModifica.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbModifica.Image = ((System.Drawing.Image)(resources.GetObject("tsbModifica.Image")));
-            this.tsbModifica.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbModifica.Name = "tsbModifica";
-            this.tsbModifica.Size = new System.Drawing.Size(29, 24);
-            this.tsbModifica.Text = "Modifica";
-            this.tsbModifica.Click += new System.EventHandler(this.tsbModifica_Click);
-            // 
-            // tsbNascondi
-            // 
-            this.tsbNascondi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNascondi.Image = ((System.Drawing.Image)(resources.GetObject("tsbNascondi.Image")));
-            this.tsbNascondi.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNascondi.Name = "tsbNascondi";
-            this.tsbNascondi.Size = new System.Drawing.Size(29, 24);
-            this.tsbNascondi.Text = "toolStripButton4";
-            this.tsbNascondi.ToolTipText = "Nascondi";
-            this.tsbNascondi.Click += new System.EventHandler(this.tsbNascondi_Click);
-            // 
-            // tsbElimina
-            // 
-            this.tsbElimina.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbElimina.Image = ((System.Drawing.Image)(resources.GetObject("tsbElimina.Image")));
-            this.tsbElimina.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbElimina.Name = "tsbElimina";
-            this.tsbElimina.Size = new System.Drawing.Size(29, 24);
-            this.tsbElimina.Text = "toolStripButton5";
-            this.tsbElimina.ToolTipText = "Elimina";
-            this.tsbElimina.Click += new System.EventHandler(this.tsbElimina_Click);
-            // 
-            // tsbVisualizza
-            // 
-            this.tsbVisualizza.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbVisualizza.Image = ((System.Drawing.Image)(resources.GetObject("tsbVisualizza.Image")));
-            this.tsbVisualizza.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbVisualizza.Name = "tsbVisualizza";
-            this.tsbVisualizza.Size = new System.Drawing.Size(29, 24);
-            this.tsbVisualizza.Text = "toolStripButton6";
-            this.tsbVisualizza.ToolTipText = "Visualizza";
-            this.tsbVisualizza.Click += new System.EventHandler(this.tsbVisualizza_Click);
             // 
             // codiceDataGridViewTextBoxColumn
             // 
@@ -281,11 +193,103 @@ namespace ProgettoDatabase
             this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
             this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // tblVoliBindingSource
+            // 
+            this.tblVoliBindingSource.DataMember = "tblVoli";
+            this.tblVoliBindingSource.DataSource = this.aeroportoDataSet;
+            // 
+            // aeroportoDataSet
+            // 
+            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblVoliTableAdapter
+            // 
+            this.tblVoliTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.White;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbSalva,
+            this.tsbNuovo,
+            this.tsbModifica,
+            this.tsbNascondi,
+            this.tsbElimina,
+            this.tsbVisualizza});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1428, 31);
+            this.toolStrip1.TabIndex = 8;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbSalva
+            // 
+            this.tsbSalva.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalva.Image")));
+            this.tsbSalva.Name = "tsbSalva";
+            this.tsbSalva.Size = new System.Drawing.Size(29, 28);
+            this.tsbSalva.ToolTipText = "Salva";
+            this.tsbSalva.Click += new System.EventHandler(this.tsbSalva_Click);
+            // 
+            // tsbNuovo
+            // 
+            this.tsbNuovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNuovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuovo.Image")));
+            this.tsbNuovo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNuovo.Name = "tsbNuovo";
+            this.tsbNuovo.Size = new System.Drawing.Size(29, 28);
+            this.tsbNuovo.Text = "Inserisci";
+            this.tsbNuovo.Click += new System.EventHandler(this.tsbNuovo_Click);
+            // 
+            // tsbModifica
+            // 
+            this.tsbModifica.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbModifica.Image = ((System.Drawing.Image)(resources.GetObject("tsbModifica.Image")));
+            this.tsbModifica.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbModifica.Name = "tsbModifica";
+            this.tsbModifica.Size = new System.Drawing.Size(29, 28);
+            this.tsbModifica.Text = "Modifica";
+            this.tsbModifica.Click += new System.EventHandler(this.tsbModifica_Click);
+            // 
+            // tsbNascondi
+            // 
+            this.tsbNascondi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNascondi.Image = ((System.Drawing.Image)(resources.GetObject("tsbNascondi.Image")));
+            this.tsbNascondi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNascondi.Name = "tsbNascondi";
+            this.tsbNascondi.Size = new System.Drawing.Size(29, 28);
+            this.tsbNascondi.Text = "toolStripButton4";
+            this.tsbNascondi.ToolTipText = "Nascondi";
+            this.tsbNascondi.Click += new System.EventHandler(this.tsbNascondi_Click);
+            // 
+            // tsbElimina
+            // 
+            this.tsbElimina.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbElimina.Image = ((System.Drawing.Image)(resources.GetObject("tsbElimina.Image")));
+            this.tsbElimina.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbElimina.Name = "tsbElimina";
+            this.tsbElimina.Size = new System.Drawing.Size(29, 28);
+            this.tsbElimina.Text = "toolStripButton5";
+            this.tsbElimina.ToolTipText = "Elimina";
+            this.tsbElimina.Click += new System.EventHandler(this.tsbElimina_Click);
+            // 
+            // tsbVisualizza
+            // 
+            this.tsbVisualizza.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbVisualizza.Image = ((System.Drawing.Image)(resources.GetObject("tsbVisualizza.Image")));
+            this.tsbVisualizza.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVisualizza.Name = "tsbVisualizza";
+            this.tsbVisualizza.Size = new System.Drawing.Size(29, 28);
+            this.tsbVisualizza.Text = "toolStripButton6";
+            this.tsbVisualizza.ToolTipText = "Visualizza";
+            this.tsbVisualizza.Click += new System.EventHandler(this.tsbVisualizza_Click);
+            // 
             // frmVoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1428, 404);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dvgVoli);

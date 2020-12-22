@@ -68,12 +68,12 @@ namespace ProgettoDatabase
             this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.cmbModello = new System.Windows.Forms.ComboBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.modelliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.ModelliTableAdapter();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.marcheTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.MarcheTableAdapter();
             this.aeroportoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
@@ -93,8 +93,8 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -394,6 +394,11 @@ namespace ProgettoDatabase
             this.cmbMarca.ValueMember = "Nome";
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataMember = "Marche";
+            this.bindingSource2.DataSource = this.aeroportoDataSet;
+            // 
             // cmbModello
             // 
             this.cmbModello.DataSource = this.bindingSource1;
@@ -405,6 +410,11 @@ namespace ProgettoDatabase
             this.cmbModello.TabIndex = 59;
             this.cmbModello.ValueMember = "Modello";
             this.cmbModello.SelectedIndexChanged += new System.EventHandler(this.cmbModello_SelectedIndexChanged);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Modelli";
+            this.bindingSource1.DataSource = this.aeroportoDataSet;
             // 
             // label9
             // 
@@ -425,19 +435,9 @@ namespace ProgettoDatabase
             this.label10.TabIndex = 57;
             this.label10.Text = "Modello";
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "Modelli";
-            this.bindingSource1.DataSource = this.aeroportoDataSet;
-            // 
             // modelliTableAdapter
             // 
             this.modelliTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataMember = "Marche";
-            this.bindingSource2.DataSource = this.aeroportoDataSet;
             // 
             // marcheTableAdapter
             // 
@@ -452,7 +452,7 @@ namespace ProgettoDatabase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(598, 712);
             this.Controls.Add(this.cmbMarca);
             this.Controls.Add(this.cmbModello);
@@ -505,8 +505,8 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
