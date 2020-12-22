@@ -37,6 +37,8 @@ namespace ProgettoDatabase
             this.txtTipoDocumento = new System.Windows.Forms.TextBox();
             this.btnSalvaENuovo = new System.Windows.Forms.Button();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
+            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.txtCompagnia = new System.Windows.Forms.TextBox();
             this.txtPropulsione = new System.Windows.Forms.TextBox();
             this.updVelocita = new System.Windows.Forms.NumericUpDown();
@@ -52,8 +54,6 @@ namespace ProgettoDatabase
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtModello = new System.Windows.Forms.TextBox();
-            this.lblModello = new System.Windows.Forms.Label();
             this.lblCodice = new System.Windows.Forms.Label();
             this.txtCodice = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -66,9 +66,18 @@ namespace ProgettoDatabase
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.cmbModello = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.modelliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.ModelliTableAdapter();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.marcheTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.MarcheTableAdapter();
+            this.aeroportoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).BeginInit();
@@ -84,8 +93,9 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalva
@@ -145,6 +155,16 @@ namespace ProgettoDatabase
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
             this.chkInternazionale.TabIndex = 54;
             this.chkInternazionale.UseVisualStyleBackColor = true;
+            // 
+            // tblAereiBindingSource
+            // 
+            this.tblAereiBindingSource.DataMember = "tblAerei";
+            this.tblAereiBindingSource.DataSource = this.aeroportoDataSet;
+            // 
+            // aeroportoDataSet
+            // 
+            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtCompagnia
             // 
@@ -301,30 +321,10 @@ namespace ProgettoDatabase
             this.label1.TabIndex = 39;
             this.label1.Text = "Capacità Massima";
             // 
-            // txtModello
-            // 
-            this.txtModello.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Modello", true));
-            this.txtModello.Location = new System.Drawing.Point(272, 102);
-            this.txtModello.Margin = new System.Windows.Forms.Padding(4);
-            this.txtModello.Name = "txtModello";
-            this.txtModello.Size = new System.Drawing.Size(265, 22);
-            this.txtModello.TabIndex = 38;
-            this.txtModello.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtModello_KeyUp);
-            // 
-            // lblModello
-            // 
-            this.lblModello.AutoSize = true;
-            this.lblModello.Location = new System.Drawing.Point(68, 102);
-            this.lblModello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblModello.Name = "lblModello";
-            this.lblModello.Size = new System.Drawing.Size(57, 17);
-            this.lblModello.TabIndex = 36;
-            this.lblModello.Text = "Modello";
-            // 
             // lblCodice
             // 
             this.lblCodice.AutoSize = true;
-            this.lblCodice.Location = new System.Drawing.Point(68, 59);
+            this.lblCodice.Location = new System.Drawing.Point(70, 117);
             this.lblCodice.Name = "lblCodice";
             this.lblCodice.Size = new System.Drawing.Size(51, 17);
             this.lblCodice.TabIndex = 55;
@@ -332,7 +332,7 @@ namespace ProgettoDatabase
             // 
             // txtCodice
             // 
-            this.txtCodice.Location = new System.Drawing.Point(272, 54);
+            this.txtCodice.Location = new System.Drawing.Point(272, 114);
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
             this.txtCodice.TabIndex = 56;
@@ -378,19 +378,75 @@ namespace ProgettoDatabase
             // 
             this.errorProvider10.ContainerControl = this;
             // 
-            // tblAereiBindingSource
-            // 
-            this.tblAereiBindingSource.DataMember = "tblAerei";
-            this.tblAereiBindingSource.DataSource = this.aeroportoDataSet;
-            // 
-            // aeroportoDataSet
-            // 
-            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
-            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tblAereiTableAdapter
             // 
             this.tblAereiTableAdapter.ClearBeforeFill = true;
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.DataSource = this.bindingSource2;
+            this.cmbMarca.DisplayMember = "Nome";
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(272, 12);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(265, 24);
+            this.cmbMarca.TabIndex = 60;
+            this.cmbMarca.ValueMember = "Nome";
+            this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
+            // 
+            // cmbModello
+            // 
+            this.cmbModello.DataSource = this.bindingSource1;
+            this.cmbModello.DisplayMember = "Modello";
+            this.cmbModello.FormattingEnabled = true;
+            this.cmbModello.Location = new System.Drawing.Point(272, 47);
+            this.cmbModello.Name = "cmbModello";
+            this.cmbModello.Size = new System.Drawing.Size(265, 24);
+            this.cmbModello.TabIndex = 59;
+            this.cmbModello.ValueMember = "Modello";
+            this.cmbModello.SelectedIndexChanged += new System.EventHandler(this.cmbModello_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(68, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "Marca";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(68, 50);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 17);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "Modello";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "Modelli";
+            this.bindingSource1.DataSource = this.aeroportoDataSet;
+            // 
+            // modelliTableAdapter
+            // 
+            this.modelliTableAdapter.ClearBeforeFill = true;
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataMember = "Marche";
+            this.bindingSource2.DataSource = this.aeroportoDataSet;
+            // 
+            // marcheTableAdapter
+            // 
+            this.marcheTableAdapter.ClearBeforeFill = true;
+            // 
+            // aeroportoDataSetBindingSource
+            // 
+            this.aeroportoDataSetBindingSource.DataSource = this.aeroportoDataSet;
+            this.aeroportoDataSetBindingSource.Position = 0;
             // 
             // frmInserisciAerei
             // 
@@ -398,6 +454,10 @@ namespace ProgettoDatabase
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(598, 712);
+            this.Controls.Add(this.cmbMarca);
+            this.Controls.Add(this.cmbModello);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtCodice);
             this.Controls.Add(this.lblCodice);
             this.Controls.Add(this.chkInternazionale);
@@ -416,8 +476,6 @@ namespace ProgettoDatabase
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtModello);
-            this.Controls.Add(this.lblModello);
             this.Controls.Add(this.btnSalvaENuovo);
             this.Controls.Add(this.txtTipoDocumento);
             this.Controls.Add(this.txtDataNascita);
@@ -430,6 +488,8 @@ namespace ProgettoDatabase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserisci Aerei";
             this.Load += new System.EventHandler(this.frmInserisciAerei_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).EndInit();
@@ -445,8 +505,9 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,8 +538,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtModello;
-        private System.Windows.Forms.Label lblModello;
         private System.Windows.Forms.Label lblCodice;
         private System.Windows.Forms.TextBox txtCodice;
         private System.Windows.Forms.ErrorProvider errorProvider1;
@@ -491,5 +550,14 @@ namespace ProgettoDatabase
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.ErrorProvider errorProvider9;
         private System.Windows.Forms.ErrorProvider errorProvider10;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.ComboBox cmbModello;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private AeroportoDataSetTableAdapters.ModelliTableAdapter modelliTableAdapter;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private AeroportoDataSetTableAdapters.MarcheTableAdapter marcheTableAdapter;
+        private System.Windows.Forms.BindingSource aeroportoDataSetBindingSource;
     }
 }

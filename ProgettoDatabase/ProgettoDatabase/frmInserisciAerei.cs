@@ -25,11 +25,11 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCompagnia.Text != "") && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
+            if ((txtCodice.Text != "") && (txtCompagnia.Text != "") && (cmbModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
             {
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
+                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, cmbModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
                     this.Close();
                 }
             }
@@ -45,9 +45,9 @@ namespace ProgettoDatabase
                     errorProvider2.SetError(txtCompagnia, "Inserire i dati correttamente");
                 }
                
-                if (txtModello.Text == "")
+                if (cmbModello.Text == "")
                 {
-                    errorProvider4.SetError(txtModello, "Inserire i dati correttamente");
+                    errorProvider4.SetError(cmbModello, "Inserire i dati correttamente");
                 }
                 if (updCapacita.Value <= 0)
                 {
@@ -85,14 +85,14 @@ namespace ProgettoDatabase
 
         private void btnSalvaENuovo_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCompagnia.Text != "")  && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
+            if ((txtCodice.Text != "") && (txtCompagnia.Text != "")  && (cmbModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
             {
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
+                    tblAereiTableAdapter.InserisciAerei(txtCodice.Text, cmbModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
                     txtCodice.Text = "";
                     txtCompagnia.Text = "";
-                    txtModello.Text = "";
+                    cmbModello.Text = "";
                     updCapacita.Value = 0;
                     updLitri.Value = 0;
                     updMotori.Value = 0;
@@ -114,9 +114,9 @@ namespace ProgettoDatabase
                     errorProvider2.SetError(txtCompagnia, "Inserire i dati correttamente");
                 }
                
-                if (txtModello.Text == "")
+                if (cmbModello.Text == "")
                 {
-                    errorProvider4.SetError(txtModello, "Inserire i dati correttamente");
+                    errorProvider4.SetError(cmbModello, "Inserire i dati correttamente");
                 }
                 if (updCapacita.Value <= 0)
                 {
@@ -180,11 +180,11 @@ namespace ProgettoDatabase
             errorProvider3.Clear();
 
         }
-
-        private void txtModello_KeyUp(object sender, KeyEventArgs e)
+        private void cmbModello_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorProvider4.Clear();
         }
+
 
         private void txtPropulsione_KeyUp(object sender, KeyEventArgs e)
         {
@@ -199,7 +199,18 @@ namespace ProgettoDatabase
 
         private void frmInserisciAerei_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.Marche'. È possibile spostarla o rimuoverla se necessario.
+            this.marcheTableAdapter.Fill(this.aeroportoDataSet.Marche);
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.Modelli'. È possibile spostarla o rimuoverla se necessario.
+            this.modelliTableAdapter.Fill(this.aeroportoDataSet.Modelli);
 
         }
+
+        private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            string marca = cmbMarca.SelectedValue.ToString();
+            this.modelliTableAdapter.FillByMarca(this.aeroportoDataSet.Modelli, marca);
+        }
+
     }
 }
