@@ -15,10 +15,15 @@ namespace ProgettoDatabase
     public partial class frmInserisciAerei : Form
     {
 
-
+        readonly Action _RefreshGrid;
 
         public frmInserisciAerei()
+        {          
+            InitializeComponent();
+        }
+        public frmInserisciAerei(Action RefreshGrid)
         {
+            this._RefreshGrid = RefreshGrid;
             InitializeComponent();
         }
 
@@ -30,7 +35,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblAereiTableAdapter.InserisciAerei(txtCodice.Text, cmbModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
-                    this.Close();
+                    this._RefreshGrid();
                 }
             }
             else
@@ -100,6 +105,7 @@ namespace ProgettoDatabase
                     updVelocita.Value = 0;
                     txtPropulsione.Text = "";
                     chkInternazionale.Checked = false;
+                    this._RefreshGrid();
                 }
             }
             else

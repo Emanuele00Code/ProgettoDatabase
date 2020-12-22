@@ -51,7 +51,7 @@ namespace ProgettoDatabase
 
         private void tsbNuovo_Click(object sender, EventArgs e)
         {
-            frmInserisciVoli formDaAprire = new frmInserisciVoli();
+            frmInserisciVoli formDaAprire = new frmInserisciVoli(this.RefreshGrid);
             formDaAprire.Show();
         }
 

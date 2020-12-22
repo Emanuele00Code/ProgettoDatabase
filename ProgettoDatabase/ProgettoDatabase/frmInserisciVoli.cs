@@ -16,12 +16,16 @@ namespace ProgettoDatabase
     {
 
 
-
+        readonly Action _RefreshGrid;
         public frmInserisciVoli()
         {  
             InitializeComponent();
         }
-
+        public frmInserisciVoli(Action RefreshGrid)
+        {
+            this._RefreshGrid = RefreshGrid;
+            InitializeComponent();
+        }
 
         private void btnSalva_Click(object sender, EventArgs e)
         {    if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))

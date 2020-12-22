@@ -16,12 +16,16 @@ namespace ProgettoDatabase
     {
 
 
-
-        public frmInserisciAeroporti()
-        {  
+        readonly Action _RefreshGrid;
+        public frmInserisciAeroporti(Action RefreshGrid)
+        {
+            this._RefreshGrid = RefreshGrid;
             InitializeComponent();
         }
-
+        public frmInserisciAeroporti()
+        {
+            InitializeComponent();
+        }
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
@@ -30,7 +34,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblAeroportiTableAdapter.InserisciAeroporto(txtSigla.Text, txtNome.Text, Convert.ToByte(updGates.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked);
-                    this.Close();
+                    this._RefreshGrid();
                 }
             }
             else
@@ -92,7 +96,8 @@ namespace ProgettoDatabase
                 txtCitta.Text = "";
                 cbkMilitare.Checked = false;
                 cbkInternazionale.Checked = false;
-            }
+                    this._RefreshGrid();
+                }
             }
             else
             {

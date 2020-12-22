@@ -52,7 +52,7 @@ namespace ProgettoDatabase
 
         private void btnNuovo_Click(object sender, EventArgs e)
         {
-            frmInserisciAeroporti formDaAprire = new frmInserisciAeroporti();
+            frmInserisciAeroporti formDaAprire = new frmInserisciAeroporti(this.RefreshGrid);
             formDaAprire.Show();
         }
 
@@ -142,7 +142,7 @@ namespace ProgettoDatabase
 
         private void tsbNuovo_Click(object sender, EventArgs e)
         {
-            frmInserisciAeroporti formDaAprire = new frmInserisciAeroporti();
+            frmInserisciAeroporti formDaAprire = new frmInserisciAeroporti(this.RefreshGrid);
             formDaAprire.Show();
         }
 

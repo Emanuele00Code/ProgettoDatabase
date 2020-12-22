@@ -36,7 +36,7 @@ namespace ProgettoDatabase
         
         private void btnNuovo_Click(object sender, EventArgs e)
         {
-            frmInserisciAerei FormDaAprire = new frmInserisciAerei();
+            frmInserisciAerei FormDaAprire = new frmInserisciAerei(this.RefreshGrid);
             FormDaAprire.Show();
         }
 
@@ -138,7 +138,7 @@ namespace ProgettoDatabase
 
         private void tsbNuovo_Click(object sender, EventArgs e)
         {
-            frmInserisciAerei FormDaAprire = new frmInserisciAerei();
+            frmInserisciAerei FormDaAprire = new frmInserisciAerei(this.RefreshGrid);
             FormDaAprire.Show();
         }
 
