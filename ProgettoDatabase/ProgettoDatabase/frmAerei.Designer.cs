@@ -47,7 +47,6 @@ namespace ProgettoDatabase
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbSalva = new System.Windows.Forms.ToolStripButton();
             this.tsbNuovo = new System.Windows.Forms.ToolStripButton();
             this.tsbModifica = new System.Windows.Forms.ToolStripButton();
             this.tsbNascondi = new System.Windows.Forms.ToolStripButton();
@@ -61,6 +60,8 @@ namespace ProgettoDatabase
             // 
             // dgvAerei
             // 
+            this.dgvAerei.AllowUserToAddRows = false;
+            this.dgvAerei.AllowUserToDeleteRows = false;
             this.dgvAerei.AutoGenerateColumns = false;
             this.dgvAerei.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvAerei.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -80,6 +81,7 @@ namespace ProgettoDatabase
             this.dgvAerei.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAerei.MultiSelect = false;
             this.dgvAerei.Name = "dgvAerei";
+            this.dgvAerei.ReadOnly = true;
             this.dgvAerei.RowHeadersWidth = 51;
             this.dgvAerei.Size = new System.Drawing.Size(1298, 264);
             this.dgvAerei.TabIndex = 0;
@@ -90,6 +92,7 @@ namespace ProgettoDatabase
             this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "Codice Aereo";
             this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
+            this.codiceAereoDataGridViewTextBoxColumn.ReadOnly = true;
             this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
             // 
             // modelloDataGridViewTextBoxColumn
@@ -98,6 +101,7 @@ namespace ProgettoDatabase
             this.modelloDataGridViewTextBoxColumn.HeaderText = "Modello";
             this.modelloDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.modelloDataGridViewTextBoxColumn.Name = "modelloDataGridViewTextBoxColumn";
+            this.modelloDataGridViewTextBoxColumn.ReadOnly = true;
             this.modelloDataGridViewTextBoxColumn.Width = 125;
             // 
             // capacitaMassimaDataGridViewTextBoxColumn
@@ -106,6 +110,7 @@ namespace ProgettoDatabase
             this.capacitaMassimaDataGridViewTextBoxColumn.HeaderText = "Capacita Massima";
             this.capacitaMassimaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.capacitaMassimaDataGridViewTextBoxColumn.Name = "capacitaMassimaDataGridViewTextBoxColumn";
+            this.capacitaMassimaDataGridViewTextBoxColumn.ReadOnly = true;
             this.capacitaMassimaDataGridViewTextBoxColumn.Width = 125;
             // 
             // litriCarburanteDataGridViewTextBoxColumn
@@ -114,6 +119,7 @@ namespace ProgettoDatabase
             this.litriCarburanteDataGridViewTextBoxColumn.HeaderText = "Litri Carburante";
             this.litriCarburanteDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.litriCarburanteDataGridViewTextBoxColumn.Name = "litriCarburanteDataGridViewTextBoxColumn";
+            this.litriCarburanteDataGridViewTextBoxColumn.ReadOnly = true;
             this.litriCarburanteDataGridViewTextBoxColumn.Width = 125;
             // 
             // numeroMotoriDataGridViewTextBoxColumn
@@ -122,6 +128,7 @@ namespace ProgettoDatabase
             this.numeroMotoriDataGridViewTextBoxColumn.HeaderText = "Numero Motori";
             this.numeroMotoriDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.numeroMotoriDataGridViewTextBoxColumn.Name = "numeroMotoriDataGridViewTextBoxColumn";
+            this.numeroMotoriDataGridViewTextBoxColumn.ReadOnly = true;
             this.numeroMotoriDataGridViewTextBoxColumn.Width = 125;
             // 
             // tipoPropulsioneDataGridViewTextBoxColumn
@@ -130,6 +137,7 @@ namespace ProgettoDatabase
             this.tipoPropulsioneDataGridViewTextBoxColumn.HeaderText = "Tipo di Propulsione";
             this.tipoPropulsioneDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tipoPropulsioneDataGridViewTextBoxColumn.Name = "tipoPropulsioneDataGridViewTextBoxColumn";
+            this.tipoPropulsioneDataGridViewTextBoxColumn.ReadOnly = true;
             this.tipoPropulsioneDataGridViewTextBoxColumn.Width = 125;
             // 
             // internazionaleDataGridViewCheckBoxColumn
@@ -138,6 +146,7 @@ namespace ProgettoDatabase
             this.internazionaleDataGridViewCheckBoxColumn.HeaderText = "Internazionale";
             this.internazionaleDataGridViewCheckBoxColumn.MinimumWidth = 6;
             this.internazionaleDataGridViewCheckBoxColumn.Name = "internazionaleDataGridViewCheckBoxColumn";
+            this.internazionaleDataGridViewCheckBoxColumn.ReadOnly = true;
             this.internazionaleDataGridViewCheckBoxColumn.Width = 125;
             // 
             // raggioDataGridViewTextBoxColumn
@@ -146,6 +155,7 @@ namespace ProgettoDatabase
             this.raggioDataGridViewTextBoxColumn.HeaderText = "Raggio";
             this.raggioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.raggioDataGridViewTextBoxColumn.Name = "raggioDataGridViewTextBoxColumn";
+            this.raggioDataGridViewTextBoxColumn.ReadOnly = true;
             this.raggioDataGridViewTextBoxColumn.Width = 125;
             // 
             // velocitaMaxDataGridViewTextBoxColumn
@@ -154,6 +164,7 @@ namespace ProgettoDatabase
             this.velocitaMaxDataGridViewTextBoxColumn.HeaderText = "Velocita Max";
             this.velocitaMaxDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.velocitaMaxDataGridViewTextBoxColumn.Name = "velocitaMaxDataGridViewTextBoxColumn";
+            this.velocitaMaxDataGridViewTextBoxColumn.ReadOnly = true;
             this.velocitaMaxDataGridViewTextBoxColumn.Width = 125;
             // 
             // compagniaAereaDataGridViewTextBoxColumn
@@ -162,6 +173,7 @@ namespace ProgettoDatabase
             this.compagniaAereaDataGridViewTextBoxColumn.HeaderText = "Compagnia Aerea";
             this.compagniaAereaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.compagniaAereaDataGridViewTextBoxColumn.Name = "compagniaAereaDataGridViewTextBoxColumn";
+            this.compagniaAereaDataGridViewTextBoxColumn.ReadOnly = true;
             this.compagniaAereaDataGridViewTextBoxColumn.Width = 125;
             // 
             // tblAereiBindingSource
@@ -187,7 +199,6 @@ namespace ProgettoDatabase
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbSalva,
             this.tsbNuovo,
             this.tsbModifica,
             this.tsbNascondi,
@@ -195,17 +206,9 @@ namespace ProgettoDatabase
             this.tsbVisualizza});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1428, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1428, 27);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsbSalva
-            // 
-            this.tsbSalva.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalva.Image")));
-            this.tsbSalva.Name = "tsbSalva";
-            this.tsbSalva.Size = new System.Drawing.Size(29, 28);
-            this.tsbSalva.ToolTipText = "Salva";
-            this.tsbSalva.Click += new System.EventHandler(this.tsbSalva_Click);
             // 
             // tsbNuovo
             // 
@@ -213,7 +216,7 @@ namespace ProgettoDatabase
             this.tsbNuovo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuovo.Image")));
             this.tsbNuovo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuovo.Name = "tsbNuovo";
-            this.tsbNuovo.Size = new System.Drawing.Size(29, 28);
+            this.tsbNuovo.Size = new System.Drawing.Size(29, 24);
             this.tsbNuovo.Text = "Inserisci";
             this.tsbNuovo.Click += new System.EventHandler(this.tsbNuovo_Click);
             // 
@@ -223,7 +226,7 @@ namespace ProgettoDatabase
             this.tsbModifica.Image = ((System.Drawing.Image)(resources.GetObject("tsbModifica.Image")));
             this.tsbModifica.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbModifica.Name = "tsbModifica";
-            this.tsbModifica.Size = new System.Drawing.Size(29, 28);
+            this.tsbModifica.Size = new System.Drawing.Size(29, 24);
             this.tsbModifica.Text = "Modifica";
             this.tsbModifica.Click += new System.EventHandler(this.tsbModifica_Click);
             // 
@@ -233,7 +236,7 @@ namespace ProgettoDatabase
             this.tsbNascondi.Image = ((System.Drawing.Image)(resources.GetObject("tsbNascondi.Image")));
             this.tsbNascondi.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNascondi.Name = "tsbNascondi";
-            this.tsbNascondi.Size = new System.Drawing.Size(29, 28);
+            this.tsbNascondi.Size = new System.Drawing.Size(29, 24);
             this.tsbNascondi.Text = "toolStripButton4";
             this.tsbNascondi.ToolTipText = "Nascondi";
             this.tsbNascondi.Click += new System.EventHandler(this.tsbNascondi_Click);
@@ -244,7 +247,7 @@ namespace ProgettoDatabase
             this.tsbElimina.Image = ((System.Drawing.Image)(resources.GetObject("tsbElimina.Image")));
             this.tsbElimina.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbElimina.Name = "tsbElimina";
-            this.tsbElimina.Size = new System.Drawing.Size(29, 28);
+            this.tsbElimina.Size = new System.Drawing.Size(29, 24);
             this.tsbElimina.Text = "toolStripButton5";
             this.tsbElimina.ToolTipText = "Elimina";
             this.tsbElimina.Click += new System.EventHandler(this.tsbElimina_Click);
@@ -255,7 +258,7 @@ namespace ProgettoDatabase
             this.tsbVisualizza.Image = ((System.Drawing.Image)(resources.GetObject("tsbVisualizza.Image")));
             this.tsbVisualizza.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbVisualizza.Name = "tsbVisualizza";
-            this.tsbVisualizza.Size = new System.Drawing.Size(29, 28);
+            this.tsbVisualizza.Size = new System.Drawing.Size(29, 24);
             this.tsbVisualizza.Text = "toolStripButton6";
             this.tsbVisualizza.ToolTipText = "Visualizza";
             this.tsbVisualizza.Click += new System.EventHandler(this.tsbVisualizza_Click);
@@ -302,7 +305,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDocumentoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton tsbSalva;
         private System.Windows.Forms.ToolStripButton tsbNuovo;
         private System.Windows.Forms.ToolStripButton tsbModifica;
         private System.Windows.Forms.ToolStripButton tsbNascondi;

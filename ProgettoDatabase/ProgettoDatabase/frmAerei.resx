@@ -123,9 +123,6 @@
   <metadata name="aeroportoDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="aeroportoDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>555, 17</value>
   </metadata>
@@ -136,17 +133,6 @@
     <value>710, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tsbSalva.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        dAAAEnQB3mYfeAAAARJJREFUOE/Nkz+Kg0AUh72Couew1FgJFoLYBOYgVgEbEQsFa08hCIImJ0hvYaq0
-        llrY2CjyW17YlYhuZLt98MHw/nzFvBmOMQbLshZkWQbP85AkaQXldF1HlmV4D46GOI5b8DwPt9vtuwzU
-        dY0kSVCWJXzfRxiGK8mh4H6/w3GcRUA975JdwfV6xTzPL57PJ9I0RVEUi+BHUlXVVkBmugdFUVZQLs/z
-        Va9t21vBXzBN878JpmnCOI4foZ5dAe1bVVVomnbI4/HYCmhVcRxjGAb0fb8L1aIoem3qV8HlcoFhGLu4
-        rnssOIpDAb228/m8SxAEx4K2bdE0zS5d120F9J3pcDqdIAgCRFH8CPXQJmiGMYYvE+IeMof2ZVQAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
   <data name="tsbNuovo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
