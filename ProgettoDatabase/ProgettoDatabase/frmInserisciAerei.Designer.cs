@@ -404,7 +404,7 @@ namespace ProgettoDatabase
             this.cmbModello.DataSource = this.bindingSource1;
             this.cmbModello.DisplayMember = "Modello";
             this.cmbModello.FormattingEnabled = true;
-            this.cmbModello.Location = new System.Drawing.Point(272, 47);
+            this.cmbModello.Location = new System.Drawing.Point(272, 65);
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
             this.cmbModello.TabIndex = 59;
@@ -428,7 +428,7 @@ namespace ProgettoDatabase
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(68, 50);
+            this.label10.Location = new System.Drawing.Point(68, 72);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 17);

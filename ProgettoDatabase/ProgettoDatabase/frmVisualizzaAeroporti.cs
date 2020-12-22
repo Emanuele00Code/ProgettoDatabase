@@ -28,17 +28,8 @@ namespace ProgettoDatabase
         }
 
 
-
-   
-
-        private void btnSalva_Click(object sender, EventArgs e)
-        {
-         
-        }
-
         private void frmVisualizzaPersona_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAeroporti'. È possibile spostarla o rimuoverla se necessario.
             this.tblAeroportiTableAdapter.Fill(this.aeroportoDataSet.tblAeroporti);
 
 

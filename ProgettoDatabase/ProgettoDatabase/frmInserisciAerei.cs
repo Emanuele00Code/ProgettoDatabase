@@ -181,11 +181,6 @@ namespace ProgettoDatabase
             errorProvider1.Clear();
         }
 
-        private void txtMarca_KeyUp(object sender, KeyEventArgs e)
-        {
-            errorProvider3.Clear();
-
-        }
         private void cmbModello_SelectedIndexChanged(object sender, EventArgs e)
         {
             errorProvider4.Clear();
@@ -205,10 +200,8 @@ namespace ProgettoDatabase
 
         private void frmInserisciAerei_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.Marche'. È possibile spostarla o rimuoverla se necessario.
             this.marcheTableAdapter.Fill(this.aeroportoDataSet.Marche);
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.Modelli'. È possibile spostarla o rimuoverla se necessario.
-            this.modelliTableAdapter.Fill(this.aeroportoDataSet.Modelli);
+             this.modelliTableAdapter.Fill(this.aeroportoDataSet.Modelli);
 
         }
 

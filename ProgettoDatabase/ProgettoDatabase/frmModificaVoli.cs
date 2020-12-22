@@ -107,10 +107,6 @@ namespace ProgettoDatabase
 
 
          }
-        private void txtCodice_KeyUp(object sender, KeyEventArgs e)
-        {
-            errorProvider1.Clear();
-        }
 
         private void txtCodiceAereo_KeyUp(object sender, KeyEventArgs e)
         {

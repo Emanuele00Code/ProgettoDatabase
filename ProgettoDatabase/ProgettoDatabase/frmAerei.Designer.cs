@@ -185,11 +185,7 @@ namespace ProgettoDatabase
             // 
             this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
             this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            
             // 
             // tblAereiTableAdapter
             // 

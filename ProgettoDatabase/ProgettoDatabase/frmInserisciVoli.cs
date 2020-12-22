@@ -145,11 +145,6 @@ namespace ProgettoDatabase
             errorProvider2.Clear();
         }
 
-        private void txtDestinazione_KeyUp(object sender, KeyEventArgs e)
-        {
-            errorProvider3.Clear();
-        }
-
         private void updDurata_ValueChanged(object sender, EventArgs e)
         {
             errorProvider4.Clear();

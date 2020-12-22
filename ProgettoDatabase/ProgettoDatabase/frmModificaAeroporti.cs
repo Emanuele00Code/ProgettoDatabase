@@ -79,10 +79,7 @@ namespace ProgettoDatabase
 
 
         }
-        private void txtSigla_KeyUp(object sender, KeyEventArgs e)
-        {
-            errorProvider1.Clear();
-        }
+        
 
         private void txtNome_KeyUp(object sender, KeyEventArgs e)
         {

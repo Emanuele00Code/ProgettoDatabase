@@ -95,7 +95,7 @@ namespace ProgettoDatabase
             // lblTerminal
             // 
             this.lblTerminal.AutoSize = true;
-            this.lblTerminal.Location = new System.Drawing.Point(74, 138);
+            this.lblTerminal.Location = new System.Drawing.Point(73, 138);
             this.lblTerminal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTerminal.Name = "lblTerminal";
             this.lblTerminal.Size = new System.Drawing.Size(63, 17);
@@ -105,7 +105,7 @@ namespace ProgettoDatabase
             // lblInternazionale
             // 
             this.lblInternazionale.AutoSize = true;
-            this.lblInternazionale.Location = new System.Drawing.Point(64, 387);
+            this.lblInternazionale.Location = new System.Drawing.Point(74, 382);
             this.lblInternazionale.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInternazionale.Name = "lblInternazionale";
             this.lblInternazionale.Size = new System.Drawing.Size(97, 17);
@@ -145,7 +145,7 @@ namespace ProgettoDatabase
             // lblGates
             // 
             this.lblGates.AutoSize = true;
-            this.lblGates.Location = new System.Drawing.Point(80, 196);
+            this.lblGates.Location = new System.Drawing.Point(74, 190);
             this.lblGates.Name = "lblGates";
             this.lblGates.Size = new System.Drawing.Size(46, 17);
             this.lblGates.TabIndex = 16;
@@ -192,7 +192,7 @@ namespace ProgettoDatabase
             // lblNazione
             // 
             this.lblNazione.AutoSize = true;
-            this.lblNazione.Location = new System.Drawing.Point(76, 236);
+            this.lblNazione.Location = new System.Drawing.Point(74, 234);
             this.lblNazione.Name = "lblNazione";
             this.lblNazione.Size = new System.Drawing.Size(60, 17);
             this.lblNazione.TabIndex = 21;

@@ -120,6 +120,7 @@ namespace ProgettoDatabase
             this.txtModello.Location = new System.Drawing.Point(271, 117);
             this.txtModello.Margin = new System.Windows.Forms.Padding(4);
             this.txtModello.Name = "txtModello";
+            this.txtModello.ReadOnly = true;
             this.txtModello.Size = new System.Drawing.Size(265, 22);
             this.txtModello.TabIndex = 10;
             // 
@@ -146,7 +147,7 @@ namespace ProgettoDatabase
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(67, 151);
+            this.label1.Location = new System.Drawing.Point(67, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 17);
             this.label1.TabIndex = 19;
@@ -218,7 +219,7 @@ namespace ProgettoDatabase
             // updCapacita
             // 
             this.updCapacita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "CapacitaMassima", true));
-            this.updCapacita.Location = new System.Drawing.Point(271, 146);
+            this.updCapacita.Location = new System.Drawing.Point(271, 162);
             this.updCapacita.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -232,7 +233,7 @@ namespace ProgettoDatabase
             // updLitri
             // 
             this.updLitri.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "LitriCarburante", true));
-            this.updLitri.Location = new System.Drawing.Point(271, 203);
+            this.updLitri.Location = new System.Drawing.Point(271, 208);
             this.updLitri.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -376,7 +377,7 @@ namespace ProgettoDatabase
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
             this.cmbModello.TabIndex = 37;
-            this.cmbModello.Text = "*Seleziona Una Marca*";
+            this.cmbModello.Text = "*Seleziona una Marca*";
             this.cmbModello.ValueMember = "Modello";
             this.cmbModello.SelectionChangeCommitted += new System.EventHandler(this.cmbModello_SelectionChangeCommitted);
             // 
@@ -402,7 +403,6 @@ namespace ProgettoDatabase
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(265, 24);
             this.cmbMarca.TabIndex = 38;
-            this.cmbMarca.Text = "Seleziona...";
             this.cmbMarca.ValueMember = "Nome";
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 

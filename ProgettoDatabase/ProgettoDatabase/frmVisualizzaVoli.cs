@@ -28,15 +28,12 @@ namespace ProgettoDatabase
         }
         private void frmVisualizzaVoli_Load(object sender, EventArgs e)
         {
-            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblVoli'. È possibile spostarla o rimuoverla se necessario.
             this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
 
             txtCodice.Text = this._MioVolo.Codice;
             txtCodiceAereo.Text = this._MioVolo.CodiceAereo;
             dtpDataArrivo.Value = Convert.ToDateTime(this._MioVolo.DataOraArrivo);
             dtpDataPartenza.Value = Convert.ToDateTime(this._MioVolo.DataOraPartenza);
-            //dtpDataArrivo.Value = DateTime.ParseExact(this._MioVolo.DataOraArrivo, "yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
-            // dtpDataPartenza.Value = DateTime.ParseExact(this._MioVolo.DataOraPartenza, "yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
             txtCodiceAereo.Text = this._MioVolo.CodiceAereo;
             updDurata.Value = this._MioVolo.Durata;
             updGatePartenza.Value = this._MioVolo.GatePartenza;

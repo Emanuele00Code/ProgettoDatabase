@@ -173,7 +173,7 @@ namespace ProgettoDatabase
             this.btnSalva.BackColor = System.Drawing.Color.White;
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalva.ForeColor = System.Drawing.Color.Black;
-            this.btnSalva.Location = new System.Drawing.Point(505, 361);
+            this.btnSalva.Location = new System.Drawing.Point(257, 507);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(158, 60);
             this.btnSalva.TabIndex = 47;
@@ -293,7 +293,7 @@ namespace ProgettoDatabase
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(714, 633);
+            this.ClientSize = new System.Drawing.Size(714, 592);
             this.Controls.Add(this.dtpDataArrivo);
             this.Controls.Add(this.dtpDataPartenza);
             this.Controls.Add(this.label2);
