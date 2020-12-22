@@ -50,8 +50,6 @@ namespace ProgettoDatabase {
         
         private global::System.Data.DataRelation relationFK_tblVoli_tblAeroporti1;
         
-        private global::System.Data.DataRelation relationFK_Modelli_Marche;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -442,7 +440,6 @@ namespace ProgettoDatabase {
             }
             this.relationFK_tblVoli_tblAerei1 = this.Relations["FK_tblVoli_tblAerei1"];
             this.relationFK_tblVoli_tblAeroporti1 = this.Relations["FK_tblVoli_tblAeroporti1"];
-            this.relationFK_Modelli_Marche = this.Relations["FK_Modelli_Marche"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -483,10 +480,6 @@ namespace ProgettoDatabase {
                         this.tabletblAeroporti.SiglaColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblVoli.DestinazioneColumn}, false);
             this.Relations.Add(this.relationFK_tblVoli_tblAeroporti1);
-            this.relationFK_Modelli_Marche = new global::System.Data.DataRelation("FK_Modelli_Marche", new global::System.Data.DataColumn[] {
-                        this.tableMarche.NomeColumn}, new global::System.Data.DataColumn[] {
-                        this.tableModelli.MarcaColumn}, false);
-            this.Relations.Add(this.relationFK_Modelli_Marche);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3683,8 +3676,6 @@ namespace ProgettoDatabase {
             
             private global::System.Data.DataColumn columnModello;
             
-            private global::System.Data.DataColumn columnMarca;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ModelliDataTable() {
@@ -3728,14 +3719,6 @@ namespace ProgettoDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MarcaColumn {
-                get {
-                    return this.columnMarca;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3771,14 +3754,10 @@ namespace ProgettoDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ModelliRow AddModelliRow(string Modello, MarcheRow parentMarcheRowByFK_Modelli_Marche) {
+            public ModelliRow AddModelliRow(string Modello) {
                 ModelliRow rowModelliRow = ((ModelliRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Modello,
-                        null};
-                if ((parentMarcheRowByFK_Modelli_Marche != null)) {
-                    columnValuesArray[1] = parentMarcheRowByFK_Modelli_Marche[0];
-                }
+                        Modello};
                 rowModelliRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowModelliRow);
                 return rowModelliRow;
@@ -3809,7 +3788,6 @@ namespace ProgettoDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnModello = base.Columns["Modello"];
-                this.columnMarca = base.Columns["Marca"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3817,15 +3795,11 @@ namespace ProgettoDatabase {
             private void InitClass() {
                 this.columnModello = new global::System.Data.DataColumn("Modello", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModello);
-                this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMarca);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnModello}, true));
                 this.columnModello.AllowDBNull = false;
                 this.columnModello.Unique = true;
                 this.columnModello.MaxLength = 30;
-                this.columnMarca.AllowDBNull = false;
-                this.columnMarca.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4761,17 +4735,6 @@ namespace ProgettoDatabase {
                     this[this.tableMarche.NumeroDipendentiColumn] = value;
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ModelliRow[] GetModelliRows() {
-                if ((this.Table.ChildRelations["FK_Modelli_Marche"] == null)) {
-                    return new ModelliRow[0];
-                }
-                else {
-                    return ((ModelliRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Modelli_Marche"])));
-                }
-            }
         }
         
         /// <summary>
@@ -4796,28 +4759,6 @@ namespace ProgettoDatabase {
                 }
                 set {
                     this[this.tableModelli.ModelloColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Marca {
-                get {
-                    return ((string)(this[this.tableModelli.MarcaColumn]));
-                }
-                set {
-                    this[this.tableModelli.MarcaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MarcheRow MarcheRow {
-                get {
-                    return ((MarcheRow)(this.GetParentRow(this.Table.ParentRelations["FK_Modelli_Marche"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Modelli_Marche"]);
                 }
             }
         }
@@ -9075,32 +9016,19 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Modelli";
             tableMapping.ColumnMappings.Add("Modello", "Modello");
-            tableMapping.ColumnMappings.Add("Marca", "Marca");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Modelli] WHERE (([Modello] = @Original_Modello) AND ([Marca] = @Orig" +
-                "inal_Marca))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Modelli] WHERE (([Modello] = @Original_Modello))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [Modelli] ([Modello], [Marca]) VALUES (@Modello, @Marca);\r\nSELECT Mod" +
-                "ello, Marca FROM Modelli WHERE (Modello = @Modello)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Modelli] SET [Modello] = @Modello, [Marca] = @Marca WHERE (([Modello] = @" +
-                "Original_Modello) AND ([Marca] = @Original_Marca));\r\nSELECT Modello, Marca FROM " +
-                "Modelli WHERE (Modello = @Modello)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Modelli] SET [Modello] = @Modello WHERE (([Modello] = @Original_Modello))" +
+                ";\r\nSELECT Modello FROM Modelli WHERE (Modello = @Modello)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9116,13 +9044,13 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Modelli.*\r\nFROM     Modelli";
+            this._commandCollection[0].CommandText = "SELECT Modello\r\nFROM     Modelli";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Modello\r\nFROM     Modelli\r\nWHERE  (Marca = @Param1)";
+            this._commandCollection[1].CommandText = "SELECT Modello\r\nFROM     Modelli\r\nWHERE  (Marca = @Marca)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9153,13 +9081,13 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByMarca(AeroportoDataSet.ModelliDataTable dataTable, string Param1) {
+        public virtual int FillByMarca(AeroportoDataSet.ModelliDataTable dataTable, string Marca) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((Param1 == null)) {
-                throw new global::System.ArgumentNullException("Param1");
+            if ((Marca == null)) {
+                throw new global::System.ArgumentNullException("Marca");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Marca));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9172,13 +9100,13 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual AeroportoDataSet.ModelliDataTable GetDataByMarca(string Param1) {
+        public virtual AeroportoDataSet.ModelliDataTable GetDataByMarca(string Marca) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((Param1 == null)) {
-                throw new global::System.ArgumentNullException("Param1");
+            if ((Marca == null)) {
+                throw new global::System.ArgumentNullException("Marca");
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Marca));
             }
             AeroportoDataSet.ModelliDataTable dataTable = new AeroportoDataSet.ModelliDataTable();
             this.Adapter.Fill(dataTable);
@@ -9218,18 +9146,12 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Modello, string Original_Marca) {
+        public virtual int Delete(string Original_Modello) {
             if ((Original_Modello == null)) {
                 throw new global::System.ArgumentNullException("Original_Modello");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Modello));
-            }
-            if ((Original_Marca == null)) {
-                throw new global::System.ArgumentNullException("Original_Marca");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Marca));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9250,64 +9172,19 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Modello, string Marca) {
-            if ((Modello == null)) {
-                throw new global::System.ArgumentNullException("Modello");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Modello));
-            }
-            if ((Marca == null)) {
-                throw new global::System.ArgumentNullException("Marca");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Marca));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Modello, string Marca, string Original_Modello, string Original_Marca) {
+        public virtual int Update(string Modello, string Original_Modello) {
             if ((Modello == null)) {
                 throw new global::System.ArgumentNullException("Modello");
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Modello));
             }
-            if ((Marca == null)) {
-                throw new global::System.ArgumentNullException("Marca");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Marca));
-            }
             if ((Original_Modello == null)) {
                 throw new global::System.ArgumentNullException("Original_Modello");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Modello));
-            }
-            if ((Original_Marca == null)) {
-                throw new global::System.ArgumentNullException("Original_Marca");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Marca));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Original_Modello));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9329,8 +9206,8 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Marca, string Original_Modello, string Original_Marca) {
-            return this.Update(Original_Modello, Marca, Original_Modello, Original_Marca);
+        public virtual int Update(string Original_Modello) {
+            return this.Update(Original_Modello, Original_Modello);
         }
     }
     
@@ -9537,21 +9414,21 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._marcheTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._marcheTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tblVoliTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tblVoliTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._marcheTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._marcheTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -9590,19 +9467,19 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._marcheTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._marcheTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tblVoliTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tblVoliTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._marcheTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._marcheTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -9632,19 +9509,19 @@ SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tblVoliTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tblVoliTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._marcheTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._marcheTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tblVoliTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tblVoliTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

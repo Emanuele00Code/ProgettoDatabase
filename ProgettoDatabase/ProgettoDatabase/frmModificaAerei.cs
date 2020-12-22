@@ -34,25 +34,29 @@ namespace ProgettoDatabase
 
         private void frmModificaAerei_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.Modelli'. È possibile spostarla o rimuoverla se necessario.
 
             // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet1.Marche'. È possibile spostarla o rimuoverla se necessario.
             this.marcheTableAdapter.Fill(this.aeroportoDataSet1.Marche);
 
             this.tblAereiTableAdapter.FillByCodiceAereo(this.aeroportoDataSet.tblAerei, this._CodiceAerei);
 
+            //this.modelliTableAdapter.Fill(this.aeroportoDataSet.Modelli);
             //string marca = cmbMarca.Items.ToString();
 
-            //cmbModello.Items.Add(modelliTableAdapter.SelezioneModello(marca));
+            //cmbModello.Items.Add(txtModello.Text);
+
+            //cmbModello.SelectedIndex = 0;
 
         }
         
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if ((txtCompagnia.Text != "") && (txtModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
+            if ((txtCompagnia.Text != "") && (cmbModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
             {
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblAereiTableAdapter.ModificaAereo( txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text, _CodiceAerei);
+                    tblAereiTableAdapter.ModificaAereo( cmbModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text, _CodiceAerei);
                     this._RefreshGrid();
                 }
             }
@@ -64,9 +68,9 @@ namespace ProgettoDatabase
                     errorProvider2.SetError(txtCompagnia, "Inserire i dati correttamente");
                 }
                 
-                if (txtModello.Text == "")
+                if (cmbModello.Text == "")
                 {
-                    errorProvider4.SetError(txtModello, "Inserire i dati correttamente");
+                    errorProvider4.SetError(cmbModello, "Inserire i dati correttamente");
                 }
                 if (updCapacita.Value <= 0)
                 {
@@ -131,12 +135,12 @@ namespace ProgettoDatabase
 
     }
 
-    private void txtModello_KeyUp(object sender, KeyEventArgs e)
+    private void cmbModello_SelectionChangeCommitted(object sender, EventArgs e)
     {
         errorProvider4.Clear();
     }
 
-    private void txtPropulsione_KeyUp(object sender, KeyEventArgs e)
+        private void txtPropulsione_KeyUp(object sender, KeyEventArgs e)
     {
         errorProvider9.Clear();
 
@@ -147,17 +151,21 @@ namespace ProgettoDatabase
         errorProvider2.Clear();
     }
 
-        private void cmbModello_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbMarca_SelectionChangeCommitted(object sender, EventArgs e)
         {
-           
-        }
-
-        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string marca = cmbMarca.Text.ToString();
+            
+            string marca = cmbMarca.SelectedValue.ToString();
             // cmbModello.Items.Add(modelliTableAdapter.SelezioneModello(cmbMarca.Text.ToString()));
             // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet1.Modelli'. È possibile spostarla o rimuoverla se necessario.
-            this.modelliTableAdapter.FillByMarca(aeroportoDataSet1.Modelli, marca);
+            //this.modelliTableAdapter.FillByMarca(aeroportoDataSet1.Modelli, marca);
+
+
+            // txtMarca.Text = cmbMarca.SelectedValue.ToString();
+
+
+            this.modelliTableAdapter.FillByMarca(this.aeroportoDataSet.Modelli, marca);
         }
+
+
     }
 }
