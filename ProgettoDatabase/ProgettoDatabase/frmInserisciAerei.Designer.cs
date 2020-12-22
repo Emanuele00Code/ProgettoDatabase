@@ -150,7 +150,7 @@ namespace ProgettoDatabase
             // 
             this.chkInternazionale.AutoSize = true;
             this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.tblAereiBindingSource, "Internazionale", true));
-            this.chkInternazionale.Location = new System.Drawing.Point(272, 368);
+            this.chkInternazionale.Location = new System.Drawing.Point(277, 404);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
             this.chkInternazionale.TabIndex = 54;
@@ -169,7 +169,7 @@ namespace ProgettoDatabase
             // txtCompagnia
             // 
             this.txtCompagnia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "CompagniaAerea", true));
-            this.txtCompagnia.Location = new System.Drawing.Point(272, 524);
+            this.txtCompagnia.Location = new System.Drawing.Point(277, 560);
             this.txtCompagnia.Name = "txtCompagnia";
             this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
             this.txtCompagnia.TabIndex = 53;
@@ -178,7 +178,7 @@ namespace ProgettoDatabase
             // txtPropulsione
             // 
             this.txtPropulsione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "TipoPropulsione", true));
-            this.txtPropulsione.Location = new System.Drawing.Point(272, 309);
+            this.txtPropulsione.Location = new System.Drawing.Point(277, 345);
             this.txtPropulsione.Name = "txtPropulsione";
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
             this.txtPropulsione.TabIndex = 52;
@@ -187,7 +187,7 @@ namespace ProgettoDatabase
             // updVelocita
             // 
             this.updVelocita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "VelocitaMax", true));
-            this.updVelocita.Location = new System.Drawing.Point(272, 465);
+            this.updVelocita.Location = new System.Drawing.Point(277, 501);
             this.updVelocita.Name = "updVelocita";
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
             this.updVelocita.TabIndex = 51;
@@ -196,7 +196,7 @@ namespace ProgettoDatabase
             // updRaggio
             // 
             this.updRaggio.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "Raggio", true));
-            this.updRaggio.Location = new System.Drawing.Point(272, 410);
+            this.updRaggio.Location = new System.Drawing.Point(277, 446);
             this.updRaggio.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -210,7 +210,7 @@ namespace ProgettoDatabase
             // updMotori
             // 
             this.updMotori.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "NumeroMotori", true));
-            this.updMotori.Location = new System.Drawing.Point(272, 259);
+            this.updMotori.Location = new System.Drawing.Point(277, 295);
             this.updMotori.Maximum = new decimal(new int[] {
             254,
             0,
@@ -224,7 +224,7 @@ namespace ProgettoDatabase
             // updLitri
             // 
             this.updLitri.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "LitriCarburante", true));
-            this.updLitri.Location = new System.Drawing.Point(272, 206);
+            this.updLitri.Location = new System.Drawing.Point(277, 242);
             this.updLitri.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -238,7 +238,7 @@ namespace ProgettoDatabase
             // updCapacita
             // 
             this.updCapacita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "CapacitaMassima", true));
-            this.updCapacita.Location = new System.Drawing.Point(272, 149);
+            this.updCapacita.Location = new System.Drawing.Point(277, 185);
             this.updCapacita.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -252,7 +252,7 @@ namespace ProgettoDatabase
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(68, 415);
+            this.label8.Location = new System.Drawing.Point(73, 451);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 17);
             this.label8.TabIndex = 46;
@@ -261,7 +261,7 @@ namespace ProgettoDatabase
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 529);
+            this.label7.Location = new System.Drawing.Point(73, 565);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 17);
             this.label7.TabIndex = 45;
@@ -270,7 +270,7 @@ namespace ProgettoDatabase
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(68, 470);
+            this.label6.Location = new System.Drawing.Point(73, 506);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 17);
             this.label6.TabIndex = 44;
@@ -279,7 +279,7 @@ namespace ProgettoDatabase
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 367);
+            this.label5.Location = new System.Drawing.Point(73, 403);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 17);
             this.label5.TabIndex = 43;
@@ -288,7 +288,7 @@ namespace ProgettoDatabase
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 315);
+            this.label4.Location = new System.Drawing.Point(73, 351);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 17);
             this.label4.TabIndex = 42;
@@ -297,7 +297,7 @@ namespace ProgettoDatabase
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(68, 264);
+            this.label3.Location = new System.Drawing.Point(73, 300);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 17);
             this.label3.TabIndex = 41;
@@ -306,7 +306,7 @@ namespace ProgettoDatabase
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 211);
+            this.label2.Location = new System.Drawing.Point(73, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 17);
             this.label2.TabIndex = 40;
@@ -315,7 +315,7 @@ namespace ProgettoDatabase
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 154);
+            this.label1.Location = new System.Drawing.Point(73, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 17);
             this.label1.TabIndex = 39;
@@ -324,7 +324,7 @@ namespace ProgettoDatabase
             // lblCodice
             // 
             this.lblCodice.AutoSize = true;
-            this.lblCodice.Location = new System.Drawing.Point(70, 117);
+            this.lblCodice.Location = new System.Drawing.Point(75, 153);
             this.lblCodice.Name = "lblCodice";
             this.lblCodice.Size = new System.Drawing.Size(51, 17);
             this.lblCodice.TabIndex = 55;
@@ -332,7 +332,7 @@ namespace ProgettoDatabase
             // 
             // txtCodice
             // 
-            this.txtCodice.Location = new System.Drawing.Point(272, 114);
+            this.txtCodice.Location = new System.Drawing.Point(277, 150);
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
             this.txtCodice.TabIndex = 56;
@@ -387,7 +387,7 @@ namespace ProgettoDatabase
             this.cmbMarca.DataSource = this.bindingSource2;
             this.cmbMarca.DisplayMember = "Nome";
             this.cmbMarca.FormattingEnabled = true;
-            this.cmbMarca.Location = new System.Drawing.Point(272, 12);
+            this.cmbMarca.Location = new System.Drawing.Point(277, 48);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(265, 24);
             this.cmbMarca.TabIndex = 60;
@@ -404,7 +404,7 @@ namespace ProgettoDatabase
             this.cmbModello.DataSource = this.bindingSource1;
             this.cmbModello.DisplayMember = "Modello";
             this.cmbModello.FormattingEnabled = true;
-            this.cmbModello.Location = new System.Drawing.Point(272, 65);
+            this.cmbModello.Location = new System.Drawing.Point(277, 101);
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
             this.cmbModello.TabIndex = 59;
@@ -419,7 +419,7 @@ namespace ProgettoDatabase
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(68, 15);
+            this.label9.Location = new System.Drawing.Point(73, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 17);
             this.label9.TabIndex = 58;
@@ -428,7 +428,7 @@ namespace ProgettoDatabase
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(68, 72);
+            this.label10.Location = new System.Drawing.Point(73, 108);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 17);
