@@ -8,7 +8,6 @@ namespace ProgettoDatabase.Classi
 {
     public class Aerei
     {
-        public string Marca { get; set; }
         public string Modello { get; set; }
         public int CapacitaMassima { get; set; }
         public int LitriCarburante { get; set; }
@@ -20,9 +19,8 @@ namespace ProgettoDatabase.Classi
         public string CompagniaAerea { get; set; }
         public string CodiceAereo { get; set; }
 
-        public Aerei(string Marca, string Modello, int CapacitaMassima, int LitriCarburante,int NumeroMotori, string TipoPropulsione,bool Internazionale, int Raggio,int VelocitaMax,string CompagniaAerea, string CodiceAereo) 
+        public Aerei( string Modello, int CapacitaMassima, int LitriCarburante,int NumeroMotori, string TipoPropulsione,bool Internazionale, int Raggio,int VelocitaMax,string CompagniaAerea, string CodiceAereo) 
         {
-            this.Marca = Marca;
             this.Modello = Modello;
             this.CapacitaMassima = CapacitaMassima;
             this.LitriCarburante = LitriCarburante;

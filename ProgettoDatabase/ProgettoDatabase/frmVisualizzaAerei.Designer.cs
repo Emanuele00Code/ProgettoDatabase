@@ -31,9 +31,6 @@ namespace ProgettoDatabase
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVisualizzaAerei));
-            this.tblAereiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
-            this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
             this.txtCompagnia = new System.Windows.Forms.TextBox();
             this.txtPropulsione = new System.Windows.Forms.TextBox();
@@ -54,33 +51,21 @@ namespace ProgettoDatabase
             this.lblModello = new System.Windows.Forms.Label();
             this.txtCodice = new System.Windows.Forms.TextBox();
             this.lblCodice = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
+            this.tblAereiTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblAereiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updLitri)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updCapacita)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // tblAereiBindingSource
-            // 
-            this.tblAereiBindingSource.DataMember = "tblAerei";
-            this.tblAereiBindingSource.DataSource = this.aeroportoDataSet;
-            // 
-            // aeroportoDataSet
-            // 
-            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
-            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblAereiTableAdapter
-            // 
-            this.tblAereiTableAdapter.ClearBeforeFill = true;
             // 
             // chkInternazionale
             // 
             this.chkInternazionale.AutoSize = true;
-            this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.tblAereiBindingSource, "Internazionale", true));
             this.chkInternazionale.Location = new System.Drawing.Point(274, 406);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
@@ -89,7 +74,6 @@ namespace ProgettoDatabase
             // 
             // txtCompagnia
             // 
-            this.txtCompagnia.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "CompagniaAerea", true));
             this.txtCompagnia.Location = new System.Drawing.Point(274, 562);
             this.txtCompagnia.Name = "txtCompagnia";
             this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
@@ -97,7 +81,6 @@ namespace ProgettoDatabase
             // 
             // txtPropulsione
             // 
-            this.txtPropulsione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "TipoPropulsione", true));
             this.txtPropulsione.Location = new System.Drawing.Point(274, 347);
             this.txtPropulsione.Name = "txtPropulsione";
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
@@ -105,15 +88,18 @@ namespace ProgettoDatabase
             // 
             // updVelocita
             // 
-            this.updVelocita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "VelocitaMax", true));
             this.updVelocita.Location = new System.Drawing.Point(274, 503);
+            this.updVelocita.Maximum = new decimal(new int[] {
+            32000,
+            0,
+            0,
+            0});
             this.updVelocita.Name = "updVelocita";
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
             this.updVelocita.TabIndex = 51;
             // 
             // updRaggio
             // 
-            this.updRaggio.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "Raggio", true));
             this.updRaggio.Location = new System.Drawing.Point(274, 448);
             this.updRaggio.Maximum = new decimal(new int[] {
             32766,
@@ -126,7 +112,6 @@ namespace ProgettoDatabase
             // 
             // updMotori
             // 
-            this.updMotori.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "NumeroMotori", true));
             this.updMotori.Location = new System.Drawing.Point(274, 297);
             this.updMotori.Maximum = new decimal(new int[] {
             254,
@@ -139,7 +124,6 @@ namespace ProgettoDatabase
             // 
             // updLitri
             // 
-            this.updLitri.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "LitriCarburante", true));
             this.updLitri.Location = new System.Drawing.Point(274, 244);
             this.updLitri.Maximum = new decimal(new int[] {
             32766,
@@ -152,7 +136,6 @@ namespace ProgettoDatabase
             // 
             // updCapacita
             // 
-            this.updCapacita.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.tblAereiBindingSource, "CapacitaMassima", true));
             this.updCapacita.Location = new System.Drawing.Point(274, 187);
             this.updCapacita.Maximum = new decimal(new int[] {
             32766,
@@ -237,7 +220,6 @@ namespace ProgettoDatabase
             // 
             // txtModello
             // 
-            this.txtModello.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Modello", true));
             this.txtModello.Location = new System.Drawing.Point(274, 140);
             this.txtModello.Margin = new System.Windows.Forms.Padding(4);
             this.txtModello.Name = "txtModello";
@@ -256,7 +238,6 @@ namespace ProgettoDatabase
             // 
             // txtCodice
             // 
-            this.txtCodice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Marca", true));
             this.txtCodice.Location = new System.Drawing.Point(274, 82);
             this.txtCodice.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodice.Name = "txtCodice";
@@ -272,6 +253,20 @@ namespace ProgettoDatabase
             this.lblCodice.Size = new System.Drawing.Size(51, 17);
             this.lblCodice.TabIndex = 55;
             this.lblCodice.Text = "Codice";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "tblAerei";
+            this.bindingSource1.DataSource = this.aeroportoDataSet;
+            // 
+            // aeroportoDataSet
+            // 
+            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblAereiTableAdapter
+            // 
+            this.tblAereiTableAdapter.ClearBeforeFill = true;
             // 
             // frmVisualizzaAerei
             // 
@@ -306,23 +301,19 @@ namespace ProgettoDatabase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Visualizza Aerei";
             this.Load += new System.EventHandler(this.frmVisualizzaAerei_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updVelocita)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updRaggio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updMotori)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updLitri)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updCapacita)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private AeroportoDataSet aeroportoDataSet;
-        
-        private System.Windows.Forms.BindingSource tblAereiBindingSource;
-        private AeroportoDataSetTableAdapters.tblAereiTableAdapter tblAereiTableAdapter;
         private System.Windows.Forms.CheckBox chkInternazionale;
         private System.Windows.Forms.TextBox txtCompagnia;
         private System.Windows.Forms.TextBox txtPropulsione;
@@ -343,5 +334,8 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label lblModello;
         private System.Windows.Forms.TextBox txtCodice;
         private System.Windows.Forms.Label lblCodice;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private AeroportoDataSet aeroportoDataSet;
+        private AeroportoDataSetTableAdapters.tblAereiTableAdapter tblAereiTableAdapter;
     }
 }

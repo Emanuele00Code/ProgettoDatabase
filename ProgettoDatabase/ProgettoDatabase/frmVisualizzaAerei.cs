@@ -33,7 +33,9 @@ namespace ProgettoDatabase
 
         private void frmVisualizzaAerei_Load(object sender, EventArgs e)
         {
-            
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAerei'. È possibile spostarla o rimuoverla se necessario.
+            this.tblAereiTableAdapter.Fill(this.aeroportoDataSet.tblAerei);
+
 
 
             txtCodice.Text = this._MiaAerei.CodiceAereo;

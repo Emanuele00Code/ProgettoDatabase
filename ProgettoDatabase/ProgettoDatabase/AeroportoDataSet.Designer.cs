@@ -42,9 +42,15 @@ namespace ProgettoDatabase {
         
         private tblVoliDataTable tabletblVoli;
         
+        private MarcheDataTable tableMarche;
+        
+        private ModelliDataTable tableModelli;
+        
         private global::System.Data.DataRelation relationFK_tblVoli_tblAerei1;
         
         private global::System.Data.DataRelation relationFK_tblVoli_tblAeroporti1;
+        
+        private global::System.Data.DataRelation relationFK_Modelli_Marche;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -100,6 +106,12 @@ namespace ProgettoDatabase {
                 }
                 if ((ds.Tables["tblVoli"] != null)) {
                     base.Tables.Add(new tblVoliDataTable(ds.Tables["tblVoli"]));
+                }
+                if ((ds.Tables["Marche"] != null)) {
+                    base.Tables.Add(new MarcheDataTable(ds.Tables["Marche"]));
+                }
+                if ((ds.Tables["Modelli"] != null)) {
+                    base.Tables.Add(new ModelliDataTable(ds.Tables["Modelli"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -211,6 +223,26 @@ namespace ProgettoDatabase {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MarcheDataTable Marche {
+            get {
+                return this.tableMarche;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ModelliDataTable Modelli {
+            get {
+                return this.tableModelli;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -303,6 +335,12 @@ namespace ProgettoDatabase {
                 if ((ds.Tables["tblVoli"] != null)) {
                     base.Tables.Add(new tblVoliDataTable(ds.Tables["tblVoli"]));
                 }
+                if ((ds.Tables["Marche"] != null)) {
+                    base.Tables.Add(new MarcheDataTable(ds.Tables["Marche"]));
+                }
+                if ((ds.Tables["Modelli"] != null)) {
+                    base.Tables.Add(new ModelliDataTable(ds.Tables["Modelli"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -390,8 +428,21 @@ namespace ProgettoDatabase {
                     this.tabletblVoli.InitVars();
                 }
             }
+            this.tableMarche = ((MarcheDataTable)(base.Tables["Marche"]));
+            if ((initTable == true)) {
+                if ((this.tableMarche != null)) {
+                    this.tableMarche.InitVars();
+                }
+            }
+            this.tableModelli = ((ModelliDataTable)(base.Tables["Modelli"]));
+            if ((initTable == true)) {
+                if ((this.tableModelli != null)) {
+                    this.tableModelli.InitVars();
+                }
+            }
             this.relationFK_tblVoli_tblAerei1 = this.Relations["FK_tblVoli_tblAerei1"];
             this.relationFK_tblVoli_tblAeroporti1 = this.Relations["FK_tblVoli_tblAeroporti1"];
+            this.relationFK_Modelli_Marche = this.Relations["FK_Modelli_Marche"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -420,6 +471,10 @@ namespace ProgettoDatabase {
             base.Tables.Add(this.tabletblAeroporti);
             this.tabletblVoli = new tblVoliDataTable();
             base.Tables.Add(this.tabletblVoli);
+            this.tableMarche = new MarcheDataTable();
+            base.Tables.Add(this.tableMarche);
+            this.tableModelli = new ModelliDataTable();
+            base.Tables.Add(this.tableModelli);
             this.relationFK_tblVoli_tblAerei1 = new global::System.Data.DataRelation("FK_tblVoli_tblAerei1", new global::System.Data.DataColumn[] {
                         this.tabletblAerei.CodiceAereoColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblVoli.CodiceAereoColumn}, false);
@@ -428,6 +483,10 @@ namespace ProgettoDatabase {
                         this.tabletblAeroporti.SiglaColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblVoli.DestinazioneColumn}, false);
             this.Relations.Add(this.relationFK_tblVoli_tblAeroporti1);
+            this.relationFK_Modelli_Marche = new global::System.Data.DataRelation("FK_Modelli_Marche", new global::System.Data.DataColumn[] {
+                        this.tableMarche.NomeColumn}, new global::System.Data.DataColumn[] {
+                        this.tableModelli.MarcaColumn}, false);
+            this.Relations.Add(this.relationFK_Modelli_Marche);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -481,6 +540,18 @@ namespace ProgettoDatabase {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializetblVoli() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeMarche() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeModelli() {
             return false;
         }
         
@@ -565,6 +636,12 @@ namespace ProgettoDatabase {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void tblVoliRowChangeEventHandler(object sender, tblVoliRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void MarcheRowChangeEventHandler(object sender, MarcheRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void ModelliRowChangeEventHandler(object sender, ModelliRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2155,8 +2232,6 @@ namespace ProgettoDatabase {
             
             private global::System.Data.DataColumn columnCodiceAereo;
             
-            private global::System.Data.DataColumn columnMarca;
-            
             private global::System.Data.DataColumn columnModello;
             
             private global::System.Data.DataColumn columnCapacitaMassima;
@@ -2213,14 +2288,6 @@ namespace ProgettoDatabase {
             public global::System.Data.DataColumn CodiceAereoColumn {
                 get {
                     return this.columnCodiceAereo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn MarcaColumn {
-                get {
-                    return this.columnMarca;
                 }
             }
             
@@ -2333,11 +2400,10 @@ namespace ProgettoDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblAereiRow AddtblAereiRow(string CodiceAereo, string Marca, string Modello, short CapacitaMassima, short LitriCarburante, byte NumeroMotori, string TipoPropulsione, bool Internazionale, short Raggio, short VelocitaMax, string CompagniaAerea) {
+            public tblAereiRow AddtblAereiRow(string CodiceAereo, string Modello, short CapacitaMassima, short LitriCarburante, byte NumeroMotori, string TipoPropulsione, bool Internazionale, short Raggio, short VelocitaMax, string CompagniaAerea) {
                 tblAereiRow rowtblAereiRow = ((tblAereiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CodiceAereo,
-                        Marca,
                         Modello,
                         CapacitaMassima,
                         LitriCarburante,
@@ -2377,7 +2443,6 @@ namespace ProgettoDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnCodiceAereo = base.Columns["CodiceAereo"];
-                this.columnMarca = base.Columns["Marca"];
                 this.columnModello = base.Columns["Modello"];
                 this.columnCapacitaMassima = base.Columns["CapacitaMassima"];
                 this.columnLitriCarburante = base.Columns["LitriCarburante"];
@@ -2394,8 +2459,6 @@ namespace ProgettoDatabase {
             private void InitClass() {
                 this.columnCodiceAereo = new global::System.Data.DataColumn("CodiceAereo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodiceAereo);
-                this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMarca);
                 this.columnModello = new global::System.Data.DataColumn("Modello", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModello);
                 this.columnCapacitaMassima = new global::System.Data.DataColumn("CapacitaMassima", typeof(short), null, global::System.Data.MappingType.Element);
@@ -2419,8 +2482,6 @@ namespace ProgettoDatabase {
                 this.columnCodiceAereo.AllowDBNull = false;
                 this.columnCodiceAereo.Unique = true;
                 this.columnCodiceAereo.MaxLength = 30;
-                this.columnMarca.AllowDBNull = false;
-                this.columnMarca.MaxLength = 100;
                 this.columnModello.AllowDBNull = false;
                 this.columnModello.MaxLength = 100;
                 this.columnCapacitaMassima.AllowDBNull = false;
@@ -3323,6 +3384,575 @@ namespace ProgettoDatabase {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MarcheDataTable : global::System.Data.TypedTableBase<MarcheRow> {
+            
+            private global::System.Data.DataColumn columnNome;
+            
+            private global::System.Data.DataColumn columnNazione;
+            
+            private global::System.Data.DataColumn columnNumeroDipendenti;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheDataTable() {
+                this.TableName = "Marche";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal MarcheDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected MarcheDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NomeColumn {
+                get {
+                    return this.columnNome;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NazioneColumn {
+                get {
+                    return this.columnNazione;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NumeroDipendentiColumn {
+                get {
+                    return this.columnNumeroDipendenti;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRow this[int index] {
+                get {
+                    return ((MarcheRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MarcheRowChangeEventHandler MarcheRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MarcheRowChangeEventHandler MarcheRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MarcheRowChangeEventHandler MarcheRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event MarcheRowChangeEventHandler MarcheRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddMarcheRow(MarcheRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRow AddMarcheRow(string Nome, string Nazione, string NumeroDipendenti) {
+                MarcheRow rowMarcheRow = ((MarcheRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Nome,
+                        Nazione,
+                        NumeroDipendenti};
+                rowMarcheRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMarcheRow);
+                return rowMarcheRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRow FindByNome(string Nome) {
+                return ((MarcheRow)(this.Rows.Find(new object[] {
+                            Nome})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MarcheDataTable cln = ((MarcheDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MarcheDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnNome = base.Columns["Nome"];
+                this.columnNazione = base.Columns["Nazione"];
+                this.columnNumeroDipendenti = base.Columns["NumeroDipendenti"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnNome = new global::System.Data.DataColumn("Nome", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNome);
+                this.columnNazione = new global::System.Data.DataColumn("Nazione", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNazione);
+                this.columnNumeroDipendenti = new global::System.Data.DataColumn("NumeroDipendenti", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumeroDipendenti);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnNome}, true));
+                this.columnNome.AllowDBNull = false;
+                this.columnNome.Unique = true;
+                this.columnNome.MaxLength = 30;
+                this.columnNazione.AllowDBNull = false;
+                this.columnNazione.MaxLength = 30;
+                this.columnNumeroDipendenti.AllowDBNull = false;
+                this.columnNumeroDipendenti.MaxLength = 30;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRow NewMarcheRow() {
+                return ((MarcheRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MarcheRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MarcheRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MarcheRowChanged != null)) {
+                    this.MarcheRowChanged(this, new MarcheRowChangeEvent(((MarcheRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MarcheRowChanging != null)) {
+                    this.MarcheRowChanging(this, new MarcheRowChangeEvent(((MarcheRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MarcheRowDeleted != null)) {
+                    this.MarcheRowDeleted(this, new MarcheRowChangeEvent(((MarcheRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MarcheRowDeleting != null)) {
+                    this.MarcheRowDeleting(this, new MarcheRowChangeEvent(((MarcheRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveMarcheRow(MarcheRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AeroportoDataSet ds = new AeroportoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MarcheDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ModelliDataTable : global::System.Data.TypedTableBase<ModelliRow> {
+            
+            private global::System.Data.DataColumn columnModello;
+            
+            private global::System.Data.DataColumn columnMarca;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliDataTable() {
+                this.TableName = "Modelli";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ModelliDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected ModelliDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ModelloColumn {
+                get {
+                    return this.columnModello;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MarcaColumn {
+                get {
+                    return this.columnMarca;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRow this[int index] {
+                get {
+                    return ((ModelliRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ModelliRowChangeEventHandler ModelliRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ModelliRowChangeEventHandler ModelliRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ModelliRowChangeEventHandler ModelliRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ModelliRowChangeEventHandler ModelliRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddModelliRow(ModelliRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRow AddModelliRow(string Modello, MarcheRow parentMarcheRowByFK_Modelli_Marche) {
+                ModelliRow rowModelliRow = ((ModelliRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Modello,
+                        null};
+                if ((parentMarcheRowByFK_Modelli_Marche != null)) {
+                    columnValuesArray[1] = parentMarcheRowByFK_Modelli_Marche[0];
+                }
+                rowModelliRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowModelliRow);
+                return rowModelliRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRow FindByModello(string Modello) {
+                return ((ModelliRow)(this.Rows.Find(new object[] {
+                            Modello})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ModelliDataTable cln = ((ModelliDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ModelliDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnModello = base.Columns["Modello"];
+                this.columnMarca = base.Columns["Marca"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnModello = new global::System.Data.DataColumn("Modello", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnModello);
+                this.columnMarca = new global::System.Data.DataColumn("Marca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMarca);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnModello}, true));
+                this.columnModello.AllowDBNull = false;
+                this.columnModello.Unique = true;
+                this.columnModello.MaxLength = 30;
+                this.columnMarca.AllowDBNull = false;
+                this.columnMarca.MaxLength = 30;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRow NewModelliRow() {
+                return ((ModelliRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ModelliRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ModelliRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ModelliRowChanged != null)) {
+                    this.ModelliRowChanged(this, new ModelliRowChangeEvent(((ModelliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ModelliRowChanging != null)) {
+                    this.ModelliRowChanging(this, new ModelliRowChangeEvent(((ModelliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ModelliRowDeleted != null)) {
+                    this.ModelliRowDeleted(this, new ModelliRowChangeEvent(((ModelliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ModelliRowDeleting != null)) {
+                    this.ModelliRowDeleting(this, new ModelliRowChangeEvent(((ModelliRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveModelliRow(ModelliRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                AeroportoDataSet ds = new AeroportoDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ModelliDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class vwAereiConMaggiorNumeroVoliRow : global::System.Data.DataRow {
@@ -3591,17 +4221,6 @@ namespace ProgettoDatabase {
                 }
                 set {
                     this[this.tabletblAerei.CodiceAereoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Marca {
-                get {
-                    return ((string)(this[this.tabletblAerei.MarcaColumn]));
-                }
-                set {
-                    this[this.tabletblAerei.MarcaColumn] = value;
                 }
             }
             
@@ -4097,6 +4716,113 @@ namespace ProgettoDatabase {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MarcheRow : global::System.Data.DataRow {
+            
+            private MarcheDataTable tableMarche;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal MarcheRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMarche = ((MarcheDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Nome {
+                get {
+                    return ((string)(this[this.tableMarche.NomeColumn]));
+                }
+                set {
+                    this[this.tableMarche.NomeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Nazione {
+                get {
+                    return ((string)(this[this.tableMarche.NazioneColumn]));
+                }
+                set {
+                    this[this.tableMarche.NazioneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NumeroDipendenti {
+                get {
+                    return ((string)(this[this.tableMarche.NumeroDipendentiColumn]));
+                }
+                set {
+                    this[this.tableMarche.NumeroDipendentiColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRow[] GetModelliRows() {
+                if ((this.Table.ChildRelations["FK_Modelli_Marche"] == null)) {
+                    return new ModelliRow[0];
+                }
+                else {
+                    return ((ModelliRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Modelli_Marche"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ModelliRow : global::System.Data.DataRow {
+            
+            private ModelliDataTable tableModelli;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal ModelliRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableModelli = ((ModelliDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Modello {
+                get {
+                    return ((string)(this[this.tableModelli.ModelloColumn]));
+                }
+                set {
+                    this[this.tableModelli.ModelloColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Marca {
+                get {
+                    return ((string)(this[this.tableModelli.MarcaColumn]));
+                }
+                set {
+                    this[this.tableModelli.MarcaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRow MarcheRow {
+                get {
+                    return ((MarcheRow)(this.GetParentRow(this.Table.ParentRelations["FK_Modelli_Marche"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Modelli_Marche"]);
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4388,6 +5114,74 @@ namespace ProgettoDatabase {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tblVoliRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class MarcheRowChangeEvent : global::System.EventArgs {
+            
+            private MarcheRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRowChangeEvent(MarcheRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public MarcheRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class ModelliRowChangeEvent : global::System.EventArgs {
+            
+            private ModelliRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRowChangeEvent(ModelliRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ModelliRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -5536,7 +6330,6 @@ namespace ProgettoDatabase.AeroportoDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "tblAerei";
             tableMapping.ColumnMappings.Add("CodiceAereo", "CodiceAereo");
-            tableMapping.ColumnMappings.Add("Marca", "Marca");
             tableMapping.ColumnMappings.Add("Modello", "Modello");
             tableMapping.ColumnMappings.Add("CapacitaMassima", "CapacitaMassima");
             tableMapping.ColumnMappings.Add("LitriCarburante", "LitriCarburante");
@@ -5549,10 +6342,9 @@ namespace ProgettoDatabase.AeroportoDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tblAerei] WHERE (([CodiceAereo] = @Original_CodiceAereo) AND ([Marca] = @Original_Marca) AND ([Modello] = @Original_Modello) AND ([CapacitaMassima] = @Original_CapacitaMassima) AND ([LitriCarburante] = @Original_LitriCarburante) AND ((@IsNull_NumeroMotori = 1 AND [NumeroMotori] IS NULL) OR ([NumeroMotori] = @Original_NumeroMotori)) AND ([TipoPropulsione] = @Original_TipoPropulsione) AND ([Internazionale] = @Original_Internazionale) AND ((@IsNull_Raggio = 1 AND [Raggio] IS NULL) OR ([Raggio] = @Original_Raggio)) AND ((@IsNull_VelocitaMax = 1 AND [VelocitaMax] IS NULL) OR ([VelocitaMax] = @Original_VelocitaMax)) AND ([CompagniaAerea] = @Original_CompagniaAerea))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tblAerei] WHERE (([CodiceAereo] = @Original_CodiceAereo) AND ([Modello] = @Original_Modello) AND ([CapacitaMassima] = @Original_CapacitaMassima) AND ([LitriCarburante] = @Original_LitriCarburante) AND ((@IsNull_NumeroMotori = 1 AND [NumeroMotori] IS NULL) OR ([NumeroMotori] = @Original_NumeroMotori)) AND ([TipoPropulsione] = @Original_TipoPropulsione) AND ([Internazionale] = @Original_Internazionale) AND ((@IsNull_Raggio = 1 AND [Raggio] IS NULL) OR ([Raggio] = @Original_Raggio)) AND ((@IsNull_VelocitaMax = 1 AND [VelocitaMax] IS NULL) OR ([VelocitaMax] = @Original_VelocitaMax)) AND ([CompagniaAerea] = @Original_CompagniaAerea))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CapacitaMassima", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapacitaMassima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LitriCarburante", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LitriCarburante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5567,11 +6359,10 @@ namespace ProgettoDatabase.AeroportoDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CompagniaAerea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompagniaAerea", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tblAerei] ([CodiceAereo], [Marca], [Modello], [CapacitaMassima], [LitriCarburante], [NumeroMotori], [TipoPropulsione], [Internazionale], [Raggio], [VelocitaMax], [CompagniaAerea]) VALUES (@CodiceAereo, @Marca, @Modello, @CapacitaMassima, @LitriCarburante, @NumeroMotori, @TipoPropulsione, @Internazionale, @Raggio, @VelocitaMax, @CompagniaAerea);
-SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea FROM tblAerei WHERE (CodiceAereo = @CodiceAereo)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tblAerei] ([CodiceAereo], [Modello], [CapacitaMassima], [LitriCarburante], [NumeroMotori], [TipoPropulsione], [Internazionale], [Raggio], [VelocitaMax], [CompagniaAerea]) VALUES (@CodiceAereo, @Modello, @CapacitaMassima, @LitriCarburante, @NumeroMotori, @TipoPropulsione, @Internazionale, @Raggio, @VelocitaMax, @CompagniaAerea);
+SELECT CodiceAereo, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea FROM tblAerei WHERE (CodiceAereo = @CodiceAereo)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapacitaMassima", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapacitaMassima", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LitriCarburante", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LitriCarburante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5583,11 +6374,10 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompagniaAerea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompagniaAerea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [tblAerei] SET [CodiceAereo] = @CodiceAereo, [Marca] = @Marca, [Modello] = @Modello, [CapacitaMassima] = @CapacitaMassima, [LitriCarburante] = @LitriCarburante, [NumeroMotori] = @NumeroMotori, [TipoPropulsione] = @TipoPropulsione, [Internazionale] = @Internazionale, [Raggio] = @Raggio, [VelocitaMax] = @VelocitaMax, [CompagniaAerea] = @CompagniaAerea WHERE (([CodiceAereo] = @Original_CodiceAereo) AND ([Marca] = @Original_Marca) AND ([Modello] = @Original_Modello) AND ([CapacitaMassima] = @Original_CapacitaMassima) AND ([LitriCarburante] = @Original_LitriCarburante) AND ((@IsNull_NumeroMotori = 1 AND [NumeroMotori] IS NULL) OR ([NumeroMotori] = @Original_NumeroMotori)) AND ([TipoPropulsione] = @Original_TipoPropulsione) AND ([Internazionale] = @Original_Internazionale) AND ((@IsNull_Raggio = 1 AND [Raggio] IS NULL) OR ([Raggio] = @Original_Raggio)) AND ((@IsNull_VelocitaMax = 1 AND [VelocitaMax] IS NULL) OR ([VelocitaMax] = @Original_VelocitaMax)) AND ([CompagniaAerea] = @Original_CompagniaAerea));
-SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea FROM tblAerei WHERE (CodiceAereo = @CodiceAereo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tblAerei] SET [CodiceAereo] = @CodiceAereo, [Modello] = @Modello, [CapacitaMassima] = @CapacitaMassima, [LitriCarburante] = @LitriCarburante, [NumeroMotori] = @NumeroMotori, [TipoPropulsione] = @TipoPropulsione, [Internazionale] = @Internazionale, [Raggio] = @Raggio, [VelocitaMax] = @VelocitaMax, [CompagniaAerea] = @CompagniaAerea WHERE (([CodiceAereo] = @Original_CodiceAereo) AND ([Modello] = @Original_Modello) AND ([CapacitaMassima] = @Original_CapacitaMassima) AND ([LitriCarburante] = @Original_LitriCarburante) AND ((@IsNull_NumeroMotori = 1 AND [NumeroMotori] IS NULL) OR ([NumeroMotori] = @Original_NumeroMotori)) AND ([TipoPropulsione] = @Original_TipoPropulsione) AND ([Internazionale] = @Original_Internazionale) AND ((@IsNull_Raggio = 1 AND [Raggio] IS NULL) OR ([Raggio] = @Original_Raggio)) AND ((@IsNull_VelocitaMax = 1 AND [VelocitaMax] IS NULL) OR ([VelocitaMax] = @Original_VelocitaMax)) AND ([CompagniaAerea] = @Original_CompagniaAerea));
+SELECT CodiceAereo, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea FROM tblAerei WHERE (CodiceAereo = @CodiceAereo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CapacitaMassima", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapacitaMassima", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LitriCarburante", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LitriCarburante", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5598,7 +6388,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VelocitaMax", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VelocitaMax", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CompagniaAerea", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CompagniaAerea", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CapacitaMassima", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CapacitaMassima", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_LitriCarburante", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LitriCarburante", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -5626,9 +6415,9 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMotor" +
-                "i, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea\r\nFROM   " +
-                "  tblAerei\r\nWHERE  (Attivo = 1)";
+            this._commandCollection[0].CommandText = "SELECT CodiceAereo, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, Tipo" +
+                "Propulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea\r\nFROM     tblAe" +
+                "rei\r\nWHERE  (Attivo = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -5774,63 +6563,57 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_CodiceAereo, string Original_Marca, string Original_Modello, short Original_CapacitaMassima, short Original_LitriCarburante, global::System.Nullable<byte> Original_NumeroMotori, string Original_TipoPropulsione, bool Original_Internazionale, global::System.Nullable<short> Original_Raggio, global::System.Nullable<short> Original_VelocitaMax, string Original_CompagniaAerea) {
+        public virtual int Delete(string Original_CodiceAereo, string Original_Modello, short Original_CapacitaMassima, short Original_LitriCarburante, global::System.Nullable<byte> Original_NumeroMotori, string Original_TipoPropulsione, bool Original_Internazionale, global::System.Nullable<short> Original_Raggio, global::System.Nullable<short> Original_VelocitaMax, string Original_CompagniaAerea) {
             if ((Original_CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("Original_CodiceAereo");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_CodiceAereo));
             }
-            if ((Original_Marca == null)) {
-                throw new global::System.ArgumentNullException("Original_Marca");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Marca));
-            }
             if ((Original_Modello == null)) {
                 throw new global::System.ArgumentNullException("Original_Modello");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Modello));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Modello));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_CapacitaMassima));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((short)(Original_LitriCarburante));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((short)(Original_CapacitaMassima));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((short)(Original_LitriCarburante));
             if ((Original_NumeroMotori.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((byte)(Original_NumeroMotori.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((byte)(Original_NumeroMotori.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Original_TipoPropulsione == null)) {
                 throw new global::System.ArgumentNullException("Original_TipoPropulsione");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_TipoPropulsione));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_TipoPropulsione));
             }
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((bool)(Original_Internazionale));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((bool)(Original_Internazionale));
             if ((Original_Raggio.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((short)(Original_Raggio.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((short)(Original_Raggio.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_VelocitaMax.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((short)(Original_VelocitaMax.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((short)(Original_VelocitaMax.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_CompagniaAerea == null)) {
                 throw new global::System.ArgumentNullException("Original_CompagniaAerea");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_CompagniaAerea));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_CompagniaAerea));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5852,57 +6635,51 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string CodiceAereo, string Marca, string Modello, short CapacitaMassima, short LitriCarburante, global::System.Nullable<byte> NumeroMotori, string TipoPropulsione, bool Internazionale, global::System.Nullable<short> Raggio, global::System.Nullable<short> VelocitaMax, string CompagniaAerea) {
+        public virtual int Insert(string CodiceAereo, string Modello, short CapacitaMassima, short LitriCarburante, global::System.Nullable<byte> NumeroMotori, string TipoPropulsione, bool Internazionale, global::System.Nullable<short> Raggio, global::System.Nullable<short> VelocitaMax, string CompagniaAerea) {
             if ((CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("CodiceAereo");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(CodiceAereo));
             }
-            if ((Marca == null)) {
-                throw new global::System.ArgumentNullException("Marca");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Marca));
-            }
             if ((Modello == null)) {
                 throw new global::System.ArgumentNullException("Modello");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Modello));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Modello));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(CapacitaMassima));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((short)(LitriCarburante));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((short)(CapacitaMassima));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((short)(LitriCarburante));
             if ((NumeroMotori.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((byte)(NumeroMotori.Value));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((byte)(NumeroMotori.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((TipoPropulsione == null)) {
                 throw new global::System.ArgumentNullException("TipoPropulsione");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(TipoPropulsione));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(TipoPropulsione));
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((bool)(Internazionale));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((bool)(Internazionale));
             if ((Raggio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((short)(Raggio.Value));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((short)(Raggio.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((VelocitaMax.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((short)(VelocitaMax.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((VelocitaMax.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((short)(VelocitaMax.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((CompagniaAerea == null)) {
                 throw new global::System.ArgumentNullException("CompagniaAerea");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(CompagniaAerea));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(CompagniaAerea));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5926,7 +6703,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string CodiceAereo, 
-                    string Marca, 
                     string Modello, 
                     short CapacitaMassima, 
                     short LitriCarburante, 
@@ -5937,7 +6713,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
                     global::System.Nullable<short> VelocitaMax, 
                     string CompagniaAerea, 
                     string Original_CodiceAereo, 
-                    string Original_Marca, 
                     string Original_Modello, 
                     short Original_CapacitaMassima, 
                     short Original_LitriCarburante, 
@@ -5953,107 +6728,95 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(CodiceAereo));
             }
-            if ((Marca == null)) {
-                throw new global::System.ArgumentNullException("Marca");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Marca));
-            }
             if ((Modello == null)) {
                 throw new global::System.ArgumentNullException("Modello");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Modello));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Modello));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(CapacitaMassima));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(LitriCarburante));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((short)(CapacitaMassima));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(LitriCarburante));
             if ((NumeroMotori.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((byte)(NumeroMotori.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((byte)(NumeroMotori.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((TipoPropulsione == null)) {
                 throw new global::System.ArgumentNullException("TipoPropulsione");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(TipoPropulsione));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(TipoPropulsione));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((bool)(Internazionale));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((bool)(Internazionale));
             if ((Raggio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(Raggio.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Raggio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((VelocitaMax.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(VelocitaMax.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((VelocitaMax.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((short)(VelocitaMax.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((CompagniaAerea == null)) {
                 throw new global::System.ArgumentNullException("CompagniaAerea");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(CompagniaAerea));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(CompagniaAerea));
             }
             if ((Original_CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("Original_CodiceAereo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_CodiceAereo));
-            }
-            if ((Original_Marca == null)) {
-                throw new global::System.ArgumentNullException("Original_Marca");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Marca));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_CodiceAereo));
             }
             if ((Original_Modello == null)) {
                 throw new global::System.ArgumentNullException("Original_Modello");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Modello));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Modello));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((short)(Original_CapacitaMassima));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((short)(Original_LitriCarburante));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((short)(Original_CapacitaMassima));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((short)(Original_LitriCarburante));
             if ((Original_NumeroMotori.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((byte)(Original_NumeroMotori.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((byte)(Original_NumeroMotori.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_TipoPropulsione == null)) {
                 throw new global::System.ArgumentNullException("Original_TipoPropulsione");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_TipoPropulsione));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_TipoPropulsione));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(Original_Internazionale));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(Original_Internazionale));
             if ((Original_Raggio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((short)(Original_Raggio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_VelocitaMax.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((short)(Original_Raggio.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((short)(Original_VelocitaMax.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_VelocitaMax.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((short)(Original_VelocitaMax.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
-            }
             if ((Original_CompagniaAerea == null)) {
                 throw new global::System.ArgumentNullException("Original_CompagniaAerea");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_CompagniaAerea));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_CompagniaAerea));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6076,7 +6839,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string Marca, 
                     string Modello, 
                     short CapacitaMassima, 
                     short LitriCarburante, 
@@ -6087,7 +6849,6 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
                     global::System.Nullable<short> VelocitaMax, 
                     string CompagniaAerea, 
                     string Original_CodiceAereo, 
-                    string Original_Marca, 
                     string Original_Modello, 
                     short Original_CapacitaMassima, 
                     short Original_LitriCarburante, 
@@ -6097,7 +6858,7 @@ SELECT CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMoto
                     global::System.Nullable<short> Original_Raggio, 
                     global::System.Nullable<short> Original_VelocitaMax, 
                     string Original_CompagniaAerea) {
-            return this.Update(Original_CodiceAereo, Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea, Original_CodiceAereo, Original_Marca, Original_Modello, Original_CapacitaMassima, Original_LitriCarburante, Original_NumeroMotori, Original_TipoPropulsione, Original_Internazionale, Original_Raggio, Original_VelocitaMax, Original_CompagniaAerea);
+            return this.Update(Original_CodiceAereo, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea, Original_CodiceAereo, Original_Modello, Original_CapacitaMassima, Original_LitriCarburante, Original_NumeroMotori, Original_TipoPropulsione, Original_Internazionale, Original_Raggio, Original_VelocitaMax, Original_CompagniaAerea);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7967,6 +8728,613 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class MarcheTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public MarcheTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Marche";
+            tableMapping.ColumnMappings.Add("Nome", "Nome");
+            tableMapping.ColumnMappings.Add("Nazione", "Nazione");
+            tableMapping.ColumnMappings.Add("NumeroDipendenti", "NumeroDipendenti");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Marche] WHERE (([Nome] = @Original_Nome) AND ([Nazione] = @Original_" +
+                "Nazione) AND ([NumeroDipendenti] = @Original_NumeroDipendenti))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazione", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroDipendenti", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroDipendenti", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Marche] ([Nome], [Nazione], [NumeroDipendenti]) VALUES (@Nome, @Nazi" +
+                "one, @NumeroDipendenti);\r\nSELECT Nome, Nazione, NumeroDipendenti FROM Marche WHE" +
+                "RE (Nome = @Nome)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazione", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroDipendenti", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroDipendenti", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Marche] SET [Nome] = @Nome, [Nazione] = @Nazione, [NumeroDipendenti] = @NumeroDipendenti WHERE (([Nome] = @Original_Nome) AND ([Nazione] = @Original_Nazione) AND ([NumeroDipendenti] = @Original_NumeroDipendenti));
+SELECT Nome, Nazione, NumeroDipendenti FROM Marche WHERE (Nome = @Nome)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazione", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroDipendenti", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroDipendenti", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nome", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazione", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroDipendenti", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroDipendenti", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProgettoDatabase.Properties.Settings.Default.AeroportoConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Marche.*\r\nFROM     Marche";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AeroportoDataSet.MarcheDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AeroportoDataSet.MarcheDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AeroportoDataSet.MarcheDataTable dataTable = new AeroportoDataSet.MarcheDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AeroportoDataSet.MarcheDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AeroportoDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Marche");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ModelliTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public ModelliTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Modelli";
+            tableMapping.ColumnMappings.Add("Modello", "Modello");
+            tableMapping.ColumnMappings.Add("Marca", "Marca");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Modelli] WHERE (([Modello] = @Original_Modello) AND ([Marca] = @Orig" +
+                "inal_Marca))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [Modelli] ([Modello], [Marca]) VALUES (@Modello, @Marca);\r\nSELECT Mod" +
+                "ello, Marca FROM Modelli WHERE (Modello = @Modello)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Modelli] SET [Modello] = @Modello, [Marca] = @Marca WHERE (([Modello] = @" +
+                "Original_Modello) AND ([Marca] = @Original_Marca));\r\nSELECT Modello, Marca FROM " +
+                "Modelli WHERE (Modello = @Modello)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modello", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modello", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::ProgettoDatabase.Properties.Settings.Default.AeroportoConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT Modelli.*\r\nFROM     Modelli";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Modello\r\nFROM     Modelli\r\nWHERE  (Marca = @Param1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(AeroportoDataSet.ModelliDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual AeroportoDataSet.ModelliDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            AeroportoDataSet.ModelliDataTable dataTable = new AeroportoDataSet.ModelliDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByMarca(AeroportoDataSet.ModelliDataTable dataTable, string Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual AeroportoDataSet.ModelliDataTable GetDataByMarca(string Param1) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Param1 == null)) {
+                throw new global::System.ArgumentNullException("Param1");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Param1));
+            }
+            AeroportoDataSet.ModelliDataTable dataTable = new AeroportoDataSet.ModelliDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AeroportoDataSet.ModelliDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(AeroportoDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Modelli");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_Modello, string Original_Marca) {
+            if ((Original_Modello == null)) {
+                throw new global::System.ArgumentNullException("Original_Modello");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Modello));
+            }
+            if ((Original_Marca == null)) {
+                throw new global::System.ArgumentNullException("Original_Marca");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Marca));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string Modello, string Marca) {
+            if ((Modello == null)) {
+                throw new global::System.ArgumentNullException("Modello");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Modello));
+            }
+            if ((Marca == null)) {
+                throw new global::System.ArgumentNullException("Marca");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Marca));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Modello, string Marca, string Original_Modello, string Original_Marca) {
+            if ((Modello == null)) {
+                throw new global::System.ArgumentNullException("Modello");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Modello));
+            }
+            if ((Marca == null)) {
+                throw new global::System.ArgumentNullException("Marca");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Marca));
+            }
+            if ((Original_Modello == null)) {
+                throw new global::System.ArgumentNullException("Original_Modello");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_Modello));
+            }
+            if ((Original_Marca == null)) {
+                throw new global::System.ArgumentNullException("Original_Marca");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_Marca));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string Marca, string Original_Modello, string Original_Marca) {
+            return this.Update(Original_Modello, Marca, Original_Modello, Original_Marca);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -7983,6 +9351,10 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         private tblAeroportiTableAdapter _tblAeroportiTableAdapter;
         
         private tblVoliTableAdapter _tblVoliTableAdapter;
+        
+        private MarcheTableAdapter _marcheTableAdapter;
+        
+        private ModelliTableAdapter _modelliTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -8043,6 +9415,34 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public MarcheTableAdapter MarcheTableAdapter {
+            get {
+                return this._marcheTableAdapter;
+            }
+            set {
+                this._marcheTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ModelliTableAdapter ModelliTableAdapter {
+            get {
+                return this._modelliTableAdapter;
+            }
+            set {
+                this._modelliTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -8072,6 +9472,14 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                             && (this._tblVoliTableAdapter.Connection != null))) {
                     return this._tblVoliTableAdapter.Connection;
                 }
+                if (((this._marcheTableAdapter != null) 
+                            && (this._marcheTableAdapter.Connection != null))) {
+                    return this._marcheTableAdapter.Connection;
+                }
+                if (((this._modelliTableAdapter != null) 
+                            && (this._modelliTableAdapter.Connection != null))) {
+                    return this._modelliTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -8092,6 +9500,12 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                     count = (count + 1);
                 }
                 if ((this._tblVoliTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._marcheTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._modelliTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -8123,12 +9537,30 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._marcheTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._marcheTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._tblVoliTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tblVoliTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._modelliTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Modelli.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._modelliTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -8158,11 +9590,27 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._marcheTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._marcheTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._tblVoliTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tblVoliTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._modelliTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Modelli.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._modelliTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -8176,11 +9624,27 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(AeroportoDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._modelliTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Modelli.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._modelliTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tblVoliTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.tblVoli.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tblVoliTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._marcheTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Marche.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._marcheTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -8254,6 +9718,16 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                 throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
                         "a stessa stringa di connessione.");
             }
+            if (((this._marcheTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._marcheTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
+                        "a stessa stringa di connessione.");
+            }
+            if (((this._modelliTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._modelliTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Tutti gli oggetti TableAdapter gestiti da TableAdapterManager devono utilizzare l" +
+                        "a stessa stringa di connessione.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager non contiene informazioni di connessione. Impostare la propri" +
@@ -8312,6 +9786,24 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                     if (this._tblVoliTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._tblVoliTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._tblVoliTableAdapter.Adapter);
+                    }
+                }
+                if ((this._marcheTableAdapter != null)) {
+                    revertConnections.Add(this._marcheTableAdapter, this._marcheTableAdapter.Connection);
+                    this._marcheTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._marcheTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._marcheTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._marcheTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._marcheTableAdapter.Adapter);
+                    }
+                }
+                if ((this._modelliTableAdapter != null)) {
+                    revertConnections.Add(this._modelliTableAdapter, this._modelliTableAdapter.Connection);
+                    this._modelliTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._modelliTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._modelliTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._modelliTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._modelliTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -8383,6 +9875,14 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
                 if ((this._tblVoliTableAdapter != null)) {
                     this._tblVoliTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tblVoliTableAdapter]));
                     this._tblVoliTableAdapter.Transaction = null;
+                }
+                if ((this._marcheTableAdapter != null)) {
+                    this._marcheTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._marcheTableAdapter]));
+                    this._marcheTableAdapter.Transaction = null;
+                }
+                if ((this._modelliTableAdapter != null)) {
+                    this._modelliTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._modelliTableAdapter]));
+                    this._modelliTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

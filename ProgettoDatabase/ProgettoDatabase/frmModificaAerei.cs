@@ -34,10 +34,15 @@ namespace ProgettoDatabase
 
         private void frmModificaAerei_Load(object sender, EventArgs e)
         {
-            
+
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet1.Marche'. È possibile spostarla o rimuoverla se necessario.
+            this.marcheTableAdapter.Fill(this.aeroportoDataSet1.Marche);
+
             this.tblAereiTableAdapter.FillByCodiceAereo(this.aeroportoDataSet.tblAerei, this._CodiceAerei);
 
-            
+            //string marca = cmbMarca.Items.ToString();
+
+            //cmbModello.Items.Add(modelliTableAdapter.SelezioneModello(marca));
 
         }
         
@@ -142,6 +147,17 @@ namespace ProgettoDatabase
         errorProvider2.Clear();
     }
 
- 
+        private void cmbModello_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void cmbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string marca = cmbMarca.Text.ToString();
+            // cmbModello.Items.Add(modelliTableAdapter.SelezioneModello(cmbMarca.Text.ToString()));
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet1.Modelli'. È possibile spostarla o rimuoverla se necessario.
+            this.modelliTableAdapter.FillByMarca(aeroportoDataSet1.Modelli, marca);
+        }
     }
 }

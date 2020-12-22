@@ -63,6 +63,17 @@ namespace ProgettoDatabase
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider9 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider10 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.marcheBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet1 = new ProgettoDatabase.AeroportoDataSet();
+            this.cmbModello = new System.Windows.Forms.ComboBox();
+            this.modelliBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.modelliBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.modelliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.marcheTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.MarcheTableAdapter();
+            this.fKModelliMarcheBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.modelliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.ModelliTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tblAereiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updCapacita)).BeginInit();
@@ -80,12 +91,18 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcheBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelliBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelliBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKModelliMarcheBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblModello
             // 
             this.lblModello.AutoSize = true;
-            this.lblModello.Location = new System.Drawing.Point(67, 99);
+            this.lblModello.Location = new System.Drawing.Point(76, 84);
             this.lblModello.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblModello.Name = "lblModello";
             this.lblModello.Size = new System.Drawing.Size(57, 17);
@@ -105,7 +122,7 @@ namespace ProgettoDatabase
             // txtModello
             // 
             this.txtModello.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tblAereiBindingSource, "Modello", true));
-            this.txtModello.Location = new System.Drawing.Point(271, 99);
+            this.txtModello.Location = new System.Drawing.Point(271, 117);
             this.txtModello.Margin = new System.Windows.Forms.Padding(4);
             this.txtModello.Name = "txtModello";
             this.txtModello.Size = new System.Drawing.Size(265, 22);
@@ -120,7 +137,7 @@ namespace ProgettoDatabase
             this.btnSalva.BackColor = System.Drawing.Color.White;
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalva.Location = new System.Drawing.Point(238, 586);
-            this.btnSalva.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.btnSalva.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(123, 52);
             this.btnSalva.TabIndex = 16;
@@ -337,12 +354,86 @@ namespace ProgettoDatabase
             // 
             this.errorProvider10.ContainerControl = this;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(76, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 17);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Marca";
+            // 
+            // cmbMarca
+            // 
+            this.cmbMarca.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.marcheBindingSource, "Nome", true));
+            this.cmbMarca.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.marcheBindingSource, "Nome", true));
+            this.cmbMarca.DataSource = this.marcheBindingSource;
+            this.cmbMarca.DisplayMember = "Nome";
+            this.cmbMarca.FormattingEnabled = true;
+            this.cmbMarca.Location = new System.Drawing.Point(271, 43);
+            this.cmbMarca.Name = "cmbMarca";
+            this.cmbMarca.Size = new System.Drawing.Size(265, 24);
+            this.cmbMarca.TabIndex = 36;
+            this.cmbMarca.SelectedIndexChanged += new System.EventHandler(this.cmbMarca_SelectedIndexChanged);
+            // 
+            // marcheBindingSource
+            // 
+            this.marcheBindingSource.DataMember = "Marche";
+            this.marcheBindingSource.DataSource = this.aeroportoDataSet1;
+            // 
+            // aeroportoDataSet1
+            // 
+            this.aeroportoDataSet1.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cmbModello
+            // 
+            this.cmbModello.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.modelliBindingSource1, "Modello", true));
+            this.cmbModello.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.modelliBindingSource2, "Modello", true));
+            this.cmbModello.FormattingEnabled = true;
+            this.cmbModello.Location = new System.Drawing.Point(271, 85);
+            this.cmbModello.Name = "cmbModello";
+            this.cmbModello.Size = new System.Drawing.Size(265, 24);
+            this.cmbModello.TabIndex = 37;
+            this.cmbModello.SelectedIndexChanged += new System.EventHandler(this.cmbModello_SelectedIndexChanged);
+            // 
+            // modelliBindingSource1
+            // 
+            this.modelliBindingSource1.DataMember = "Modelli";
+            this.modelliBindingSource1.DataSource = this.aeroportoDataSet;
+            // 
+            // modelliBindingSource2
+            // 
+            this.modelliBindingSource2.DataMember = "Modelli";
+            this.modelliBindingSource2.DataSource = this.aeroportoDataSet;
+            // 
+            // modelliBindingSource
+            // 
+            this.modelliBindingSource.DataMember = "Modelli";
+            this.modelliBindingSource.DataSource = this.aeroportoDataSet1;
+            // 
+            // marcheTableAdapter
+            // 
+            this.marcheTableAdapter.ClearBeforeFill = true;
+            // 
+            // fKModelliMarcheBindingSource
+            // 
+            this.fKModelliMarcheBindingSource.DataMember = "FK_Modelli_Marche";
+            this.fKModelliMarcheBindingSource.DataSource = this.marcheBindingSource;
+            // 
+            // modelliTableAdapter
+            // 
+            this.modelliTableAdapter.ClearBeforeFill = true;
+            // 
             // frmModificaAerei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(591, 688);
+            this.Controls.Add(this.cmbModello);
+            this.Controls.Add(this.cmbMarca);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.chkInternazionale);
             this.Controls.Add(this.txtCompagnia);
             this.Controls.Add(this.txtPropulsione);
@@ -386,6 +477,12 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcheBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelliBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelliBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.modelliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fKModelliMarcheBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,5 +521,16 @@ namespace ProgettoDatabase
         private System.Windows.Forms.ErrorProvider errorProvider8;
         private System.Windows.Forms.ErrorProvider errorProvider9;
         private System.Windows.Forms.ErrorProvider errorProvider10;
+        private System.Windows.Forms.ComboBox cmbModello;
+        private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.Label label9;
+        private AeroportoDataSet aeroportoDataSet1;
+        private System.Windows.Forms.BindingSource marcheBindingSource;
+        private AeroportoDataSetTableAdapters.MarcheTableAdapter marcheTableAdapter;
+        private System.Windows.Forms.BindingSource fKModelliMarcheBindingSource;
+        private AeroportoDataSetTableAdapters.ModelliTableAdapter modelliTableAdapter;
+        private System.Windows.Forms.BindingSource modelliBindingSource;
+        private System.Windows.Forms.BindingSource modelliBindingSource1;
+        private System.Windows.Forms.BindingSource modelliBindingSource2;
     }
 }

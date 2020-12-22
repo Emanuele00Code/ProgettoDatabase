@@ -87,7 +87,7 @@ namespace ProgettoDatabase
                 VelocitaMax = Convert.ToInt16(selectedRow.Cells[9].Value);
                 CompagniaAerea = Convert.ToString(selectedRow.Cells[10].Value);
                 
-                Aerei MiaAerei = new Aerei( Marca,  Modello,  CapacitaMassima,  LitriCarburante,  NumeroMotori,  TipoPropulsione,  Internazionale, Raggio, VelocitaMax, CompagniaAerea, CodiceAereo);
+                Aerei MiaAerei = new Aerei(Modello,  CapacitaMassima,  LitriCarburante,  NumeroMotori,  TipoPropulsione,  Internazionale, Raggio, VelocitaMax, CompagniaAerea, CodiceAereo);
                 frmVisualizzaAerei FormDaAprire = new frmVisualizzaAerei(MiaAerei);
                 FormDaAprire.Show();
             }
@@ -230,18 +230,18 @@ namespace ProgettoDatabase
                 int selectedrowindex = dgvAerei.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvAerei.Rows[selectedrowindex];
                 CodiceAereo = Convert.ToString(selectedRow.Cells[0].Value);
-                Marca = Convert.ToString(selectedRow.Cells[1].Value);
-                Modello = Convert.ToString(selectedRow.Cells[2].Value);
-                CapacitaMassima = Convert.ToInt16(selectedRow.Cells[3].Value);
-                LitriCarburante = Convert.ToInt16(selectedRow.Cells[4].Value);
-                NumeroMotori = Convert.ToInt16(selectedRow.Cells[5].Value);
-                TipoPropulsione = Convert.ToString(selectedRow.Cells[6].Value);
-                Internazionale = Convert.ToBoolean(selectedRow.Cells[7].Value);
-                Raggio = Convert.ToInt16(selectedRow.Cells[8].Value);
-                VelocitaMax = Convert.ToInt16(selectedRow.Cells[9].Value);
-                CompagniaAerea = Convert.ToString(selectedRow.Cells[10].Value);
+                //Marca = Convert.ToString(selectedRow.Cells[1].Value);
+                Modello = Convert.ToString(selectedRow.Cells[1].Value);
+                CapacitaMassima = Convert.ToInt16(selectedRow.Cells[2].Value);
+                LitriCarburante = Convert.ToInt16(selectedRow.Cells[3].Value);
+                NumeroMotori = Convert.ToInt16(selectedRow.Cells[4].Value);
+                TipoPropulsione = Convert.ToString(selectedRow.Cells[5].Value);
+                Internazionale = Convert.ToBoolean(selectedRow.Cells[6].Value);
+                Raggio = Convert.ToInt16(selectedRow.Cells[7].Value);
+                VelocitaMax = Convert.ToInt16(selectedRow.Cells[8].Value);
+                CompagniaAerea = Convert.ToString(selectedRow.Cells[9].Value);
 
-                Aerei MiaAerei = new Aerei(Marca, Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea, CodiceAereo);
+                Aerei MiaAerei = new Aerei(Modello, CapacitaMassima, LitriCarburante, NumeroMotori, TipoPropulsione, Internazionale, Raggio, VelocitaMax, CompagniaAerea, CodiceAereo);
                 frmVisualizzaAerei FormDaAprire = new frmVisualizzaAerei(MiaAerei);
                 FormDaAprire.Show();
             }
