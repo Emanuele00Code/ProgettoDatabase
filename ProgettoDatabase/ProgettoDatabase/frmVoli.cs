@@ -83,6 +83,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     tblVoliTableAdapter.DisattivaVoli(Sigla);
+                    this.RefreshGrid();
                 }
             }
         }
@@ -103,6 +104,7 @@ namespace ProgettoDatabase
                     //MessageBox.Show("Placeholder, funzione già presente ma non attiva");
 
                     tblVoliTableAdapter.EliminaVoli(Sigla);
+                    this.RefreshGrid();
                 }
             }
         }

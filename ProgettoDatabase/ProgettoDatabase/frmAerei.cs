@@ -33,23 +33,7 @@ namespace ProgettoDatabase
             }
         }
 
-        private void btnModifica_Click(object sender, EventArgs e)
-        {
-
-            string CodiceAerei;
-
-            if (dgvAerei.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dgvAerei.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dgvAerei.Rows[selectedrowindex];
-                CodiceAerei = Convert.ToString(selectedRow.Cells[0].Value);
-                frmModificaAerei FormDaAprire = new frmModificaAerei(this.RefreshGrid,CodiceAerei);
-                FormDaAprire.Show();
-
-            }
-
-        }
-
+        
         private void btnNuovo_Click(object sender, EventArgs e)
         {
             frmInserisciAerei FormDaAprire = new frmInserisciAerei();
@@ -187,6 +171,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi eliminare l'Aereo selezionato?", "Eliminazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     tblAereiTableAdapter.DisattivaAereo(CodiceAerei);
+                    this.RefreshGrid();
                 }
             }
         }
@@ -206,6 +191,7 @@ namespace ProgettoDatabase
                 {
                     //MessageBox.Show("Placeholder, funzione già presente ma non attiva");
                     tblAereiTableAdapter.EliminaAereo(CodiceAerei);
+                    this.RefreshGrid();
                 }
             }
         }

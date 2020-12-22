@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -61,23 +62,23 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (txtDestinazione.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+            if ((txtCodiceAereo.Text != "") && (txtDestinazione.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), txtDestinazione.Text, chkInternazionale.Checked);
-                    this.Close();
+                    
+                        tblVoliTableAdapter.ModificaVoli( Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text,
+                           txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked, _Codice);
+                    this._RefreshGrid();
+
                 }
 
             }
             else
             {
                 MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (txtCodice.Text == "")
-                {
-                    errorProvider1.SetError(txtCodice, "Inserire i dati correttamente");
-                }
+                
                 if (txtCodiceAereo.Text == "")
                 {
                     errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
@@ -131,5 +132,64 @@ namespace ProgettoDatabase
             errorProvider5.Clear();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkInternazionale_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Internazionale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDestinazione_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDestinazione_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodiceAereo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPartenza_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPartenza_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblGatePartenza_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDurata_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCodiceAereo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

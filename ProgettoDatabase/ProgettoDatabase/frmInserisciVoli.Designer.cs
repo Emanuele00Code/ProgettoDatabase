@@ -49,8 +49,6 @@ namespace ProgettoDatabase
             this.updDurata = new System.Windows.Forms.NumericUpDown();
             this.updGatePartenza = new System.Windows.Forms.NumericUpDown();
             this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
-            this.lblDestinazione = new System.Windows.Forms.Label();
-            this.txtDestinazione = new System.Windows.Forms.TextBox();
             this.dtpDataArrivo = new System.Windows.Forms.DateTimePicker();
             this.lblDataOraArrivo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -251,30 +249,12 @@ namespace ProgettoDatabase
             // 
             this.tblVoliTableAdapter.ClearBeforeFill = true;
             // 
-            // lblDestinazione
-            // 
-            this.lblDestinazione.AutoSize = true;
-            this.lblDestinazione.Location = new System.Drawing.Point(79, 286);
-            this.lblDestinazione.Name = "lblDestinazione";
-            this.lblDestinazione.Size = new System.Drawing.Size(90, 17);
-            this.lblDestinazione.TabIndex = 43;
-            this.lblDestinazione.Text = "Destinazione";
-            // 
-            // txtDestinazione
-            // 
-            this.txtDestinazione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Destinazione", true));
-            this.txtDestinazione.Location = new System.Drawing.Point(272, 286);
-            this.txtDestinazione.Name = "txtDestinazione";
-            this.txtDestinazione.Size = new System.Drawing.Size(265, 22);
-            this.txtDestinazione.TabIndex = 44;
-            this.txtDestinazione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDestinazione_KeyUp);
-            // 
             // dtpDataArrivo
             // 
             this.dtpDataArrivo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataArrivo.Location = new System.Drawing.Point(277, 400);
+            this.dtpDataArrivo.Location = new System.Drawing.Point(277, 358);
             this.dtpDataArrivo.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(265, 22);
@@ -284,7 +264,7 @@ namespace ProgettoDatabase
             // lblDataOraArrivo
             // 
             this.lblDataOraArrivo.AutoSize = true;
-            this.lblDataOraArrivo.Location = new System.Drawing.Point(74, 400);
+            this.lblDataOraArrivo.Location = new System.Drawing.Point(74, 358);
             this.lblDataOraArrivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDataOraArrivo.Name = "lblDataOraArrivo";
             this.lblDataOraArrivo.Size = new System.Drawing.Size(79, 17);
@@ -294,7 +274,7 @@ namespace ProgettoDatabase
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(277, 400);
+            this.textBox1.Location = new System.Drawing.Point(277, 358);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(231, 22);
@@ -305,7 +285,7 @@ namespace ProgettoDatabase
             this.dtpDataPartenza.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataPartenza.Location = new System.Drawing.Point(278, 333);
+            this.dtpDataPartenza.Location = new System.Drawing.Point(278, 291);
             this.dtpDataPartenza.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(265, 22);
@@ -315,7 +295,7 @@ namespace ProgettoDatabase
             // lblDataOraPartenza
             // 
             this.lblDataOraPartenza.AutoSize = true;
-            this.lblDataOraPartenza.Location = new System.Drawing.Point(75, 333);
+            this.lblDataOraPartenza.Location = new System.Drawing.Point(75, 291);
             this.lblDataOraPartenza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDataOraPartenza.Name = "lblDataOraPartenza";
             this.lblDataOraPartenza.Size = new System.Drawing.Size(99, 17);
@@ -325,7 +305,7 @@ namespace ProgettoDatabase
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(278, 333);
+            this.textBox2.Location = new System.Drawing.Point(278, 291);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(231, 22);
@@ -334,7 +314,7 @@ namespace ProgettoDatabase
             // lblInternazionale
             // 
             this.lblInternazionale.AutoSize = true;
-            this.lblInternazionale.Location = new System.Drawing.Point(77, 452);
+            this.lblInternazionale.Location = new System.Drawing.Point(77, 410);
             this.lblInternazionale.Name = "lblInternazionale";
             this.lblInternazionale.Size = new System.Drawing.Size(97, 17);
             this.lblInternazionale.TabIndex = 51;
@@ -344,7 +324,7 @@ namespace ProgettoDatabase
             // 
             this.chkInternazionale.AutoSize = true;
             this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSource1, "Internazionale", true));
-            this.chkInternazionale.Location = new System.Drawing.Point(272, 452);
+            this.chkInternazionale.Location = new System.Drawing.Point(272, 410);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
             this.chkInternazionale.TabIndex = 52;
@@ -396,8 +376,6 @@ namespace ProgettoDatabase
             this.Controls.Add(this.dtpDataArrivo);
             this.Controls.Add(this.lblDataOraArrivo);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtDestinazione);
-            this.Controls.Add(this.lblDestinazione);
             this.Controls.Add(this.updGatePartenza);
             this.Controls.Add(this.updDurata);
             this.Controls.Add(this.txtPartenza);
@@ -455,8 +433,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.NumericUpDown updGatePartenza;
         private System.Windows.Forms.BindingSource bindingSource1;
         private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
-        private System.Windows.Forms.Label lblDestinazione;
-        private System.Windows.Forms.TextBox txtDestinazione;
         private System.Windows.Forms.DateTimePicker dtpDataArrivo;
         private System.Windows.Forms.Label lblDataOraArrivo;
         private System.Windows.Forms.TextBox textBox1;

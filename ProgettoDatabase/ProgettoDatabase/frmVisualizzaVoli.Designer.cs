@@ -41,8 +41,6 @@ namespace ProgettoDatabase
             this.dtpDataArrivo = new System.Windows.Forms.DateTimePicker();
             this.lblDataOraArrivo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtDestinazione = new System.Windows.Forms.TextBox();
-            this.lblDestinazione = new System.Windows.Forms.Label();
             this.updGatePartenza = new System.Windows.Forms.NumericUpDown();
             this.updDurata = new System.Windows.Forms.NumericUpDown();
             this.txtPartenza = new System.Windows.Forms.TextBox();
@@ -152,28 +150,10 @@ namespace ProgettoDatabase
             this.textBox1.Size = new System.Drawing.Size(231, 22);
             this.textBox1.TabIndex = 89;
             // 
-            // txtDestinazione
-            // 
-            this.txtDestinazione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Destinazione", true));
-            this.txtDestinazione.Location = new System.Drawing.Point(268, 260);
-            this.txtDestinazione.Name = "txtDestinazione";
-            this.txtDestinazione.ReadOnly = true;
-            this.txtDestinazione.Size = new System.Drawing.Size(265, 22);
-            this.txtDestinazione.TabIndex = 86;
-            // 
-            // lblDestinazione
-            // 
-            this.lblDestinazione.AutoSize = true;
-            this.lblDestinazione.Location = new System.Drawing.Point(75, 260);
-            this.lblDestinazione.Name = "lblDestinazione";
-            this.lblDestinazione.Size = new System.Drawing.Size(90, 17);
-            this.lblDestinazione.TabIndex = 85;
-            this.lblDestinazione.Text = "Destinazione";
-            // 
             // updGatePartenza
             // 
             this.updGatePartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "GatePartenza", true));
-            this.updGatePartenza.Location = new System.Drawing.Point(268, 159);
+            this.updGatePartenza.Location = new System.Drawing.Point(268, 204);
             this.updGatePartenza.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -187,7 +167,7 @@ namespace ProgettoDatabase
             // updDurata
             // 
             this.updDurata.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "Durata", true));
-            this.updDurata.Location = new System.Drawing.Point(268, 113);
+            this.updDurata.Location = new System.Drawing.Point(268, 158);
             this.updDurata.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -201,7 +181,7 @@ namespace ProgettoDatabase
             // txtPartenza
             // 
             this.txtPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Partenza", true));
-            this.txtPartenza.Location = new System.Drawing.Point(268, 203);
+            this.txtPartenza.Location = new System.Drawing.Point(268, 248);
             this.txtPartenza.Name = "txtPartenza";
             this.txtPartenza.ReadOnly = true;
             this.txtPartenza.Size = new System.Drawing.Size(265, 22);
@@ -210,7 +190,7 @@ namespace ProgettoDatabase
             // lblPartenza
             // 
             this.lblPartenza.AutoSize = true;
-            this.lblPartenza.Location = new System.Drawing.Point(75, 203);
+            this.lblPartenza.Location = new System.Drawing.Point(75, 248);
             this.lblPartenza.Name = "lblPartenza";
             this.lblPartenza.Size = new System.Drawing.Size(65, 17);
             this.lblPartenza.TabIndex = 81;
@@ -219,7 +199,7 @@ namespace ProgettoDatabase
             // txtCodiceAereo
             // 
             this.txtCodiceAereo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "CodiceAereo", true));
-            this.txtCodiceAereo.Location = new System.Drawing.Point(268, 60);
+            this.txtCodiceAereo.Location = new System.Drawing.Point(268, 105);
             this.txtCodiceAereo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodiceAereo.Name = "txtCodiceAereo";
             this.txtCodiceAereo.ReadOnly = true;
@@ -229,7 +209,7 @@ namespace ProgettoDatabase
             // txtCodice
             // 
             this.txtCodice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Codice", true));
-            this.txtCodice.Location = new System.Drawing.Point(268, 6);
+            this.txtCodice.Location = new System.Drawing.Point(268, 51);
             this.txtCodice.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.ReadOnly = true;
@@ -239,7 +219,7 @@ namespace ProgettoDatabase
             // lblGatePartenza
             // 
             this.lblGatePartenza.AutoSize = true;
-            this.lblGatePartenza.Location = new System.Drawing.Point(74, 164);
+            this.lblGatePartenza.Location = new System.Drawing.Point(74, 209);
             this.lblGatePartenza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGatePartenza.Name = "lblGatePartenza";
             this.lblGatePartenza.Size = new System.Drawing.Size(96, 17);
@@ -249,7 +229,7 @@ namespace ProgettoDatabase
             // lblCodice
             // 
             this.lblCodice.AutoSize = true;
-            this.lblCodice.Location = new System.Drawing.Point(73, 9);
+            this.lblCodice.Location = new System.Drawing.Point(73, 54);
             this.lblCodice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodice.Name = "lblCodice";
             this.lblCodice.Size = new System.Drawing.Size(51, 17);
@@ -259,7 +239,7 @@ namespace ProgettoDatabase
             // lblDurata
             // 
             this.lblDurata.AutoSize = true;
-            this.lblDurata.Location = new System.Drawing.Point(73, 113);
+            this.lblDurata.Location = new System.Drawing.Point(73, 158);
             this.lblDurata.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDurata.Name = "lblDurata";
             this.lblDurata.Size = new System.Drawing.Size(51, 17);
@@ -269,7 +249,7 @@ namespace ProgettoDatabase
             // lblCodiceAereo
             // 
             this.lblCodiceAereo.AutoSize = true;
-            this.lblCodiceAereo.Location = new System.Drawing.Point(73, 60);
+            this.lblCodiceAereo.Location = new System.Drawing.Point(73, 105);
             this.lblCodiceAereo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodiceAereo.Name = "lblCodiceAereo";
             this.lblCodiceAereo.Size = new System.Drawing.Size(92, 17);
@@ -294,8 +274,6 @@ namespace ProgettoDatabase
             this.Controls.Add(this.dtpDataArrivo);
             this.Controls.Add(this.lblDataOraArrivo);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.txtDestinazione);
-            this.Controls.Add(this.lblDestinazione);
             this.Controls.Add(this.updGatePartenza);
             this.Controls.Add(this.updDurata);
             this.Controls.Add(this.txtPartenza);
@@ -329,8 +307,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.DateTimePicker dtpDataArrivo;
         private System.Windows.Forms.Label lblDataOraArrivo;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtDestinazione;
-        private System.Windows.Forms.Label lblDestinazione;
         private System.Windows.Forms.NumericUpDown updGatePartenza;
         private System.Windows.Forms.NumericUpDown updDurata;
         private System.Windows.Forms.TextBox txtPartenza;

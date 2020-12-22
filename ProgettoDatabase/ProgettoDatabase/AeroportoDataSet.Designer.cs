@@ -8106,7 +8106,6 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partenza", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durata", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GatePartenza", global::System.Data.SqlDbType.Real, 4, global::System.Data.ParameterDirection.Input, 24, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destinazione", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Internazionale", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
@@ -8119,7 +8118,6 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partenza", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durata", global::System.Data.SqlDbType.SmallInt, 2, global::System.Data.ParameterDirection.Input, 5, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GatePartenza", global::System.Data.SqlDbType.Real, 4, global::System.Data.ParameterDirection.Input, 24, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destinazione", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Internazionale", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codice", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -8518,7 +8516,7 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InserisciVoli(string Codice, global::System.Nullable<global::System.DateTime> DataOraPartenza, global::System.Nullable<global::System.DateTime> DataOraArrivo, string CodiceAereo, string Partenza, global::System.Nullable<short> Durata, global::System.Nullable<float> GatePartenza, string Destinazione, global::System.Nullable<bool> Internazionale) {
+        public virtual int InserisciVoli(string Codice, global::System.Nullable<global::System.DateTime> DataOraPartenza, global::System.Nullable<global::System.DateTime> DataOraArrivo, string CodiceAereo, string Partenza, global::System.Nullable<short> Durata, global::System.Nullable<float> GatePartenza, global::System.Nullable<bool> Internazionale) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((Codice == null)) {
                 command.Parameters[1].Value = global::System.DBNull.Value;
@@ -8562,17 +8560,11 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Destinazione == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[8].Value = ((string)(Destinazione));
-            }
             if ((Internazionale.HasValue == true)) {
-                command.Parameters[9].Value = ((bool)(Internazionale.Value));
+                command.Parameters[8].Value = ((bool)(Internazionale.Value));
             }
             else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
+                command.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8594,7 +8586,7 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int ModificaVoli(global::System.Nullable<global::System.DateTime> DataOraPartenza, global::System.Nullable<global::System.DateTime> DataOraArrivo, string CodiceAereo, string Partenza, global::System.Nullable<short> Durata, global::System.Nullable<float> GatePartenza, string Destinazione, global::System.Nullable<bool> Internazionale, string Codice) {
+        public virtual int ModificaVoli(global::System.Nullable<global::System.DateTime> DataOraPartenza, global::System.Nullable<global::System.DateTime> DataOraArrivo, string CodiceAereo, string Partenza, global::System.Nullable<short> Durata, global::System.Nullable<float> GatePartenza, global::System.Nullable<bool> Internazionale, string Codice) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((DataOraPartenza.HasValue == true)) {
                 command.Parameters[1].Value = ((System.DateTime)(DataOraPartenza.Value));
@@ -8632,23 +8624,17 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             else {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Destinazione == null)) {
+            if ((Internazionale.HasValue == true)) {
+                command.Parameters[7].Value = ((bool)(Internazionale.Value));
+            }
+            else {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                command.Parameters[7].Value = ((string)(Destinazione));
-            }
-            if ((Internazionale.HasValue == true)) {
-                command.Parameters[8].Value = ((bool)(Internazionale.Value));
-            }
-            else {
+            if ((Codice == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Codice == null)) {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
             else {
-                command.Parameters[9].Value = ((string)(Codice));
+                command.Parameters[8].Value = ((string)(Codice));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

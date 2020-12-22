@@ -84,7 +84,7 @@ namespace ProgettoDatabase
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.toolStrip1.BackColor = System.Drawing.Color.White;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1});
@@ -112,27 +112,27 @@ namespace ProgettoDatabase
             this.voloToolStripMenuItem,
             this.aeroportoToolStripMenuItem});
             this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
-            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.nuovoToolStripMenuItem.Text = "Nuovo...";
             // 
             // aereoToolStripMenuItem
             // 
             this.aereoToolStripMenuItem.Name = "aereoToolStripMenuItem";
-            this.aereoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aereoToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.aereoToolStripMenuItem.Text = "Aereo";
             this.aereoToolStripMenuItem.Click += new System.EventHandler(this.aereoToolStripMenuItem_Click);
             // 
             // voloToolStripMenuItem
             // 
             this.voloToolStripMenuItem.Name = "voloToolStripMenuItem";
-            this.voloToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.voloToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.voloToolStripMenuItem.Text = "Volo";
             this.voloToolStripMenuItem.Click += new System.EventHandler(this.voloToolStripMenuItem_Click);
             // 
             // aeroportoToolStripMenuItem
             // 
             this.aeroportoToolStripMenuItem.Name = "aeroportoToolStripMenuItem";
-            this.aeroportoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aeroportoToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.aeroportoToolStripMenuItem.Text = "Aeroporto";
             this.aeroportoToolStripMenuItem.Click += new System.EventHandler(this.aeroportoToolStripMenuItem_Click);
             // 

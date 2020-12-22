@@ -24,12 +24,12 @@ namespace ProgettoDatabase
 
 
         private void btnSalva_Click(object sender, EventArgs e)
-        {    if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (txtDestinazione.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+        {    if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), txtDestinazione.Text, chkInternazionale.Checked);
+                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
                     this.Close();
                 }
 
@@ -45,10 +45,7 @@ namespace ProgettoDatabase
                 {
                     errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
                 }
-                if (txtDestinazione.Text == "")
-                {
-                    errorProvider3.SetError(txtDestinazione, "Inserire i dati correttamente");
-                }
+                
                 if (updDurata.Value <= 0)
                 {
                     errorProvider4.SetError(updDurata, "Inserire i dati correttamente");
@@ -67,12 +64,12 @@ namespace ProgettoDatabase
 
         private void btnSalvaENuovo_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (txtDestinazione.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+            if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), txtDestinazione.Text, chkInternazionale.Checked);
+                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
                     this.Close();
                 }
 
@@ -87,10 +84,6 @@ namespace ProgettoDatabase
                 if (txtCodiceAereo.Text == "")
                 {
                     errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
-                }
-                if (txtDestinazione.Text == "")
-                {
-                    errorProvider3.SetError(txtDestinazione, "Inserire i dati correttamente");
                 }
                 if (updDurata.Value <= 0)
                 {

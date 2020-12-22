@@ -38,7 +38,6 @@ namespace ProgettoDatabase
             //dtpDataArrivo.Value = DateTime.ParseExact(this._MioVolo.DataOraArrivo, "yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
             // dtpDataPartenza.Value = DateTime.ParseExact(this._MioVolo.DataOraPartenza, "yyyy-MM-dd HH:mm:ss.fff", CultureInfo.InvariantCulture);
             txtCodiceAereo.Text = this._MioVolo.CodiceAereo;
-            txtDestinazione.Text = this._MioVolo.Destinazione;
             updDurata.Value = this._MioVolo.Durata;
             updGatePartenza.Value = this._MioVolo.GatePartenza;
             if (this._MioVolo.Internazionale == true)

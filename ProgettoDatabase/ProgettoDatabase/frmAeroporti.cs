@@ -174,6 +174,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi eliminare la persona selezionata?", "Emilinazione", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     tblAeroportiTableAdapter.DisattivaAeroporto(Sigla);
+                    this.RefreshGrid();
                 }
             }
         }
@@ -194,6 +195,7 @@ namespace ProgettoDatabase
                     //MessageBox.Show("Placeholder, funzione già presente ma non attiva");
 
                     tblAeroportiTableAdapter.EliminaAeroporto(Sigla);
+                    this.RefreshGrid();
                 }
             }
         }
