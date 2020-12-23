@@ -83,6 +83,7 @@ namespace ProgettoDatabase
             // 
             this.txtPropulsione.Location = new System.Drawing.Point(274, 347);
             this.txtPropulsione.Name = "txtPropulsione";
+            this.txtPropulsione.ReadOnly = true;
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
             this.txtPropulsione.TabIndex = 52;
             // 
@@ -95,6 +96,7 @@ namespace ProgettoDatabase
             0,
             0});
             this.updVelocita.Name = "updVelocita";
+            this.updVelocita.ReadOnly = true;
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
             this.updVelocita.TabIndex = 51;
             // 
@@ -107,6 +109,7 @@ namespace ProgettoDatabase
             0,
             0});
             this.updRaggio.Name = "updRaggio";
+            this.updRaggio.ReadOnly = true;
             this.updRaggio.Size = new System.Drawing.Size(120, 22);
             this.updRaggio.TabIndex = 50;
             // 
@@ -119,6 +122,7 @@ namespace ProgettoDatabase
             0,
             0});
             this.updMotori.Name = "updMotori";
+            this.updMotori.ReadOnly = true;
             this.updMotori.Size = new System.Drawing.Size(120, 22);
             this.updMotori.TabIndex = 49;
             // 
@@ -131,6 +135,7 @@ namespace ProgettoDatabase
             0,
             0});
             this.updLitri.Name = "updLitri";
+            this.updLitri.ReadOnly = true;
             this.updLitri.Size = new System.Drawing.Size(120, 22);
             this.updLitri.TabIndex = 48;
             // 
@@ -143,6 +148,7 @@ namespace ProgettoDatabase
             0,
             0});
             this.updCapacita.Name = "updCapacita";
+            this.updCapacita.ReadOnly = true;
             this.updCapacita.Size = new System.Drawing.Size(120, 22);
             this.updCapacita.TabIndex = 47;
             // 
