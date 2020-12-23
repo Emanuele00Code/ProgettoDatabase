@@ -69,7 +69,7 @@ namespace ProgettoDatabase
                 {
                     
                         tblVoliTableAdapter.ModificaVoli( Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text,
-                           txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked, _Codice);
+                           txtPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked, _Codice);
                     this._RefreshGrid();
 
                 }
