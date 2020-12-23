@@ -34,6 +34,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
+                    this._RefreshGrid();
                     this.Close();
                 }
 
@@ -74,7 +75,7 @@ namespace ProgettoDatabase
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     tblVoliTableAdapter.InserisciVoli(txtCodice.Text, Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToInt16(updGatePartenza.Value), chkInternazionale.Checked);
-                    this.Close();
+                    this._RefreshGrid();
                 }
 
             }
@@ -132,6 +133,8 @@ namespace ProgettoDatabase
 
         private void frmInserisciVoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblVoli'. È possibile spostarla o rimuoverla se necessario.
+            this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
 
         }
 

@@ -37,28 +37,27 @@ namespace ProgettoDatabase
             this.btnElimina = new System.Windows.Forms.Button();
             this.btnFittizia = new System.Windows.Forms.Button();
             this.dvgVoli = new System.Windows.Forms.DataGridView();
-            this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOraPartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataOraArrivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.internazionaleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.partenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gatePartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.durataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinazioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tblVoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
-            this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNuovo = new System.Windows.Forms.ToolStripButton();
             this.tsbModifica = new System.Windows.Forms.ToolStripButton();
             this.tsbNascondi = new System.Windows.Forms.ToolStripButton();
             this.tsbElimina = new System.Windows.Forms.ToolStripButton();
             this.tsbVisualizza = new System.Windows.Forms.ToolStripButton();
+            this.codiceAereoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gatePartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.internazionaleDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataOraArrivoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataOraPartenzaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblVoliBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
+            this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dvgVoli)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSalva
@@ -111,7 +110,6 @@ namespace ProgettoDatabase
             this.partenzaDataGridViewTextBoxColumn,
             this.gatePartenzaDataGridViewTextBoxColumn,
             this.durataDataGridViewTextBoxColumn,
-            this.destinazioneDataGridViewTextBoxColumn,
             this.codiceAereoDataGridViewTextBoxColumn});
             this.dvgVoli.DataSource = this.tblVoliBindingSource;
             this.dvgVoli.Location = new System.Drawing.Point(78, 76);
@@ -122,101 +120,6 @@ namespace ProgettoDatabase
             this.dvgVoli.RowTemplate.Height = 24;
             this.dvgVoli.Size = new System.Drawing.Size(1298, 264);
             this.dvgVoli.TabIndex = 7;
-            // 
-            // codiceDataGridViewTextBoxColumn
-            // 
-            this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
-            this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
-            this.codiceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
-            this.codiceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codiceDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataOraPartenzaDataGridViewTextBoxColumn
-            // 
-            this.dataOraPartenzaDataGridViewTextBoxColumn.DataPropertyName = "DataOraPartenza";
-            this.dataOraPartenzaDataGridViewTextBoxColumn.HeaderText = "Data e Ora Partenza";
-            this.dataOraPartenzaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataOraPartenzaDataGridViewTextBoxColumn.Name = "dataOraPartenzaDataGridViewTextBoxColumn";
-            this.dataOraPartenzaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataOraPartenzaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dataOraArrivoDataGridViewTextBoxColumn
-            // 
-            this.dataOraArrivoDataGridViewTextBoxColumn.DataPropertyName = "DataOraArrivo";
-            this.dataOraArrivoDataGridViewTextBoxColumn.HeaderText = "Data e Ora Arrivo";
-            this.dataOraArrivoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dataOraArrivoDataGridViewTextBoxColumn.Name = "dataOraArrivoDataGridViewTextBoxColumn";
-            this.dataOraArrivoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataOraArrivoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // internazionaleDataGridViewCheckBoxColumn
-            // 
-            this.internazionaleDataGridViewCheckBoxColumn.DataPropertyName = "Internazionale";
-            this.internazionaleDataGridViewCheckBoxColumn.HeaderText = "Internazionale";
-            this.internazionaleDataGridViewCheckBoxColumn.MinimumWidth = 6;
-            this.internazionaleDataGridViewCheckBoxColumn.Name = "internazionaleDataGridViewCheckBoxColumn";
-            this.internazionaleDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.internazionaleDataGridViewCheckBoxColumn.Width = 125;
-            // 
-            // partenzaDataGridViewTextBoxColumn
-            // 
-            this.partenzaDataGridViewTextBoxColumn.DataPropertyName = "Partenza";
-            this.partenzaDataGridViewTextBoxColumn.HeaderText = "Partenza";
-            this.partenzaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.partenzaDataGridViewTextBoxColumn.Name = "partenzaDataGridViewTextBoxColumn";
-            this.partenzaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.partenzaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // gatePartenzaDataGridViewTextBoxColumn
-            // 
-            this.gatePartenzaDataGridViewTextBoxColumn.DataPropertyName = "GatePartenza";
-            this.gatePartenzaDataGridViewTextBoxColumn.HeaderText = "Gate di Partenza";
-            this.gatePartenzaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.gatePartenzaDataGridViewTextBoxColumn.Name = "gatePartenzaDataGridViewTextBoxColumn";
-            this.gatePartenzaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.gatePartenzaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // durataDataGridViewTextBoxColumn
-            // 
-            this.durataDataGridViewTextBoxColumn.DataPropertyName = "Durata";
-            this.durataDataGridViewTextBoxColumn.HeaderText = "Durata";
-            this.durataDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.durataDataGridViewTextBoxColumn.Name = "durataDataGridViewTextBoxColumn";
-            this.durataDataGridViewTextBoxColumn.ReadOnly = true;
-            this.durataDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // destinazioneDataGridViewTextBoxColumn
-            // 
-            this.destinazioneDataGridViewTextBoxColumn.DataPropertyName = "Destinazione";
-            this.destinazioneDataGridViewTextBoxColumn.HeaderText = "Destinazione";
-            this.destinazioneDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.destinazioneDataGridViewTextBoxColumn.Name = "destinazioneDataGridViewTextBoxColumn";
-            this.destinazioneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.destinazioneDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // codiceAereoDataGridViewTextBoxColumn
-            // 
-            this.codiceAereoDataGridViewTextBoxColumn.DataPropertyName = "CodiceAereo";
-            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "Codice Aereo";
-            this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
-            this.codiceAereoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tblVoliBindingSource
-            // 
-            this.tblVoliBindingSource.DataMember = "tblVoli";
-            this.tblVoliBindingSource.DataSource = this.aeroportoDataSet;
-            // 
-            // aeroportoDataSet
-            // 
-            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
-            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblVoliTableAdapter
-            // 
-            this.tblVoliTableAdapter.ClearBeforeFill = true;
             // 
             // toolStrip1
             // 
@@ -287,6 +190,92 @@ namespace ProgettoDatabase
             this.tsbVisualizza.ToolTipText = "Visualizza";
             this.tsbVisualizza.Click += new System.EventHandler(this.tsbVisualizza_Click);
             // 
+            // codiceAereoDataGridViewTextBoxColumn
+            // 
+            this.codiceAereoDataGridViewTextBoxColumn.DataPropertyName = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.HeaderText = "CodiceAereo";
+            this.codiceAereoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codiceAereoDataGridViewTextBoxColumn.Name = "codiceAereoDataGridViewTextBoxColumn";
+            this.codiceAereoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codiceAereoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // durataDataGridViewTextBoxColumn
+            // 
+            this.durataDataGridViewTextBoxColumn.DataPropertyName = "Durata";
+            this.durataDataGridViewTextBoxColumn.HeaderText = "Durata";
+            this.durataDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.durataDataGridViewTextBoxColumn.Name = "durataDataGridViewTextBoxColumn";
+            this.durataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.durataDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // gatePartenzaDataGridViewTextBoxColumn
+            // 
+            this.gatePartenzaDataGridViewTextBoxColumn.DataPropertyName = "GatePartenza";
+            this.gatePartenzaDataGridViewTextBoxColumn.HeaderText = "GatePartenza";
+            this.gatePartenzaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.gatePartenzaDataGridViewTextBoxColumn.Name = "gatePartenzaDataGridViewTextBoxColumn";
+            this.gatePartenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gatePartenzaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // partenzaDataGridViewTextBoxColumn
+            // 
+            this.partenzaDataGridViewTextBoxColumn.DataPropertyName = "Partenza";
+            this.partenzaDataGridViewTextBoxColumn.HeaderText = "Partenza";
+            this.partenzaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.partenzaDataGridViewTextBoxColumn.Name = "partenzaDataGridViewTextBoxColumn";
+            this.partenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.partenzaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // internazionaleDataGridViewCheckBoxColumn
+            // 
+            this.internazionaleDataGridViewCheckBoxColumn.DataPropertyName = "Internazionale";
+            this.internazionaleDataGridViewCheckBoxColumn.HeaderText = "Internazionale";
+            this.internazionaleDataGridViewCheckBoxColumn.MinimumWidth = 6;
+            this.internazionaleDataGridViewCheckBoxColumn.Name = "internazionaleDataGridViewCheckBoxColumn";
+            this.internazionaleDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.internazionaleDataGridViewCheckBoxColumn.Width = 125;
+            // 
+            // dataOraArrivoDataGridViewTextBoxColumn
+            // 
+            this.dataOraArrivoDataGridViewTextBoxColumn.DataPropertyName = "DataOraArrivo";
+            this.dataOraArrivoDataGridViewTextBoxColumn.HeaderText = "DataOraArrivo";
+            this.dataOraArrivoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataOraArrivoDataGridViewTextBoxColumn.Name = "dataOraArrivoDataGridViewTextBoxColumn";
+            this.dataOraArrivoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataOraArrivoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataOraPartenzaDataGridViewTextBoxColumn
+            // 
+            this.dataOraPartenzaDataGridViewTextBoxColumn.DataPropertyName = "DataOraPartenza";
+            this.dataOraPartenzaDataGridViewTextBoxColumn.HeaderText = "DataOraPartenza";
+            this.dataOraPartenzaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dataOraPartenzaDataGridViewTextBoxColumn.Name = "dataOraPartenzaDataGridViewTextBoxColumn";
+            this.dataOraPartenzaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataOraPartenzaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // codiceDataGridViewTextBoxColumn
+            // 
+            this.codiceDataGridViewTextBoxColumn.DataPropertyName = "Codice";
+            this.codiceDataGridViewTextBoxColumn.HeaderText = "Codice";
+            this.codiceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.codiceDataGridViewTextBoxColumn.Name = "codiceDataGridViewTextBoxColumn";
+            this.codiceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codiceDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tblVoliBindingSource
+            // 
+            this.tblVoliBindingSource.DataMember = "tblVoli";
+            this.tblVoliBindingSource.DataSource = this.aeroportoDataSet;
+            // 
+            // aeroportoDataSet
+            // 
+            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblVoliTableAdapter
+            // 
+            this.tblVoliTableAdapter.ClearBeforeFill = true;
+            // 
             // frmVoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -309,17 +298,16 @@ namespace ProgettoDatabase
             this.Text = "Voli";
             this.Load += new System.EventHandler(this.frmVoli_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgVoli)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblVoliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private AeroportoDataSet aeroportoDataSet;
 
         private System.Windows.Forms.Button btnSalva;
         private System.Windows.Forms.Button btnModifica;
@@ -345,8 +333,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.DataGridViewTextBoxColumn expr16DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn expr17DataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn expr18DataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource tblVoliBindingSource;
-        private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsbNuovo;
         private System.Windows.Forms.ToolStripButton tsbModifica;
@@ -360,7 +346,9 @@ namespace ProgettoDatabase
         private System.Windows.Forms.DataGridViewTextBoxColumn partenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn gatePartenzaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn durataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destinazioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codiceAereoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource tblVoliBindingSource;
+        private AeroportoDataSet aeroportoDataSet;
+        private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
     }
 }

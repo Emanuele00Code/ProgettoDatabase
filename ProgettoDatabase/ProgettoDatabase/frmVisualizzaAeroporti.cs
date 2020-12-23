@@ -49,12 +49,9 @@ namespace ProgettoDatabase
             {
                 cbkInternazionale.Checked = true;
             }
-
-
-
-
-
         }
+
+    
 
         private void updTerminal_ValueChanged(object sender, EventArgs e)
         {

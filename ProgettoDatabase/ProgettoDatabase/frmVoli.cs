@@ -20,6 +20,8 @@ namespace ProgettoDatabase
 
         private void frmVoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblVoli'. È possibile spostarla o rimuoverla se necessario.
+            this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
 
             this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
 
@@ -132,9 +134,8 @@ namespace ProgettoDatabase
                 Partenza = Convert.ToString(selectedRow.Cells[4].Value);
                 GatePartenza = Convert.ToInt32(selectedRow.Cells[5].Value);
                 Durata = Convert.ToInt32(selectedRow.Cells[6].Value);
-                Destinazione = Convert.ToString(selectedRow.Cells[7].Value);
-                CodiceAereo = Convert.ToString(selectedRow.Cells[8].Value);
-                Voli MioVolo = new Voli(Codice, DataOraPartenza, DataOraArrivo, Internazionale, CodiceAereo, Destinazione, Durata, GatePartenza);
+                CodiceAereo = Convert.ToString(selectedRow.Cells[7].Value);
+                Voli MioVolo = new Voli(Codice, DataOraPartenza, DataOraArrivo, Internazionale, CodiceAereo, Durata, GatePartenza);
                 frmVisualizzaVoli formDaAprire = new frmVisualizzaVoli(MioVolo);
                 formDaAprire.Show();
 

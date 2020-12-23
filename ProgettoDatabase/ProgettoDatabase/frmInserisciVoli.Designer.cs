@@ -31,14 +31,12 @@ namespace ProgettoDatabase
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInserisciVoli));
-            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
             this.btnSalva = new System.Windows.Forms.Button();
             this.txtSesso = new System.Windows.Forms.TextBox();
             this.txtDataNascita = new System.Windows.Forms.TextBox();
             this.txtTipoDocumento = new System.Windows.Forms.TextBox();
             this.btnSalvaENuovo = new System.Windows.Forms.Button();
             this.txtPartenza = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lblPartenza = new System.Windows.Forms.Label();
             this.txtCodiceAereo = new System.Windows.Forms.TextBox();
             this.txtCodice = new System.Windows.Forms.TextBox();
@@ -48,7 +46,6 @@ namespace ProgettoDatabase
             this.lblCodiceAereo = new System.Windows.Forms.Label();
             this.updDurata = new System.Windows.Forms.NumericUpDown();
             this.updGatePartenza = new System.Windows.Forms.NumericUpDown();
-            this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
             this.dtpDataArrivo = new System.Windows.Forms.DateTimePicker();
             this.lblDataOraArrivo = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -65,8 +62,9 @@ namespace ProgettoDatabase
             this.errorProvider6 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider7 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider8 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
+            this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -77,12 +75,9 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // aeroportoDataSet
-            // 
-            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
-            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSalva
             // 
@@ -136,16 +131,10 @@ namespace ProgettoDatabase
             // 
             // txtPartenza
             // 
-            this.txtPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Destinazione", true));
             this.txtPartenza.Location = new System.Drawing.Point(272, 229);
             this.txtPartenza.Name = "txtPartenza";
             this.txtPartenza.Size = new System.Drawing.Size(265, 22);
             this.txtPartenza.TabIndex = 40;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "tblVoli";
-            this.bindingSource1.DataSource = this.aeroportoDataSet;
             // 
             // lblPartenza
             // 
@@ -158,7 +147,6 @@ namespace ProgettoDatabase
             // 
             // txtCodiceAereo
             // 
-            this.txtCodiceAereo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "CodiceAereo", true));
             this.txtCodiceAereo.Location = new System.Drawing.Point(272, 86);
             this.txtCodiceAereo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodiceAereo.Name = "txtCodiceAereo";
@@ -168,7 +156,6 @@ namespace ProgettoDatabase
             // 
             // txtCodice
             // 
-            this.txtCodice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Codice", true));
             this.txtCodice.Location = new System.Drawing.Point(272, 32);
             this.txtCodice.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodice.Name = "txtCodice";
@@ -219,7 +206,6 @@ namespace ProgettoDatabase
             // 
             // updDurata
             // 
-            this.updDurata.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "Durata", true));
             this.updDurata.Location = new System.Drawing.Point(272, 139);
             this.updDurata.Maximum = new decimal(new int[] {
             32666,
@@ -227,13 +213,13 @@ namespace ProgettoDatabase
             0,
             0});
             this.updDurata.Name = "updDurata";
+            this.updDurata.ReadOnly = true;
             this.updDurata.Size = new System.Drawing.Size(120, 22);
             this.updDurata.TabIndex = 41;
             this.updDurata.ValueChanged += new System.EventHandler(this.updDurata_ValueChanged);
             // 
             // updGatePartenza
             // 
-            this.updGatePartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "GatePartenza", true));
             this.updGatePartenza.Location = new System.Drawing.Point(272, 185);
             this.updGatePartenza.Maximum = new decimal(new int[] {
             32666,
@@ -245,14 +231,9 @@ namespace ProgettoDatabase
             this.updGatePartenza.TabIndex = 42;
             this.updGatePartenza.ValueChanged += new System.EventHandler(this.updGatePartenza_ValueChanged);
             // 
-            // tblVoliTableAdapter
-            // 
-            this.tblVoliTableAdapter.ClearBeforeFill = true;
-            // 
             // dtpDataArrivo
             // 
             this.dtpDataArrivo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataArrivo.Location = new System.Drawing.Point(277, 358);
             this.dtpDataArrivo.Margin = new System.Windows.Forms.Padding(4);
@@ -283,7 +264,6 @@ namespace ProgettoDatabase
             // dtpDataPartenza
             // 
             this.dtpDataPartenza.CustomFormat = "dd/MM/yyyy HH:mm:ss";
-            this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDataPartenza.Location = new System.Drawing.Point(278, 291);
             this.dtpDataPartenza.Margin = new System.Windows.Forms.Padding(4);
@@ -323,7 +303,6 @@ namespace ProgettoDatabase
             // chkInternazionale
             // 
             this.chkInternazionale.AutoSize = true;
-            this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSource1, "Internazionale", true));
             this.chkInternazionale.Location = new System.Drawing.Point(272, 410);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
@@ -362,6 +341,20 @@ namespace ProgettoDatabase
             // 
             this.errorProvider8.ContainerControl = this;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "tblVoli";
+            this.bindingSource1.DataSource = this.aeroportoDataSet;
+            // 
+            // aeroportoDataSet
+            // 
+            this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
+            this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblVoliTableAdapter
+            // 
+            this.tblVoliTableAdapter.ClearBeforeFill = true;
+            // 
             // frmInserisciVoli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,8 +390,6 @@ namespace ProgettoDatabase
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserisci Volo";
             this.Load += new System.EventHandler(this.frmInserisciVoli_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updDurata)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updGatePartenza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -409,6 +400,8 @@ namespace ProgettoDatabase
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aeroportoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,7 +409,6 @@ namespace ProgettoDatabase
 
         #endregion
         private System.Windows.Forms.Button btnSalva;
-        private AeroportoDataSet aeroportoDataSet;
         private System.Windows.Forms.TextBox txtSesso;
         private System.Windows.Forms.TextBox txtDataNascita;
         private System.Windows.Forms.TextBox txtTipoDocumento;
@@ -431,8 +423,6 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label lblCodiceAereo;
         private System.Windows.Forms.NumericUpDown updDurata;
         private System.Windows.Forms.NumericUpDown updGatePartenza;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
         private System.Windows.Forms.DateTimePicker dtpDataArrivo;
         private System.Windows.Forms.Label lblDataOraArrivo;
         private System.Windows.Forms.TextBox textBox1;
@@ -449,5 +439,8 @@ namespace ProgettoDatabase
         private System.Windows.Forms.ErrorProvider errorProvider6;
         private System.Windows.Forms.ErrorProvider errorProvider7;
         private System.Windows.Forms.ErrorProvider errorProvider8;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private AeroportoDataSet aeroportoDataSet;
+        private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
     }
 }

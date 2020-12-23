@@ -202,6 +202,7 @@ namespace ProgettoDatabase
             // 
             // updGates
             // 
+            this.updGates.Enabled = false;
             this.updGates.Location = new System.Drawing.Point(262, 275);
             this.updGates.Maximum = new decimal(new int[] {
             32766,
@@ -216,6 +217,7 @@ namespace ProgettoDatabase
             // 
             // updTerminal
             // 
+            this.updTerminal.Enabled = false;
             this.updTerminal.Location = new System.Drawing.Point(262, 218);
             this.updTerminal.Maximum = new decimal(new int[] {
             32766,
@@ -230,6 +232,7 @@ namespace ProgettoDatabase
             // 
             // updPiste
             // 
+            this.updPiste.Enabled = false;
             this.updPiste.Location = new System.Drawing.Point(262, 172);
             this.updPiste.Maximum = new decimal(new int[] {
             32766,

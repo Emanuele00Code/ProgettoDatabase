@@ -43,8 +43,6 @@ namespace ProgettoDatabase
             this.updDurata = new System.Windows.Forms.NumericUpDown();
             this.btnSalva = new System.Windows.Forms.Button();
             this.tblVoliTableAdapter = new ProgettoDatabase.AeroportoDataSetTableAdapters.tblVoliTableAdapter();
-            this.txtDestinazione = new System.Windows.Forms.TextBox();
-            this.lblDestinazione = new System.Windows.Forms.Label();
             this.Internazionale = new System.Windows.Forms.Label();
             this.chkInternazionale = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,29 +74,26 @@ namespace ProgettoDatabase
             this.lblCodiceAereo.Size = new System.Drawing.Size(92, 17);
             this.lblCodiceAereo.TabIndex = 0;
             this.lblCodiceAereo.Text = "Codice aereo";
-            this.lblCodiceAereo.Click += new System.EventHandler(this.lblCodiceAereo_Click);
             // 
             // lblDurata
             // 
             this.lblDurata.AutoSize = true;
-            this.lblDurata.Location = new System.Drawing.Point(62, 214);
+            this.lblDurata.Location = new System.Drawing.Point(62, 166);
             this.lblDurata.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDurata.Name = "lblDurata";
             this.lblDurata.Size = new System.Drawing.Size(51, 17);
             this.lblDurata.TabIndex = 1;
             this.lblDurata.Text = "Durata";
-            this.lblDurata.Click += new System.EventHandler(this.lblDurata_Click);
             // 
             // lblGatePartenza
             // 
             this.lblGatePartenza.AutoSize = true;
-            this.lblGatePartenza.Location = new System.Drawing.Point(63, 265);
+            this.lblGatePartenza.Location = new System.Drawing.Point(63, 217);
             this.lblGatePartenza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGatePartenza.Name = "lblGatePartenza";
             this.lblGatePartenza.Size = new System.Drawing.Size(99, 17);
             this.lblGatePartenza.TabIndex = 5;
             this.lblGatePartenza.Text = "Gate partenza";
-            this.lblGatePartenza.Click += new System.EventHandler(this.lblGatePartenza_Click);
             // 
             // bindingSource1
             // 
@@ -118,7 +113,6 @@ namespace ProgettoDatabase
             this.txtCodiceAereo.Name = "txtCodiceAereo";
             this.txtCodiceAereo.Size = new System.Drawing.Size(265, 22);
             this.txtCodiceAereo.TabIndex = 9;
-            this.txtCodiceAereo.TextChanged += new System.EventHandler(this.txtCodiceAereo_TextChanged);
             this.txtCodiceAereo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodiceAereo_KeyUp);
             // 
             // lblPartenza
@@ -129,7 +123,6 @@ namespace ProgettoDatabase
             this.lblPartenza.Size = new System.Drawing.Size(132, 17);
             this.lblPartenza.TabIndex = 21;
             this.lblPartenza.Text = "Aeroporto Partenza";
-            this.lblPartenza.Click += new System.EventHandler(this.lblPartenza_Click);
             // 
             // txtPartenza
             // 
@@ -138,12 +131,11 @@ namespace ProgettoDatabase
             this.txtPartenza.Name = "txtPartenza";
             this.txtPartenza.Size = new System.Drawing.Size(265, 22);
             this.txtPartenza.TabIndex = 22;
-            this.txtPartenza.TextChanged += new System.EventHandler(this.txtPartenza_TextChanged);
             // 
             // updGatePartenza
             // 
             this.updGatePartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "GatePartenza", true));
-            this.updGatePartenza.Location = new System.Drawing.Point(257, 255);
+            this.updGatePartenza.Location = new System.Drawing.Point(257, 207);
             this.updGatePartenza.Maximum = new decimal(new int[] {
             32766,
             0,
@@ -157,13 +149,14 @@ namespace ProgettoDatabase
             // updDurata
             // 
             this.updDurata.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "Durata", true));
-            this.updDurata.Location = new System.Drawing.Point(257, 209);
+            this.updDurata.Location = new System.Drawing.Point(257, 161);
             this.updDurata.Maximum = new decimal(new int[] {
             32766,
             0,
             0,
             0});
             this.updDurata.Name = "updDurata";
+            this.updDurata.ReadOnly = true;
             this.updDurata.Size = new System.Drawing.Size(120, 22);
             this.updDurata.TabIndex = 44;
             this.updDurata.ValueChanged += new System.EventHandler(this.updDurata_ValueChanged);
@@ -173,7 +166,7 @@ namespace ProgettoDatabase
             this.btnSalva.BackColor = System.Drawing.Color.White;
             this.btnSalva.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalva.ForeColor = System.Drawing.Color.Black;
-            this.btnSalva.Location = new System.Drawing.Point(257, 507);
+            this.btnSalva.Location = new System.Drawing.Point(257, 473);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(158, 60);
             this.btnSalva.TabIndex = 47;
@@ -185,73 +178,49 @@ namespace ProgettoDatabase
             // 
             this.tblVoliTableAdapter.ClearBeforeFill = true;
             // 
-            // txtDestinazione
-            // 
-            this.txtDestinazione.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Destinazione", true));
-            this.txtDestinazione.Location = new System.Drawing.Point(256, 154);
-            this.txtDestinazione.Name = "txtDestinazione";
-            this.txtDestinazione.Size = new System.Drawing.Size(265, 22);
-            this.txtDestinazione.TabIndex = 49;
-            this.txtDestinazione.TextChanged += new System.EventHandler(this.txtDestinazione_TextChanged);
-            this.txtDestinazione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtDestinazione_KeyUp);
-            // 
-            // lblDestinazione
-            // 
-            this.lblDestinazione.AutoSize = true;
-            this.lblDestinazione.Location = new System.Drawing.Point(62, 159);
-            this.lblDestinazione.Name = "lblDestinazione";
-            this.lblDestinazione.Size = new System.Drawing.Size(157, 17);
-            this.lblDestinazione.TabIndex = 48;
-            this.lblDestinazione.Text = "Aeroporto Destinazione";
-            this.lblDestinazione.Click += new System.EventHandler(this.lblDestinazione_Click);
-            // 
             // Internazionale
             // 
             this.Internazionale.AutoSize = true;
-            this.Internazionale.Location = new System.Drawing.Point(66, 323);
+            this.Internazionale.Location = new System.Drawing.Point(66, 275);
             this.Internazionale.Name = "Internazionale";
             this.Internazionale.Size = new System.Drawing.Size(97, 17);
             this.Internazionale.TabIndex = 50;
             this.Internazionale.Text = "Internazionale";
-            this.Internazionale.Click += new System.EventHandler(this.Internazionale_Click);
             // 
             // chkInternazionale
             // 
             this.chkInternazionale.AutoSize = true;
             this.chkInternazionale.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSource1, "Internazionale", true));
-            this.chkInternazionale.Location = new System.Drawing.Point(256, 323);
+            this.chkInternazionale.Location = new System.Drawing.Point(256, 275);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
             this.chkInternazionale.TabIndex = 51;
             this.chkInternazionale.UseVisualStyleBackColor = true;
-            this.chkInternazionale.CheckedChanged += new System.EventHandler(this.chkInternazionale_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 399);
+            this.label1.Location = new System.Drawing.Point(64, 351);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 17);
             this.label1.TabIndex = 52;
             this.label1.Text = "Data Partenza";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 450);
+            this.label2.Location = new System.Drawing.Point(64, 402);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 53;
             this.label2.Text = "Data Arrivo";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpDataPartenza
             // 
             this.dtpDataPartenza.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraPartenza", true));
             this.dtpDataPartenza.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataPartenza.Location = new System.Drawing.Point(257, 399);
+            this.dtpDataPartenza.Location = new System.Drawing.Point(257, 351);
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(200, 22);
             this.dtpDataPartenza.TabIndex = 54;
@@ -262,7 +231,7 @@ namespace ProgettoDatabase
             this.dtpDataArrivo.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dtpDataArrivo.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "DataOraArrivo", true));
             this.dtpDataArrivo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDataArrivo.Location = new System.Drawing.Point(256, 445);
+            this.dtpDataArrivo.Location = new System.Drawing.Point(256, 397);
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(200, 22);
             this.dtpDataArrivo.TabIndex = 55;
@@ -300,8 +269,6 @@ namespace ProgettoDatabase
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chkInternazionale);
             this.Controls.Add(this.Internazionale);
-            this.Controls.Add(this.txtDestinazione);
-            this.Controls.Add(this.lblDestinazione);
             this.Controls.Add(this.btnSalva);
             this.Controls.Add(this.updGatePartenza);
             this.Controls.Add(this.updDurata);
@@ -345,8 +312,6 @@ namespace ProgettoDatabase
         private AeroportoDataSet aeroportoDataSet;
         private System.Windows.Forms.BindingSource bindingSource1;
         private AeroportoDataSetTableAdapters.tblVoliTableAdapter tblVoliTableAdapter;
-        private System.Windows.Forms.TextBox txtDestinazione;
-        private System.Windows.Forms.Label lblDestinazione;
         private System.Windows.Forms.Label Internazionale;
         private System.Windows.Forms.CheckBox chkInternazionale;
         private System.Windows.Forms.Label label1;

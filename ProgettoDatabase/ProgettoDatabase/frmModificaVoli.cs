@@ -62,7 +62,7 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if ((txtCodiceAereo.Text != "") && (txtDestinazione.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+            if ((txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -82,10 +82,6 @@ namespace ProgettoDatabase
                 if (txtCodiceAereo.Text == "")
                 {
                     errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
-                }
-                if (txtDestinazione.Text == "")
-                {
-                    errorProvider3.SetError(txtDestinazione, "Inserire i dati correttamente");
                 }
                 if (updDurata.Value <= 0)
                 {
@@ -113,10 +109,6 @@ namespace ProgettoDatabase
             errorProvider2.Clear();
         }
 
-        private void txtDestinazione_KeyUp(object sender, KeyEventArgs e)
-        {
-            errorProvider3.Clear();
-        }
 
         private void updDurata_ValueChanged(object sender, EventArgs e)
         {
@@ -128,64 +120,6 @@ namespace ProgettoDatabase
             errorProvider5.Clear();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkInternazionale_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Internazionale_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtDestinazione_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDestinazione_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCodiceAereo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPartenza_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPartenza_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblGatePartenza_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblDurata_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCodiceAereo_Click(object sender, EventArgs e)
-        {
-
-        }
+  
     }
 }

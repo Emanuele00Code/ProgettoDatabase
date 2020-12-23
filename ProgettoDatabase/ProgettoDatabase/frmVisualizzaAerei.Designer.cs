@@ -115,6 +115,7 @@ namespace ProgettoDatabase
             // 
             // updMotori
             // 
+            this.updMotori.Enabled = false;
             this.updMotori.Location = new System.Drawing.Point(274, 297);
             this.updMotori.Maximum = new decimal(new int[] {
             254,
@@ -128,6 +129,7 @@ namespace ProgettoDatabase
             // 
             // updLitri
             // 
+            this.updLitri.Enabled = false;
             this.updLitri.Location = new System.Drawing.Point(274, 244);
             this.updLitri.Maximum = new decimal(new int[] {
             32766,
@@ -141,6 +143,7 @@ namespace ProgettoDatabase
             // 
             // updCapacita
             // 
+            this.updCapacita.Enabled = false;
             this.updCapacita.Location = new System.Drawing.Point(274, 187);
             this.updCapacita.Maximum = new decimal(new int[] {
             32766,

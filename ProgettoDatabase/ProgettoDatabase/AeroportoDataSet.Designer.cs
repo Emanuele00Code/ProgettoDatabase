@@ -48,7 +48,7 @@ namespace ProgettoDatabase {
         
         private global::System.Data.DataRelation relationFK_tblVoli_tblAerei1;
         
-        private global::System.Data.DataRelation relationFK_tblVoli_tblAeroporti1;
+        private global::System.Data.DataRelation relationFK_tblVoli_tblAeroporti;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -439,7 +439,7 @@ namespace ProgettoDatabase {
                 }
             }
             this.relationFK_tblVoli_tblAerei1 = this.Relations["FK_tblVoli_tblAerei1"];
-            this.relationFK_tblVoli_tblAeroporti1 = this.Relations["FK_tblVoli_tblAeroporti1"];
+            this.relationFK_tblVoli_tblAeroporti = this.Relations["FK_tblVoli_tblAeroporti"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -476,10 +476,10 @@ namespace ProgettoDatabase {
                         this.tabletblAerei.CodiceAereoColumn}, new global::System.Data.DataColumn[] {
                         this.tabletblVoli.CodiceAereoColumn}, false);
             this.Relations.Add(this.relationFK_tblVoli_tblAerei1);
-            this.relationFK_tblVoli_tblAeroporti1 = new global::System.Data.DataRelation("FK_tblVoli_tblAeroporti1", new global::System.Data.DataColumn[] {
+            this.relationFK_tblVoli_tblAeroporti = new global::System.Data.DataRelation("FK_tblVoli_tblAeroporti", new global::System.Data.DataColumn[] {
                         this.tabletblAeroporti.SiglaColumn}, new global::System.Data.DataColumn[] {
-                        this.tabletblVoli.DestinazioneColumn}, false);
-            this.Relations.Add(this.relationFK_tblVoli_tblAeroporti1);
+                        this.tabletblVoli.PartenzaColumn}, false);
+            this.Relations.Add(this.relationFK_tblVoli_tblAeroporti);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3010,8 +3010,6 @@ namespace ProgettoDatabase {
             
             private global::System.Data.DataColumn columnDurata;
             
-            private global::System.Data.DataColumn columnDestinazione;
-            
             private global::System.Data.DataColumn columnCodiceAereo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3105,14 +3103,6 @@ namespace ProgettoDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DestinazioneColumn {
-                get {
-                    return this.columnDestinazione;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn CodiceAereoColumn {
                 get {
                     return this.columnCodiceAereo;
@@ -3156,23 +3146,22 @@ namespace ProgettoDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public tblVoliRow AddtblVoliRow(string Codice, System.DateTime DataOraPartenza, System.DateTime DataOraArrivo, bool Internazionale, string Partenza, float GatePartenza, short Durata, tblAeroportiRow parenttblAeroportiRowByFK_tblVoli_tblAeroporti1, tblAereiRow parenttblAereiRowByFK_tblVoli_tblAerei1) {
+            public tblVoliRow AddtblVoliRow(string Codice, System.DateTime DataOraPartenza, System.DateTime DataOraArrivo, bool Internazionale, tblAeroportiRow parenttblAeroportiRowByFK_tblVoli_tblAeroporti, float GatePartenza, short Durata, tblAereiRow parenttblAereiRowByFK_tblVoli_tblAerei1) {
                 tblVoliRow rowtblVoliRow = ((tblVoliRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Codice,
                         DataOraPartenza,
                         DataOraArrivo,
                         Internazionale,
-                        Partenza,
+                        null,
                         GatePartenza,
                         Durata,
-                        null,
                         null};
-                if ((parenttblAeroportiRowByFK_tblVoli_tblAeroporti1 != null)) {
-                    columnValuesArray[7] = parenttblAeroportiRowByFK_tblVoli_tblAeroporti1[0];
+                if ((parenttblAeroportiRowByFK_tblVoli_tblAeroporti != null)) {
+                    columnValuesArray[4] = parenttblAeroportiRowByFK_tblVoli_tblAeroporti[0];
                 }
                 if ((parenttblAereiRowByFK_tblVoli_tblAerei1 != null)) {
-                    columnValuesArray[8] = parenttblAereiRowByFK_tblVoli_tblAerei1[0];
+                    columnValuesArray[7] = parenttblAereiRowByFK_tblVoli_tblAerei1[0];
                 }
                 rowtblVoliRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtblVoliRow);
@@ -3210,7 +3199,6 @@ namespace ProgettoDatabase {
                 this.columnPartenza = base.Columns["Partenza"];
                 this.columnGatePartenza = base.Columns["GatePartenza"];
                 this.columnDurata = base.Columns["Durata"];
-                this.columnDestinazione = base.Columns["Destinazione"];
                 this.columnCodiceAereo = base.Columns["CodiceAereo"];
             }
             
@@ -3231,8 +3219,6 @@ namespace ProgettoDatabase {
                 base.Columns.Add(this.columnGatePartenza);
                 this.columnDurata = new global::System.Data.DataColumn("Durata", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDurata);
-                this.columnDestinazione = new global::System.Data.DataColumn("Destinazione", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDestinazione);
                 this.columnCodiceAereo = new global::System.Data.DataColumn("CodiceAereo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodiceAereo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -3240,14 +3226,10 @@ namespace ProgettoDatabase {
                 this.columnCodice.AllowDBNull = false;
                 this.columnCodice.Unique = true;
                 this.columnCodice.MaxLength = 30;
-                this.columnDataOraPartenza.AllowDBNull = false;
-                this.columnDataOraArrivo.AllowDBNull = false;
                 this.columnPartenza.AllowDBNull = false;
                 this.columnPartenza.MaxLength = 30;
                 this.columnGatePartenza.AllowDBNull = false;
                 this.columnDurata.AllowDBNull = false;
-                this.columnDestinazione.AllowDBNull = false;
-                this.columnDestinazione.MaxLength = 30;
                 this.columnCodiceAereo.AllowDBNull = false;
                 this.columnCodiceAereo.MaxLength = 30;
             }
@@ -4527,11 +4509,11 @@ namespace ProgettoDatabase {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tblVoliRow[] GettblVoliRows() {
-                if ((this.Table.ChildRelations["FK_tblVoli_tblAeroporti1"] == null)) {
+                if ((this.Table.ChildRelations["FK_tblVoli_tblAeroporti"] == null)) {
                     return new tblVoliRow[0];
                 }
                 else {
-                    return ((tblVoliRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tblVoli_tblAeroporti1"])));
+                    return ((tblVoliRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tblVoli_tblAeroporti"])));
                 }
             }
         }
@@ -4565,7 +4547,12 @@ namespace ProgettoDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime DataOraPartenza {
                 get {
-                    return ((global::System.DateTime)(this[this.tabletblVoli.DataOraPartenzaColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblVoli.DataOraPartenzaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'DataOraPartenza\' nella tabella \'tblVoli\' è DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletblVoli.DataOraPartenzaColumn] = value;
@@ -4576,7 +4563,12 @@ namespace ProgettoDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime DataOraArrivo {
                 get {
-                    return ((global::System.DateTime)(this[this.tabletblVoli.DataOraArrivoColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletblVoli.DataOraArrivoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Il valore della colonna \'DataOraArrivo\' nella tabella \'tblVoli\' è DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tabletblVoli.DataOraArrivoColumn] = value;
@@ -4634,17 +4626,6 @@ namespace ProgettoDatabase {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Destinazione {
-                get {
-                    return ((string)(this[this.tabletblVoli.DestinazioneColumn]));
-                }
-                set {
-                    this[this.tabletblVoli.DestinazioneColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string CodiceAereo {
                 get {
                     return ((string)(this[this.tabletblVoli.CodiceAereoColumn]));
@@ -4669,11 +4650,35 @@ namespace ProgettoDatabase {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public tblAeroportiRow tblAeroportiRow {
                 get {
-                    return ((tblAeroportiRow)(this.GetParentRow(this.Table.ParentRelations["FK_tblVoli_tblAeroporti1"])));
+                    return ((tblAeroportiRow)(this.GetParentRow(this.Table.ParentRelations["FK_tblVoli_tblAeroporti"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_tblVoli_tblAeroporti1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tblVoli_tblAeroporti"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataOraPartenzaNull() {
+                return this.IsNull(this.tabletblVoli.DataOraPartenzaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataOraPartenzaNull() {
+                this[this.tabletblVoli.DataOraPartenzaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDataOraArrivoNull() {
+                return this.IsNull(this.tabletblVoli.DataOraArrivoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDataOraArrivoNull() {
+                this[this.tabletblVoli.DataOraArrivoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8003,27 +8008,27 @@ SELECT Sigla, Nome, Piste, Terminal, Gates, Nazione, Citta, Militare, Internazio
             tableMapping.ColumnMappings.Add("Partenza", "Partenza");
             tableMapping.ColumnMappings.Add("GatePartenza", "GatePartenza");
             tableMapping.ColumnMappings.Add("Durata", "Durata");
-            tableMapping.ColumnMappings.Add("Destinazione", "Destinazione");
             tableMapping.ColumnMappings.Add("CodiceAereo", "CodiceAereo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tblVoli] WHERE (([Codice] = @Original_Codice) AND ([DataOraPartenza] = @Original_DataOraPartenza) AND ([DataOraArrivo] = @Original_DataOraArrivo) AND ((@IsNull_Internazionale = 1 AND [Internazionale] IS NULL) OR ([Internazionale] = @Original_Internazionale)) AND ([Partenza] = @Original_Partenza) AND ([GatePartenza] = @Original_GatePartenza) AND ([Durata] = @Original_Durata) AND ([Destinazione] = @Original_Destinazione) AND ([CodiceAereo] = @Original_CodiceAereo))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [tblVoli] WHERE (([Codice] = @Original_Codice) AND ((@IsNull_DataOraPartenza = 1 AND [DataOraPartenza] IS NULL) OR ([DataOraPartenza] = @Original_DataOraPartenza)) AND ((@IsNull_DataOraArrivo = 1 AND [DataOraArrivo] IS NULL) OR ([DataOraArrivo] = @Original_DataOraArrivo)) AND ((@IsNull_Internazionale = 1 AND [Internazionale] IS NULL) OR ([Internazionale] = @Original_Internazionale)) AND ([Partenza] = @Original_Partenza) AND ([GatePartenza] = @Original_GatePartenza) AND ([Durata] = @Original_Durata) AND ([CodiceAereo] = @Original_CodiceAereo))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Codice", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Codice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataOraPartenza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraPartenza", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataOraPartenza", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraPartenza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataOraArrivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraArrivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataOraArrivo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraArrivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Internazionale", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Internazionale", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Internazionale", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Internazionale", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Partenza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Partenza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GatePartenza", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GatePartenza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Durata", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durata", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Destinazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destinazione", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tblVoli] ([Codice], [DataOraPartenza], [DataOraArrivo], [Internazionale], [Partenza], [GatePartenza], [Durata], [Destinazione], [CodiceAereo]) VALUES (@Codice, @DataOraPartenza, @DataOraArrivo, @Internazionale, @Partenza, @GatePartenza, @Durata, @Destinazione, @CodiceAereo);
-SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePartenza, Durata, Destinazione, CodiceAereo FROM tblVoli WHERE (Codice = @Codice)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tblVoli] ([Codice], [DataOraPartenza], [DataOraArrivo], [Internazionale], [Partenza], [GatePartenza], [Durata], [CodiceAereo]) VALUES (@Codice, @DataOraPartenza, @DataOraArrivo, @Internazionale, @Partenza, @GatePartenza, @Durata, @CodiceAereo);
+SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePartenza, Durata, CodiceAereo FROM tblVoli WHERE (Codice = @Codice)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codice", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Codice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataOraPartenza", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraPartenza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8032,12 +8037,11 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partenza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Partenza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GatePartenza", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GatePartenza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durata", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durata", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destinazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destinazione", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [tblVoli] SET [Codice] = @Codice, [DataOraPartenza] = @DataOraPartenza, [DataOraArrivo] = @DataOraArrivo, [Internazionale] = @Internazionale, [Partenza] = @Partenza, [GatePartenza] = @GatePartenza, [Durata] = @Durata, [Destinazione] = @Destinazione, [CodiceAereo] = @CodiceAereo WHERE (([Codice] = @Original_Codice) AND ([DataOraPartenza] = @Original_DataOraPartenza) AND ([DataOraArrivo] = @Original_DataOraArrivo) AND ((@IsNull_Internazionale = 1 AND [Internazionale] IS NULL) OR ([Internazionale] = @Original_Internazionale)) AND ([Partenza] = @Original_Partenza) AND ([GatePartenza] = @Original_GatePartenza) AND ([Durata] = @Original_Durata) AND ([Destinazione] = @Original_Destinazione) AND ([CodiceAereo] = @Original_CodiceAereo));
-SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePartenza, Durata, Destinazione, CodiceAereo FROM tblVoli WHERE (Codice = @Codice)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tblVoli] SET [Codice] = @Codice, [DataOraPartenza] = @DataOraPartenza, [DataOraArrivo] = @DataOraArrivo, [Internazionale] = @Internazionale, [Partenza] = @Partenza, [GatePartenza] = @GatePartenza, [Durata] = @Durata, [CodiceAereo] = @CodiceAereo WHERE (([Codice] = @Original_Codice) AND ((@IsNull_DataOraPartenza = 1 AND [DataOraPartenza] IS NULL) OR ([DataOraPartenza] = @Original_DataOraPartenza)) AND ((@IsNull_DataOraArrivo = 1 AND [DataOraArrivo] IS NULL) OR ([DataOraArrivo] = @Original_DataOraArrivo)) AND ((@IsNull_Internazionale = 1 AND [Internazionale] IS NULL) OR ([Internazionale] = @Original_Internazionale)) AND ([Partenza] = @Original_Partenza) AND ([GatePartenza] = @Original_GatePartenza) AND ([Durata] = @Original_Durata) AND ([CodiceAereo] = @Original_CodiceAereo));
+SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePartenza, Durata, CodiceAereo FROM tblVoli WHERE (Codice = @Codice)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codice", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Codice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DataOraPartenza", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraPartenza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8046,17 +8050,17 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Partenza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Partenza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GatePartenza", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GatePartenza", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Durata", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durata", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Destinazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destinazione", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Codice", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Codice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataOraPartenza", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraPartenza", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataOraPartenza", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraPartenza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DataOraArrivo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraArrivo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DataOraArrivo", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DataOraArrivo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Internazionale", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Internazionale", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Internazionale", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Internazionale", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Partenza", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Partenza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_GatePartenza", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "GatePartenza", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Durata", global::System.Data.SqlDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Durata", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Destinazione", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Destinazione", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CodiceAereo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodiceAereo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -8074,7 +8078,7 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePart" +
-                "enza, Durata, Destinazione, CodiceAereo\r\nFROM     tblVoli\r\nWHERE Attivo=1";
+                "enza, Durata,CodiceAereo\r\nFROM     tblVoli\r\nWHERE Attivo=1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -8090,8 +8094,8 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codice", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT Codice, DataOraPartenza, DataOraArrivo, CodiceAereo, Internazionale, Parte" +
-                "nza, GatePartenza, Durata, Destinazione\r\nFROM     tblVoli\r\nWHERE Codice=@Codice";
+            this._commandCollection[3].CommandText = "SELECT Codice, CodiceAereo, DataOraArrivo, DataOraPartenza, Durata, GatePartenza," +
+                " Internazionale, Partenza FROM tblVoli WHERE (Codice = @Codice)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codice", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Codice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -8215,42 +8219,50 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Codice, System.DateTime Original_DataOraPartenza, System.DateTime Original_DataOraArrivo, global::System.Nullable<bool> Original_Internazionale, string Original_Partenza, float Original_GatePartenza, short Original_Durata, string Original_Destinazione, string Original_CodiceAereo) {
+        public virtual int Delete(string Original_Codice, global::System.Nullable<global::System.DateTime> Original_DataOraPartenza, global::System.Nullable<global::System.DateTime> Original_DataOraArrivo, global::System.Nullable<bool> Original_Internazionale, string Original_Partenza, float Original_GatePartenza, short Original_Durata, string Original_CodiceAereo) {
             if ((Original_Codice == null)) {
                 throw new global::System.ArgumentNullException("Original_Codice");
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_Codice));
             }
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_DataOraPartenza));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DataOraArrivo));
-            if ((Original_Internazionale.HasValue == true)) {
+            if ((Original_DataOraPartenza.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DataOraPartenza.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DataOraArrivo.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_Internazionale.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_DataOraArrivo.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
+            if ((Original_Internazionale.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((bool)(Original_Internazionale.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             if ((Original_Partenza == null)) {
                 throw new global::System.ArgumentNullException("Original_Partenza");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Partenza));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Partenza));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((float)(Original_GatePartenza));
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((short)(Original_Durata));
-            if ((Original_Destinazione == null)) {
-                throw new global::System.ArgumentNullException("Original_Destinazione");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Destinazione));
-            }
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((float)(Original_GatePartenza));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((short)(Original_Durata));
             if ((Original_CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("Original_CodiceAereo");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_CodiceAereo));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_CodiceAereo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8272,15 +8284,25 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Codice, System.DateTime DataOraPartenza, System.DateTime DataOraArrivo, global::System.Nullable<bool> Internazionale, string Partenza, float GatePartenza, short Durata, string Destinazione, string CodiceAereo) {
+        public virtual int Insert(string Codice, global::System.Nullable<global::System.DateTime> DataOraPartenza, global::System.Nullable<global::System.DateTime> DataOraArrivo, global::System.Nullable<bool> Internazionale, string Partenza, float GatePartenza, short Durata, string CodiceAereo) {
             if ((Codice == null)) {
                 throw new global::System.ArgumentNullException("Codice");
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Codice));
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DataOraPartenza));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DataOraArrivo));
+            if ((DataOraPartenza.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(DataOraPartenza.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DataOraArrivo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(DataOraArrivo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((Internazionale.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((bool)(Internazionale.Value));
             }
@@ -8295,17 +8317,11 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             }
             this.Adapter.InsertCommand.Parameters[5].Value = ((float)(GatePartenza));
             this.Adapter.InsertCommand.Parameters[6].Value = ((short)(Durata));
-            if ((Destinazione == null)) {
-                throw new global::System.ArgumentNullException("Destinazione");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Destinazione));
-            }
             if ((CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("CodiceAereo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(CodiceAereo));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(CodiceAereo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8329,22 +8345,20 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     string Codice, 
-                    System.DateTime DataOraPartenza, 
-                    System.DateTime DataOraArrivo, 
+                    global::System.Nullable<global::System.DateTime> DataOraPartenza, 
+                    global::System.Nullable<global::System.DateTime> DataOraArrivo, 
                     global::System.Nullable<bool> Internazionale, 
                     string Partenza, 
                     float GatePartenza, 
                     short Durata, 
-                    string Destinazione, 
                     string CodiceAereo, 
                     string Original_Codice, 
-                    System.DateTime Original_DataOraPartenza, 
-                    System.DateTime Original_DataOraArrivo, 
+                    global::System.Nullable<global::System.DateTime> Original_DataOraPartenza, 
+                    global::System.Nullable<global::System.DateTime> Original_DataOraArrivo, 
                     global::System.Nullable<bool> Original_Internazionale, 
                     string Original_Partenza, 
                     float Original_GatePartenza, 
                     short Original_Durata, 
-                    string Original_Destinazione, 
                     string Original_CodiceAereo) {
             if ((Codice == null)) {
                 throw new global::System.ArgumentNullException("Codice");
@@ -8352,8 +8366,18 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Codice));
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DataOraPartenza));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DataOraArrivo));
+            if ((DataOraPartenza.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(DataOraPartenza.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DataOraArrivo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DataOraArrivo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((Internazionale.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((bool)(Internazionale.Value));
             }
@@ -8368,48 +8392,50 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((float)(GatePartenza));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Durata));
-            if ((Destinazione == null)) {
-                throw new global::System.ArgumentNullException("Destinazione");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Destinazione));
-            }
             if ((CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("CodiceAereo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(CodiceAereo));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(CodiceAereo));
             }
             if ((Original_Codice == null)) {
                 throw new global::System.ArgumentNullException("Original_Codice");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Codice));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Codice));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DataOraPartenza));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_DataOraArrivo));
-            if ((Original_Internazionale.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((bool)(Original_Internazionale.Value));
+            if ((Original_DataOraPartenza.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_DataOraPartenza.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_DataOraArrivo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_DataOraArrivo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Internazionale.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((bool)(Original_Internazionale.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_Partenza == null)) {
                 throw new global::System.ArgumentNullException("Original_Partenza");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Partenza));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Partenza));
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((float)(Original_GatePartenza));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((short)(Original_Durata));
-            if ((Original_Destinazione == null)) {
-                throw new global::System.ArgumentNullException("Original_Destinazione");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Destinazione));
-            }
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(Original_GatePartenza));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((short)(Original_Durata));
             if ((Original_CodiceAereo == null)) {
                 throw new global::System.ArgumentNullException("Original_CodiceAereo");
             }
@@ -8436,25 +8462,8 @@ SELECT Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePar
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(
-                    System.DateTime DataOraPartenza, 
-                    System.DateTime DataOraArrivo, 
-                    global::System.Nullable<bool> Internazionale, 
-                    string Partenza, 
-                    float GatePartenza, 
-                    short Durata, 
-                    string Destinazione, 
-                    string CodiceAereo, 
-                    string Original_Codice, 
-                    System.DateTime Original_DataOraPartenza, 
-                    System.DateTime Original_DataOraArrivo, 
-                    global::System.Nullable<bool> Original_Internazionale, 
-                    string Original_Partenza, 
-                    float Original_GatePartenza, 
-                    short Original_Durata, 
-                    string Original_Destinazione, 
-                    string Original_CodiceAereo) {
-            return this.Update(Original_Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePartenza, Durata, Destinazione, CodiceAereo, Original_Codice, Original_DataOraPartenza, Original_DataOraArrivo, Original_Internazionale, Original_Partenza, Original_GatePartenza, Original_Durata, Original_Destinazione, Original_CodiceAereo);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> DataOraPartenza, global::System.Nullable<global::System.DateTime> DataOraArrivo, global::System.Nullable<bool> Internazionale, string Partenza, float GatePartenza, short Durata, string CodiceAereo, string Original_Codice, global::System.Nullable<global::System.DateTime> Original_DataOraPartenza, global::System.Nullable<global::System.DateTime> Original_DataOraArrivo, global::System.Nullable<bool> Original_Internazionale, string Original_Partenza, float Original_GatePartenza, short Original_Durata, string Original_CodiceAereo) {
+            return this.Update(Original_Codice, DataOraPartenza, DataOraArrivo, Internazionale, Partenza, GatePartenza, Durata, CodiceAereo, Original_Codice, Original_DataOraPartenza, Original_DataOraArrivo, Original_Internazionale, Original_Partenza, Original_GatePartenza, Original_Durata, Original_CodiceAereo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

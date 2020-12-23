@@ -15,19 +15,17 @@ namespace ProgettoDatabase.Classi
         public string DataOraArrivo { get; }
 
         public string CodiceAereo { get; }
-        public string Destinazione { get; }
         public int Durata { get; }
         public int GatePartenza { get; }
 
         public bool Internazionale { get; }
 
-        public Voli(string Codice, string DataOraPartenza,string DataOraArrivo, bool internazionale, string CodiceAereo, string Destinazione, int Durata, int GatePartenza )
+        public Voli(string Codice, string DataOraPartenza,string DataOraArrivo, bool internazionale, string CodiceAereo, int Durata, int GatePartenza )
         {
             this.Codice = Codice;
             this.DataOraPartenza = DataOraPartenza;
             this.DataOraArrivo = DataOraArrivo; 
             this.CodiceAereo = CodiceAereo;
-            this.Destinazione = Destinazione;
             this.Durata = Durata;
             this.GatePartenza = GatePartenza;
             this.Internazionale = Internazionale;
