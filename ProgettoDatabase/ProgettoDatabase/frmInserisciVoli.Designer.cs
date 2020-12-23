@@ -222,7 +222,7 @@ namespace ProgettoDatabase
             this.updDurata.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "Durata", true));
             this.updDurata.Location = new System.Drawing.Point(272, 139);
             this.updDurata.Maximum = new decimal(new int[] {
-            1000,
+            32666,
             0,
             0,
             0});
@@ -236,7 +236,7 @@ namespace ProgettoDatabase
             this.updGatePartenza.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "GatePartenza", true));
             this.updGatePartenza.Location = new System.Drawing.Point(272, 185);
             this.updGatePartenza.Maximum = new decimal(new int[] {
-            1000,
+            32666,
             0,
             0,
             0});
