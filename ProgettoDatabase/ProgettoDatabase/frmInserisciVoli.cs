@@ -28,12 +28,12 @@ namespace ProgettoDatabase
         }
 
         private void btnSalva_Click(object sender, EventArgs e)
-        {    if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+        {    if ((txtCodice.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, txtCodiceAereo.Text, txtPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
+                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
                     this._RefreshGrid();
                     this.Close();
                 }
@@ -46,9 +46,9 @@ namespace ProgettoDatabase
                 {
                     errorProvider1.SetError(txtCodice, "Inserire i dati correttamente");
                 }
-                if (txtCodiceAereo.Text == "")
+                if (cmbCodiceAereo.Text == "")
                 {
-                    errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
+                    errorProvider2.SetError(cmbCodiceAereo, "Inserire i dati correttamente");
                 }
                 
                 if (updDurata.Value <= 0)
@@ -69,12 +69,12 @@ namespace ProgettoDatabase
 
         private void btnSalvaENuovo_Click(object sender, EventArgs e)
         {
-            if ((txtCodice.Text != "") && (txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+            if ((txtCodice.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text, txtPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToInt16(updGatePartenza.Value), chkInternazionale.Checked);
+                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToInt16(updGatePartenza.Value), chkInternazionale.Checked);
                     this._RefreshGrid();
                 }
 
@@ -85,10 +85,6 @@ namespace ProgettoDatabase
                 if (txtCodice.Text == "")
                 {
                     errorProvider1.SetError(txtCodice, "Inserire i dati correttamente");
-                }
-                if (txtCodiceAereo.Text == "")
-                {
-                    errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
                 }
                 if (updDurata.Value <= 0)
                 {
@@ -133,9 +129,12 @@ namespace ProgettoDatabase
 
         private void frmInserisciVoli_Load(object sender, EventArgs e)
         {
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAeroporti'. È possibile spostarla o rimuoverla se necessario.
+            this.tblAeroportiTableAdapter.Fill(this.aeroportoDataSet.tblAeroporti);
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAerei'. È possibile spostarla o rimuoverla se necessario.
+            this.tblAereiTableAdapter.Fill(this.aeroportoDataSet.tblAerei);
             // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblVoli'. È possibile spostarla o rimuoverla se necessario.
-            this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
-
+            //this.tblVoliTableAdapter.Fill(this.aeroportoDataSet.tblVoli);
         }
 
         private void txtCodice_KeyUp(object sender, KeyEventArgs e)
@@ -158,10 +157,6 @@ namespace ProgettoDatabase
             errorProvider5.Clear();
         }
 
-        private void txtCodice_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
     
 }

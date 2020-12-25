@@ -62,14 +62,14 @@ namespace ProgettoDatabase
 
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            if ((txtCodiceAereo.Text != "") && (updDurata.Value > 0) && (updGatePartenza.Value > 0))
+            if ( (updDurata.Value > 0) && (updGatePartenza.Value > 0))
             {
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     
-                        tblVoliTableAdapter.ModificaVoli( Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), txtCodiceAereo.Text,
-                           txtPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked, _Codice);
+                        tblVoliTableAdapter.ModificaVoli( Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), cmbCodiceAereo.Text,
+                           cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked, _Codice);
                     this._RefreshGrid();
 
                 }
@@ -79,10 +79,7 @@ namespace ProgettoDatabase
             {
                 MessageBox.Show("Non puoi lasciare campi vuoti oppure a zero", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
-                if (txtCodiceAereo.Text == "")
-                {
-                    errorProvider2.SetError(txtCodiceAereo, "Inserire i dati correttamente");
-                }
+
                 if (updDurata.Value <= 0)
                 {
                     errorProvider4.SetError(updDurata, "Inserire i dati correttamente");
@@ -98,16 +95,17 @@ namespace ProgettoDatabase
 
         private void frmModificaVoli_Load(object sender, EventArgs e)
         {
-            
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAeroporti'. È possibile spostarla o rimuoverla se necessario.
+            this.tblAeroportiTableAdapter.Fill(this.aeroportoDataSet.tblAeroporti);
+            // TODO: questa riga di codice carica i dati nella tabella 'aeroportoDataSet.tblAerei'. È possibile spostarla o rimuoverla se necessario.
+            this.tblAereiTableAdapter.Fill(this.aeroportoDataSet.tblAerei);
+
             this.tblVoliTableAdapter.FillByCodice(this.aeroportoDataSet.tblVoli,this._Codice);
 
 
          }
 
-        private void txtCodiceAereo_KeyUp(object sender, KeyEventArgs e)
-        {
-            errorProvider2.Clear();
-        }
+
 
 
         private void updDurata_ValueChanged(object sender, EventArgs e)
