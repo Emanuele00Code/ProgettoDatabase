@@ -94,7 +94,7 @@ namespace ProgettoDatabase
             this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(137, 43);
-            this.btnSalva.TabIndex = 16;
+            this.btnSalva.TabIndex = 10;
             this.btnSalva.Text = "SALVA E CHIUDI";
             this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
@@ -130,7 +130,7 @@ namespace ProgettoDatabase
             this.btnSalvaENuovo.Location = new System.Drawing.Point(140, 506);
             this.btnSalvaENuovo.Name = "btnSalvaENuovo";
             this.btnSalvaENuovo.Size = new System.Drawing.Size(150, 43);
-            this.btnSalvaENuovo.TabIndex = 20;
+            this.btnSalvaENuovo.TabIndex = 9;
             this.btnSalvaENuovo.Text = "SALVA E NUOVO";
             this.btnSalvaENuovo.UseVisualStyleBackColor = false;
             this.btnSalvaENuovo.Click += new System.EventHandler(this.btnSalvaENuovo_Click);
@@ -150,7 +150,7 @@ namespace ProgettoDatabase
             this.txtCodice.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
-            this.txtCodice.TabIndex = 29;
+            this.txtCodice.TabIndex = 1;
             this.txtCodice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodice_KeyUp);
             // 
             // lblGatePartenza
@@ -205,7 +205,7 @@ namespace ProgettoDatabase
             this.updDurata.Name = "updDurata";
             this.updDurata.ReadOnly = true;
             this.updDurata.Size = new System.Drawing.Size(120, 22);
-            this.updDurata.TabIndex = 41;
+            this.updDurata.TabIndex = 3;
             this.updDurata.ValueChanged += new System.EventHandler(this.updDurata_ValueChanged);
             // 
             // updGatePartenza
@@ -218,7 +218,7 @@ namespace ProgettoDatabase
             0});
             this.updGatePartenza.Name = "updGatePartenza";
             this.updGatePartenza.Size = new System.Drawing.Size(120, 22);
-            this.updGatePartenza.TabIndex = 42;
+            this.updGatePartenza.TabIndex = 4;
             this.updGatePartenza.ValueChanged += new System.EventHandler(this.updGatePartenza_ValueChanged);
             // 
             // dtpDataArrivo
@@ -229,7 +229,7 @@ namespace ProgettoDatabase
             this.dtpDataArrivo.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(265, 22);
-            this.dtpDataArrivo.TabIndex = 46;
+            this.dtpDataArrivo.TabIndex = 7;
             this.dtpDataArrivo.ValueChanged += new System.EventHandler(this.dtpDataArrivo_ValueChanged);
             // 
             // lblDataOraArrivo
@@ -259,7 +259,7 @@ namespace ProgettoDatabase
             this.dtpDataPartenza.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(265, 22);
-            this.dtpDataPartenza.TabIndex = 49;
+            this.dtpDataPartenza.TabIndex = 6;
             this.dtpDataPartenza.ValueChanged += new System.EventHandler(this.dtpDataPartenza_ValueChanged);
             // 
             // lblDataOraPartenza
@@ -296,7 +296,7 @@ namespace ProgettoDatabase
             this.chkInternazionale.Location = new System.Drawing.Point(272, 410);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
-            this.chkInternazionale.TabIndex = 52;
+            this.chkInternazionale.TabIndex = 8;
             this.chkInternazionale.UseVisualStyleBackColor = true;
             // 
             // errorProvider1
@@ -353,7 +353,7 @@ namespace ProgettoDatabase
             this.cmbCodiceAereo.Location = new System.Drawing.Point(271, 79);
             this.cmbCodiceAereo.Name = "cmbCodiceAereo";
             this.cmbCodiceAereo.Size = new System.Drawing.Size(266, 24);
-            this.cmbCodiceAereo.TabIndex = 53;
+            this.cmbCodiceAereo.TabIndex = 2;
             this.cmbCodiceAereo.ValueMember = "CodiceAereo";
             // 
             // bindingSource2
@@ -373,7 +373,7 @@ namespace ProgettoDatabase
             this.cmbPartenza.Location = new System.Drawing.Point(272, 229);
             this.cmbPartenza.Name = "cmbPartenza";
             this.cmbPartenza.Size = new System.Drawing.Size(265, 24);
-            this.cmbPartenza.TabIndex = 54;
+            this.cmbPartenza.TabIndex = 5;
             this.cmbPartenza.ValueMember = "Sigla";
             // 
             // bindingSource3

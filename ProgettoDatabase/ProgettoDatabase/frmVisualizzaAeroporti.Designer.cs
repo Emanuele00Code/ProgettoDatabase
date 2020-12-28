@@ -126,7 +126,7 @@ namespace ProgettoDatabase
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.ReadOnly = true;
             this.txtSigla.Size = new System.Drawing.Size(265, 22);
-            this.txtSigla.TabIndex = 8;
+            this.txtSigla.TabIndex = 1;
             // 
             // txtNome
             // 
@@ -135,7 +135,7 @@ namespace ProgettoDatabase
             this.txtNome.Name = "txtNome";
             this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(265, 22);
-            this.txtNome.TabIndex = 9;
+            this.txtNome.TabIndex = 2;
             // 
             // lblGates
             // 
@@ -161,7 +161,7 @@ namespace ProgettoDatabase
             this.txtCitta.Name = "txtCitta";
             this.txtCitta.ReadOnly = true;
             this.txtCitta.Size = new System.Drawing.Size(265, 22);
-            this.txtCitta.TabIndex = 18;
+            this.txtCitta.TabIndex = 7;
             // 
             // cbkMilitare
             // 
@@ -170,7 +170,7 @@ namespace ProgettoDatabase
             this.cbkMilitare.Location = new System.Drawing.Point(262, 418);
             this.cbkMilitare.Name = "cbkMilitare";
             this.cbkMilitare.Size = new System.Drawing.Size(18, 17);
-            this.cbkMilitare.TabIndex = 19;
+            this.cbkMilitare.TabIndex = 8;
             this.cbkMilitare.UseVisualStyleBackColor = true;
             // 
             // cbkInternazionale
@@ -180,7 +180,7 @@ namespace ProgettoDatabase
             this.cbkInternazionale.Location = new System.Drawing.Point(262, 472);
             this.cbkInternazionale.Name = "cbkInternazionale";
             this.cbkInternazionale.Size = new System.Drawing.Size(18, 17);
-            this.cbkInternazionale.TabIndex = 20;
+            this.cbkInternazionale.TabIndex = 9;
             this.cbkInternazionale.UseVisualStyleBackColor = true;
             // 
             // lblNazione
@@ -198,7 +198,7 @@ namespace ProgettoDatabase
             this.txtNazione.Name = "txtNazione";
             this.txtNazione.ReadOnly = true;
             this.txtNazione.Size = new System.Drawing.Size(265, 22);
-            this.txtNazione.TabIndex = 22;
+            this.txtNazione.TabIndex = 6;
             // 
             // updGates
             // 
@@ -212,7 +212,7 @@ namespace ProgettoDatabase
             this.updGates.Name = "updGates";
             this.updGates.ReadOnly = true;
             this.updGates.Size = new System.Drawing.Size(120, 22);
-            this.updGates.TabIndex = 46;
+            this.updGates.TabIndex = 5;
             this.updGates.ValueChanged += new System.EventHandler(this.updGates_ValueChanged);
             // 
             // updTerminal
@@ -227,7 +227,7 @@ namespace ProgettoDatabase
             this.updTerminal.Name = "updTerminal";
             this.updTerminal.ReadOnly = true;
             this.updTerminal.Size = new System.Drawing.Size(120, 22);
-            this.updTerminal.TabIndex = 45;
+            this.updTerminal.TabIndex = 4;
             this.updTerminal.ValueChanged += new System.EventHandler(this.updTerminal_ValueChanged);
             // 
             // updPiste
@@ -242,7 +242,7 @@ namespace ProgettoDatabase
             this.updPiste.Name = "updPiste";
             this.updPiste.ReadOnly = true;
             this.updPiste.Size = new System.Drawing.Size(120, 22);
-            this.updPiste.TabIndex = 44;
+            this.updPiste.TabIndex = 3;
             this.updPiste.ValueChanged += new System.EventHandler(this.updPiste_ValueChanged);
             // 
             // tblPersoneBindingSource

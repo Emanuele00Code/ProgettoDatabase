@@ -122,7 +122,7 @@ namespace ProgettoDatabase
             this.txtModello.Name = "txtModello";
             this.txtModello.ReadOnly = true;
             this.txtModello.Size = new System.Drawing.Size(265, 22);
-            this.txtModello.TabIndex = 10;
+            this.txtModello.TabIndex = 3;
             // 
             // btnSalva
             // 
@@ -135,7 +135,7 @@ namespace ProgettoDatabase
             this.btnSalva.Margin = new System.Windows.Forms.Padding(0);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(123, 52);
-            this.btnSalva.TabIndex = 16;
+            this.btnSalva.TabIndex = 12;
             this.btnSalva.Text = "SALVA";
             this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
@@ -227,7 +227,7 @@ namespace ProgettoDatabase
             0});
             this.updCapacita.Name = "updCapacita";
             this.updCapacita.Size = new System.Drawing.Size(120, 22);
-            this.updCapacita.TabIndex = 27;
+            this.updCapacita.TabIndex = 4;
             this.updCapacita.ValueChanged += new System.EventHandler(this.updCapacita_ValueChanged);
             // 
             // updLitri
@@ -241,7 +241,7 @@ namespace ProgettoDatabase
             0});
             this.updLitri.Name = "updLitri";
             this.updLitri.Size = new System.Drawing.Size(120, 22);
-            this.updLitri.TabIndex = 28;
+            this.updLitri.TabIndex = 5;
             this.updLitri.ValueChanged += new System.EventHandler(this.updLitri_ValueChanged);
             // 
             // updMotori
@@ -255,7 +255,7 @@ namespace ProgettoDatabase
             0});
             this.updMotori.Name = "updMotori";
             this.updMotori.Size = new System.Drawing.Size(120, 22);
-            this.updMotori.TabIndex = 29;
+            this.updMotori.TabIndex = 6;
             this.updMotori.ValueChanged += new System.EventHandler(this.updMotori_ValueChanged);
             // 
             // updRaggio
@@ -269,7 +269,7 @@ namespace ProgettoDatabase
             0});
             this.updRaggio.Name = "updRaggio";
             this.updRaggio.Size = new System.Drawing.Size(120, 22);
-            this.updRaggio.TabIndex = 30;
+            this.updRaggio.TabIndex = 9;
             this.updRaggio.ValueChanged += new System.EventHandler(this.updRaggio_ValueChanged);
             // 
             // updVelocita
@@ -278,7 +278,7 @@ namespace ProgettoDatabase
             this.updVelocita.Location = new System.Drawing.Point(271, 462);
             this.updVelocita.Name = "updVelocita";
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
-            this.updVelocita.TabIndex = 31;
+            this.updVelocita.TabIndex = 10;
             this.updVelocita.ValueChanged += new System.EventHandler(this.updVelocita_ValueChanged);
             // 
             // txtPropulsione
@@ -287,7 +287,7 @@ namespace ProgettoDatabase
             this.txtPropulsione.Location = new System.Drawing.Point(271, 306);
             this.txtPropulsione.Name = "txtPropulsione";
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
-            this.txtPropulsione.TabIndex = 32;
+            this.txtPropulsione.TabIndex = 7;
             this.txtPropulsione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPropulsione_KeyUp);
             // 
             // txtCompagnia
@@ -296,7 +296,7 @@ namespace ProgettoDatabase
             this.txtCompagnia.Location = new System.Drawing.Point(271, 521);
             this.txtCompagnia.Name = "txtCompagnia";
             this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
-            this.txtCompagnia.TabIndex = 33;
+            this.txtCompagnia.TabIndex = 11;
             this.txtCompagnia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCompagnia_KeyUp);
             // 
             // chkInternazionale
@@ -306,7 +306,7 @@ namespace ProgettoDatabase
             this.chkInternazionale.Location = new System.Drawing.Point(271, 365);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
-            this.chkInternazionale.TabIndex = 34;
+            this.chkInternazionale.TabIndex = 8;
             this.chkInternazionale.UseVisualStyleBackColor = true;
             // 
             // errorProvider1
@@ -376,8 +376,7 @@ namespace ProgettoDatabase
             this.cmbModello.Location = new System.Drawing.Point(271, 85);
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
-            this.cmbModello.TabIndex = 37;
-            this.cmbModello.Text = "*Seleziona una Marca*";
+            this.cmbModello.TabIndex = 2;
             this.cmbModello.ValueMember = "Modello";
             this.cmbModello.SelectionChangeCommitted += new System.EventHandler(this.cmbModello_SelectionChangeCommitted);
             // 
@@ -402,7 +401,7 @@ namespace ProgettoDatabase
             this.cmbMarca.Location = new System.Drawing.Point(271, 50);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(265, 24);
-            this.cmbMarca.TabIndex = 38;
+            this.cmbMarca.TabIndex = 1;
             this.cmbMarca.ValueMember = "Nome";
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 

@@ -36,9 +36,7 @@ namespace ProgettoDatabase
             this.lblGatePartenza = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.aeroportoDataSet = new ProgettoDatabase.AeroportoDataSet();
-            this.txtCodiceAereo = new System.Windows.Forms.TextBox();
             this.lblPartenza = new System.Windows.Forms.Label();
-            this.txtPartenza = new System.Windows.Forms.TextBox();
             this.updGatePartenza = new System.Windows.Forms.NumericUpDown();
             this.updDurata = new System.Windows.Forms.NumericUpDown();
             this.btnSalva = new System.Windows.Forms.Button();
@@ -113,15 +111,6 @@ namespace ProgettoDatabase
             this.aeroportoDataSet.DataSetName = "AeroportoDataSet";
             this.aeroportoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txtCodiceAereo
-            // 
-            this.txtCodiceAereo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "CodiceAereo", true));
-            this.txtCodiceAereo.Location = new System.Drawing.Point(258, 13);
-            this.txtCodiceAereo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodiceAereo.Name = "txtCodiceAereo";
-            this.txtCodiceAereo.Size = new System.Drawing.Size(265, 22);
-            this.txtCodiceAereo.TabIndex = 9;
-            // 
             // lblPartenza
             // 
             this.lblPartenza.AutoSize = true;
@@ -130,14 +119,6 @@ namespace ProgettoDatabase
             this.lblPartenza.Size = new System.Drawing.Size(132, 17);
             this.lblPartenza.TabIndex = 21;
             this.lblPartenza.Text = "Aeroporto Partenza";
-            // 
-            // txtPartenza
-            // 
-            this.txtPartenza.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "Partenza", true));
-            this.txtPartenza.Location = new System.Drawing.Point(256, 85);
-            this.txtPartenza.Name = "txtPartenza";
-            this.txtPartenza.Size = new System.Drawing.Size(265, 22);
-            this.txtPartenza.TabIndex = 22;
             // 
             // updGatePartenza
             // 
@@ -150,7 +131,7 @@ namespace ProgettoDatabase
             0});
             this.updGatePartenza.Name = "updGatePartenza";
             this.updGatePartenza.Size = new System.Drawing.Size(120, 22);
-            this.updGatePartenza.TabIndex = 45;
+            this.updGatePartenza.TabIndex = 4;
             this.updGatePartenza.ValueChanged += new System.EventHandler(this.updGatePartenza_ValueChanged);
             // 
             // updDurata
@@ -166,7 +147,7 @@ namespace ProgettoDatabase
             this.updDurata.Name = "updDurata";
             this.updDurata.ReadOnly = true;
             this.updDurata.Size = new System.Drawing.Size(120, 22);
-            this.updDurata.TabIndex = 44;
+            this.updDurata.TabIndex = 3;
             this.updDurata.ValueChanged += new System.EventHandler(this.updDurata_ValueChanged);
             // 
             // btnSalva
@@ -177,7 +158,7 @@ namespace ProgettoDatabase
             this.btnSalva.Location = new System.Drawing.Point(257, 473);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(158, 60);
-            this.btnSalva.TabIndex = 47;
+            this.btnSalva.TabIndex = 7;
             this.btnSalva.Text = "SALVA";
             this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
@@ -202,7 +183,7 @@ namespace ProgettoDatabase
             this.chkInternazionale.Location = new System.Drawing.Point(256, 275);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
-            this.chkInternazionale.TabIndex = 51;
+            this.chkInternazionale.TabIndex = 5;
             this.chkInternazionale.UseVisualStyleBackColor = true;
             // 
             // label1
@@ -231,7 +212,7 @@ namespace ProgettoDatabase
             this.dtpDataPartenza.Location = new System.Drawing.Point(257, 351);
             this.dtpDataPartenza.Name = "dtpDataPartenza";
             this.dtpDataPartenza.Size = new System.Drawing.Size(200, 22);
-            this.dtpDataPartenza.TabIndex = 54;
+            this.dtpDataPartenza.TabIndex = 6;
             this.dtpDataPartenza.ValueChanged += new System.EventHandler(this.dtpDataPartenza_ValueChanged);
             // 
             // dtpDataArrivo
@@ -242,7 +223,7 @@ namespace ProgettoDatabase
             this.dtpDataArrivo.Location = new System.Drawing.Point(256, 397);
             this.dtpDataArrivo.Name = "dtpDataArrivo";
             this.dtpDataArrivo.Size = new System.Drawing.Size(200, 22);
-            this.dtpDataArrivo.TabIndex = 55;
+            this.dtpDataArrivo.TabIndex = 7;
             this.dtpDataArrivo.ValueChanged += new System.EventHandler(this.dtpDataArrivo_ValueChanged);
             // 
             // errorProvider1
@@ -273,7 +254,7 @@ namespace ProgettoDatabase
             this.cmbPartenza.Location = new System.Drawing.Point(255, 113);
             this.cmbPartenza.Name = "cmbPartenza";
             this.cmbPartenza.Size = new System.Drawing.Size(265, 24);
-            this.cmbPartenza.TabIndex = 57;
+            this.cmbPartenza.TabIndex = 2;
             this.cmbPartenza.ValueMember = "Sigla";
             // 
             // bindingSource3
@@ -292,13 +273,14 @@ namespace ProgettoDatabase
             // 
             // cmbCodiceAereo
             // 
+            this.cmbCodiceAereo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "CodiceAereo", true));
             this.cmbCodiceAereo.DataSource = this.bindingSource2;
             this.cmbCodiceAereo.DisplayMember = "CodiceAereo";
             this.cmbCodiceAereo.FormattingEnabled = true;
             this.cmbCodiceAereo.Location = new System.Drawing.Point(255, 55);
             this.cmbCodiceAereo.Name = "cmbCodiceAereo";
             this.cmbCodiceAereo.Size = new System.Drawing.Size(266, 24);
-            this.cmbCodiceAereo.TabIndex = 58;
+            this.cmbCodiceAereo.TabIndex = 1;
             this.cmbCodiceAereo.ValueMember = "CodiceAereo";
             // 
             // tblAeroportiTableAdapter
@@ -322,9 +304,7 @@ namespace ProgettoDatabase
             this.Controls.Add(this.btnSalva);
             this.Controls.Add(this.updGatePartenza);
             this.Controls.Add(this.updDurata);
-            this.Controls.Add(this.txtPartenza);
             this.Controls.Add(this.lblPartenza);
-            this.Controls.Add(this.txtCodiceAereo);
             this.Controls.Add(this.lblGatePartenza);
             this.Controls.Add(this.lblDurata);
             this.Controls.Add(this.lblCodiceAereo);
@@ -355,9 +335,7 @@ namespace ProgettoDatabase
         private System.Windows.Forms.Label lblCodiceAereo;
         private System.Windows.Forms.Label lblDurata;
         private System.Windows.Forms.Label lblGatePartenza;
-        private System.Windows.Forms.TextBox txtCodiceAereo;
         private System.Windows.Forms.Label lblPartenza;
-        private System.Windows.Forms.TextBox txtPartenza;
         private System.Windows.Forms.NumericUpDown updGatePartenza;
         private System.Windows.Forms.NumericUpDown updDurata;
         private System.Windows.Forms.Button btnSalva;

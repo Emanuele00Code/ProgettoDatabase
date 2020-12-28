@@ -89,7 +89,7 @@ namespace ProgettoDatabase
             this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(150, 43);
-            this.btnSalva.TabIndex = 16;
+            this.btnSalva.TabIndex = 11;
             this.btnSalva.Text = "SALVA E CHIUDI";
             this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
@@ -124,7 +124,7 @@ namespace ProgettoDatabase
             this.btnSalvaENuovo.Location = new System.Drawing.Point(382, 366);
             this.btnSalvaENuovo.Name = "btnSalvaENuovo";
             this.btnSalvaENuovo.Size = new System.Drawing.Size(150, 43);
-            this.btnSalvaENuovo.TabIndex = 20;
+            this.btnSalvaENuovo.TabIndex = 10;
             this.btnSalvaENuovo.Text = "SALVA E NUOVO";
             this.btnSalvaENuovo.UseVisualStyleBackColor = false;
             this.btnSalvaENuovo.Click += new System.EventHandler(this.btnSalvaENuovo_Click);
@@ -134,7 +134,7 @@ namespace ProgettoDatabase
             this.txtNazione.Location = new System.Drawing.Point(272, 283);
             this.txtNazione.Name = "txtNazione";
             this.txtNazione.Size = new System.Drawing.Size(265, 22);
-            this.txtNazione.TabIndex = 40;
+            this.txtNazione.TabIndex = 6;
             this.txtNazione.TextChanged += new System.EventHandler(this.txtNazione_TextChanged);
             // 
             // lblNazione
@@ -152,7 +152,7 @@ namespace ProgettoDatabase
             this.cbkInternazionale.Location = new System.Drawing.Point(272, 434);
             this.cbkInternazionale.Name = "cbkInternazionale";
             this.cbkInternazionale.Size = new System.Drawing.Size(18, 17);
-            this.cbkInternazionale.TabIndex = 38;
+            this.cbkInternazionale.TabIndex = 9;
             this.cbkInternazionale.UseVisualStyleBackColor = true;
             // 
             // cbkMilitare
@@ -161,7 +161,7 @@ namespace ProgettoDatabase
             this.cbkMilitare.Location = new System.Drawing.Point(272, 380);
             this.cbkMilitare.Name = "cbkMilitare";
             this.cbkMilitare.Size = new System.Drawing.Size(18, 17);
-            this.cbkMilitare.TabIndex = 37;
+            this.cbkMilitare.TabIndex = 8;
             this.cbkMilitare.UseVisualStyleBackColor = true;
             // 
             // txtCitta
@@ -169,7 +169,7 @@ namespace ProgettoDatabase
             this.txtCitta.Location = new System.Drawing.Point(272, 321);
             this.txtCitta.Name = "txtCitta";
             this.txtCitta.Size = new System.Drawing.Size(265, 22);
-            this.txtCitta.TabIndex = 36;
+            this.txtCitta.TabIndex = 7;
             this.txtCitta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCitta_KeyUp);
             // 
             // lblCitta
@@ -196,7 +196,7 @@ namespace ProgettoDatabase
             this.txtNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(265, 22);
-            this.txtNome.TabIndex = 30;
+            this.txtNome.TabIndex = 2;
             this.txtNome.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtNome_KeyUp);
             // 
             // txtSigla
@@ -205,7 +205,7 @@ namespace ProgettoDatabase
             this.txtSigla.Margin = new System.Windows.Forms.Padding(4);
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(265, 22);
-            this.txtSigla.TabIndex = 29;
+            this.txtSigla.TabIndex = 1;
             this.txtSigla.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSigla_KeyUp);
             // 
             // lblInternazionale
@@ -283,7 +283,7 @@ namespace ProgettoDatabase
             0});
             this.updPiste.Name = "updPiste";
             this.updPiste.Size = new System.Drawing.Size(120, 22);
-            this.updPiste.TabIndex = 41;
+            this.updPiste.TabIndex = 3;
             this.updPiste.ValueChanged += new System.EventHandler(this.updPiste_ValueChanged);
             // 
             // updTerminal
@@ -296,7 +296,7 @@ namespace ProgettoDatabase
             0});
             this.updTerminal.Name = "updTerminal";
             this.updTerminal.Size = new System.Drawing.Size(120, 22);
-            this.updTerminal.TabIndex = 42;
+            this.updTerminal.TabIndex = 4;
             this.updTerminal.ValueChanged += new System.EventHandler(this.updTerminal_ValueChanged);
             // 
             // updGates
@@ -309,7 +309,7 @@ namespace ProgettoDatabase
             0});
             this.updGates.Name = "updGates";
             this.updGates.Size = new System.Drawing.Size(120, 22);
-            this.updGates.TabIndex = 43;
+            this.updGates.TabIndex = 5;
             this.updGates.ValueChanged += new System.EventHandler(this.updGates_ValueChanged);
             // 
             // errorProvider1

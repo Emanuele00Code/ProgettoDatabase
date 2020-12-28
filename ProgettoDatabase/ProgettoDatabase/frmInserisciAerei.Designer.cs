@@ -106,7 +106,7 @@ namespace ProgettoDatabase
             this.btnSalva.Margin = new System.Windows.Forms.Padding(4);
             this.btnSalva.Name = "btnSalva";
             this.btnSalva.Size = new System.Drawing.Size(137, 43);
-            this.btnSalva.TabIndex = 16;
+            this.btnSalva.TabIndex = 13;
             this.btnSalva.Text = "SALVA E CHIUDI";
             this.btnSalva.UseVisualStyleBackColor = false;
             this.btnSalva.Click += new System.EventHandler(this.btnSalva_Click);
@@ -141,7 +141,7 @@ namespace ProgettoDatabase
             this.btnSalvaENuovo.Location = new System.Drawing.Point(71, 630);
             this.btnSalvaENuovo.Name = "btnSalvaENuovo";
             this.btnSalvaENuovo.Size = new System.Drawing.Size(150, 43);
-            this.btnSalvaENuovo.TabIndex = 20;
+            this.btnSalvaENuovo.TabIndex = 12;
             this.btnSalvaENuovo.Text = "SALVA E NUOVO";
             this.btnSalvaENuovo.UseVisualStyleBackColor = false;
             this.btnSalvaENuovo.Click += new System.EventHandler(this.btnSalvaENuovo_Click);
@@ -153,7 +153,7 @@ namespace ProgettoDatabase
             this.chkInternazionale.Location = new System.Drawing.Point(277, 404);
             this.chkInternazionale.Name = "chkInternazionale";
             this.chkInternazionale.Size = new System.Drawing.Size(18, 17);
-            this.chkInternazionale.TabIndex = 54;
+            this.chkInternazionale.TabIndex = 8;
             this.chkInternazionale.UseVisualStyleBackColor = true;
             // 
             // tblAereiBindingSource
@@ -172,7 +172,7 @@ namespace ProgettoDatabase
             this.txtCompagnia.Location = new System.Drawing.Point(277, 560);
             this.txtCompagnia.Name = "txtCompagnia";
             this.txtCompagnia.Size = new System.Drawing.Size(265, 22);
-            this.txtCompagnia.TabIndex = 53;
+            this.txtCompagnia.TabIndex = 11;
             this.txtCompagnia.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCompagnia_KeyUp);
             // 
             // txtPropulsione
@@ -181,7 +181,7 @@ namespace ProgettoDatabase
             this.txtPropulsione.Location = new System.Drawing.Point(277, 345);
             this.txtPropulsione.Name = "txtPropulsione";
             this.txtPropulsione.Size = new System.Drawing.Size(265, 22);
-            this.txtPropulsione.TabIndex = 52;
+            this.txtPropulsione.TabIndex = 7;
             this.txtPropulsione.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtPropulsione_KeyUp);
             // 
             // updVelocita
@@ -190,7 +190,7 @@ namespace ProgettoDatabase
             this.updVelocita.Location = new System.Drawing.Point(277, 501);
             this.updVelocita.Name = "updVelocita";
             this.updVelocita.Size = new System.Drawing.Size(120, 22);
-            this.updVelocita.TabIndex = 51;
+            this.updVelocita.TabIndex = 10;
             this.updVelocita.ValueChanged += new System.EventHandler(this.updVelocita_ValueChanged);
             // 
             // updRaggio
@@ -204,7 +204,7 @@ namespace ProgettoDatabase
             0});
             this.updRaggio.Name = "updRaggio";
             this.updRaggio.Size = new System.Drawing.Size(120, 22);
-            this.updRaggio.TabIndex = 50;
+            this.updRaggio.TabIndex = 9;
             this.updRaggio.ValueChanged += new System.EventHandler(this.updRaggio_ValueChanged);
             // 
             // updMotori
@@ -218,7 +218,7 @@ namespace ProgettoDatabase
             0});
             this.updMotori.Name = "updMotori";
             this.updMotori.Size = new System.Drawing.Size(120, 22);
-            this.updMotori.TabIndex = 49;
+            this.updMotori.TabIndex = 6;
             this.updMotori.ValueChanged += new System.EventHandler(this.updMotori_ValueChanged);
             // 
             // updLitri
@@ -232,7 +232,7 @@ namespace ProgettoDatabase
             0});
             this.updLitri.Name = "updLitri";
             this.updLitri.Size = new System.Drawing.Size(120, 22);
-            this.updLitri.TabIndex = 48;
+            this.updLitri.TabIndex = 5;
             this.updLitri.ValueChanged += new System.EventHandler(this.updLitri_ValueChanged);
             // 
             // updCapacita
@@ -246,7 +246,7 @@ namespace ProgettoDatabase
             0});
             this.updCapacita.Name = "updCapacita";
             this.updCapacita.Size = new System.Drawing.Size(120, 22);
-            this.updCapacita.TabIndex = 47;
+            this.updCapacita.TabIndex = 4;
             this.updCapacita.ValueChanged += new System.EventHandler(this.updCapacita_ValueChanged);
             // 
             // label8
@@ -335,7 +335,7 @@ namespace ProgettoDatabase
             this.txtCodice.Location = new System.Drawing.Point(277, 150);
             this.txtCodice.Name = "txtCodice";
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
-            this.txtCodice.TabIndex = 56;
+            this.txtCodice.TabIndex = 3;
             this.txtCodice.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCodice_KeyUp);
             // 
             // errorProvider1
@@ -390,7 +390,7 @@ namespace ProgettoDatabase
             this.cmbMarca.Location = new System.Drawing.Point(277, 48);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(265, 24);
-            this.cmbMarca.TabIndex = 60;
+            this.cmbMarca.TabIndex = 1;
             this.cmbMarca.ValueMember = "Nome";
             this.cmbMarca.SelectionChangeCommitted += new System.EventHandler(this.cmbMarca_SelectionChangeCommitted);
             // 
@@ -407,7 +407,7 @@ namespace ProgettoDatabase
             this.cmbModello.Location = new System.Drawing.Point(277, 101);
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
-            this.cmbModello.TabIndex = 59;
+            this.cmbModello.TabIndex = 2;
             this.cmbModello.ValueMember = "Modello";
             this.cmbModello.SelectedIndexChanged += new System.EventHandler(this.cmbModello_SelectedIndexChanged);
             // 
