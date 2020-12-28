@@ -232,6 +232,7 @@ namespace ProgettoDatabase
             this.txtModello.Location = new System.Drawing.Point(274, 140);
             this.txtModello.Margin = new System.Windows.Forms.Padding(4);
             this.txtModello.Name = "txtModello";
+            this.txtModello.ReadOnly = true;
             this.txtModello.Size = new System.Drawing.Size(265, 22);
             this.txtModello.TabIndex = 38;
             // 
@@ -250,6 +251,7 @@ namespace ProgettoDatabase
             this.txtCodice.Location = new System.Drawing.Point(274, 82);
             this.txtCodice.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodice.Name = "txtCodice";
+            this.txtCodice.ReadOnly = true;
             this.txtCodice.Size = new System.Drawing.Size(265, 22);
             this.txtCodice.TabIndex = 56;
             // 
