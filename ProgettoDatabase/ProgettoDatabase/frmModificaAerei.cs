@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -52,9 +53,18 @@ namespace ProgettoDatabase
                     }
                     else
                     {
-                        tblAereiTableAdapter.ModificaAereo(txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text, _CodiceAerei);
+                        try
+                        {
+                            tblAereiTableAdapter.ModificaAereo(txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text, _CodiceAerei);
+                            this._RefreshGrid();
+                        }
+                        catch(SqlException ex)when(ex.Number==2627)
+                        {
+                            MessageBox.Show("Chiave primaria duplicata, usarne una differente");
+                        }
+                        
                     }
-                    this._RefreshGrid();
+                    
                 }
             }
             else

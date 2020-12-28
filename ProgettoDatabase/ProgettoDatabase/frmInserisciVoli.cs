@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -33,9 +34,17 @@ namespace ProgettoDatabase
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
-                    this._RefreshGrid();
-                    this.Close();
+                    try
+                    {
+                        tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
+                        this._RefreshGrid();
+                        this.Close();
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627)
+                    {
+                        MessageBox.Show("Chiave primaria duplicata, usarne una differente");
+                    }
+                    
                 }
 
             }
@@ -74,8 +83,18 @@ namespace ProgettoDatabase
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblVoliTableAdapter.InserisciVoli(txtCodice.Text, Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToByte(updDurata.Value), Convert.ToInt16(updGatePartenza.Value), chkInternazionale.Checked);
-                    this._RefreshGrid();
+                    try
+                    {
+                        tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
+                        this._RefreshGrid();
+                        txtCodice.Text = "";
+                        updDurata.Value = 0;
+                        updGatePartenza.Value = 0;
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627)
+                    {
+                        MessageBox.Show("Chiave primaria duplicata, usarne una differente");
+                    }
                 }
 
             }

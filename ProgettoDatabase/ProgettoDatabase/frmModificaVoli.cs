@@ -67,10 +67,17 @@ namespace ProgettoDatabase
 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    
-                        tblVoliTableAdapter.ModificaVoli( Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), cmbCodiceAereo.Text,
+                    try
+                    {
+                        tblVoliTableAdapter.ModificaVoli(Convert.ToDateTime(dtpDataPartenza.Value), Convert.ToDateTime(dtpDataArrivo.Value), cmbCodiceAereo.Text,
                            cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked, _Codice);
-                    this._RefreshGrid();
+                        this._RefreshGrid();
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627)
+                    {
+                        MessageBox.Show("Chiave primaria duplicata, usarne una differente");
+                    }
+                    
 
                 }
 

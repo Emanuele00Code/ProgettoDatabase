@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -33,8 +34,17 @@ namespace ProgettoDatabase
             {
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    tblAeroportiTableAdapter.InserisciAeroporto(txtSigla.Text, txtNome.Text, Convert.ToByte(updGates.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked);
-                    this._RefreshGrid();
+                    
+                    try
+                    {
+                        tblAeroportiTableAdapter.InserisciAeroporto(txtSigla.Text, txtNome.Text, Convert.ToByte(updGates.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked);
+                        this._RefreshGrid();
+                        this.Close();
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627)
+                    {
+                        MessageBox.Show("Chiave primaria duplicata, usarne una differente");
+                    }
                 }
             }
             else
@@ -84,18 +94,25 @@ namespace ProgettoDatabase
             if ((txtSigla.Text != "") && (txtNome.Text != "") && (txtNazione.Text != "") && (txtCitta.Text != "") && (updPiste.Value > 0) && (updTerminal.Value > 0) && (updGates.Value > 0))
             { 
                 if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                tblAeroportiTableAdapter.InserisciAeroporto(txtSigla.Text, txtNome.Text, Convert.ToByte(updGates.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked);
-                txtSigla.Text = "";
-                txtNome.Text = "";
-                updPiste.Value = 0;
-                updTerminal.Value = 0;
-                updGates.Value = 0;
-                txtNazione.Text = "";
-                txtCitta.Text = "";
-                cbkMilitare.Checked = false;
-                cbkInternazionale.Checked = false;
-                    this._RefreshGrid();
+                {
+                    try
+                    {
+                        tblAeroportiTableAdapter.InserisciAeroporto(txtSigla.Text, txtNome.Text, Convert.ToByte(updGates.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked);
+                        txtSigla.Text = "";
+                        txtNome.Text = "";
+                        updPiste.Value = 0;
+                        updTerminal.Value = 0;
+                        updGates.Value = 0;
+                        txtNazione.Text = "";
+                        txtCitta.Text = "";
+                        cbkMilitare.Checked = false;
+                        cbkInternazionale.Checked = false;
+                        this._RefreshGrid();
+                    }
+                    catch (SqlException ex) when (ex.Number == 2627)
+                    {
+                        MessageBox.Show("Chiave primaria duplicata, usarne una differente");
+                    }
                 }
             }
             else
