@@ -62,18 +62,11 @@ namespace ProgettoDatabase
                     }
                     else
                     {
-                        try
-                        {
                             // Richiamo la stored procedure InserisciAerei, per inserire i nuovi dati nel dataset
                             // siccome non ho selezionato una Marca prendo il modello dal txt contenente il modello corrente
                             tblAereiTableAdapter.ModificaAereo(txtModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text, _CodiceAerei);
                             this._RefreshGrid();
-                        }
-                        catch(SqlException ex)when(ex.Number==2627)
-                        {
-                            MessageBox.Show("Chiave primaria duplicata, usarne una differente");
-                        }
-                        
+                                            
                     }
                     
                 }
@@ -177,8 +170,9 @@ namespace ProgettoDatabase
     {
         // Dichiaro una variabile Marca contente la Marca selezionata
         string marca = cmbMarca.SelectedValue.ToString();
-        // Richiamo il riempimento passando il parametro Marca
-        // i valori verranno selezionati filtrando per la marca in ingresso
+            // Richiamo il riempimento passando il parametro Marca
+            // i valori verranno selezionati filtrando per la marca in ingresso
+            cmbModello.Text = "";
         this.modelliTableAdapter.FillByMarca(this.aeroportoDataSet.Modelli, marca);
     }
 

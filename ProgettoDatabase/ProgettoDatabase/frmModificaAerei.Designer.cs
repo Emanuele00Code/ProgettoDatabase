@@ -377,6 +377,7 @@ namespace ProgettoDatabase
             this.cmbModello.Name = "cmbModello";
             this.cmbModello.Size = new System.Drawing.Size(265, 24);
             this.cmbModello.TabIndex = 2;
+            this.cmbModello.Text = "*Seleziona una Marca*";
             this.cmbModello.ValueMember = "Modello";
             this.cmbModello.SelectionChangeCommitted += new System.EventHandler(this.cmbModello_SelectionChangeCommitted);
             // 
