@@ -43,14 +43,6 @@ namespace ProgettoDatabase
             dvgVoli.DataSource = tblVoliBindingSource;
         }
 
-        private void tsbSalva_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Vuoi salvare le modifiche?", "Salvataggio", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                tblVoliTableAdapter.Update(aeroportoDataSet.tblVoli);
-            }
-        }
-
         private void tsbNuovo_Click(object sender, EventArgs e)
         {
             frmInserisciVoli formDaAprire = new frmInserisciVoli(this.RefreshGrid);

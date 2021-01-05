@@ -17,10 +17,12 @@ namespace ProgettoDatabase
 
         Aerei _MiaAerei;
 
+        // Costruttore senza parametri
         public frmVisualizzaAerei()
         {  
         }
 
+        // Costruttore con parametri (passo l'istanza di Aerei)
         public frmVisualizzaAerei(Aerei MiaAerei): this()
         {
             this._MiaAerei = MiaAerei;
@@ -33,10 +35,11 @@ namespace ProgettoDatabase
 
         private void frmVisualizzaAerei_Load(object sender, EventArgs e)
         {
+            // Con l'utilizzo del metodo fill aggiungo/aggiorno righe all'interno del dataset
             this.tblAereiTableAdapter.Fill(this.aeroportoDataSet.tblAerei);
 
 
-
+            // Riempo i componenti della form con i dati relativi all'Aereo '_MiaAerei'
             txtCodice.Text = this._MiaAerei.CodiceAereo;
             txtCompagnia.Text = this._MiaAerei.CompagniaAerea;
             
