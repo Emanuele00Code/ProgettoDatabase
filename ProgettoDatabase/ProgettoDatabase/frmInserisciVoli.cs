@@ -39,8 +39,12 @@ namespace ProgettoDatabase
                     try
                     {
                         tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
-                         
-                        
+                        if (!this.avvio)
+                        {
+                            this._RefreshGrid();
+                            
+                        }
+                        this.Close();
                     }
                     catch (SqlException ex) when (ex.Number == 2627)
                     {

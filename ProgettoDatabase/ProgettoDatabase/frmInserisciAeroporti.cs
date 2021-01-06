@@ -43,8 +43,9 @@ namespace ProgettoDatabase
                         if (!this.avvio)
                         {
                             this._RefreshGrid();
-                            this.Close();
+                            
                         }
+                        this.Close();
                     }
                     catch (SqlException ex) when (ex.Number == 2627)
                     {

@@ -50,8 +50,9 @@ namespace ProgettoDatabase
                         if (!this.avvio)
                         {
                             this._RefreshGrid();
-                            this.Close();
+                            
                         }
+                        this.Close();
                     }
                     // In caso di chiave primaria duplicata
                     catch (SqlException ex) when (ex.Number == 2627)
