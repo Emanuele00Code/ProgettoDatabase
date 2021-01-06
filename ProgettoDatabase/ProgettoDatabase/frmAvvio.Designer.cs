@@ -96,7 +96,15 @@ namespace ProgettoDatabase
             // 
             // toolStripDropDownButton1
             // 
-         
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovoToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(34, 24);
+            this.toolStripDropDownButton1.Text = "Inserimento diretto";
+            // 
             // nuovoToolStripMenuItem
             // 
             this.nuovoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -104,7 +112,7 @@ namespace ProgettoDatabase
             this.voloToolStripMenuItem,
             this.aeroportoToolStripMenuItem});
             this.nuovoToolStripMenuItem.Name = "nuovoToolStripMenuItem";
-            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.nuovoToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
             this.nuovoToolStripMenuItem.Text = "Nuovo...";
             // 
             // aereoToolStripMenuItem
