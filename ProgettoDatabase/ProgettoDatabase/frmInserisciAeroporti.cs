@@ -15,16 +15,18 @@ namespace ProgettoDatabase
 {
     public partial class frmInserisciAeroporti : Form
     {
-
+        bool avvio;
 
         readonly Action _RefreshGrid;
         public frmInserisciAeroporti(Action RefreshGrid)
         {
+            avvio = false;
             this._RefreshGrid = RefreshGrid;
             InitializeComponent();
         }
         public frmInserisciAeroporti()
         {
+            avvio = true;
             InitializeComponent();
         }
 
@@ -38,8 +40,11 @@ namespace ProgettoDatabase
                     try
                     {
                         tblAeroportiTableAdapter.InserisciAeroporto(txtSigla.Text, txtNome.Text, Convert.ToByte(updGates.Value), Convert.ToByte(updTerminal.Value), Convert.ToByte(updGates.Value), txtNazione.Text, txtCitta.Text, cbkMilitare.Checked, cbkInternazionale.Checked);
-                        this._RefreshGrid();
-                        this.Close();
+                        if (!this.avvio)
+                        {
+                            this._RefreshGrid();
+                            this.Close();
+                        }
                     }
                     catch (SqlException ex) when (ex.Number == 2627)
                     {
@@ -107,7 +112,10 @@ namespace ProgettoDatabase
                         txtCitta.Text = "";
                         cbkMilitare.Checked = false;
                         cbkInternazionale.Checked = false;
-                        this._RefreshGrid();
+                        if (!this.avvio)
+                        {
+                            this._RefreshGrid();
+                        }
                     }
                     catch (SqlException ex) when (ex.Number == 2627)
                     {

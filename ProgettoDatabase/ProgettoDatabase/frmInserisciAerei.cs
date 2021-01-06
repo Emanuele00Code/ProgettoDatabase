@@ -15,18 +15,20 @@ namespace ProgettoDatabase
 {
     public partial class frmInserisciAerei : Form
     {
-
+        bool avvio;
         readonly Action _RefreshGrid;
 
         // Costruttore senza parametri
         public frmInserisciAerei()
-        {          
+        {
+            avvio = true;
             InitializeComponent();
         }
 
         // Costruttore con parametri (passo il metodo RefreshGrid per il refresh della DataGridView)
         public frmInserisciAerei(Action RefreshGrid)
         {
+            avvio = false;
             this._RefreshGrid = RefreshGrid;
             InitializeComponent();
         }
@@ -34,7 +36,7 @@ namespace ProgettoDatabase
         // Bottone che carica i dati sul dataset, chiudendo la form
         private void btnSalva_Click(object sender, EventArgs e)
         {
-            // Controllo che non ci siano dei parametri vuoti o uguali a 0
+               // Controllo che non ci siano dei parametri vuoti o uguali a 0
             if ((txtCodice.Text != "") && (txtCompagnia.Text != "") && (cmbModello.Text != "") && (updCapacita.Value > 0) && (updRaggio.Value > 0) && (updLitri.Value > 0) && (updMotori.Value > 0) && (updVelocita.Value > 0) && (txtPropulsione.Text != ""))
             {
                 // Chiedo conferma per apportare le modifiche
@@ -45,10 +47,11 @@ namespace ProgettoDatabase
                     {
                         // Richiamo la stored procedure InserisciAerei, per inserire i nuovi dati nel dataset
                         tblAereiTableAdapter.InserisciAerei(txtCodice.Text, cmbModello.Text, Convert.ToInt16(updCapacita.Value), Convert.ToInt16(updLitri.Value), Convert.ToByte(updMotori.Value), txtPropulsione.Text, chkInternazionale.Checked, Convert.ToInt16(updRaggio.Value), Convert.ToInt16(updVelocita.Value), txtCompagnia.Text);
-                        // Aggiorno la DataGridView
-                        this._RefreshGrid();
-                        // Chiudo la form
-                        this.Close();
+                        if (!this.avvio)
+                        {
+                            this._RefreshGrid();
+                            this.Close();
+                        }
                     }
                     // In caso di chiave primaria duplicata
                     catch (SqlException ex) when (ex.Number == 2627)
@@ -131,7 +134,10 @@ namespace ProgettoDatabase
                         txtPropulsione.Text = "";
                         chkInternazionale.Checked = false;
                         // Aggiorno la DataGridView Aerei
-                        this._RefreshGrid();
+                        if (!this.avvio)
+                        {
+                            this._RefreshGrid();
+                        }
                     }
                     // In caso di chiave primaria duplicata
                     catch (SqlException ex) when (ex.Number == 2627)

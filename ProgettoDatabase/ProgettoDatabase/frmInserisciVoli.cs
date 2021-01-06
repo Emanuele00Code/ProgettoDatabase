@@ -16,14 +16,16 @@ namespace ProgettoDatabase
     public partial class frmInserisciVoli : Form
     {
 
-
+        bool avvio;
         readonly Action _RefreshGrid;
         public frmInserisciVoli()
-        {  
+        {
+            avvio = true;
             InitializeComponent();
         }
         public frmInserisciVoli(Action RefreshGrid)
         {
+            avvio = false;
             this._RefreshGrid = RefreshGrid;
             InitializeComponent();
         }
@@ -37,8 +39,8 @@ namespace ProgettoDatabase
                     try
                     {
                         tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
-                        this._RefreshGrid();
-                        this.Close();
+                         
+                        
                     }
                     catch (SqlException ex) when (ex.Number == 2627)
                     {
@@ -86,7 +88,10 @@ namespace ProgettoDatabase
                     try
                     {
                         tblVoliTableAdapter.InserisciVoli(txtCodice.Text, dtpDataPartenza.Value, dtpDataArrivo.Value, cmbCodiceAereo.Text, cmbPartenza.Text, Convert.ToInt16(updDurata.Value), Convert.ToByte(updGatePartenza.Value), chkInternazionale.Checked);
-                        this._RefreshGrid();
+                        if (!this.avvio)
+                        {
+                            this._RefreshGrid();
+                        }
                         txtCodice.Text = "";
                         updDurata.Value = 0;
                         updGatePartenza.Value = 0;
