@@ -134,7 +134,7 @@ namespace ProgettoDatabase
                         updVelocita.Value = 0;
                         txtPropulsione.Text = "";
                         chkInternazionale.Checked = false;
-                        // Aggiorno la DataGridView Aerei
+                        // Aggiorno la DataGridView Aerei se non mi trovo nella form Avvio
                         if (!this.avvio)
                         {
                             this._RefreshGrid();
